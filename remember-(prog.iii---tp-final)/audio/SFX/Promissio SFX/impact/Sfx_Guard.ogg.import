@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgfcq3ougx4d2"
+path="res://.godot/imported/Sfx_Guard.ogg-c51850afde847bd7c879b3cacc8d490c.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Promissio SFX/impact/Sfx_Guard.ogg"
+dest_files=["res://.godot/imported/Sfx_Guard.ogg-c51850afde847bd7c879b3cacc8d490c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

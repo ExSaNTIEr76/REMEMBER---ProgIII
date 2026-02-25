@@ -1,0 +1,492 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="REMEMBER"
+config/description="you must to remember your true purpose..."
+run/main_scene="uid://cuois8lq6u0de"
+config/features=PackedStringArray("4.6", "Forward Plus")
+run/low_processor_mode=true
+boot_splash/bg_color=Color(0.00784314, 0.00784314, 0.00784314, 1)
+boot_splash/use_filter=false
+boot_splash/image="uid://p8qei67gahpx"
+config/icon="res://icon.png"
+
+[audio]
+
+buses/default_bus_layout="uid://du5qqd7ch0rfw"
+
+[autoload]
+
+GameManager="*res://global/game_manager.gd"
+ThothGameState="*res://addons/thoth/thoth_gamestate.gd"
+AudioPlayer="*res://global/audio_player.gd"
+LevelManager="*res://global/global_scenes/level_manager.tscn"
+PlayerManager="*res://global/global_scenes/PlayerManager.tscn"
+PlayerGlobalStats="*res://global/player_global_stats.gd"
+PlayerHUD="*res://UI/HUD/player_HUD.tscn"
+InventoryManager="*res://global/inventory_manager.gd"
+NewGameManager="*res://global/new_game_manager.gd"
+TimeManager="*res://global/time_manager.gd"
+GlobalConditions="*res://global/global_scenes/global_conditions.tscn"
+GlobalCinematicsState="*res://global/global_scenes/global_cinematics_state.tscn"
+GlobalPlayerStatsState="res://global/global_scenes/global_player_stats_state.tscn"
+GlobalPuzzlesState="*res://global/global_scenes/global_puzzles_state.tscn"
+GlobalFightsState="*res://global/global_scenes/global_fights_state.tscn"
+GlobalChestsState="*res://global/global_scenes/global_chests_state.tscn"
+GlobalInventoryState="*res://global/global_scenes/global_inventory_state.tscn"
+CPRegenerator="*res://global/cp_regenerator.gd"
+StateUnlockManager="*res://global/state_unlock_manager.gd"
+SceneTransition="*res://scenes/LEVELS/levelScripts/SceneTransition.tscn"
+State="*res://dialogues/state.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+TeleportManager="*res://global/teleport_manager.gd"
+DirectionHelper="*res://global/direction_helper.gd"
+Spawner="*res://scenes/ENEMIES/UTILITIES/spawner.tscn"
+NotesManager="*res://UI/Notes/notes_manager.tscn"
+CinematicManager="*res://global/cinematic_manager.gd"
+DamageNumbers="*res://global/damage_numbers.gd"
+ImpactSounds="*res://global/impact_sounds.gd"
+GlobalMenuHub="*res://UI/Menu/MainMenu/global_menu_hub.gd"
+ItemDB="*res://global/item_db.gd"
+TextPopup="*res://UI/Others/text_pop_up.tscn"
+AudioManager="*res://global/audio_manager.gd"
+FootstepSoundManager="*uid://cwxmgl8me2t5o"
+GameOver="*uid://bjy0njjncf48q"
+
+[dialogic]
+
+directories/dch_directory={
+"CHARACTERS/Ciro": "res://dialogues/DIALOGIC/CHARACTERS/Ciro.dch",
+"CHARACTERS/Ciro/Ciro": "res://dialogues/DIALOGIC/CHARACTERS/Ciro/Ciro.dch"
+}
+directories/dtl_directory={
+"DIALOGIC/Sign": "res://dialogues/DIALOGIC/Sign.dtl",
+"TIMELINES/Zone 0/Sign": "res://dialogues/DIALOGIC/TIMELINES/Zone 0/Sign.dtl",
+"Zone 0/Beginning": "res://dialogues/DIALOGIC/TIMELINES/Zone 0/Beginning.dtl"
+}
+glossary/default_case_sensitive=true
+layout/style_list=["res://dialogues/Dialogue_style.tres"]
+layout/default_style="res://dialogues/Dialogue_style.tres"
+variables={
+"Letrero": true
+}
+text/letter_speed=0.04
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.2
+animations/leave_default_length=0.2
+animations/leave_default_wait=true
+animations/join_default_wait=false
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+translation/enabled=true
+translation/original_locale="es"
+translation/file_mode=1
+translation/translation_folder=""
+translation/save_mode=0
+translation/add_separator=false
+text/autopauses={}
+text/autoadvance_enabled=false
+text/autocolor_names=false
+save/autosave=true
+save/autosave_mode=2
+save/default_slot="Saves"
+history/already_read_history_enabled=false
+history/full_history_enabled=false
+history/simple_history_enabled=false
+animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/zoom_in_center.gd"
+animations/leave_default="res://addons/dialogic/Modules/Character/DefaultAnimations/zoom_out_center.gd"
+layout/end_behaviour=0
+timer/process_in_physics=true
+
+[dialogue_manager]
+
+runtime/state_autoload_shortcuts=["State"]
+runtime/balloon_path="res://dialogues/balloon.tscn"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=352
+window/size/mode=3
+window/size/borderless=true
+window/size/window_width_override=1280
+window/size/window_height_override=704
+window/stretch/mode="canvas_items"
+window/per_pixel_transparency/allowed=true
+mouse_cursor/custom_image="uid://b6phlsy2xgyac"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/thoth/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://UI/": "blue",
+"res://UI/Camera/": "green",
+"res://UI/Fonts/": "green",
+"res://UI/HUD/": "green",
+"res://UI/HUD/scripts/": "red",
+"res://UI/HUD/sprites/": "red",
+"res://UI/Menu/": "green",
+"res://UI/Menu/EquipMenu/": "red",
+"res://UI/Menu/GameOverScreen/": "red",
+"res://UI/Menu/GameOverScreen/sprites/": "pink",
+"res://UI/Menu/ItemsMenu/": "red",
+"res://UI/Menu/ItemsMenu/inventory/": "pink",
+"res://UI/Menu/LoadingScreens/": "red",
+"res://UI/Menu/MainMenu/": "red",
+"res://UI/Menu/Objects Menu/inventory/player_inventory.tres": "orange",
+"res://UI/Menu/OptionsMenu/": "red",
+"res://UI/Menu/Panels/": "red",
+"res://UI/Menu/SaveMenu/": "red",
+"res://UI/Menu/TitleScreen/": "red",
+"res://UI/Menu/TitleScreen/sprites/": "pink",
+"res://UI/Menu/sprites/": "red",
+"res://UI/Menu/styleboxes/": "red",
+"res://UI/Notes/": "green",
+"res://UI/Notes/z0_notes/": "yellow",
+"res://UI/Others/": "green",
+"res://UI/Pictures/": "green",
+"res://addons/": "blue",
+"res://addons/dialogue_manager/": "red",
+"res://addons/proyect_icons/": "red",
+"res://addons/scene_manager/": "green",
+"res://addons/scene_manager/Autoloads/": "red",
+"res://addons/scene_manager/Gameplay/": "red",
+"res://addons/scene_manager/Gameplay/Levels/": "pink",
+"res://addons/scene_manager/Gameplay/Sprites/": "pink",
+"res://addons/scene_manager/Menus/": "red",
+"res://addons/scene_manager/Menus/Sprites/": "pink",
+"res://addons/thoth/": "red",
+"res://audio/": "blue",
+"res://audio/SFX/": "red",
+"res://audio/SFX/Characters/Elsens/": "pink",
+"res://audio/SFX/Characters/Zacharie/": "pink",
+"res://audio/SFX/Enemies SFX/spectres/": "pink",
+"res://audio/SFX/Enviorement/chests/": "pink",
+"res://audio/SFX/Enviorement/doors/": "pink",
+"res://audio/SFX/Enviorement/notes/": "pink",
+"res://audio/SFX/Enviorement/others/": "pink",
+"res://audio/SFX/Enviorement/tramway/": "pink",
+"res://audio/SFX/Enviorement/transitions/": "pink",
+"res://audio/SFX/GUI SFX/map/": "pink",
+"res://audio/SFX/GUI SFX/menu/": "pink",
+"res://audio/SFX/Items SFX/pickup/": "pink",
+"res://audio/SFX/Promissio SFX/abstractSymbols/": "pink",
+"res://audio/SFX/Promissio SFX/concreteSymbols/": "pink",
+"res://audio/SFX/Promissio SFX/impact/": "pink",
+"res://audio/SFX/Promissio SFX/singularSymbols/": "pink",
+"res://audio/SFX/Puppet SFX/combat/": "pink",
+"res://audio/SFX/Puppet SFX/footsteps/": "pink",
+"res://audio/SFX/Puppet SFX/hurt/": "pink",
+"res://audio/SFX/Puppet SFX/talk/": "pink",
+"res://audio/ambient/": "yellow",
+"res://audio/music/": "green",
+"res://dialogues/": "blue",
+"res://dialogues/CHARACTERS/Ciro/portraits/": "pink",
+"res://dialogues/CHARACTERS/Ciro/portraits/eyes closed/": "purple",
+"res://dialogues/CHARACTERS/Ciro/portraits/looking player/": "purple",
+"res://dialogues/CHARACTERS/Ciro/portraits/normal/": "purple",
+"res://dialogues/CHARACTERS/Ciro/portraits/normal/gesturing/": "gray",
+"res://dialogues/CHARACTERS/Ciro/portraits/normal/talking/": "gray",
+"res://dialogues/CHARACTERS/portraits/": "pink",
+"res://dialogues/FullBackground/": "green",
+"res://dialogues/TALKSPRITES/": "green",
+"res://dialogues/TIMELINES/": "green",
+"res://dialogues/TIMELINES/Zone 0/": "yellow",
+"res://dialogues/UI/": "green",
+"res://dialogues/ZONE 0/": "yellow",
+"res://dialogues/ZONE 1/": "green",
+"res://effects/": "blue",
+"res://effects/Darkness/": "green",
+"res://effects/Gradients/": "green",
+"res://effects/Light/": "green",
+"res://effects/Particles/": "green",
+"res://effects/Shaders/": "green",
+"res://global/": "blue",
+"res://global/global_scenes/": "green",
+"res://items/": "blue",
+"res://items/Equipment/": "green",
+"res://items/Equipment/defensive1/": "red",
+"res://items/Equipment/defensive2/": "red",
+"res://items/Equipment/special/": "red",
+"res://items/ItemsEffects/": "yellow",
+"res://items/Objects/": "green",
+"res://items/Objects/keys/": "red",
+"res://items/Objects/materials/": "red",
+"res://items/Objects/others/": "red",
+"res://items/Objects/usables/": "red",
+"res://items/Symbols/": "green",
+"res://items/Symbols/abstract/": "red",
+"res://items/Symbols/concrete/": "red",
+"res://items/Symbols/singular/": "red",
+"res://scenes/": "blue",
+"res://scenes/CHARACTERS/": "green",
+"res://scenes/CHARACTERS/Animals/": "red",
+"res://scenes/CHARACTERS/Animals/sprites/": "pink",
+"res://scenes/CHARACTERS/Animals/states/": "pink",
+"res://scenes/CHARACTERS/Elsens/": "red",
+"res://scenes/CHARACTERS/Elsens/elsenStates/": "pink",
+"res://scenes/CHARACTERS/Elsens/sprites/": "pink",
+"res://scenes/CHARACTERS/Kletus/": "red",
+"res://scenes/CHARACTERS/Kletus/kletusStates/": "pink",
+"res://scenes/CHARACTERS/Promissio/": "red",
+"res://scenes/CHARACTERS/Promissio/animations/": "pink",
+"res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_Shield/": "yellow",
+"res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearA/": "yellow",
+"res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/": "yellow",
+"res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/": "yellow",
+"res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/": "yellow",
+"res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/": "yellow",
+"res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/": "yellow",
+"res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/": "yellow",
+"res://scenes/CHARACTERS/Promissio/concreteSymbols/": "pink",
+"res://scenes/CHARACTERS/Promissio/concreteSymbols/scenes/": "orange",
+"res://scenes/CHARACTERS/Promissio/concreteSymbols/scripts/": "orange",
+"res://scenes/CHARACTERS/Promissio/concreteSymbols/sprites/": "orange",
+"res://scenes/CHARACTERS/Promissio/promissioStates/": "pink",
+"res://scenes/CHARACTERS/Promissio/promissio_glowing.gdshader": "red",
+"res://scenes/CHARACTERS/Puppet/": "red",
+"res://scenes/CHARACTERS/Puppet/animationTrees/": "pink",
+"res://scenes/CHARACTERS/Puppet/animations/": "pink",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_AttackA/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_AttackB/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_CinematicIdle/": "orange",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_Climb/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_CloseBox/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_Hurt/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_Idle/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_Motions/": "orange",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_OpenBox/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_Run/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_StopRun/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_StopWalk/": "yellow",
+"res://scenes/CHARACTERS/Puppet/animations/PuppetAnimations_Walk/": "yellow",
+"res://scenes/CHARACTERS/Puppet/puppetSatates/": "pink",
+"res://scenes/CHARACTERS/Puppet/puppetStadistics/": "pink",
+"res://scenes/CHARACTERS/Puppet/scripts/": "pink",
+"res://scenes/CHARACTERS/Puppet/shadows/": "pink",
+"res://scenes/CHARACTERS/Puppet/sprites/": "pink",
+"res://scenes/CHARACTERS/Sucre/": "red",
+"res://scenes/CHARACTERS/Sucre/sprites/": "pink",
+"res://scenes/CHARACTERS/Sucre/sucreStates/": "pink",
+"res://scenes/CHARACTERS/The Child/": "red",
+"res://scenes/CHARACTERS/The Child/TheChildStates/": "pink",
+"res://scenes/CHARACTERS/Zacharie/": "red",
+"res://scenes/CHARACTERS/Zoulven/": "red",
+"res://scenes/CHARACTERS/Zoulven/sprites/": "pink",
+"res://scenes/CHARACTERS/Zoulven/zoulvenAnimations/": "pink",
+"res://scenes/CHARACTERS/Zoulven/zoulvenAnimations/ZoulvenAnimtions_Idle/": "yellow",
+"res://scenes/CHARACTERS/Zoulven/zoulvenAnimations/ZoulvenAnimtions_Walk/": "yellow",
+"res://scenes/CHARACTERS/Zoulven/zoulvenStates/": "pink",
+"res://scenes/ENEMIES/": "green",
+"res://scenes/ENEMIES/Bosses/": "orange",
+"res://scenes/ENEMIES/Ghouls/": "orange",
+"res://scenes/ENEMIES/Snoopers/": "orange",
+"res://scenes/ENEMIES/Spectres/": "orange",
+"res://scenes/ENEMIES/Spectres/common_spectre/": "yellow",
+"res://scenes/ENEMIES/Spectres/common_spectre/ghostrail/": "pink",
+"res://scenes/ENEMIES/Spectres/common_spectre/states/": "pink",
+"res://scenes/ENEMIES/UTILITIES/": "orange",
+"res://scenes/ENVIOREMENT/": "green",
+"res://scenes/ENVIOREMENT/Barriers/": "red",
+"res://scenes/ENVIOREMENT/Barriers/DoubleBarrier/": "pink",
+"res://scenes/ENVIOREMENT/Barriers/SimpleBarrier/": "pink",
+"res://scenes/ENVIOREMENT/Barriers/TrapdoorBarrier/": "pink",
+"res://scenes/ENVIOREMENT/Combats/": "red",
+"res://scenes/ENVIOREMENT/Floating Blocks/": "red",
+"res://scenes/ENVIOREMENT/Floating Blocks/scripts/": "pink",
+"res://scenes/ENVIOREMENT/Floating Boxes/": "red",
+"res://scenes/ENVIOREMENT/HitHurtBoxes/": "red",
+"res://scenes/ENVIOREMENT/Puzzles/": "red",
+"res://scenes/ENVIOREMENT/Shine/": "red",
+"res://scenes/ENVIOREMENT/Shops/": "red",
+"res://scenes/ENVIOREMENT/SmokeCurrents/": "red",
+"res://scenes/ENVIOREMENT/TreasureChests/": "red",
+"res://scenes/LEVELS/": "green",
+"res://scenes/LEVELS/TestScenes/": "gray",
+"res://scenes/LEVELS/The Nothingness/": "gray",
+"res://scenes/LEVELS/Zone 0/": "yellow",
+"res://scenes/LEVELS/Zone 1/levels/Damien/": "purple",
+"res://scenes/LEVELS/Zone 2/": "pink",
+"res://scenes/LEVELS/levelScripts/": "gray",
+"res://translations/": "blue"
+}
+
+[global_group]
+
+Persist=""
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194310,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ui_select={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":20,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ui_cancel={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":96,"key_label":0,"unicode":186,"location":0,"echo":false,"script":null)
+]
+}
+ui_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194319,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194321,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194320,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194322,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+]
+}
+ui_colorpicker_delete_preset={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194312,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+ui_pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ui_interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ui_run={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194326,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":9,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ui_attack_a={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":81,"location":0,"echo":false,"script":null)
+]
+}
+ui_attack_b={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":87,"location":0,"echo":false,"script":null)
+]
+}
+ui_abstract_symbol={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"location":0,"echo":false,"script":null)
+]
+}
+ui_guard={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ui_mark={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":67,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":7,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ui_assimilate={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://dialogues/ZONE 0/Z0_Actionables_ENG.en.translation")
+locale/translations_pot_files=PackedStringArray("res://dialogues/GameUI.dialogue", "res://dialogues/ZONE 1/Zone1_ElsenStation.dialogue", "res://dialogues/ZONE 1/Zone1_Damien.dialogue", "res://dialogues/UI/FloatingBoxes.dialogue", "res://dialogues/UI/Tramway.dialogue", "res://dialogues/UI/TheNothingness.dialogue", "res://dialogues/ZONE 0/Zone0_Ruins.dialogue", "res://dialogues/ZONE 0/Zone0_Prelude.dialogue", "res://dialogues/ZONE 1/Zone1_SmokeMines.dialogue", "res://dialogues/ZONE 1/Zone1_AnnexMines.dialogue", "res://dialogues/UI/Chests.dialogue", "res://dialogues/UI/Shops.dialogue", "res://dialogues/ZONE 1/Zone1_Pentel.dialogue")
+locale/test="es"
+
+[layer_names]
+
+2d_render/layer_1="World"
+2d_render/layer_2="Player Hitbox"
+2d_render/layer_3="Actionables"
+2d_render/layer_4="Enemy Hitbox"
+2d_render/layer_5="Doors"
+2d_render/layer_6="Player Hurtbox"
+2d_render/layer_7="Enemy Hurtbox"
+2d_render/layer_10="Lights"
+2d_render/layer_11="Oclusion"
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Actionables"
+2d_physics/layer_4="Enemy"
+2d_physics/layer_5="Doors"
+2d_physics/layer_6="Promissio ATK"
+2d_physics/layer_7="Companion"
+2d_physics/layer_8="Elsen"
+2d_physics/layer_10="LightDetector"
+2d_physics/layer_11="Floating Box"
+2d_physics/layer_12="Floating Block"
+2d_physics/layer_13="Barrier"
+2d_physics/layer_14="CameraZone"
+2d_physics/layer_15="Chest"
+2d_physics/layer_20="Shield"
+2d_physics/size/mode=3
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+lights_and_shadows/use_physical_light_units=true
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
+textures/decals/filter=0
+textures/light_projectors/filter=0

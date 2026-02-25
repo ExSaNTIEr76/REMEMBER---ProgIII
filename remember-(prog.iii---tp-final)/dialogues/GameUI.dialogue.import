@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://du5miuptrhrcj"
+path="res://.godot/imported/GameUI.dialogue-25b454012d82cd5aa697b70c5286f8fb.tres"
+
+[deps]
+
+source_file="res://dialogues/GameUI.dialogue"
+dest_files=["res://.godot/imported/GameUI.dialogue-25b454012d82cd5aa697b70c5286f8fb.tres"]
+
+[params]
+
+defaults=true

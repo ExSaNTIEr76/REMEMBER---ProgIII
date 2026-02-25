@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://b1wt5shmuyv5u"]
+
+[ext_resource type="TileSet" uid="uid://ch8qquwfuqasp" path="res://scenes/LEVELS/Zone 1/sprites/Zone 1 TileMap.tres" id="1_eju73"]
+[ext_resource type="Script" uid="uid://cwxmgl8me2t5o" path="res://global/footstep_sound_manager.gd" id="2_eju73"]
+[ext_resource type="Script" uid="uid://bcweryyykqkml" path="res://scenes/LEVELS/levelScripts/level_tile_map_layer.gd" id="2_iwh2f"]
+[ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="4_me7xk"]
+
+[node name="YSORT" type="Node2D" unique_id=246051334 groups=["Y-SORT"]]
+y_sort_enabled = true
+
+[node name="Layer 0 (Plastic)" type="TileMapLayer" parent="." unique_id=1350054519]
+z_index = -5
+y_sort_enabled = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 1 (Building)" type="TileMapLayer" parent="." unique_id=822126230]
+z_index = -4
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+script = ExtResource("2_eju73")
+
+[node name="Layer 1_1 (Deep Rocks)" type="TileMapLayer" parent="Layer 1 (Building)" unique_id=1039174060]
+z_index = -3
+z_as_relative = false
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 1_2 (Deep Rocks 2)" type="TileMapLayer" parent="Layer 1 (Building)" unique_id=1580807806]
+z_index = -3
+z_as_relative = false
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 1_3 (Deep Rocks 3)" type="TileMapLayer" parent="Layer 1 (Building)" unique_id=1203464045]
+z_index = -3
+z_as_relative = false
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 2 (Entrances)" type="TileMapLayer" parent="." unique_id=1450872339]
+z_index = -3
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 3 (Wall Shorings)" type="TileMapLayer" parent="." unique_id=113386526]
+z_index = -2
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 4 (Path)" type="TileMapLayer" parent="." unique_id=1385131622]
+z_index = -1
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 1_1 (Deep Path Rocks)" type="TileMapLayer" parent="Layer 4 (Path)" unique_id=784273010]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 1_2 (Deep Path Rocks 2)" type="TileMapLayer" parent="Layer 4 (Path)" unique_id=1036928682]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 1_3 (Deep Path Rocks 3)" type="TileMapLayer" parent="Layer 4 (Path)" unique_id=142398525]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 5 (Background)" type="TileMapLayer" parent="." unique_id=736988241]
+light_mask = 0
+z_index = 4
+y_sort_enabled = true
+texture_repeat = 3
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+script = ExtResource("2_iwh2f")
+
+[node name="Layer 6 (Lights)" type="TileMapLayer" parent="." unique_id=185700682]
+y_sort_enabled = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 7 (Decorations)" type="TileMapLayer" parent="." unique_id=1148760834]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 8 (Decorations 2)" type="TileMapLayer" parent="." unique_id=741681366]
+y_sort_enabled = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 9 (Shorings)" type="TileMapLayer" parent="." unique_id=81635965]
+z_index = 1
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="Layer 10 (Limit)" type="TileMapLayer" parent="." unique_id=1660595440]
+light_mask = 0
+z_index = 4
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_eju73")
+
+[node name="PlayerSpawn" parent="." unique_id=2098283364 instance=ExtResource("4_me7xk")]
+spawn_promissio = true

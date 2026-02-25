@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="UsableItemData" format=3 uid="uid://078u7moxey38"]
+
+[ext_resource type="Script" uid="uid://bmaqc3o0ps2of" path="res://items/ItemsEffects/item_effect.gd" id="1_8vu5v"]
+[ext_resource type="Script" uid="uid://cbsu122wrox35" path="res://items/ItemsEffects/item_effect_restore.gd" id="2_2r2o0"]
+[ext_resource type="AudioStream" uid="uid://b4w1e7mwo8gj1" path="res://audio/SFX/GUI SFX/menu/Sfx_Use_Item.ogg" id="2_751nf"]
+[ext_resource type="Script" uid="uid://2ifblpu6h0vf" path="res://items/usable_item_data.gd" id="2_otlfv"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="5_ycuyn"]
+
+[sub_resource type="Resource" id="Resource_8vu5v"]
+script = ExtResource("2_2r2o0")
+heal_amount = 25
+target_stat = "CP"
+audio = ExtResource("2_751nf")
+audio_volume = -12.0
+metadata/_custom_type_script = "uid://cbsu122wrox35"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e76lr"]
+atlas = ExtResource("5_ycuyn")
+region = Rect2(64, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_otlfv")
+effects = Array[ExtResource("1_8vu5v")]([SubResource("Resource_8vu5v")])
+name = "Suplementos básicos"
+type = 1
+ID = 3
+is_quantitative = true
+description = "Cápsulas de calcio para revitalizar la energía del cuerpo.
+Restaura 25 CP."
+texture = SubResource("AtlasTexture_e76lr")
+metadata/_custom_type_script = "uid://2ifblpu6h0vf"

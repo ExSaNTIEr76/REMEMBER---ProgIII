@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tf6b8txx62w2"
+path="res://.godot/imported/OFF - Rainy Day (in).ogg-79a1e55f13d9583708f8c5865a8d2ee4.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/OFF - Rainy Day (in).ogg"
+dest_files=["res://.godot/imported/OFF - Rainy Day (in).ogg-79a1e55f13d9583708f8c5865a8d2ee4.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

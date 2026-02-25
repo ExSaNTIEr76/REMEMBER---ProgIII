@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://drcx2pcmq8h00"]
+
+[ext_resource type="Script" uid="uid://bog32dxl57cno" path="res://scenes/ENEMIES/UTILITIES/spawner.gd" id="1_uif02"]
+
+[node name="SPAWNER" type="Node2D"]
+script = ExtResource("1_uif02")
+
+[node name="SpawnerMarker" type="Marker2D" parent="."]
+position = Vector2(830.993, 355.454)

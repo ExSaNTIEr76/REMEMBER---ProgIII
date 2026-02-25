@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cl8mu5n2n01aw"
+path="res://.godot/imported/Zone1_AnnexMines.dialogue-4f446b83bc40d4f37d24c3ba2957c6d7.tres"
+
+[deps]
+
+source_file="res://dialogues/ZONE 1/Zone1_AnnexMines.dialogue"
+dest_files=["res://.godot/imported/Zone1_AnnexMines.dialogue-4f446b83bc40d4f37d24c3ba2957c6d7.tres"]
+
+[params]
+
+defaults=true

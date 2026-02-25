@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="EquipableItemData" format=3 uid="uid://cmixv7r6f8jj2"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_sgwq6"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_awmgr"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="3_7sjdy"]
+
+[sub_resource type="Resource" id="Resource_awmgr"]
+script = ExtResource("1_sgwq6")
+type = 4
+value = 4
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="Resource" id="Resource_ct4ic"]
+script = ExtResource("1_sgwq6")
+type = 7
+value = 6
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awmgr"]
+atlas = ExtResource("3_7sjdy")
+region = Rect2(368, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_awmgr")
+modifiers = Array[ExtResource("1_sgwq6")]([SubResource("Resource_awmgr"), SubResource("Resource_ct4ic")])
+name = "Strong spirit"
+type = 9
+ID = 120
+is_quantitative = true
+description = "The persevering spirit of tireless workers."
+texture = SubResource("AtlasTexture_awmgr")
+cost = 100
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

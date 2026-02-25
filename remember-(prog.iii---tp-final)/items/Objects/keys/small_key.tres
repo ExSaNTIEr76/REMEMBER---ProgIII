@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://1mt4rhshrai4"]
+
+[ext_resource type="Script" uid="uid://culxbd8ylmven" path="res://items/item_data.gd" id="2_5kh1h"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="3_5kh1h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vojpp"]
+atlas = ExtResource("3_5kh1h")
+region = Rect2(0, 224, 16, 16)
+
+[resource]
+script = ExtResource("2_5kh1h")
+name = "Small key"
+type = 2
+ID = 25
+is_quantitative = true
+description = "Small and generic pocket key.
+Can be used to unlock simple padlocks."
+texture = SubResource("AtlasTexture_vojpp")
+cost = 400
+metadata/_custom_type_script = "uid://culxbd8ylmven"

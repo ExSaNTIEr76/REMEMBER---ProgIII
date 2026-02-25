@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=4 uid="uid://cqdpljd76nmjb"]
+
+[ext_resource type="TileSet" uid="uid://bbxgpr6k085rt" path="res://scenes/LEVELS/Zone 0/sprites/Zone 0 TileMap.tres" id="1_fu2ru"]
+[ext_resource type="Script" uid="uid://da33mdxfo35ay" path="res://scenes/LEVELS/Level.gd" id="1_kjg5u"]
+[ext_resource type="PackedScene" uid="uid://dl01jemdi45gy" path="res://scenes/CHARACTERS/Puppet/Puppet.tscn" id="2_qi3km"]
+[ext_resource type="PackedScene" uid="uid://b0d4f0nhwtenq" path="res://UI/Camera/Follow Camera.tscn" id="3_vy5aa"]
+[ext_resource type="PackedScene" uid="uid://bjo1vifofl7f2" path="res://dialogues/Actionable.tscn" id="4_a4ft6"]
+[ext_resource type="Resource" uid="uid://dg48fr6p71bs2" path="res://dialogues/ZONE 0/Zone0_Actionables.dialogue" id="5_541ix"]
+[ext_resource type="Script" uid="uid://bog32dxl57cno" path="res://scenes/LEVELS/Zone 0/spawner.gd" id="5_ifi7p"]
+[ext_resource type="PackedScene" uid="uid://bswm0sxs1yfo3" path="res://scenes/ENEMIES/Spectres/common spectre/common_spectre.tscn" id="5_nao0d"]
+[ext_resource type="PackedScene" uid="uid://cbhl4re0el2sc" path="res://scenes/LEVELS/Door.tscn" id="6_2rjk5"]
+[ext_resource type="AudioStream" uid="uid://dwxahm0lbykp4" path="res://audio/ambient/ambSfx_Plastic flowing.mp3" id="8_tbc3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sa3k7"]
+size = Vector2(35, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5505x"]
+radius = 20.0
+height = 58.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x378t"]
+size = Vector2(96, 6)
+
+[node name="Sepulcher" type="Node2D" node_paths=PackedStringArray("player", "doors")]
+script = ExtResource("1_kjg5u")
+player = NodePath("Y-SORT/Puppet")
+doors = [NodePath("DOORS/Door_S")]
+
+[node name="Y-SORT" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Layer 0 (Liquid)" type="TileMapLayer" parent="Y-SORT"]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAUAAgANAAQAAAAGAAUAAgANAAQAAAAFAAcAAgANAAQAAAABAAcAAgANAAQAAAAAAAYAAgANAAUAAAAAAAcAAgANAAUAAAAAAAgAAgANAAUAAAAAAAkAAgANAAUAAAABAAgAAgANAAUAAAABAAkAAgANAAUAAAAFAAgAAgANAAUAAAAFAAkAAgANAAUAAAAGAAYAAgANAAUAAAAGAAcAAgANAAUAAAAGAAgAAgANAAUAAAAGAAkAAgANAAUAAAAAAP//AgAYAAAAAAABAP//AgAYAAAAAAACAP//AgAYAAAAAAADAP//AgAYAAAAAAAEAP//AgAYAAAAAAAFAP//AgAYAAAAAAAGAP//AgAYAAAAAAD//wYAAgANAAUAAAD//wcAAgANAAUAAAD//wgAAgANAAUAAAD//wkAAgANAAUAAAD//woAAgAYAAAAAAAAAAoAAgAYAAAAAAABAAoAAgAYAAAAAAACAAoAAgAYAAAAAAADAAoAAgAYAAAAAAAEAAoAAgAYAAAAAAAFAAoAAgAYAAAAAAAGAAoAAgAYAAAAAAAHAAoAAgAYAAAAAAAHAAYAAgANAAUAAAAHAAcAAgANAAUAAAAHAAgAAgANAAUAAAAHAAkAAgANAAUAAAD/////AgAYAAAAAAD//wUAAgANAAUAAAD//wQAAgANAAUAAAAHAAQAAgANAAUAAAAHAAUAAgANAAUAAAAIAAMAAgAYAAAAAAD+/wMAAgAYAAAAAAD//wMAAgANAAQAAAAHAAMAAgANAAQAAAA=")
+tile_set = ExtResource("1_fu2ru")
+
+[node name="Layer 1 (Floor)" type="TileMapLayer" parent="Y-SORT"]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAGAAMAAQACAAEAAAAFAAMAAQABAAEAAAAFAAIAAQABAAAAAAAEAAMAAQABAAEAAAAEAAIAAQABAAAAAAADAAMAAQABAAEAAAADAAIAAQABAAAAAAACAAMAAQABAAEAAAACAAIAAQABAAAAAAABAAMAAQABAAEAAAABAAIAAQABAAAAAAAAAAMAAQAAAAEAAAAAAAIAAQAAAAAAAAAGAAQAAQACAAIAAAAFAAQAAQAFAAEAAAAEAAQAAQABAAEAAAADAAQAAQABAAEAAAACAAQAAQABAAEAAAABAAQAAQAGAAEAAAAAAAQAAQAAAAIAAAAFAAYAAQACAAIAAAAFAAUAAQACAAEAAAAEAAYAAQAFAAEAAAAEAAUAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAEAAAACAAYAAQAGAAEAAAACAAUAAQABAAEAAAABAAYAAQAAAAIAAAABAAUAAQAAAAEAAAAEAAcAAQACAAEAAAADAAcAAQABAAEAAAACAAcAAQAAAAEAAAAEAAgAAQACAAEAAAADAAgAAQABAAEAAAACAAgAAQAAAAEAAAAEAAkAAQACAAEAAAADAAkAAQABAAEAAAACAAkAAQAAAAEAAAAGAAIAAQACAAAAAAA=")
+tile_set = ExtResource("1_fu2ru")
+
+[node name="Layer 2 (Path)" type="TileMapLayer" parent="Y-SORT"]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAADAAgAAQAQAAEAAAADAAcAAQAQAAEAAAADAAYAAQAQAAEAAAADAAUAAQAQAAEAAAADAAQAAQAVAAQAAAADAAMAAQAQAAAAAAADAAkAAQAQAAEAAAACAAQAAQANAAMAAAAEAAQAAQAPAAMAAAA=")
+tile_set = ExtResource("1_fu2ru")
+
+[node name="Layer 3 (Entrances)" type="TileMapLayer" parent="Y-SORT"]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAAAAgAOAAAAAAAAAAEAAgAOAAEAAAAAAAIAAgAOAAIAAAABAAAAAgAPAAAAAAABAAEAAgAPAAEAAAABAAIAAgAPAAIAAAABAAMAAgAPAAMAAAACAAAAAgAQAAAAAAACAAEAAgAQAAEAAAACAAIAAgAQAAIAAAACAAMAAgAQAAMAAAADAAAAAgARAAAAAAADAAEAAgARAAEAAAADAAIAAgARAAIAAAADAAMAAgARAAMAAAAEAAAAAgASAAAAAAAEAAEAAgASAAEAAAAEAAIAAgASAAIAAAAEAAMAAgASAAMAAAAFAAAAAgATAAAAAAAFAAEAAgATAAEAAAAFAAIAAgATAAIAAAAFAAMAAgATAAMAAAAGAAAAAgAUAAAAAAAGAAEAAgAUAAEAAAAGAAIAAgAUAAIAAAD//wAAAgANAAAAAAD//wEAAgANAAEAAAD//wIAAgANAAIAAAAHAAAAAgAVAAAAAAAHAAEAAgAVAAEAAAAHAAIAAgAVAAIAAAAGAAMAAgAUAAMAAAAAAAMAAgAOAAMAAAA=")
+tile_set = ExtResource("1_fu2ru")
+
+[node name="Layer 4 (Decorations)" type="TileMapLayer" parent="Y-SORT"]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAEAAYAAgATAAoAAAACAAkAAgARAAoAAAAGAAQAAgATAAkAAAAAAAQAAgASAAoAAAACAAUAAQAAAAQAAAADAAIAAgAUAAUAAAAEAAEAAgAVAAQAAAAEAAIAAgAVAAUAAAAEAAMAAgAVAAYAAAAFAAEAAgAWAAQAAAAFAAIAAgAWAAUAAAAFAAMAAgAWAAYAAAAGAAEAAgAXAAQAAAAGAAIAAgAXAAUAAAAGAAMAAgAXAAYAAAAFAAAAAgAWAAMAAAA=")
+tile_set = ExtResource("1_fu2ru")
+
+[node name="Puppet" parent="Y-SORT" instance=ExtResource("2_qi3km")]
+position = Vector2(112, 113)
+
+[node name="Follow Camera" parent="Y-SORT/Puppet" instance=ExtResource("3_vy5aa")]
+position = Vector2(-125, -134)
+offset = Vector2(0, 1)
+zoom = Vector2(1.667, 1.667)
+limit_left = -1
+limit_top = -1
+limit_right = 256
+limit_bottom = 320
+limit_smoothed = true
+
+[node name="Common Spectre" parent="Y-SORT" instance=ExtResource("5_nao0d")]
+
+[node name="ACTIONABLES" type="Node" parent="."]
+
+[node name="Cave Entrance" type="StaticBody2D" parent="ACTIONABLES"]
+
+[node name="Actionable" parent="ACTIONABLES/Cave Entrance" instance=ExtResource("4_a4ft6")]
+dialogue_resource = ExtResource("5_541ix")
+dialogue_start = "caveEntrance"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/Cave Entrance/Actionable"]
+position = Vector2(107, 74)
+shape = SubResource("RectangleShape2D_sa3k7")
+debug_color = Color(0.596078, 0.372549, 1, 0.419608)
+
+[node name="Rock" type="StaticBody2D" parent="ACTIONABLES"]
+
+[node name="Actionable" parent="ACTIONABLES/Rock" instance=ExtResource("4_a4ft6")]
+dialogue_resource = ExtResource("5_541ix")
+dialogue_start = "rockSymbol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/Rock/Actionable"]
+position = Vector2(163, 94)
+shape = SubResource("CapsuleShape2D_5505x")
+debug_color = Color(0.596078, 0.372549, 1, 0.419608)
+
+[node name="DOORS" type="Node" parent="."]
+
+[node name="Door_S" parent="DOORS" instance=ExtResource("6_2rjk5")]
+position = Vector2(112, 317)
+collision_mask = 17
+entry_direction = 0
+transition_type = "fade_to_white"
+path_to_new_scene = "res://scenes/LEVELS/Zone 0/Z0_laresOfExcile.tscn"
+entry_door_name = "Door_N"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DOORS/Door_S"]
+shape = SubResource("RectangleShape2D_x378t")
+debug_color = Color(0.992157, 0.0823529, 0, 0.419608)
+
+[node name="AUDIO" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AUDIO"]
+stream = ExtResource("8_tbc3d")
+volume_db = -9.6
+pitch_scale = 0.82
+autoplay = true
+bus = &"Ambient"
+
+[node name="SPAWNER" type="Node" parent="."]
+script = ExtResource("5_ifi7p")

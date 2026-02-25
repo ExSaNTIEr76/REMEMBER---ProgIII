@@ -1,0 +1,30 @@
+---------------------------- PENTEL -------------------------------------
+
+~ signal
+
+#[center][speed=10.0]↑  TRAMWAY                    FARMS  →
+#	[center][speed=10.0]←  SLAUGHTERHOUSE         MINES  ↓
+
+
+[center][speed=80.0]↑  ESTACIÓN                GRANJAS  →
+	[center][speed=80.0]←  MATADERO              MINAS  ↓
+	[set GlobalConditions.tramPassport += 2]
+
+=> END
+
+-----------------------------------------------------
+
+~ signalMines
+
+#[center]--- DAMIEN ---
+#	[center]←  ENTRANCES TO THE MINES  ←
+
+--- DAMIEN ---
+	←  ENTRADAS A LAS MINAS  ←
+
+=> END
+
+-----------------------------------------------------
+
+
+------------------------- PENTEL HOUSE 1 ----------------------------------

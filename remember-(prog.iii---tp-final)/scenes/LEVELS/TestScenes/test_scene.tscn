@@ -1,0 +1,363 @@
+[gd_scene format=4 uid="uid://b51dn64tpoaib"]
+
+[ext_resource type="Script" uid="uid://da33mdxfo35ay" path="res://scenes/LEVELS/levelScripts/level.gd" id="1_ww852"]
+[ext_resource type="AudioStream" uid="uid://n1x7rkl4ur3j" path="res://audio/ambient/ambSfx_Soft rain.ogg" id="3_8jwsi"]
+[ext_resource type="Script" uid="uid://bcweryyykqkml" path="res://scenes/LEVELS/levelScripts/level_tile_map_layer.gd" id="3_f2vhe"]
+[ext_resource type="TileSet" uid="uid://ch8qquwfuqasp" path="res://scenes/LEVELS/Zone 1/sprites/Zone 1 TileMap.tres" id="3_hfvhy"]
+[ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="3_ww852"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="4_f2vhe"]
+[ext_resource type="Script" uid="uid://dlae4fxyvspys" path="res://scenes/LEVELS/levelScripts/footstep_tilemap.gd" id="6_uooyq"]
+[ext_resource type="PackedScene" uid="uid://dljuv1v63dwsj" path="res://scenes/ENVIOREMENT/TreasureChests/treasure_chest.tscn" id="7_2kgp1"]
+[ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="8_2kgp1"]
+[ext_resource type="Resource" uid="uid://1mt4rhshrai4" path="res://items/Objects/keys/small_key.tres" id="8_drp40"]
+[ext_resource type="Resource" uid="uid://bytlk64ofcdd8" path="res://items/Objects/keys/gilded_key.tres" id="10_8jwsi"]
+[ext_resource type="Resource" uid="uid://d1jkvxdtnr8qr" path="res://items/Objects/materials/eye.tres" id="12_ipa0k"]
+[ext_resource type="Resource" uid="uid://bejclh1yx5l5a" path="res://items/Objects/others/aquarius_card.tres" id="12_q1qoc"]
+[ext_resource type="Resource" uid="uid://d4fnbdv1u7wng" path="res://items/Objects/usables/luck_ticket.tres" id="13_ipa0k"]
+[ext_resource type="Resource" uid="uid://rykq1j6n02qy" path="res://items/Symbols/concrete/punch_1_symbol.tres" id="14_knmw0"]
+[ext_resource type="Resource" uid="uid://cmixv7r6f8jj2" path="res://items/Equipment/defensive2/strong_spirit.tres" id="14_tc7r2"]
+[ext_resource type="Resource" uid="uid://b4qcbo2ajfsv3" path="res://items/Symbols/abstract/thorns_symbol.tres" id="15_ipa0k"]
+[ext_resource type="Resource" uid="uid://ddtyqpma3vjy0" path="res://items/Symbols/singular/shield_1_symbol.tres" id="16_q1qoc"]
+[ext_resource type="PackedScene" uid="uid://drcx2pcmq8h00" path="res://scenes/ENEMIES/UTILITIES/spawner.tscn" id="18_6s0ag"]
+[ext_resource type="PackedScene" uid="uid://bjo1vifofl7f2" path="res://dialogues/Actionable.tscn" id="19_uooyq"]
+[ext_resource type="Resource" uid="uid://cl8mu5n2n01aw" path="res://dialogues/ZONE 1/Zone1_AnnexMines.dialogue" id="20_co6bp"]
+[ext_resource type="PackedScene" uid="uid://bqvpo6ds3fn1l" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/symbol_materialized.tscn" id="21_6s0ag"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ww852"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_hfvhy"]
+_limits = [0.0, 0.3, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 1.8176, 0, 0, Vector2(0.464516, 0.3), 0.0, 0.0, 0, 0, Vector2(0.5, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.6189, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_2kgp1"]
+curve = SubResource("Curve_hfvhy")
+
+[sub_resource type="Gradient" id="Gradient_2kgp1"]
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_shh88"]
+gradient = SubResource("Gradient_2kgp1")
+
+[sub_resource type="Curve" id="Curve_drp40"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8jwsi"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 15.2926), 0.0, 144.805, 0, 0, Vector2(0.245161, 30), 0.0, 0.0, 0, 0, Vector2(1, 30), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_kbyug"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_drp40"]
+curve_x = SubResource("Curve_drp40")
+curve_y = SubResource("Curve_8jwsi")
+curve_z = SubResource("Curve_kbyug")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s5q4r"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(350, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -9.99999
+angle_max = -9.99999
+gravity = Vector3(0, 3000, 0)
+scale_min = 0.2
+scale_over_velocity_curve = SubResource("CurveXYZTexture_drp40")
+color_initial_ramp = SubResource("GradientTexture1D_shh88")
+alpha_curve = SubResource("CurveTexture_2kgp1")
+sub_emitter_mode = 1
+sub_emitter_frequency = 100.0
+
+[sub_resource type="Curve" id="Curve_ww852"]
+_data = [Vector2(0, 0), 0.0, 3.89684, 0, 0, Vector2(0.493548, 0.636541), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.38244, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_hfvhy"]
+curve = SubResource("Curve_ww852")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f2vhe"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(350, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+flatness = 1.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 500, 0)
+alpha_curve = SubResource("CurveTexture_hfvhy")
+collision_mode = 2
+collision_use_scale = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok4va"]
+size = Vector2(24, 12)
+
+[node name="TestScene" type="Node2D" unique_id=1900801484 groups=["Persist"]]
+script = ExtResource("1_ww852")
+level_name = "Test Scene"
+zone_name = "Zone 1"
+zone_tag = "Z1_ext"
+transition_tag = "Z1_ext"
+music_volume = 0.0
+ambient = ExtResource("3_8jwsi")
+ambient_volume = -25.0
+
+[node name="YSORT" type="Node2D" parent="." unique_id=689930760 groups=["Y-SORT"]]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Serializable" type="Node" parent="YSORT" unique_id=911948613]
+script = ExtResource("4_f2vhe")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="Layer 0 (Plastic)" type="TileMapLayer" parent="YSORT" unique_id=1657480532]
+z_index = -4
+y_sort_enabled = true
+position = Vector2(32, 32)
+tile_map_data = PackedByteArray("AAD//wcAAgALABEAAAD//wgAAwANAAEAAAAAAAcAAwANAAAAAAAAAAgAAwANAAEAAAABAAcAAwANAAAAAAABAAgAAwANAAEAAAACAAcAAwANAAAAAAACAAgAAwANAAEAAAADAAcAAwANAAAAAAADAAgAAwANAAEAAAAEAAcAAwANAAAAAAAEAAgAAwANAAEAAAAFAAcAAwANAAAAAAAFAAgAAwANAAEAAAAGAAcAAwANAAAAAAAGAAgAAwANAAEAAAAHAP//AwANAAEAAAAHAAcAAwANAAAAAAAHAAgAAwANAAEAAAAIAP//AwANAAEAAAAIAAcAAwANAAAAAAAIAAgAAwANAAEAAAAJAP//AwANAAEAAAAJAAcAAwANAAAAAAAJAAgAAwANAAEAAAAKAP//AwANAAEAAAAKAAcAAwANAAAAAAAKAAgAAwANAAEAAAALAP//AwANAAEAAAALAAcAAwANAAAAAAALAAgAAwANAAEAAAAMAP//AwANAAEAAAAMAAcAAwANAAAAAAAMAAgAAwANAAEAAAANAP//AwANAAEAAAANAAMAAwANAAEAAAANAAQAAwANAAEAAAANAAUAAwANAAEAAAANAAYAAwANAAEAAAANAAcAAgALABIAAAANAAgAAwANAAEAAAAOAP//AwANAAEAAAAOAAMAAwANAAEAAAAOAAQAAwANAAEAAAAOAAUAAwANAAEAAAAOAAYAAwANAAEAAAAOAAcAAwANAAEAAAAOAAgAAwANAAEAAAAPAP//AwANAAEAAAAPAAMAAwANAAEAAAAPAAQAAwANAAEAAAAPAAUAAwANAAEAAAAPAAYAAwANAAEAAAAPAAcAAwANAAEAAAAPAAgAAwANAAEAAAAQAP//AwANAAEAAAAQAAMAAwANAAEAAAAQAAQAAwANAAEAAAAQAAUAAwANAAEAAAAQAAYAAwANAAEAAAAQAAcAAwANAAEAAAAQAAgAAwANAAEAAAD/////AwANAAEAAAAAAP//AwANAAEAAAABAP//AwANAAEAAAACAP//AwANAAEAAAADAP//AwANAAEAAAAEAP//AwANAAEAAAAFAP//AwANAAEAAAAGAP//AwANAAEAAAD//wYAAwANAAAAAAARAP//AwANAAEAAAARAAMAAwANAAEAAAARAAQAAwANAAEAAAARAAUAAwANAAEAAAARAAYAAwANAAEAAAARAAcAAwANAAEAAAARAAgAAwANAAEAAAASAP//AwANAAEAAAASAAMAAwANAAEAAAASAAQAAwANAAEAAAASAAUAAwANAAEAAAASAAYAAwANAAEAAAASAAcAAwANAAEAAAASAAgAAwANAAEAAAD//wkAAwANAAEAAAAAAAkAAwANAAEAAAABAAkAAwANAAEAAAACAAkAAwANAAEAAAADAAkAAwANAAEAAAAEAAkAAwANAAEAAAAFAAkAAwANAAEAAAAGAAkAAwANAAEAAAAHAAkAAwANAAEAAAAIAAkAAwANAAEAAAAJAAkAAwANAAEAAAAKAAkAAwANAAEAAAALAAkAAwANAAEAAAAMAAkAAwANAAEAAAANAAkAAwANAAEAAAAOAAkAAwANAAEAAAAPAAkAAwANAAEAAAAQAAkAAwANAAEAAAARAAkAAwANAAEAAAASAAkAAwANAAEAAAD//wEAAwANAAEAAAANAAEAAwANAAEAAAANAAIAAwANAAEAAAAOAAEAAwANAAEAAAAOAAIAAwANAAEAAAAPAAEAAwANAAEAAAAPAAIAAwANAAEAAAAQAAEAAwANAAEAAAAQAAIAAwANAAEAAAARAAEAAwANAAEAAAARAAIAAwANAAEAAAASAAEAAwANAAEAAAASAAIAAwANAAEAAAD//wIAAwANAAEAAAAAAAEAAwANAAEAAAABAAEAAwANAAEAAAACAAEAAwANAAEAAAADAAEAAwANAAEAAAAEAAEAAwANAAEAAAAFAAEAAwANAAEAAAAGAAEAAwANAAEAAAAHAAEAAwANAAEAAAAIAAEAAwANAAEAAAAJAAEAAwANAAEAAAAKAAEAAwANAAEAAAALAAEAAwANAAEAAAAMAAEAAwANAAEAAAD//wAAAwANAAEAAAAAAAAAAwANAAEAAAABAAAAAwANAAEAAAACAAAAAwANAAEAAAADAAAAAwANAAEAAAAEAAAAAwANAAEAAAAFAAAAAwANAAEAAAAGAAAAAwANAAEAAAAHAAAAAwANAAEAAAAIAAAAAwANAAEAAAAJAAAAAwANAAEAAAAKAAAAAwANAAEAAAALAAAAAwANAAEAAAAMAAAAAwANAAEAAAANAAAAAwANAAEAAAAOAAAAAwANAAEAAAAPAAAAAwANAAEAAAAQAAAAAwANAAEAAAARAAAAAwANAAEAAAASAAAAAwANAAEAAAA=")
+tile_set = ExtResource("3_hfvhy")
+script = ExtResource("3_f2vhe")
+
+[node name="Layer 1 (Ground)" type="TileMapLayer" parent="YSORT" unique_id=1795438603]
+z_index = -3
+y_sort_enabled = true
+position = Vector2(32, 32)
+tile_map_data = PackedByteArray("AAABAAQAAgABAAEAAAABAAUAAgABAAEAAAACAAQAAgABAAEAAAACAAUAAgABAAEAAAACAAYAAgABAAEAAAADAAQAAgABAAEAAAADAAUAAgABAAEAAAADAAYAAgABAAEAAAAEAAQAAgABAAEAAAAEAAUAAgABAAEAAAAEAAYAAgABAAEAAAAFAAQAAgABAAEAAAAFAAUAAgABAAEAAAAFAAYAAgABAAEAAAAGAAQAAgABAAEAAAAGAAUAAgABAAEAAAAGAAYAAgABAAEAAAAHAAQAAgABAAEAAAAHAAUAAgABAAEAAAAHAAYAAgABAAEAAAAIAAQAAgABAAEAAAAIAAUAAgABAAEAAAAIAAYAAgABAAEAAAAJAAQAAgABAAEAAAAJAAUAAgABAAEAAAAJAAYAAgABAAEAAAAKAAQAAgABAAEAAAAKAAUAAgABAAEAAAAKAAYAAgABAAEAAAALAAQAAgABAAEAAAALAAUAAgABAAEAAAALAAYAAgABAAEAAAAMAAQAAgABAAEAAAAMAAUAAgABAAEAAAAMAAYAAgABAAEAAAD//wQAAgABAAEAAAAAAAQAAgABAAEAAAD+/wQAAwAWAAAAAAD+/wUAAwAWAAAAAAANAAYAAgAAABAAAAANAAUAAgAAABAAAAANAAQAAgAAABAAAAAMAAcAAgABAA8AAAALAAcAAgABAA8AAAAKAAcAAgABAA8AAAAJAAcAAgABAA8AAAAIAAcAAgABAA8AAAAHAAcAAgABAA8AAAAGAAcAAgABAA8AAAAFAAcAAgABAA8AAAAEAAcAAgABAA8AAAADAAcAAgABAA8AAAACAAcAAgABAA8AAAABAAcAAgABAA8AAAANAAcAAgAGABEAAAD//wYAAgACAA8AAAABAAYAAgABAAEAAAD//wcAAgAFABEAAAAAAAUAAgABAAEAAAAAAAcAAgABAA8AAAAAAAYAAgABAAEAAAD//wUAAgABAAEAAAD+/wMAAwAWAAAAAAD//wEAAgAFABAAAAD//wIAAgACABEAAAD//wMAAgABAAEAAAAAAAEAAgABABEAAAAAAAIAAgABAAEAAAAAAAMAAgABAAEAAAABAAEAAgABABEAAAABAAIAAgABAAEAAAABAAMAAgABAAEAAAACAAEAAgABABEAAAACAAIAAgABAAEAAAACAAMAAgABAAEAAAADAAEAAgACABEAAAADAAIAAgABAAEAAAADAAMAAgABAAEAAAAEAAEAAgACAAQAAAAEAAIAAgABAAEAAAAEAAMAAgABAAEAAAAFAAEAAgACAAQAAAAFAAIAAgABAAEAAAAFAAMAAgABAAEAAAAGAAEAAgACAAQAAAAGAAIAAgABAAEAAAAGAAMAAgABAAEAAAAHAAEAAgACAAQAAAAHAAIAAgABAAEAAAAHAAMAAgABAAEAAAAIAAEAAgACAAQAAAAIAAIAAgABAAEAAAAIAAMAAgABAAEAAAAJAAEAAgAAABEAAAAJAAIAAgABAAEAAAAJAAMAAgABAAEAAAAKAAEAAgABABEAAAAKAAIAAgABAAEAAAAKAAMAAgABAAEAAAALAAEAAgABABEAAAALAAIAAgABAAEAAAALAAMAAgABAAEAAAAMAAEAAgABABEAAAAMAAIAAgABAAEAAAAMAAMAAgABAAEAAAANAAEAAgAGABAAAAANAAIAAgAAABAAAAANAAMAAgAAABAAAAADAAAAAgAFABAAAAAJAAAAAgAGABAAAAA=")
+tile_set = ExtResource("3_hfvhy")
+script = ExtResource("6_uooyq")
+
+[node name="Layer 2 (Path)" type="TileMapLayer" parent="YSORT" unique_id=1920490498]
+z_index = -2
+position = Vector2(32, 32)
+tile_map_data = PackedByteArray("AAAIAAQAAgASAAQAAAAHAAQAAgAOAAEAAAAGAAQAAgAOAAEAAAAFAAQAAgAOAAEAAAAEAAQAAgATAAQAAAAGAAMAAgAOAAAAAAAFAAMAAgAOAAAAAAAHAAMAAgAOAAAAAAAJAAQAAgAPAAMAAAADAAQAAgANAAMAAAAEAAMAAgANAAAAAAAIAAMAAgAPAAAAAAAEAAIAAgAAAAUAAAAFAAIAAgAAAAQAAAAGAAIAAgAAAAQAAAAHAAIAAgAAAAQAAAAIAAIAAgAAAAUAABAIAAUAAgAPAAIAAAAHAAUAAgAOAAIAAAAGAAUAAgAOAAIAAAAFAAUAAgAOAAIAAAAEAAUAAgANAAIAAAD//wMAAgAPAAAAAAD//wQAAgASAAQAAAD//wUAAgAPAAIAAAAAAAQAAgAPAAMAAAA=")
+tile_set = ExtResource("3_hfvhy")
+
+[node name="Layer 3 (Buildings)" type="TileMapLayer" parent="YSORT" unique_id=472138426]
+tile_map_data = PackedByteArray("AAAIAAIAAgAOAAoAAAAIAAEAAgAOAAgAAAAHAAIAAgAOAAoAAAAHAAEAAgAOAAgAAAAGAAIAAgAOAAoAAAAGAAEAAgAOAAgAAAAJAAIAAgAPAAoAAAAJAAEAAgAPAAgAAAAFAAIAAgANAAoAAAAFAAEAAgANAAgAAAA=")
+tile_set = ExtResource("3_hfvhy")
+
+[node name="Layer 4 (Puddles)" type="TileMapLayer" parent="YSORT" unique_id=1336214947]
+z_index = -2
+position = Vector2(32, 32)
+tile_map_data = PackedByteArray("AAD+/wMAAwAWAAAAAAD+/wQAAwAWAAAAAAD+/wUAAwAWAAAAAAAKAAYAAwAXAAoAAAACAAYAAwAXAAgAAAAMAAIAAwAXAAcAAAAJAAIAAwAXAAoAAAABAAIAAwAVAAkAAAA=")
+tile_set = ExtResource("3_hfvhy")
+
+[node name="Layer 5 (Decoration)" type="TileMapLayer" parent="YSORT" unique_id=560034395]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD//wUAAwAWAAAAAAD//wYAAwAWAAAAAAD//wQAAwAWAAAAAAAFAAEAAgANAAwAAAAGAAEAAgAOAAwAAAAHAAEAAgAOAAwAAAAIAAEAAgAOAAwAAAAJAAEAAgAPAAwAAAAFAAAAAgAAAAsAAAAGAAAAAgABAAsAAAAHAAAAAgABAAsAAAAJAAAAAgACAAsAAAAIAAAAAgABAAsAAAAGAAMAAwAKAAkAAQAIAAMAAwAKAAkAAQACAAMAAwARAAoAAAADAAEAAwANAAkAAAADAAMAAwANAAoAAAALAAEAAwANAAkAAAALAAMAAwANAAoAAAALAAUAAwAWAAIAAAA=")
+tile_set = ExtResource("3_hfvhy")
+rendering_quadrant_size = 32
+
+[node name="Layer 6 (Decoration 2)" type="TileMapLayer" parent="YSORT" unique_id=316364953]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD//wUAAwAWAAAAAAD//wYAAwAWAAAAAAD//wQAAwAWAAAAAAA=")
+tile_set = ExtResource("3_hfvhy")
+rendering_quadrant_size = 32
+
+[node name="Layer 7 (Boxes)" type="TileMapLayer" parent="YSORT" unique_id=1744034664]
+visible = false
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD//wUAAwAWAAAAAAD//wYAAwAWAAAAAAD//wQAAwAWAAAAAAAEAAMAAwAOAAcAAAAFAAMAAwAKAAcAAAADAAYAAwAMAAcAAAAKAAYAAwAKAAcAAAALAAYAAwAOAAcAAAAJAAMAAwAMAAcAAAA=")
+enabled = false
+tile_set = ExtResource("3_hfvhy")
+rendering_quadrant_size = 32
+
+[node name="PlayerSpawn" parent="YSORT" unique_id=2067442505 instance=ExtResource("3_ww852")]
+position = Vector2(238, 179)
+spawn_promissio = true
+
+[node name="SoftRain" type="GPUParticles2D" parent="YSORT" unique_id=1516259585]
+top_level = true
+light_mask = 0
+material = SubResource("CanvasItemMaterial_ww852")
+position = Vector2(346, 12)
+amount = 100
+sub_emitter = NodePath("../SoftRain_splash")
+lifetime = 0.5
+preprocess = 0.5
+visibility_rect = Rect2(-350, -200, 700, 400)
+process_material = SubResource("ParticleProcessMaterial_s5q4r")
+
+[node name="SoftRain_splash" type="GPUParticles2D" parent="YSORT" unique_id=237694570]
+visible = false
+light_mask = 0
+z_index = 5
+position = Vector2(349, 198)
+amount = 200
+lifetime = 0.2
+collision_base_size = 128.0
+visibility_rect = Rect2(-350, -200, 700, 400)
+process_material = SubResource("ParticleProcessMaterial_f2vhe")
+
+[node name="ACTIONABLES" type="Node2D" parent="." unique_id=40508570]
+y_sort_enabled = true
+
+[node name="Chest1" parent="ACTIONABLES" unique_id=479455382 instance=ExtResource("7_2kgp1")]
+position = Vector2(198, 149.35)
+chest_color = "Lime"
+item_data = ExtResource("8_drp40")
+
+[node name="Chest9" parent="ACTIONABLES" unique_id=1415898619 instance=ExtResource("7_2kgp1")]
+position = Vector2(154, 150)
+item_data = ExtResource("13_ipa0k")
+
+[node name="Chest2" parent="ACTIONABLES" unique_id=1341531617 instance=ExtResource("7_2kgp1")]
+position = Vector2(239.709, 149)
+chest_color = "Mines"
+is_padlocked = true
+padlock_type = "Simple"
+item_data = ExtResource("10_8jwsi")
+
+[node name="Chest3" parent="ACTIONABLES" unique_id=1674799329 instance=ExtResource("7_2kgp1")]
+position = Vector2(283, 149)
+chest_color = "Deep Mines"
+is_padlocked = true
+padlock_type = "Complex"
+item_data = ExtResource("12_q1qoc")
+
+[node name="Chest4" parent="ACTIONABLES" unique_id=2120517418 instance=ExtResource("7_2kgp1")]
+position = Vector2(326, 150)
+item_data = ExtResource("12_ipa0k")
+quantity = 10
+
+[node name="Chest10" parent="ACTIONABLES" unique_id=225540277 instance=ExtResource("7_2kgp1")]
+position = Vector2(154, 200)
+quantity = 0
+gives_credits = true
+credits_amount = 100
+
+[node name="Chest5" parent="ACTIONABLES" unique_id=323772026 instance=ExtResource("7_2kgp1")]
+position = Vector2(198, 200)
+chest_color = "Lime"
+item_data = ExtResource("14_tc7r2")
+
+[node name="Chest6" parent="ACTIONABLES" unique_id=1039093842 instance=ExtResource("7_2kgp1")]
+position = Vector2(240, 201)
+chest_color = "Mines"
+item_data = ExtResource("14_knmw0")
+
+[node name="Chest7" parent="ACTIONABLES" unique_id=692665808 instance=ExtResource("7_2kgp1")]
+position = Vector2(283.29102, 201)
+chest_color = "Deep Mines"
+item_data = ExtResource("15_ipa0k")
+
+[node name="Chest8" parent="ACTIONABLES" unique_id=667600530 instance=ExtResource("7_2kgp1")]
+position = Vector2(326.29102, 202)
+item_data = ExtResource("16_q1qoc")
+
+[node name="SPAWNER" parent="." unique_id=1346352752 instance=ExtResource("18_6s0ag")]
+
+[node name="Spawn" parent="SPAWNER" unique_id=211137380 instance=ExtResource("19_uooyq")]
+dialogue_resource = ExtResource("20_co6bp")
+dialogue_start = "spawnGhosts"
+one_time = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SPAWNER/Spawn" unique_id=1908311635]
+position = Vector2(368, 183)
+shape = SubResource("RectangleShape2D_ok4va")
+debug_color = Color(0.596078, 0.372549, 1, 0.419608)
+
+[node name="Marker2D" type="Marker2D" parent="SPAWNER" unique_id=1221199070]
+position = Vector2(240, 128)
+
+[node name="Serializable" type="Node" parent="." unique_id=1561692105]
+script = ExtResource("4_f2vhe")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="Savestate" type="Node" parent="." unique_id=1539273632]
+script = ExtResource("8_2kgp1")
+metadata/_custom_type_script = "uid://b146xa42md0k3"
+
+[node name="SYMBOLS" type="Node2D" parent="." unique_id=1100674110]
+visible = false
+y_sort_enabled = true
+
+[node name="Punch_1" parent="SYMBOLS" unique_id=354980058 instance=ExtResource("21_6s0ag")]
+position = Vector2(75, 66)
+symbol_name = "C_punch_1"
+
+[node name="Punch_2" parent="SYMBOLS" unique_id=1769964643 instance=ExtResource("21_6s0ag")]
+position = Vector2(75, 122)
+symbol_name = "C_punch_2"
+
+[node name="Knife_1" parent="SYMBOLS" unique_id=2144038693 instance=ExtResource("21_6s0ag")]
+position = Vector2(137, 66)
+symbol_name = "C_knife_1"
+
+[node name="Knife_2" parent="SYMBOLS" unique_id=503396119 instance=ExtResource("21_6s0ag")]
+position = Vector2(135, 122)
+symbol_name = "C_knife_2"
+
+[node name="Pickaxe_1" parent="SYMBOLS" unique_id=1748929846 instance=ExtResource("21_6s0ag")]
+position = Vector2(197, 66)
+symbol_name = "C_pickaxe_1"
+
+[node name="Pickaxe_2" parent="SYMBOLS" unique_id=1715304379 instance=ExtResource("21_6s0ag")]
+position = Vector2(195, 122)
+symbol_name = "C_pickaxe_2"
+
+[node name="Block_1" parent="SYMBOLS" unique_id=1235917263 instance=ExtResource("21_6s0ag")]
+position = Vector2(256, 66)
+symbol_name = "C_block_1"
+
+[node name="Block_2" parent="SYMBOLS" unique_id=969339932 instance=ExtResource("21_6s0ag")]
+position = Vector2(255, 122)
+symbol_name = "C_block_2"
+
+[node name="Bomb_1" parent="SYMBOLS" unique_id=1411636400 instance=ExtResource("21_6s0ag")]
+position = Vector2(315, 66)
+symbol_name = "C_bomb_1"
+
+[node name="-----------------------------------" type="Node" parent="SYMBOLS" unique_id=495044299]
+
+[node name="Thorns" parent="SYMBOLS" unique_id=1515635918 instance=ExtResource("21_6s0ag")]
+position = Vector2(401, 66)
+symbol_name = "A_thorns"
+
+[node name="Twins" parent="SYMBOLS" unique_id=1197569010 instance=ExtResource("21_6s0ag")]
+position = Vector2(460, 66)
+symbol_name = "A_twins"
+
+[node name="Tempest" parent="SYMBOLS" unique_id=1453192568 instance=ExtResource("21_6s0ag")]
+position = Vector2(516, 66)
+symbol_name = "A_tempest"
+
+[node name="----------------------------------" type="Node" parent="SYMBOLS" unique_id=518770834]
+
+[node name="Shield_1" parent="SYMBOLS" unique_id=1577353810 instance=ExtResource("21_6s0ag")]
+position = Vector2(604, 66)
+symbol_name = "S_shield_1"
+
+[node name="Shield_2" parent="SYMBOLS" unique_id=1705579806 instance=ExtResource("21_6s0ag")]
+position = Vector2(604, 122)
+symbol_name = "S_shield_2"
+
+[node name="Ultravision" parent="SYMBOLS" unique_id=847811665 instance=ExtResource("21_6s0ag")]
+position = Vector2(719, 66)
+symbol_name = "S_ultravision"
+
+[node name="Arithmetic" parent="SYMBOLS" unique_id=1740335140 instance=ExtResource("21_6s0ag")]
+position = Vector2(777, 66)
+symbol_name = "S_arithmetic"
+
+[node name="Dodge_1" parent="SYMBOLS" unique_id=540061569 instance=ExtResource("21_6s0ag")]
+position = Vector2(659, 66)
+symbol_name = "S_dodge_1"
+
+[node name="Candela_1" parent="SYMBOLS" unique_id=350552885 instance=ExtResource("21_6s0ag")]
+position = Vector2(834, 66)
+symbol_name = "S_candela_1"
+
+[node name="Candela_2" parent="SYMBOLS" unique_id=753125223 instance=ExtResource("21_6s0ag")]
+position = Vector2(835, 122)
+symbol_name = "S_candela_2"

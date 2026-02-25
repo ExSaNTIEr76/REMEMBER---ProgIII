@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://b73ons0syynlp"]
+
+[ext_resource type="Script" uid="uid://bas1vdqii0wep" path="res://UI/Camera/camera_manager.gd" id="1_ardp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqt0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cswhs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27t5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orsla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sisrr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjf57"]
+
+[node name="CameraManager" type="Node2D" groups=["camera_managers"]]
+script = ExtResource("1_ardp4")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(274.818, 153.273)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+editor_draw_limits = true
+
+[node name="AreaZone0" type="Area2D" parent="." groups=["camera_areas"]]
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CameraZone0" type="Marker2D" parent="AreaZone0" groups=["camera_markers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaZone0"]
+shape = SubResource("RectangleShape2D_lqt0s")
+
+[node name="AreaZone1" type="Area2D" parent="." groups=["camera_areas"]]
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CameraZone1" type="Marker2D" parent="AreaZone1" groups=["camera_markers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaZone1"]
+shape = SubResource("RectangleShape2D_cswhs")
+
+[node name="AreaZone2" type="Area2D" parent="." groups=["camera_areas"]]
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CameraZone2" type="Marker2D" parent="AreaZone2" groups=["camera_markers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaZone2"]
+shape = SubResource("RectangleShape2D_27t5r")
+
+[node name="AreaZone3" type="Area2D" parent="." groups=["camera_areas"]]
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CameraZone3" type="Marker2D" parent="AreaZone3" groups=["camera_markers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaZone3"]
+shape = SubResource("RectangleShape2D_orsla")
+
+[node name="AreaZone4" type="Area2D" parent="." groups=["camera_areas"]]
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CameraZone4" type="Marker2D" parent="AreaZone4" groups=["camera_markers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaZone4"]
+shape = SubResource("RectangleShape2D_sisrr")
+
+[node name="AreaZone5" type="Area2D" parent="." groups=["camera_areas"]]
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CameraZone5" type="Marker2D" parent="AreaZone5" groups=["camera_markers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaZone5"]
+shape = SubResource("RectangleShape2D_jjf57")
+
+[node name="AreaZone6" type="Area2D" parent="." groups=["camera_areas"]]
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CameraZone6" type="Marker2D" parent="AreaZone6" groups=["camera_markers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaZone6"]
+shape = SubResource("RectangleShape2D_jjf57")

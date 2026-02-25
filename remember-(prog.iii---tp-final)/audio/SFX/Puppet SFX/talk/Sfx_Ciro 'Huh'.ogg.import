@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bk2sn120dp0yy"
+path="res://.godot/imported/Sfx_Ciro 'Huh'.ogg-ac6ec1e12eaa9038befed83cc260bab2.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Huh'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'Huh'.ogg-ac6ec1e12eaa9038befed83cc260bab2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

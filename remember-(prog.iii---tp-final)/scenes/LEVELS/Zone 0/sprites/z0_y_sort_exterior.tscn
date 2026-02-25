@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c1gee1qni0k2x"]
+
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="1_mkk3s"]
+[ext_resource type="TileSet" uid="uid://bbxgpr6k085rt" path="res://scenes/LEVELS/Zone 0/sprites/Zone 0 TileMap.tres" id="1_ungd1"]
+[ext_resource type="Script" uid="uid://bcweryyykqkml" path="res://scenes/LEVELS/levelScripts/level_tile_map_layer.gd" id="2_4a5fu"]
+[ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="3_wlukw"]
+[ext_resource type="Script" uid="uid://dlae4fxyvspys" path="res://scenes/LEVELS/levelScripts/footstep_tilemap.gd" id="4_tuwee"]
+
+[node name="YSORT" type="Node2D" unique_id=2117299545 groups=["Y-SORT"]]
+y_sort_enabled = true
+
+[node name="Serializable" type="Node" parent="." unique_id=2123509411]
+script = ExtResource("1_mkk3s")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="Layer 0 (Plastic)" type="TileMapLayer" parent="." unique_id=1330258269]
+z_index = -3
+use_parent_material = true
+tile_set = ExtResource("1_ungd1")
+script = ExtResource("2_4a5fu")
+
+[node name="Layer 1 (Ground)" type="TileMapLayer" parent="." unique_id=1930978597]
+z_index = -2
+use_parent_material = true
+tile_set = ExtResource("1_ungd1")
+script = ExtResource("4_tuwee")
+
+[node name="Layer 2 (Path)" type="TileMapLayer" parent="." unique_id=534238096]
+z_index = -1
+use_parent_material = true
+tile_set = ExtResource("1_ungd1")
+
+[node name="Layer 3 (Buildings)" type="TileMapLayer" parent="." unique_id=941922434]
+tile_set = ExtResource("1_ungd1")
+
+[node name="Layer 4 (Buildings 2)" type="TileMapLayer" parent="." unique_id=1614574666]
+tile_set = ExtResource("1_ungd1")
+
+[node name="Layer 5 (Buildings 3)" type="TileMapLayer" parent="." unique_id=1549653988]
+tile_set = ExtResource("1_ungd1")
+
+[node name="Layer 6 (Entrances)" type="TileMapLayer" parent="." unique_id=352602484]
+use_parent_material = true
+tile_set = ExtResource("1_ungd1")
+
+[node name="Layer 7 (Decorations)" type="TileMapLayer" parent="." unique_id=1557486527]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_ungd1")
+
+[node name="Layer 0 (Decorations 2)" type="TileMapLayer" parent="." unique_id=553445317]
+y_sort_enabled = true
+tile_set = ExtResource("1_ungd1")
+
+[node name="PlayerSpawn" parent="." unique_id=184231313 instance=ExtResource("3_wlukw")]

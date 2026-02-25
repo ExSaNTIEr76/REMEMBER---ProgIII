@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxk4ect7invdr"
+path="res://.godot/imported/Sfx_Ciro 'I Hope so' 2.ogg-bb2b445d40b4e4ffac3b4edbee63f4ef.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'I Hope so' 2.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'I Hope so' 2.ogg-bb2b445d40b4e4ffac3b4edbee63f4ef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

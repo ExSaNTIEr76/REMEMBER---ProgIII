@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EquipableItemData" format=3 uid="uid://b3e28y5x01pfg"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_ak6aw"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_g4w7s"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="3_jyx4w"]
+
+[sub_resource type="Resource" id="Resource_tlaaf"]
+script = ExtResource("1_ak6aw")
+type = 3
+value = 12
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak6aw"]
+atlas = ExtResource("3_jyx4w")
+region = Rect2(352, 144, 16, 16)
+
+[resource]
+script = ExtResource("2_g4w7s")
+modifiers = Array[ExtResource("1_ak6aw")]([SubResource("Resource_tlaaf")])
+symbol_icon_name = "C_punch_2"
+cep_cost = 11
+name = "Punch Duo"
+type = 5
+ID = 181
+is_quantitative = true
+description = "Boxing symbol that throws heavy punches that can push and cause concussions."
+texture = SubResource("AtlasTexture_ak6aw")
+cost = 400
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

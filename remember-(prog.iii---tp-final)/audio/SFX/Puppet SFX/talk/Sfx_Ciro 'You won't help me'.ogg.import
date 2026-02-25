@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgh740wihjipb"
+path="res://.godot/imported/Sfx_Ciro 'You won't help me'.ogg-c369e2887951ef069d9250873bae77ef.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'You won't help me'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'You won't help me'.ogg-c369e2887951ef069d9250873bae77ef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,354 @@
+[gd_scene format=3 uid="uid://bkp3cjremw68y"]
+
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="1_fisbn"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="1_gf4jr"]
+[ext_resource type="Script" uid="uid://bm2kb4ondn74m" path="res://UI/Menu/Panels/status_panel.gd" id="1_x0roo"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="2_gf4jr"]
+[ext_resource type="Texture2D" uid="uid://bt3s3im0fcbu" path="res://UI/HUD/sprites/healthBar.png" id="3_x0roo"]
+[ext_resource type="Script" uid="uid://cdpsfkx4dajgk" path="res://UI/HUD/scripts/healthbar.gd" id="4_wyj4x"]
+[ext_resource type="Texture2D" uid="uid://cssubp2epuwls" path="res://UI/HUD/sprites/competenceBar.png" id="5_gamk1"]
+[ext_resource type="Script" uid="uid://cn08jeuwabb1" path="res://UI/HUD/scripts/competencebar.gd" id="6_kor04"]
+[ext_resource type="Texture2D" uid="uid://stm50fldayay" path="res://UI/HUD/sprites/espritBart.png" id="7_ik7t4"]
+[ext_resource type="Script" uid="uid://bhm74r41xhatd" path="res://UI/HUD/scripts/espritbar.gd" id="8_o3ppr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fisbn"]
+atlas = ExtResource("1_fisbn")
+region = Rect2(72, 40, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72d1b"]
+texture = SubResource("AtlasTexture_fisbn")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5cvm"]
+atlas = ExtResource("3_x0roo")
+region = Rect2(0, 56, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtn5l"]
+atlas = ExtResource("3_x0roo")
+region = Rect2(0, 40, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3e6q"]
+atlas = ExtResource("3_x0roo")
+region = Rect2(0, 48, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju1pn"]
+atlas = ExtResource("1_fisbn")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5cvm"]
+texture = SubResource("AtlasTexture_ju1pn")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhfhy"]
+atlas = ExtResource("5_gamk1")
+region = Rect2(0, 46, 58, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc4vc"]
+atlas = ExtResource("5_gamk1")
+region = Rect2(0, 30, 58, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijgva"]
+atlas = ExtResource("5_gamk1")
+region = Rect2(0, 38, 58, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3o3u"]
+atlas = ExtResource("1_fisbn")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4qsf"]
+texture = SubResource("AtlasTexture_w3o3u")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2agm2"]
+atlas = ExtResource("7_ik7t4")
+region = Rect2(0, 136, 28, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxiw3"]
+atlas = ExtResource("7_ik7t4")
+region = Rect2(0, 120, 28, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c38ta"]
+atlas = ExtResource("7_ik7t4")
+region = Rect2(0, 128, 28, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4qsf"]
+atlas = ExtResource("1_fisbn")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whcjl"]
+texture = SubResource("AtlasTexture_b4qsf")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[node name="STATUS" type="Control" unique_id=1285903627]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 255.0
+offset_bottom = 132.0
+script = ExtResource("1_x0roo")
+
+[node name="StatusPanel" type="PanelContainer" parent="." unique_id=31691094]
+layout_mode = 0
+offset_right = 255.0
+offset_bottom = 14.0
+theme_override_styles/panel = ExtResource("1_gf4jr")
+
+[node name="MarginContainer" type="MarginContainer" parent="StatusPanel" unique_id=143785706]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatusPanel/MarginContainer" unique_id=1215654749]
+layout_mode = 2
+tooltip_text = "
+"
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="HBoxContainerHP" type="HBoxContainer" parent="StatusPanel/MarginContainer/VBoxContainer" unique_id=1957224880]
+z_index = 1
+layout_mode = 2
+
+[node name="HP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP" unique_id=1698828773]
+z_index = 1
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.25098, 0.25098, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentHP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP" unique_id=1303079031]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 2
+
+[node name="bar" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP" unique_id=1054360956]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "/"
+horizontal_alignment = 1
+
+[node name="maxHP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP" unique_id=1930771754]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "100"
+
+[node name="Healthbar" type="TextureProgressBar" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP/maxHP" unique_id=524891791]
+process_mode = 3
+layout_mode = 0
+offset_left = -81.0
+offset_top = 25.736
+offset_right = 44.0
+offset_bottom = 30.736
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = SubResource("AtlasTexture_q5cvm")
+texture_over = SubResource("AtlasTexture_jtn5l")
+texture_progress = SubResource("AtlasTexture_g3e6q")
+script = ExtResource("4_wyj4x")
+
+[node name="HpPanel" type="PanelContainer" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP/maxHP" unique_id=884169674]
+z_index = -1
+layout_mode = 0
+offset_left = -81.0
+offset_top = 3.39085
+offset_right = 44.0
+offset_bottom = 25.3908
+theme_override_styles/panel = SubResource("StyleBoxTexture_q5cvm")
+
+[node name="HBoxContainerCP" type="HBoxContainer" parent="StatusPanel/MarginContainer/VBoxContainer" unique_id=986308006]
+z_index = 1
+layout_mode = 2
+
+[node name="CP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP" unique_id=275567373]
+z_index = 1
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.917647, 0.25098, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "CP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentCP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP" unique_id=1453899358]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 2
+
+[node name="bar" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP" unique_id=747465047]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "/"
+horizontal_alignment = 1
+
+[node name="maxCP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP" unique_id=1750465818]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "100"
+
+[node name="Competencebar" type="TextureProgressBar" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP/maxCP" unique_id=1147830715]
+process_mode = 3
+layout_mode = 0
+offset_left = -81.438
+offset_top = 25.736
+offset_right = 43.562
+offset_bottom = 30.736
+max_value = 50.0
+step = 0.1
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = SubResource("AtlasTexture_dhfhy")
+texture_over = SubResource("AtlasTexture_qc4vc")
+texture_progress = SubResource("AtlasTexture_ijgva")
+script = ExtResource("6_kor04")
+
+[node name="CpPanel" type="PanelContainer" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP/maxCP" unique_id=743011165]
+z_index = -1
+layout_mode = 0
+offset_left = -81.0
+offset_top = 3.43059
+offset_right = 44.0
+offset_bottom = 25.4306
+theme_override_styles/panel = SubResource("StyleBoxTexture_b4qsf")
+
+[node name="HBoxContainerEP" type="HBoxContainer" parent="StatusPanel/MarginContainer/VBoxContainer" unique_id=1175695300]
+z_index = 1
+layout_mode = 2
+
+[node name="EP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP" unique_id=482511333]
+z_index = 1
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.756863, 1, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "EP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentEP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP" unique_id=2071143076]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 2
+
+[node name="bar" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP" unique_id=1155614738]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "/"
+horizontal_alignment = 1
+
+[node name="maxEP" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP" unique_id=1586241461]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 22
+text = "100"
+
+[node name="Espritbar" type="TextureProgressBar" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP/maxEP" unique_id=951575464]
+process_mode = 3
+layout_mode = 0
+offset_left = -81.438
+offset_top = 25.443
+offset_right = 42.562
+offset_bottom = 30.443
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = SubResource("AtlasTexture_2agm2")
+texture_over = SubResource("AtlasTexture_xxiw3")
+texture_progress = SubResource("AtlasTexture_c38ta")
+script = ExtResource("8_o3ppr")
+
+[node name="EpPanel" type="PanelContainer" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP/maxEP" unique_id=491725774]
+z_index = -1
+layout_mode = 0
+offset_left = -81.0
+offset_top = 3.44297
+offset_right = 44.0
+offset_bottom = 25.443
+theme_override_styles/panel = SubResource("StyleBoxTexture_whcjl")
+
+[node name="HBoxContainerSTATUS" type="HBoxContainer" parent="StatusPanel/MarginContainer/VBoxContainer" unique_id=134280611]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="STATUS" type="Label" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerSTATUS" unique_id=1885201686]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_gf4jr")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "ESTADO"
+
+[node name="actualStatus" type="RichTextLabel" parent="StatusPanel/MarginContainer/VBoxContainer/HBoxContainerSTATUS" unique_id=1424646830]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_gf4jr")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "PURO"
+vertical_alignment = 1

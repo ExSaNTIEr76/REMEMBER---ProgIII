@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwo0xy4i5wrga"
+path="res://.godot/imported/Sfx_Ciro Angry 1.ogg-2fec4b9d5048e16107a12365d06d445f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Angry 1.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro Angry 1.ogg-2fec4b9d5048e16107a12365d06d445f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

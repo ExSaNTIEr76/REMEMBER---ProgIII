@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b307bcl44vosc"
+path="res://.godot/imported/OFF - Empty Warehouse (in).ogg-ca132d9c007b5ecc0554f747842b0b3d.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/OFF - Empty Warehouse (in).ogg"
+dest_files=["res://.godot/imported/OFF - Empty Warehouse (in).ogg-ca132d9c007b5ecc0554f747842b0b3d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cc7vm4wvhwy2o"
+path="res://.godot/imported/Sfx_Ciro 'Hmm'.ogg-4e8498a33b7c105230d5eb5f6bfde34a.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Hmm'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'Hmm'.ogg-4e8498a33b7c105230d5eb5f6bfde34a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

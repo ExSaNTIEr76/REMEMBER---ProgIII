@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2ep7s6wyw73j"
+path="res://.godot/imported/Sfx_ Ciro 'I Can't Give Up Now'.ogg-7f7bb45056d86b312e4ed0851338233b.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'I Can't Give Up Now'.ogg"
+dest_files=["res://.godot/imported/Sfx_ Ciro 'I Can't Give Up Now'.ogg-7f7bb45056d86b312e4ed0851338233b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

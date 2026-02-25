@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4da373q1kafs"
+path="res://.godot/imported/Doze Off.ogg-b5ad1a0b1c7844a31e927689e6579e53.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Doze Off.ogg"
+dest_files=["res://.godot/imported/Doze Off.ogg-b5ad1a0b1c7844a31e927689e6579e53.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

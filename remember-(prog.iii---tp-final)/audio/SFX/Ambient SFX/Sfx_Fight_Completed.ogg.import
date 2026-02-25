@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2ennqjxuedq5"
+path="res://.godot/imported/Sfx_Fight_Completed.ogg-c5b845157517c74b582587ebd018414d.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Ambient SFX/Sfx_Fight_Completed.ogg"
+dest_files=["res://.godot/imported/Sfx_Fight_Completed.ogg-c5b845157517c74b582587ebd018414d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

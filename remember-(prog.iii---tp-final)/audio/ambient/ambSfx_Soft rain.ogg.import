@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://n1x7rkl4ur3j"
+path="res://.godot/imported/ambSfx_Soft rain.ogg-70de0e3d1d37b273531ed457c0312072.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/ambient/ambSfx_Soft rain.ogg"
+dest_files=["res://.godot/imported/ambSfx_Soft rain.ogg-70de0e3d1d37b273531ed457c0312072.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

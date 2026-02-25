@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://blpi5vtkl7np2"]
+
+[ext_resource type="Script" uid="uid://dj471swdxpb0m" path="res://UI/Menu/SaveMenu/save_slot.gd" id="1_itfg2"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="2_and8x"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="3_76t18"]
+[ext_resource type="StyleBox" uid="uid://c1tsw80ncp7qa" path="res://UI/Menu/styleboxes/menuHp_stylebox.tres" id="4_p85ni"]
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="5_w2yjf"]
+[ext_resource type="Script" uid="uid://cfylos866td70" path="res://UI/Menu/MainMenu/menu_button.gd" id="6_and8x"]
+[ext_resource type="AudioStream" uid="uid://78a5tcw0n2eu" path="res://audio/SFX/GUI SFX/menu/Sfx_Cursor.ogg" id="7_w2yjf"]
+[ext_resource type="AudioStream" uid="uid://baqva677n6av0" path="res://audio/SFX/GUI SFX/menu/Sfx_Save_Data.ogg" id="8_p85ni"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="8_w2yjf"]
+[ext_resource type="AudioStream" uid="uid://bglgatckwenmv" path="res://audio/SFX/GUI SFX/menu/Sfx_Blocked.ogg" id="9_qoitv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pr2qx"]
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1idwy"]
+atlas = ExtResource("5_w2yjf")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oeha3"]
+texture = SubResource("AtlasTexture_1idwy")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="Animation" id="Animation_qoitv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aantw"]
+resource_name = "slot_blocked"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.631, 0, 0.0058480976, 0.588), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qa01l"]
+resource_name = "slot_pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.13333333),
+"transitions": PackedFloat32Array(1, 0.5, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.02, 1.02), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.631, 1.562879, 0, 0.588), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aantw"]
+_data = {
+&"RESET": SubResource("Animation_qoitv"),
+&"slot_blocked": SubResource("Animation_aantw"),
+&"slot_pressed": SubResource("Animation_qa01l")
+}
+
+[node name="save_slot" type="Panel" unique_id=1726745654 groups=["Persist"]]
+process_mode = 3
+editor_description = "121.438
+312.514"
+script = ExtResource("1_itfg2")
+press_sfx = ExtResource("8_p85ni")
+blocked_sfx = ExtResource("9_qoitv")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=418679770]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 33.0
+theme_override_styles/panel = ExtResource("2_and8x")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1513065558]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=412006225]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=768346484]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 352.0
+offset_bottom = 27.0
+theme_override_constants/separation = 10
+
+[node name="SlotNumber" type="Label" parent="HBoxContainer" unique_id=1638318305]
+custom_minimum_size = Vector2(22, 15)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_76t18")
+theme_override_font_sizes/font_size = 15
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNamePanel" type="PanelContainer" parent="HBoxContainer" unique_id=1974370511]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_p85ni")
+metadata/_edit_group_ = true
+
+[node name="PlayerNameHBoxContainer" type="HBoxContainer" parent="HBoxContainer/PlayerNamePanel" unique_id=680550323]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerName" type="Label" parent="HBoxContainer/PlayerNamePanel/PlayerNameHBoxContainer" unique_id=1333994496]
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_76t18")
+theme_override_font_sizes/font_size = 11
+text = "PlayerName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZonePanel" type="PanelContainer" parent="HBoxContainer" unique_id=626779148]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pr2qx")
+
+[node name="ZoneHBoxContainer" type="HBoxContainer" parent="HBoxContainer/ZonePanel" unique_id=1366349348]
+layout_mode = 2
+
+[node name="LevelName" type="Label" parent="HBoxContainer/ZonePanel/ZoneHBoxContainer" unique_id=338624581]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_76t18")
+theme_override_font_sizes/font_size = 11
+text = "LevelName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZoneName" type="Label" parent="HBoxContainer/ZonePanel" unique_id=1555811672]
+custom_minimum_size = Vector2(189, 10)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_76t18")
+theme_override_font_sizes/font_size = 11
+text = "ZoneName"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CreateSave" type="Label" parent="HBoxContainer" unique_id=296778602]
+visible = false
+custom_minimum_size = Vector2(290, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_76t18")
+theme_override_font_sizes/font_size = 11
+text = "-  CREATE  SAVE  -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlotButton" type="Button" parent="." unique_id=1672673697]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 33.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_oeha3")
+flat = true
+script = ExtResource("6_and8x")
+hover_sfx = ExtResource("7_w2yjf")
+blocked_volume_db = -5.0
+blocked_pitch = 1.0
+
+[node name="SaveSlotAnimations" type="AnimationPlayer" parent="." unique_id=601406666]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_aantw")
+
+[node name="Serializable" type="Node" parent="." unique_id=529097699]
+script = ExtResource("8_w2yjf")
+transform = false
+variables = Array[String](["global_puzzles_state", "player_name_panel", "zone_panel", "createsave", "slot_number", "player_name", "level_name", "zone_name"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

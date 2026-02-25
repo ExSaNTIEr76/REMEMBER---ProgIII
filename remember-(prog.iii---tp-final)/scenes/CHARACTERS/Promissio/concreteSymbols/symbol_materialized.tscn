@@ -1,0 +1,505 @@
+[gd_scene format=3 uid="uid://bqvpo6ds3fn1l"]
+
+[ext_resource type="Shader" uid="uid://cr83rtcue7ava" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/symbol_materialized.gdshader" id="1_22c3p"]
+[ext_resource type="SpriteFrames" uid="uid://dbiu2rqbyitx" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/sprites/Symbol_background.tres" id="1_eafy4"]
+[ext_resource type="SpriteFrames" uid="uid://l23x5diy6dsr" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/sprites/Symbols_blur_spriteframes.tres" id="2_loip6"]
+[ext_resource type="Script" uid="uid://buj5v5p3hddyw" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/symbol_materialized.gd" id="3_epscm"]
+[ext_resource type="Shader" uid="uid://dh1ohreqrmn3k" path="res://effects/Shaders/symbol_flicker.gdshader" id="3_ex7kp"]
+[ext_resource type="Shader" uid="uid://c1r7m0kk8m2wi" path="res://scenes/ENEMIES/Spectres/common_spectre/hurtFlashEnemy.gdshader" id="4_22c3p"]
+[ext_resource type="SpriteFrames" uid="uid://c6m2ewmwh1ydq" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/sprites/Symbols_icons_spriteframes.tres" id="4_epscm"]
+[ext_resource type="AudioStream" uid="uid://dw05y1ne1tvlu" path="res://audio/SFX/Ambient SFX/Sfx_Symbol_Materialized.ogg" id="8_3aoui"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ex7kp"]
+resource_local_to_scene = true
+shader = ExtResource("1_22c3p")
+shader_parameter/sway_strength = 0.00800000038
+shader_parameter/sway_speed = 4.0
+shader_parameter/pulse_speed = 3.0
+shader_parameter/pulse_intensity = 0.0
+shader_parameter/pedestal_alpha = 0.70000003325
+shader_parameter/energy_color = Color(0.3, 0.7, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3aoui"]
+resource_local_to_scene = true
+shader = ExtResource("4_22c3p")
+shader_parameter/flash_opacity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0.106796265, 1)
+shader_parameter/enable_outline = false
+shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/outline_thickness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_epscm"]
+resource_local_to_scene = true
+shader = ExtResource("3_ex7kp")
+shader_parameter/min_on_time = 0.4
+shader_parameter/max_on_time = 0.6
+shader_parameter/min_off_time = 0.1
+shader_parameter/max_off_time = 0.1
+shader_parameter/glow_intensity = 2.0
+
+[sub_resource type="Animation" id="Animation_3aoui"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SymbolBackground:material:shader_parameter/pedestal_alpha")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.70000003325]
+}
+
+[sub_resource type="Animation" id="Animation_22c3p"]
+resource_name = "background_idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SymbolBackground:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wf53r"]
+_data = {
+&"RESET": SubResource("Animation_3aoui"),
+&"background_idle": SubResource("Animation_22c3p")
+}
+
+[sub_resource type="Animation" id="Animation_jpnfs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SymbolBackground:material:shader_parameter/pedestal_alpha")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.70000003325]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SymbolBackground:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Symbol:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SymbolBlur:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SymbolBackground:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%SymbolBlur:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%SymbolBlur:skew")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%Symbol:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%Symbol:skew")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_811d3"]
+resource_name = "symbol_absorbed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SymbolBackground:material:shader_parameter/pedestal_alpha")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.23333333, 0.4, 0.56666666, 0.73333335, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.70000003325, 0.0, 0.70000003325, 0.0, 0.70000003325]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SymbolBackground:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.19999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Symbol:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SymbolBlur:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SymbolBackground:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.19999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.569051]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%SymbolBlur:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%SymbolBlur:skew")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.569051]
+}
+
+[sub_resource type="Animation" id="Animation_wf53r"]
+resource_name = "symbol_spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SymbolBackground:material:shader_parameter/pedestal_alpha")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.36666667, 0.5333333, 0.70000005, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.70000003325, 0.0, 0.70000003325, 0.0, 0.70000003325]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SymbolBackground:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Symbol:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SymbolBlur:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SymbolBackground:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.569051, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_k0v6n"]
+resource_name = "symbol_vanishing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SymbolBackground:material:shader_parameter/pedestal_alpha")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.23333333, 0.4, 0.56666666, 0.73333335, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.70000003325, 0.0, 0.70000003325, 0.0, 0.70000003325]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SymbolBackground:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.19999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Symbol:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SymbolBlur:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SymbolBackground:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.19999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.569051]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%SymbolBlur:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%SymbolBlur:skew")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.569051]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%Symbol:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%Symbol:skew")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.569051]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0v6n"]
+_data = {
+&"RESET": SubResource("Animation_jpnfs"),
+&"symbol_absorbed": SubResource("Animation_811d3"),
+&"symbol_spawn": SubResource("Animation_wf53r"),
+&"symbol_vanishing": SubResource("Animation_k0v6n")
+}
+
+[node name="SymbolMaterialized" type="CharacterBody2D" unique_id=1074395384]
+z_index = 3
+y_sort_enabled = true
+motion_mode = 1
+script = ExtResource("3_epscm")
+
+[node name="SymbolBackground" type="AnimatedSprite2D" parent="." unique_id=131630070]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ex7kp")
+rotation = 4.510087
+sprite_frames = ExtResource("1_eafy4")
+animation = &"C_background"
+
+[node name="SymbolBlur" type="AnimatedSprite2D" parent="." unique_id=254272854]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.54901963)
+material = SubResource("ShaderMaterial_3aoui")
+scale = Vector2(1.2, 1.2)
+sprite_frames = ExtResource("2_loip6")
+animation = &"C_punch_1"
+
+[node name="Symbol" type="AnimatedSprite2D" parent="." unique_id=94586472]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_epscm")
+scale = Vector2(1.2, 1.2)
+sprite_frames = ExtResource("4_epscm")
+animation = &"C_punch_1"
+
+[node name="BackgroundRotation" type="AnimationPlayer" parent="." unique_id=1984587917]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_wf53r")
+autoplay = &"background_idle"
+
+[node name="SymbolAnimations" type="AnimationPlayer" parent="." unique_id=1967293845]
+unique_name_in_owner = true
+root_node = NodePath("../BackgroundRotation")
+libraries/ = SubResource("AnimationLibrary_k0v6n")
+
+[node name="SymbolSound" type="AudioStreamPlayer2D" parent="." unique_id=885042215]
+unique_name_in_owner = true
+position = Vector2(0.18373871, 0.25421906)
+stream = ExtResource("8_3aoui")
+volume_db = -12.0
+autoplay = true
+max_distance = 200.0
+attenuation = 2.0
+panning_strength = 3.0
+bus = &"Ambient"

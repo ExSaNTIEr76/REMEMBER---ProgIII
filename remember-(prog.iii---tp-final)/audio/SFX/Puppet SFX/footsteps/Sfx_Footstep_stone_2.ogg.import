@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://20plnnxim7bb"
+path="res://.godot/imported/Sfx_Footstep_stone_2.ogg-ed36fe4278f791f964fa40eee7689ca6.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/footsteps/Sfx_Footstep_stone_2.ogg"
+dest_files=["res://.godot/imported/Sfx_Footstep_stone_2.ogg-ed36fe4278f791f964fa40eee7689ca6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,159 @@
+[gd_scene format=4 uid="uid://cqdpljd76nmjb"]
+
+[ext_resource type="Script" uid="uid://da33mdxfo35ay" path="res://scenes/LEVELS/levelScripts/level.gd" id="1_k4yro"]
+[ext_resource type="AudioStream" uid="uid://cnq4siso38ihs" path="res://audio/ambient/ambSfx_Plastic Flowing_1.ogg" id="2_jkdj5"]
+[ext_resource type="AudioStream" uid="uid://dew7jeyhury0a" path="res://audio/music/Glimpse of Life.ogg" id="2_xmfaq"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="4_7hjo3"]
+[ext_resource type="Texture2D" uid="uid://bjs8rf4f7ynn8" path="res://scenes/LEVELS/Zone 0/panorama/z0_ sky.png" id="4_xmfaq"]
+[ext_resource type="TileSet" uid="uid://bbxgpr6k085rt" path="res://scenes/LEVELS/Zone 0/sprites/Zone 0 TileMap.tres" id="5_ya2yp"]
+[ext_resource type="Script" uid="uid://bcweryyykqkml" path="res://scenes/LEVELS/levelScripts/level_tile_map_layer.gd" id="6_mln02"]
+[ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="7_py4iv"]
+[ext_resource type="PackedScene" uid="uid://bjo1vifofl7f2" path="res://dialogues/Actionable.tscn" id="8_5xi2e"]
+[ext_resource type="Script" uid="uid://dlae4fxyvspys" path="res://scenes/LEVELS/levelScripts/footstep_tilemap.gd" id="8_xmfaq"]
+[ext_resource type="Resource" uid="uid://dg48fr6p71bs2" path="res://dialogues/ZONE 0/Zone0_Prelude.dialogue" id="9_5ubpy"]
+[ext_resource type="PackedScene" uid="uid://cbhl4re0el2sc" path="res://scenes/LEVELS/levelScripts/LevelTransition.tscn" id="10_y1k6b"]
+[ext_resource type="Script" uid="uid://bog32dxl57cno" path="res://scenes/ENEMIES/UTILITIES/spawner.gd" id="11_j7x0g"]
+[ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="13_xmfaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ydit"]
+size = Vector2(38, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sa3k7"]
+size = Vector2(35, 18)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5505x"]
+radius = 20.0
+height = 58.0
+
+[node name="Sepulcher" type="Node2D" unique_id=965009860 groups=["Persist"]]
+script = ExtResource("1_k4yro")
+level_name = "Sepulcher"
+zone_name = "Zone 0"
+zone_tag = "Z0_ext"
+transition_tag = "Z0_ext"
+music = ExtResource("2_xmfaq")
+music_volume = -7.0
+ambient = ExtResource("2_jkdj5")
+ambient_volume = -25.0
+ambient_pitch = 0.76
+
+[node name="YSORT" type="Node2D" parent="." unique_id=40700375 groups=["Y-SORT"]]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Serializable" type="Node" parent="YSORT" unique_id=1638912541]
+script = ExtResource("4_7hjo3")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="Sky" type="Sprite2D" parent="YSORT" unique_id=1478829735]
+z_index = -5
+y_sort_enabled = true
+position = Vector2(320, -43.3713)
+scale = Vector2(2.85714, 1.69524)
+texture = ExtResource("4_xmfaq")
+
+[node name="Layer 0 (Liquid)" type="TileMapLayer" parent="YSORT" unique_id=292034422]
+z_index = -4
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(160, 0)
+tile_map_data = PackedByteArray("AAD7/wMAAgANAAEAAAD7/wQAAgANAAEAAAD7/wUAAgANAAEAAAD7/wYAAgANAAEAAAD7/wcAAgANAAEAAAD7/wgAAgANAAEAAAD7/wkAAgANAAEAAAD7/woAAgANAAEAAAD8/wMAAgANAAEAAAD8/wQAAgANAAEAAAD8/wUAAgANAAEAAAD8/wYAAgANAAEAAAD8/wcAAgANAAEAAAD8/wgAAgANAAEAAAD8/wkAAgANAAEAAAD8/woAAgANAAEAAAD9/wQAAgANAAEAAAD9/wUAAgANAAEAAAD9/wYAAgANAAEAAAD9/wcAAgANAAEAAAD9/wgAAgANAAEAAAD9/wkAAgANAAEAAAD9/woAAgANAAEAAAD+/wIAAgANAAEAAAD+/wQAAgANAAEAAAD+/wUAAgANAAEAAAD+/wYAAgANAAEAAAD+/wcAAgANAAEAAAD+/wgAAgANAAEAAAD+/wkAAgANAAEAAAD+/woAAgANAAEAAAD//wIAAgANAAEAAAD//wQAAgANAAEAAAD//wUAAgANAAEAAAD//wYAAgANAAEAAAD//wcAAgANAAEAAAD//wgAAgANAAEAAAD//wkAAgANAAEAAAD//woAAgANAAEAAAAAAAQAAgANAAAAAAAAAAUAAgANAAEAAAAAAAYAAgANAAEAAAAAAAcAAgANAAEAAAAAAAgAAgANAAEAAAAAAAkAAgANAAEAAAAAAAoAAgANAAEAAAABAAUAAgANAAAAAAABAAYAAgANAAEAAAABAAcAAgANAAEAAAABAAgAAgANAAEAAAABAAkAAgANAAEAAAABAAoAAgANAAEAAAACAAgAAgANAAEAAAACAAkAAgANAAEAAAACAAoAAgANAAEAAAACAAcAAgANAAAAAAAGAAcAAgANAAAAAAAGAAgAAgANAAEAAAAGAAkAAgANAAEAAAAGAAoAAgANAAEAAAAHAAUAAgANAAAAAAAHAAYAAgANAAEAAAAHAAcAAgANAAEAAAAHAAgAAgANAAEAAAAHAAkAAgANAAEAAAAHAAoAAgANAAEAAAAIAAQAAgANAAAAAAAIAAUAAgANAAEAAAAIAAYAAgANAAEAAAAIAAcAAgANAAEAAAAIAAgAAgANAAEAAAAIAAkAAgANAAEAAAAIAAoAAgANAAEAAAAJAAQAAgANAAEAAAAJAAUAAgANAAEAAAAJAAYAAgANAAEAAAAJAAcAAgANAAEAAAAJAAgAAgANAAEAAAAJAAkAAgANAAEAAAAJAAoAAgANAAEAAAAKAAQAAgANAAEAAAAKAAUAAgANAAEAAAAKAAYAAgANAAEAAAAKAAcAAgANAAEAAAAKAAgAAgANAAEAAAAKAAkAAgANAAEAAAAKAAoAAgANAAEAAAALAAQAAgANAAEAAAALAAUAAgANAAEAAAALAAYAAgANAAEAAAALAAcAAgANAAEAAAALAAgAAgANAAEAAAALAAkAAgANAAEAAAALAAoAAgANAAEAAAAJAAIAAgANAAEAAAAKAAIAAgANAAEAAAAMAAMAAgANAAEAAAAMAAQAAgANAAEAAAAMAAUAAgANAAEAAAAMAAYAAgANAAEAAAAMAAcAAgANAAEAAAAMAAgAAgANAAEAAAAMAAkAAgANAAEAAAAMAAoAAgANAAEAAAANAAMAAgANAAEAAAANAAQAAgANAAEAAAANAAUAAgANAAEAAAANAAYAAgANAAEAAAANAAcAAgANAAEAAAANAAgAAgANAAEAAAANAAkAAgANAAEAAAANAAoAAgANAAEAAAAOAAMAAgANAAEAAAAOAAQAAgANAAEAAAAOAAUAAgANAAEAAAAOAAYAAgANAAEAAAAOAAcAAgANAAEAAAAOAAgAAgANAAEAAAAOAAkAAgANAAEAAAAOAAoAAgANAAEAAAAEAP7/AgAYAAAAAAD7/wEAAgAUAAIAAAD8/wEAAgAUAAIAAAD9/wEAAgAUAAIAAAALAAEAAgAUAAIAAAAMAAEAAgAUAAIAAAANAAEAAgAUAAIAAAAOAAEAAgAUAAIAAAALAAIAAgAUAAEAAAAMAAIAAgAUAAEAAAANAAIAAgAUAAEAAAAOAAIAAgAUAAEAAAD7/wIAAgAUAAEAAAD8/wIAAgAUAAEAAAD9/wIAAgAUAAEAAAA=")
+tile_set = ExtResource("5_ya2yp")
+script = ExtResource("6_mln02")
+
+[node name="Layer 1 (Ground)" type="TileMapLayer" parent="YSORT" unique_id=128456126]
+z_index = -3
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAFAAMAAQAAAAIAAAAGAAMAAQAGAAEAAAAGAAQAAQAAAAIAAAAHAAMAAQABAAEAAAAHAAQAAQAGAAEAAAAIAAMAAQABAAEAAAAHAAUAAQAAAAEAAAAHAAYAAQAAAAIAAAAIAAQAAQABAAEAAAAIAAUAAQABAAEAAAAIAAYAAQAGAAEAAAAIAAcAAQAAAAEAAAAIAAgAAQAAAAEAAAAIAAkAAQAAAAEAAAAIAAoAAQAAAAIAAAAJAAMAAQABAAEAAAAJAAQAAQABAAEAAAAJAAUAAQABAAEAAAAJAAYAAQABAAEAAAAJAAcAAQABAAEAAAAJAAgAAQABAAEAAAAJAAkAAQABAAEAAAAJAAoAAQABAAIAAAAKAAMAAQABAAEAAAAKAAQAAQABAAEAAAAKAAUAAQABAAEAAAAKAAYAAQAFAAEAAAAKAAcAAQACAAEAAAAKAAgAAQACAAEAAAAKAAkAAQACAAEAAAAKAAoAAQACAAIAAAALAAMAAQABAAEAAAALAAQAAQAFAAEAAAALAAUAAQACAAEAAAALAAYAAQACAAIAAAAMAAMAAQAFAAEAAAAMAAQAAQACAAIAAAANAAMAAQACAAIAAAA=")
+tile_set = ExtResource("5_ya2yp")
+script = ExtResource("8_xmfaq")
+
+[node name="Layer 2 (Path)" type="TileMapLayer" parent="YSORT" unique_id=1361355065]
+z_index = -2
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(160, 0)
+tile_map_data = PackedByteArray("AAADAAQAAQANAAMAAAAEAAQAAQAVAAQAAAAEAAMAAQAQAAAAAAAEAAUAAQAQAAEAAAAEAAYAAQAQAAEAAAAEAAcAAQAQAAEAAAAEAAgAAQAQAAEAAAAEAAkAAQAQAAEAAAAEAAoAAQAVAAIAAAAFAAQAAQAPAAMAAAADAAIAAQABAAEAAAAEAAIAAQABAAEAAAAFAAIAAQABAAEAAAADAAoAAQANAAAAAAAFAAoAAQAPAAAAAAA=")
+tile_set = ExtResource("5_ya2yp")
+
+[node name="Layer 3 (Entrances)" type="TileMapLayer" parent="YSORT" unique_id=1745217169]
+z_index = -1
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(160, 0)
+tile_map_data = PackedByteArray("AAAEAAIAAgACABYAAAAEAAMAAgACABoAAAA=")
+tile_set = ExtResource("5_ya2yp")
+
+[node name="Layer 4 (Decorations)" type="TileMapLayer" parent="YSORT" unique_id=1399969258]
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(160, 0)
+tile_map_data = PackedByteArray("AAABAAQAAgASAAoAAAADAAUAAQAAAAQAAAAFAAYAAgATAAoAAAAHAAQAAgATAAkAAAAJAAMAAgANAAIAAAAKAAMAAgANAAIAAAALAAMAAgANAAIAAAAFAAEAAgARABcAAAD9/wMAAgANAAIAAAD+/wMAAgANAAIAAAD//wMAAgANAAIAAAADAAgAAgARAAoAAAAFAAkAAQABAAQAAAA=")
+tile_set = ExtResource("5_ya2yp")
+
+[node name="PlayerSpawn" parent="YSORT" unique_id=43027295 instance=ExtResource("7_py4iv")]
+position = Vector2(304, 113)
+
+[node name="SpawnMarker" type="Marker2D" parent="YSORT" unique_id=822252473]
+position = Vector2(304, 113)
+
+[node name="ACTIONABLES" type="Node2D" parent="." unique_id=1363888946]
+
+[node name="Prelude" parent="ACTIONABLES" unique_id=826722939 instance=ExtResource("8_5xi2e")]
+collision_mask = 2
+dialogue_resource = ExtResource("9_5ubpy")
+dialogue_start = "beginningAct1"
+auto_trigger = true
+cinematic_name = "prelude_act_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/Prelude" unique_id=893765241]
+position = Vector2(304, 120)
+shape = SubResource("RectangleShape2D_7ydit")
+debug_color = Color(0, 0.866667, 1, 0.419608)
+
+[node name="Cave Entrance" parent="ACTIONABLES" unique_id=1669336673 instance=ExtResource("8_5xi2e")]
+monitoring = false
+dialogue_resource = ExtResource("9_5ubpy")
+dialogue_start = "caveEntrance"
+one_time = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/Cave Entrance" unique_id=451721579]
+position = Vector2(302, 73)
+shape = SubResource("RectangleShape2D_sa3k7")
+debug_color = Color(0.596078, 0.372549, 1, 0.419608)
+
+[node name="Rock Symbol" parent="ACTIONABLES" unique_id=2004257178 instance=ExtResource("8_5xi2e")]
+monitoring = false
+dialogue_resource = ExtResource("9_5ubpy")
+dialogue_start = "rockSymbol"
+one_time = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/Rock Symbol" unique_id=2096339261]
+position = Vector2(356, 88)
+shape = SubResource("CapsuleShape2D_5505x")
+debug_color = Color(0.596078, 0.372549, 1, 0.419608)
+
+[node name="DOORS" type="Node2D" parent="." unique_id=287637582]
+
+[node name="Sepulcher2" parent="DOORS" unique_id=1464597784 instance=ExtResource("10_y1k6b")]
+position = Vector2(304, 352)
+level = "uid://o0i5x8fbdexc"
+target_transition_area = "LaresOfExcile1_a"
+size = 3
+side = 3
+initial_camera_zone = 1
+
+[node name="SPAWNER" type="Node2D" parent="." unique_id=1952885727]
+script = ExtResource("11_j7x0g")
+
+[node name="Serializable" type="Node" parent="." unique_id=216257623]
+script = ExtResource("4_7hjo3")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="Savestate" type="Node" parent="." unique_id=1069052925]
+script = ExtResource("13_xmfaq")
+metadata/_custom_type_script = "uid://b146xa42md0k3"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1900405462]

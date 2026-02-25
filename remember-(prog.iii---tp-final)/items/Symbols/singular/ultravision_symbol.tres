@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=6 format=3 uid="uid://cn2nn22inohnx"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_ubevv"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_3ewha"]
+
+[sub_resource type="Resource" id="Resource_jl8aa"]
+script = ExtResource("1_ubevv")
+type = 3
+value = 8
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c7it6"]
+load_path = "res://.godot/imported/itemsIcons.png-4b876634127af6fbfaabb9b7f4249248.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r1me"]
+atlas = SubResource("CompressedTexture2D_c7it6")
+region = Rect2(368, 288, 16, 16)
+
+[resource]
+script = ExtResource("2_3ewha")
+modifiers = Array[ExtResource("1_ubevv")]([SubResource("Resource_jl8aa")])
+symbol_icon_name = "S_ultravision"
+name = "Ultravision"
+type = 7
+ID = 266
+description = "Observer symbol that allows you to know the name of the damaged enemies."
+texture = SubResource("AtlasTexture_6r1me")
+cost = 0
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

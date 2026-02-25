@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://l2dg2syjntg1"
+path="res://.godot/imported/Sfx_ Ciro 'You Would Trust In Me'.ogg-142f87fed8795d3888e72ee21b3e37f7.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'You Would Trust In Me'.ogg"
+dest_files=["res://.godot/imported/Sfx_ Ciro 'You Would Trust In Me'.ogg-142f87fed8795d3888e72ee21b3e37f7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

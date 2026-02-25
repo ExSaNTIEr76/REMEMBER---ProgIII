@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://civ5oshbi562"]
+
+[ext_resource type="Script" uid="uid://bm1s46dqii1mk" path="res://global/global_puzzles_state.gd" id="1_3cp3l"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_cev3u"]
+
+[node name="GlobalPuzzlesState" type="Node"]
+script = ExtResource("1_3cp3l")
+
+[node name="Serializable" type="Node" parent="."]
+script = ExtResource("2_cev3u")
+transform = false
+children = false
+variables = Array[String](["puzzles_completed"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

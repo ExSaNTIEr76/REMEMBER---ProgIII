@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dafkfhldlbu5o"
+path="res://.godot/imported/Sfx_Footstep_metal_2.ogg-625644327838b83a7f78e673873a6b82.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/footsteps/Sfx_Footstep_metal_2.ogg"
+dest_files=["res://.godot/imported/Sfx_Footstep_metal_2.ogg-625644327838b83a7f78e673873a6b82.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

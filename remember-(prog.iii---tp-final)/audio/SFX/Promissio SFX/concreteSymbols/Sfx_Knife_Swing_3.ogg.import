@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ydt0po4cfrq"
+path="res://.godot/imported/Sfx_Knife_Swing_3.ogg-610d75eeb6f8639e95487df4097c7e0c.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Promissio SFX/concreteSymbols/Sfx_Knife_Swing_3.ogg"
+dest_files=["res://.godot/imported/Sfx_Knife_Swing_3.ogg-610d75eeb6f8639e95487df4097c7e0c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

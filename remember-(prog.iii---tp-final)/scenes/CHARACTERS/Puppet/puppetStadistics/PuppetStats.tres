@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerGlobalStats" load_steps=2 format=3 uid="uid://bablv0pe3ob0"]
+
+[ext_resource type="Script" uid="uid://bui7unv0qdhld" path="res://global/player_global_stats.gd" id="1_pjnyx"]
+
+[resource]
+script = ExtResource("1_pjnyx")
+ATK = 8
+metadata/_custom_type_script = "uid://bui7unv0qdhld"

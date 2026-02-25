@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjujff8xi8qru"]
+
+[ext_resource type="Script" uid="uid://dr0lc4fhge7mt" path="res://UI/HUD/player_hud.gd" id="1_53hql"]
+[ext_resource type="Texture2D" uid="uid://bt3s3im0fcbu" path="res://UI/HUD/sprites/healthBar.png" id="1_nmvne"]
+[ext_resource type="Script" uid="uid://cdpsfkx4dajgk" path="res://UI/HUD/healthbar.gd" id="2_anc6v"]
+[ext_resource type="Script" uid="uid://cq6s1ma8kwt6" path="res://UI/HUD/healthbar_delay.gd" id="2_nqxmk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7cui"]
+atlas = ExtResource("1_nmvne")
+region = Rect2(0, 16, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anc6v"]
+atlas = ExtResource("1_nmvne")
+region = Rect2(0, 24, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ndh6"]
+atlas = ExtResource("1_nmvne")
+region = Rect2(0, 0, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_galay"]
+atlas = ExtResource("1_nmvne")
+region = Rect2(0, 8, 64, 8)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_53hql")
+
+[node name="HealthbarDelay" type="TextureProgressBar" parent="." node_paths=PackedStringArray("delayHealthBar", "updateValueDelayTimer")]
+z_index = -1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 70.0
+offset_bottom = 13.0
+step = 0.1
+value = 94.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = SubResource("AtlasTexture_o7cui")
+texture_progress = SubResource("AtlasTexture_anc6v")
+script = ExtResource("2_nqxmk")
+delayHealthBar = NodePath("Healthbar")
+updateValueDelayTimer = NodePath("HealthbarDelayTimer")
+metadata/_edit_group_ = true
+
+[node name="Healthbar" type="TextureProgressBar" parent="HealthbarDelay"]
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 8.0
+step = 0.1
+value = 85.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_over = SubResource("AtlasTexture_5ndh6")
+texture_progress = SubResource("AtlasTexture_galay")
+script = ExtResource("2_anc6v")
+
+[node name="HealthbarDelayTimer" type="Timer" parent="HealthbarDelay"]

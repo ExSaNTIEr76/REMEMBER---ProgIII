@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c38wwfa3qjqbo"]
+
+[ext_resource type="Material" uid="uid://b8t3bswj5v8c5" path="res://effects/Shaders/SmoothPixel.tres" id="1_krret"]
+[ext_resource type="Script" uid="uid://bt6g8g3njq65e" path="res://UI/Camera/panning camera.gd" id="2_1ukhx"]
+
+[node name="Panning Camera" type="Camera2D"]
+texture_filter = 2
+material = ExtResource("1_krret")
+offset = Vector2(1, 1)
+anchor_mode = 0
+zoom = Vector2(1.01, 1.01)
+limit_left = 0
+limit_top = 1
+limit_right = 1728
+limit_bottom = 1728
+script = ExtResource("2_1ukhx")

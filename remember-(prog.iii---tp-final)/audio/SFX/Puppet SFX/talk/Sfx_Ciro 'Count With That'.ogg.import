@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8kpgc13kikxg"
+path="res://.godot/imported/Sfx_Ciro 'Count With That'.ogg-7e58717105ba267be635fa5544dbd69b.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Count With That'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'Count With That'.ogg-7e58717105ba267be635fa5544dbd69b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

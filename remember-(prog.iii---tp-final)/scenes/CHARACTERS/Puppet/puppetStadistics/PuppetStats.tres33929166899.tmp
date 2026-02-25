@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="PlayerGlobalStats" load_steps=2 format=3 uid="uid://bablv0pe3ob0"]
+
+[ext_resource type="Script" uid="uid://bui7unv0qdhld" path="res://global/player_global_stats.gd" id="1_pjnyx"]
+
+[resource]
+script = ExtResource("1_pjnyx")
+MAX_HP = 100
+MAX_CP = 50
+MAX_EP = 10
+x = "-------------------------"
+CURRENT_HP = 100
+CURRENT_CP = 50
+cp_regen_rate = 5
+cp_regen_interval = 1
+CURRENT_EP = 10
+CURRENT_ALTERED_STATE = 0
+ATK = 8
+STR = 0
+INT = 0
+DEF = 0
+CON = 0
+LCK = 0
+MAX_LEVEL = 99
+CURRENT_LEVEL = 2
+XP = 0
+NEXT_EXP = 10
+CREDITS = 500
+X = "-------------------------"
+speed = 40.0
+running_speed_multiplier = 2.5
+player_actual_name = "Ciro"
+player_map_discovered = 20
+metadata/_custom_type_script = "uid://bui7unv0qdhld"

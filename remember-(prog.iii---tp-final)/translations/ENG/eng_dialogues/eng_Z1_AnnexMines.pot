@@ -1,0 +1,885 @@
+# LANGUAGE translation for REMEMBER for the following files:
+# res://dialogues/GameUI.dialogue
+# res://dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+# res://dialogues/ZONE 1/Zone1_Damien.dialogue
+# res://dialogues/UI/FloatingBoxes.dialogue
+# res://dialogues/UI/Tramway.dialogue
+# res://dialogues/UI/TheNothingness.dialogue
+# res://dialogues/ZONE 0/Zone0_Ruins.dialogue
+# res://dialogues/ZONE 0/Zone0_Prelude.dialogue
+# res://dialogues/ZONE 1/Zone1_SmokeMines.dialogue
+# res://dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: REMEMBER\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgctxt "dialogue"
+msgid "Ciro"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgctxt "dialogue"
+msgid "Elsen"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "Elsen"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "------------------------- ELSEN STATION EXTERIOR ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Disculpe... ¿señor?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]¿E-Eh? ¿Me habla a mí?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]S-Sí. ¿De casualidad podría decirme qué lugar es este?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Esta.. es la estación de tranvía del distrito Elsen."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]El único medio de transporte disponible hacia los demás distritos."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Ah sí, la estación de tranvía, por supuesto."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Usted... no parece de por aquí, joven. ¿Acaso viene en busca de trabajo?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.3]¿Qué?... no."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Entonces... ¿es un turista? eso es curioso."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]¿Por qué lo dice?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Es que... por lo general, la gente viene a esta zona en busca de trabajo, no ocio."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Además... el clima por aquí no es muy agradable para estar paseando."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]En realidad busco a un pequeño niño."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]¿Es un familiar suyo?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Bueno... sí. Se me escapó, y estoy preocupado de que le haya pasado algo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Es peladito, tiene grandes ojos bermellón y una chaqutilla a cuadros..."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]No... lo siento mucho. No lo he visto."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]¿Ya se fijó en el interior de la estación?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Tal vez... lo encuentre allí."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Eso espero."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Si no tuvo suerte, vaya al distrito Damien."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Yo... hablaré con mi grupo de trabajo por si lo han visto."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Pregunte por \"Coal\" y venga a verme. Le diré si supe algo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]¿Enserio haría eso por mí?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Por supuesto. Esta zona es peligrosa para niños pequeños."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Muchas gracias, señor. En verdad se lo agradezco."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]No hay de qué, joven."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Ahora, no se quede mucho tiempo debajo de la llovizna, o se resfriará. [set GlobalConditions.lookingForTheChild += 1]"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Puede fijarse en el interior de la estación."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Tal vez... el pequeño al que busca se encuentre allí."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "-----------------------------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Como detesto la lluvia."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Ya no espero para llegar a la oficina con calefacción y beber una taza de leche caliente."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Hhh..."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Aquí vamos otra vez con otro día más de trabajo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Aunque no puedo quejarme."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]A comparación del año pasado, las cosas han mejorado mucho."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Si consigo ahorrar lo de este mes, tal vez ya pueda mudarme hacia Alma."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.2]..."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.2]Tú... [speed=0.4]¿Me oíste hablar?[speed=0.1][speed=0.4] ¿Necesitas algo?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]N-Nada. Disculpe."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]..."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "------------------------- ELSEN STATION INTERIOR ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Buenas. ¿Necesita un boleto?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Buenas. N-No... ¿sabe si un niño pequeño estuvo por aquí?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]¿Un niño pequeño?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Sí. Es mi hermano pequeño. Venía conmigo, pero se me desapareció."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Me dijeron que tal vez está aquí."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]No, muchacho. Estuve toda la mañana aquí y no he visto a ningún niño."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Enserio lo lamento mucho."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Está bien..."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]¿De casualidad sabe dónde se encuentra el distrito Damien?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Es el distrito minero del sur, no muy lejos de aquí."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]¿Necesita ir hacia allí?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Sí. Un trabajador me dijo que tal vez sepa algo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Bien. Entonces le daré su pasaporte."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]¡E-Espere!, no tengo como pagarle."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Descuide. La preocupación en su rostro es muy genuina."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Puedo hacer una excepción por usted."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]¿Seguro que no lo meteré en problemas?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Tranquilo, amigo. Mi jefe lo entenderá."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[center] ¡Has obtenido \"Pasaporte de Tranvía\"! [set GlobalConditions.tramPassport += 1]"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Aquí lo tiene."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]El pasaporte le permitirá tener viajes gratis de ida y de vuelta desde aquí hasta Damien."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Si en el futuro necesita lo mismo para los demás distritos, puede hacerlo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Sólo debe de conseguir la certificación de residente en la estación de cada distrito."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Viendo el tiempo, le recomiendo que vaya tomando asiento en el tranvía."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]El próximo viaje a Damien será en unos minutos."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6]Muchas gracias. Prometo que ni bien resuelva todo esto, se lo pagaré de alguna forma."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]No es necesario, amigo. Consideralo como un regalo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]Ahora vaya y encuentre a su hermanito."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4]No demore en tomar asiento o el tranvía se le irá, amigo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4] Oye, ¿eres de administración metalúrgica?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4] ¿Es verdad que la paga para los extractores de metal aumentará mañana?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6] ¿Qué? n-no. Lo siento, yo..."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4] Oh. Está bien."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4] Igual no importa. El último aumento fue el mes pasado."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4] Creo que ya va siendo hora de cambiar de empleo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4] Tantas horas sentado en la oficina atendiendo llamadas está matando mi espalda."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.4] No lo sé... tal vez cuidar el ganado y respirar humo fresco no me sentaría nada mal."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_ElsenStation.dialogue
+msgid "[speed=0.6] ¿?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "---------------------------- DAMIEN -------------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "--- ENTRADAS A LAS MINAS ---                      <---  ANEXA              PRINCIPAL  --->"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "------------------------- DAMIEN HOUSE 1 ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Es un calendario de trabajo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Tiene días marcados y una serie de tareas tachadas."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+#: dialogues/ZONE 1/Zone1_SmokeMines.dialogue
+msgid "\"CUIDADO POR DONDE SE PISA!\""
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+#: dialogues/ZONE 1/Zone1_SmokeMines.dialogue
+msgid "\"Los túneles de las mina han estado presentando derrumbes. Por favor, no ingrese hasta nuevo aviso. Gracias.\""
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Es un cuadro de los mineros de la zona. Parece que celebraban algo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Al parecer, es un libro de novedades:"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "\"Los flujos de humo han estado presentando obstrucciones repentinas proveninetes de las galerías anexas."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Enviaremos a Slate y a Steel para que investiguen el origen.\" - Coal."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Son algunos libros de minería, y varios resúmenes sobre el trabajo anual en las minas."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Sólo es un pequeño armario con cosas ordinarias y libros sobre minería y el humo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Está cerrada con un candado."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_Damien.dialogue
+msgid "Está cerrada con llave."
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "---------------------- YELLOW BOX -------------------------------"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "¿Deseas guardar tus memorias?"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "Cancelar"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "Guardar"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "---------------------- RED BOX -------------------------------"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "¿Deseas guardar tus memorias o ir a La Nada?"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "Ir a La Nada"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "---------------------- GREEN BOX -------------------------------"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "Do you want to load your memories?"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "Cancel"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "Load"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "---------------------- BLUE BOX -------------------------------"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "Do you want to save your memories?"
+msgstr ""
+
+#: dialogues/UI/FloatingBoxes.dialogue
+msgid "Save"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "--------------------------  ELSEN -----------------------------------"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "Select the distrit:"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "CANCELAR"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "Damien"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "Pentel"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "Shachihata"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "Alma"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "--------------------------  DAMIEN -----------------------------------"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "--------------------------  PENTEL -----------------------------------"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "Seleccionar distrito"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "-----------------------  SHACHIHATA --------------------------------"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "--------------------------  ALMA -----------------------------------"
+msgstr ""
+
+#: dialogues/UI/Tramway.dialogue
+msgid "Selecciona el distrito"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "------------------------ ZONE 0 ---------------------------------"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "Go to Zone 0?"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "NO"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "YES"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "------------------------ ZONE 1 ---------------------------------"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "Go to Zone 1?"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "------------------------ ZONE 2 ---------------------------------"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "¿Viajar hacia la Zona 2?"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "SÍ"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "------------------------ ZONE 3 ---------------------------------"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "¿Viajar hacia la Zona 3?"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "------------------------ ZONE 4 ---------------------------------"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "¿Viajar hacia la Zona 4?"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "------------------------ THE ROOM ---------------------------------"
+msgstr ""
+
+#: dialogues/UI/TheNothingness.dialogue
+msgid "¿Viajar hacia La Habitación?"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "------------------------ RUINS ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Está cerrado con un candado."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "FIN DE LA BUILD DE PUZZLES. ¡Gracias si llegaste hasta acá! :D"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "¿Qué te pareció hasta el momento? Espero tu feedback jeje :3"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "------------------------ RUINS F1 ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Creo que es un rascador para gatos."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "------------------------ JUDGE'S BASEMENT ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "El cuadro lleva escrito \"Memorias del Parque\", y se muestra a un peculiar hombre con dos gatos en... ¿una montaña rusa?"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Son sólo algunos libros sobre filosofía, física y... ¿salud felina?"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Vaya gustos iguales."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Son cuchas para gatos."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Dios. No me imagino a dos gatitos viviendo en este sitio."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Uno de los comederos está más vacío que el otro."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Parece que tenemos a un pequeño glotón."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Dentro de las cajas abiertas hay marcas de arañazos."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "En la mesa hay una partida de cartas sin terminar."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Parece que nadie tenía una buena mano."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Espera... puedo ver algo escrito detrás de la biblioteca."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Ruins.dialogue
+msgid "Dice \"2+3, 7-5, 6+2, 12-4, \""
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "------------------------ SEPULCHER ---------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "W-what..."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.15]Where am I?"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "It's dark. I don't want to go back in there."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "I have no idea what this is."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "----------------------- LARES OF EXCILE --------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "<-- S////H////    FORGO//// GROTTOES -->"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.2]Huh?"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "Boxes with nothing special inside."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "------------------------- WAREHOUSE 1 ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "More boxes with nothing important in them."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "I can hear the distant waves from here."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "A chair and an empty table."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "I wonder if there's anyone around here."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "----------------------- SECRET BASEMENT 1 --------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "----------------------- SECRET BASEMENT 2 --------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "\"That is why these entities are said to be the abstract manifestation of a strong purpose, feeling, desire, or memory.\""
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "\"Their intentions are known to be in accord with the nature of this gestating energy, making them both bright and dark.\""
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "\"Those individuals not bound by a physical order can resonate with its energy and allow it to forge an irrevocable bond.\""
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "What the heck is this? Esotericism?"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "God... I have to get out of here as soon as possible."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "\"The New World\".                                               \"The Primordial Elements\".                                \"The Royal Guardians\"..."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "From the titles, they seem like fantasy books."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "Whatever. I don't think reading them is very relevant right now."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "I'm not interested in reading right now."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "They are posters of curious places."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "---------------------- FORGOTTEN GROTTOES -------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.4]This place gives me chills."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.4]I feel like something's watching me."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.4]I don't want to stay here. I need to get out."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.2]Now."
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "----------------------- SECRET BASEMENT 4 --------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.15]!!!"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.3]What was all that about?"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.5]And the stairs?"
+msgstr ""
+
+#: dialogues/ZONE 0/Zone0_Prelude.dialogue
+msgid "[speed=0.55]God... I think I'm going crazy right now."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_SmokeMines.dialogue
+msgid "------------------------- SMOKE MINES ENTRANCE ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "------------------------- ANNEX-SMOKE MINES ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "------------------------- PITFALL ROOM ----------------------------------"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "D-Dios... eso estuvo cerca."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "Por poco me estampo contra el suelo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "[speed=0.4]Hhh... que frío hace aquí."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "[speed=0.5]N-No me gusta este lugar."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "[speed=0.5]¿Y otra vez en la total oscuridad?"
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "[speed=0.5]Esto ya parece personal."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "[speed=0.5]Tengo que buscar una salida cuanto antes o juro que me va a dar algo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "Otra vez este estúpido símbolo."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "Dondequiera que vaya, allí está. Perturbando mi paz."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "No sé que representa, pero mirarlo fijamente me produce dolor de cabeza."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "Como si mi cuerpo reviviera una sensación que mi mente es incapaz de asociar."
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "\"\""
+msgstr ""
+
+#: dialogues/ZONE 1/Zone1_AnnexMines.dialogue
+msgid "Hay un hueco en la pared. ¿Debería revisarlo?"
+msgstr ""

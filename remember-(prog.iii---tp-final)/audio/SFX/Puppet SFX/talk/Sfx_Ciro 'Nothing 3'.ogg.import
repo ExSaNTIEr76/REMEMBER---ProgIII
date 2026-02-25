@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jstmw0lcrgov"
+path="res://.godot/imported/Sfx_Ciro 'Nothing 3'.ogg-5ff7c433bd53b8e8e7ee916f665f9b3a.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Nothing 3'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'Nothing 3'.ogg-5ff7c433bd53b8e8e7ee916f665f9b3a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

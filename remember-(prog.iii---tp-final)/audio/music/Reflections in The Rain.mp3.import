@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd5uvjm7374ig"
+path="res://.godot/imported/Reflections in The Rain.mp3-3e4f2b74bb379b607ec46bc04a4a5568.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Reflections in The Rain.mp3"
+dest_files=["res://.godot/imported/Reflections in The Rain.mp3-3e4f2b74bb379b607ec46bc04a4a5568.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

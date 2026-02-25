@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="EquipableItemData" format=3 uid="uid://bgd0xtrhc57j7"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_xi585"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_hs2ac"]
+
+[sub_resource type="Resource" id="Resource_awmgr"]
+script = ExtResource("1_xi585")
+type = 4
+value = 4
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="Resource" id="Resource_ct4ic"]
+script = ExtResource("1_xi585")
+type = 7
+value = 12
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ixo80"]
+load_path = "res://.godot/imported/itemsIcons.png-4b876634127af6fbfaabb9b7f4249248.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi585"]
+atlas = SubResource("CompressedTexture2D_ixo80")
+region = Rect2(400, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_hs2ac")
+modifiers = Array[ExtResource("1_xi585")]([SubResource("Resource_awmgr"), SubResource("Resource_ct4ic")])
+name = "Flexible spirit"
+type = 9
+ID = 123
+is_quantitative = true
+description = "The optimistic spirit of happy residents."
+texture = SubResource("AtlasTexture_xi585")
+cost = 100
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EquipableItemData" format=3 uid="uid://cab1uhrle0a1i"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_0e6v1"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_teou5"]
+[ext_resource type="PackedScene" uid="uid://cmlvkcb6dpddi" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/scenes/c_symbol_pickaxe.tscn" id="3_1jnfw"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="3_teou5"]
+
+[sub_resource type="Resource" id="Resource_jl8aa"]
+script = ExtResource("1_0e6v1")
+type = 3
+value = 10
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teou5"]
+atlas = ExtResource("3_teou5")
+region = Rect2(400, 144, 16, 16)
+
+[resource]
+script = ExtResource("2_teou5")
+modifiers = Array[ExtResource("1_0e6v1")]([SubResource("Resource_jl8aa")])
+symbol_scene = ExtResource("3_1jnfw")
+symbol_icon_name = "C_pickaxe_1"
+cep_cost = 6
+name = "Pico"
+type = 5
+ID = 184
+is_quantitative = true
+description = "Símbolo duro que puede romper blindajes en un radio."
+texture = SubResource("AtlasTexture_teou5")
+cost = 100
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

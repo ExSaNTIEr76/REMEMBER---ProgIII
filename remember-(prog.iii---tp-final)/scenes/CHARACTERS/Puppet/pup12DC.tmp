@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl01jemdi45gy"]
+
+[ext_resource type="Texture2D" uid="uid://lw7i6wahswwk" path="res://PUPPET/Ciro Spritesheet.png" id="1_c57in"]
+[ext_resource type="Script" path="res://PUPPET/puppet.gd" id="1_hujvh"]
+[ext_resource type="Animation" uid="uid://r5tdsynnwvyk" path="res://PUPPET/animations/WalkDown.res" id="3_xqiy7"]
+[ext_resource type="Animation" uid="uid://gwtroqk1ghht" path="res://PUPPET/animations/WalkUp.res" id="4_1wr6s"]
+[ext_resource type="Animation" uid="uid://bgyyg16ei6cde" path="res://PUPPET/animations/WalkRight.res" id="5_g31b6"]
+[ext_resource type="Animation" uid="uid://dfrinf217w3sl" path="res://PUPPET/animations/WalkLeft.res" id="6_ix7n7"]
+
+[sub_resource type="Animation" id="Animation_2x26s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_27igm"]
+_data = {
+"RESET": SubResource("Animation_2x26s"),
+"WalkDown": ExtResource("3_xqiy7"),
+"WalkLeft": ExtResource("6_ix7n7"),
+"WalkRight": ExtResource("5_g31b6"),
+"WalkUp": ExtResource("4_1wr6s")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_hujvh")
+speed = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c57in")
+hframes = 6
+vframes = 12
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_27igm")
+}

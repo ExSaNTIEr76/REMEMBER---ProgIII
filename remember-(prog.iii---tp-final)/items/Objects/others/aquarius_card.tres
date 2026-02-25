@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bejclh1yx5l5a"]
+
+[ext_resource type="Script" uid="uid://culxbd8ylmven" path="res://items/item_data.gd" id="1_o3prh"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="2_8s5gu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8y58"]
+atlas = ExtResource("2_8s5gu")
+region = Rect2(0, 192, 16, 16)
+
+[resource]
+script = ExtResource("1_o3prh")
+name = "Aquarius card"
+type = 4
+ID = 58
+description = "Zodiac card engraved with the figure of an abstract puddle.
+Grants access to..."
+texture = SubResource("AtlasTexture_e8y58")
+cost = 0
+metadata/_custom_type_script = "uid://culxbd8ylmven"

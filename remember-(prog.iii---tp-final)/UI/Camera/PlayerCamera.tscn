@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0d4f0nhwtenq"]
+
+[ext_resource type="Material" uid="uid://b8t3bswj5v8c5" path="res://effects/Shaders/SmoothPixel.tres" id="1_krret"]
+[ext_resource type="Script" uid="uid://cc4fthw743qwx" path="res://UI/Camera/player_camera.gd" id="2_okb4y"]
+
+[node name="PlayerCamera" type="Camera2D" groups=["PlayerCamera"]]
+texture_filter = 2
+material = ExtResource("1_krret")
+editor_draw_limits = true
+script = ExtResource("2_okb4y")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://78a5tcw0n2eu"
+path="res://.godot/imported/Sfx_Cursor.ogg-b4a96cd788cbd30a1c9e03c6764aba33.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/GUI SFX/menu/Sfx_Cursor.ogg"
+dest_files=["res://.godot/imported/Sfx_Cursor.ogg-b4a96cd788cbd30a1c9e03c6764aba33.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

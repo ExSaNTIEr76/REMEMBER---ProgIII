@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7pcuqc6vq2u1"
+path="res://.godot/imported/Escucha (third call).ogg-838397b99a84bb33e7d7c9c8d168f23e.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Escucha (third call).ogg"
+dest_files=["res://.godot/imported/Escucha (third call).ogg-838397b99a84bb33e7d7c9c8d168f23e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=14.6
+bpm=0.0
+beat_count=0
+bar_beats=4

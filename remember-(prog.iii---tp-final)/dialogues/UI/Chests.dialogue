@@ -1,0 +1,69 @@
+------------------------ LOCKS ----------------------------------
+
+~ simpleLock
+
+
+#It's closed with a padlock.
+
+[speed=80.0] [center]Está cerrado con un candado simple.
+
+=> END
+
+-----------------------------------------------------
+
+~ complexLock
+
+
+#It's closed with a padlock.
+
+[speed=80.0] [center]Está cerrado con un candado complejo.
+
+=> END
+
+
+
+------------------------ UNLOCKS ----------------------------------
+
+~ simpleUnlock
+
+if InventoryManager.is_player_has_item([ItemDB.IDs.SMALL_KEY]):
+
+	[speed=80.0]¿Usar llave pequeña?
+	do wait(1.0)
+
+	- NO
+		=> END
+	- SÍ
+		do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/chests/Sfx_Key.ogg", 1.0, -12.0)
+		do wait(0.3)
+		do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/chests/Sfx_Key.ogg", 1.3, -12.0)
+		=> END
+
+=> END
+
+-----------------------------------------------------
+
+~ complexUnlock
+
+if InventoryManager.is_player_has_item([ItemDB.IDs.GILDED_KEY]):
+
+	[speed=80.0]¿Usar llave dorada?
+	do wait(1.0)
+
+- NO
+	=> END
+- SÍ
+	do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/chests/Sfx_Key.ogg", 1.0, -12.0)
+	do wait(0.3)
+	do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/chests/Sfx_Key.ogg", 1.3, -12.0) 
+
+=> END
+
+-----------------------------------------------------
+
+~ giveKeys
+
+do InventoryManager.give(ItemDB.IDs.SIMPLE_KEY, 1)
+do InventoryManager.give(ItemDB.IDs.GILDED_KEY, 1)
+
+=> END

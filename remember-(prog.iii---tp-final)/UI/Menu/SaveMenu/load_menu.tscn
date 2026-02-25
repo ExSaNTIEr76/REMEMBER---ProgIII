@@ -1,0 +1,449 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1y6mjaucqr85"]
+
+[ext_resource type="Script" uid="uid://cnweq45jcve7n" path="res://UI/Menu/SaveMenu/load_menu.gd" id="1_rlm4d"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="2_4d6j0"]
+[ext_resource type="PackedScene" uid="uid://blpi5vtkl7np2" path="res://UI/Menu/SaveMenu/save_slot.tscn" id="2_v8m4p"]
+[ext_resource type="StyleBox" uid="uid://mtvkww3askqp" path="res://UI/Menu/styleboxes/menuSelector_stylebox.tres" id="3_k3t87"]
+[ext_resource type="Texture2D" uid="uid://d1c21v2e6rejx" path="res://UI/Menu/sprites/mainMenu_portraits.png" id="4_wu36o"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="5_y8yss"]
+[ext_resource type="Script" uid="uid://d2ec33lltskdl" path="res://UI/Menu/Panels/stats_panel.gd" id="6_w1nmo"]
+[ext_resource type="StyleBox" uid="uid://c1tsw80ncp7qa" path="res://UI/Menu/styleboxes/menuHp_stylebox.tres" id="7_hqqpe"]
+[ext_resource type="StyleBox" uid="uid://cvpviixmf0jhl" path="res://UI/Menu/styleboxes/menuContainer_stylebox.tres" id="8_627ji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr2qx"]
+atlas = ExtResource("4_wu36o")
+region = Rect2(0, 0, 68, 74)
+
+[node name="LoadMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_rlm4d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0.0431373, 0.0588235, 1)
+
+[node name="LOADMENU" type="Label" parent="."]
+z_index = 1
+offset_left = 289.0
+offset_top = 4.2133
+offset_right = 338.0
+offset_bottom = 28.2133
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = ExtResource("3_k3t87")
+text = "LOAD"
+horizontal_alignment = 1
+
+[node name="SLOT DATA" type="Control" parent="."]
+process_mode = 3
+editor_description = "121.438
+312.514"
+layout_mode = 3
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 240.0
+offset_right = 168.0
+offset_bottom = 240.0
+
+[node name="ZonePortrait" type="TextureRect" parent="SLOT DATA"]
+z_index = 1
+layout_mode = 0
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 60.001
+offset_bottom = 82.0001
+texture = SubResource("AtlasTexture_pr2qx")
+
+[node name="SlotDataPanel" type="PanelContainer" parent="SLOT DATA"]
+layout_mode = 0
+offset_left = -24.0
+offset_right = 328.0
+offset_bottom = 96.0
+theme_override_styles/panel = ExtResource("5_y8yss")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="SLOT DATA/SlotDataPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SLOT DATA/SlotDataPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="STATS" type="Control" parent="SLOT DATA"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 8.0
+offset_right = 158.0
+offset_bottom = 79.0
+script = ExtResource("6_w1nmo")
+
+[node name="STATSContainer" type="VBoxContainer" parent="SLOT DATA/STATS"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 100.0
+offset_bottom = 69.0
+theme_override_constants/separation = -3
+
+[node name="PLAYERContainer" type="HBoxContainer" parent="SLOT DATA/STATS/STATSContainer"]
+layout_mode = 2
+
+[node name="PLAYER" type="Label" parent="SLOT DATA/STATS/STATSContainer/PLAYERContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("7_hqqpe")
+text = "ExSaNTIEr76"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="levelNumber" type="Label" parent="SLOT DATA/STATS/STATSContainer/PLAYERContainer"]
+custom_minimum_size = Vector2(20, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LEVELContainer" type="HBoxContainer" parent="SLOT DATA/STATS/STATSContainer"]
+layout_mode = 2
+
+[node name="LEVEL" type="Label" parent="SLOT DATA/STATS/STATSContainer/LEVELContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("8_627ji")
+text = "LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="levelNumber" type="Label" parent="SLOT DATA/STATS/STATSContainer/LEVELContainer"]
+custom_minimum_size = Vector2(20, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 12
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="STATS2Container" type="VBoxContainer" parent="SLOT DATA/STATS"]
+layout_mode = 0
+offset_left = 111.0
+offset_right = 248.0
+offset_bottom = 74.0
+theme_override_constants/separation = -5
+
+[node name="TIMEHBoxContainer" type="HBoxContainer" parent="SLOT DATA/STATS/STATS2Container"]
+layout_mode = 2
+
+[node name="TIME" type="Label" parent="SLOT DATA/STATS/STATS2Container/TIMEHBoxContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("8_627ji")
+text = "TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HOURS" type="Label" parent="SLOT DATA/STATS/STATS2Container/TIMEHBoxContainer"]
+custom_minimum_size = Vector2(20, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = "00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="points" type="Label" parent="SLOT DATA/STATS/STATS2Container/TIMEHBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MINUTES" type="Label" parent="SLOT DATA/STATS/STATS2Container/TIMEHBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = "00"
+vertical_alignment = 1
+
+[node name="points2" type="Label" parent="SLOT DATA/STATS/STATS2Container/TIMEHBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SECONDS" type="Label" parent="SLOT DATA/STATS/STATS2Container/TIMEHBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = "00"
+vertical_alignment = 1
+
+[node name="LIMIT" type="Label" parent="SLOT DATA/STATS/STATS2Container/TIMEHBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = "+ 999"
+vertical_alignment = 1
+
+[node name="MAPContainer" type="HBoxContainer" parent="SLOT DATA/STATS/STATS2Container"]
+layout_mode = 2
+
+[node name="MAP" type="Label" parent="SLOT DATA/STATS/STATS2Container/MAPContainer"]
+editor_description = "Fuerza espiritual innata de Ciro, y bonificación de Símbolos Abstractos.
+
+Aumenta al subir de nivel y con las Auras."
+z_index = 1
+custom_minimum_size = Vector2(-20, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("8_627ji")
+text = "MAP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mapNumber" type="Label" parent="SLOT DATA/STATS/STATS2Container/MAPContainer"]
+custom_minimum_size = Vector2(20, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="percent" type="Label" parent="SLOT DATA/STATS/STATS2Container/MAPContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = "%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CREDITSContainer" type="HBoxContainer" parent="SLOT DATA/STATS/STATS2Container"]
+layout_mode = 2
+
+[node name="CREDITS" type="Label" parent="SLOT DATA/STATS/STATS2Container/CREDITSContainer"]
+editor_description = "Fuerza espiritual innata de Ciro, y bonificación de Símbolos Abstractos.
+
+Aumenta al subir de nivel y con las Auras."
+z_index = 1
+custom_minimum_size = Vector2(-20, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.717647, 1, 0.25098, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("8_627ji")
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mapNumber" type="Label" parent="SLOT DATA/STATS/STATS2Container/CREDITSContainer"]
+custom_minimum_size = Vector2(33, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DATEHBoxContainer" type="HBoxContainer" parent="SLOT DATA/STATS"]
+layout_mode = 2
+offset_left = -96.0
+offset_top = 66.0
+offset_right = -8.0
+offset_bottom = 94.0
+
+[node name="MONTH" type="Label" parent="SLOT DATA/STATS/DATEHBoxContainer"]
+custom_minimum_size = Vector2(20, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 9
+text = "00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="bar" type="Label" parent="SLOT DATA/STATS/DATEHBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 9
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DAY" type="Label" parent="SLOT DATA/STATS/DATEHBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 9
+text = "00"
+vertical_alignment = 1
+
+[node name="bar2" type="Label" parent="SLOT DATA/STATS/DATEHBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 9
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YEAR" type="Label" parent="SLOT DATA/STATS/DATEHBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4d6j0")
+theme_override_font_sizes/font_size = 9
+text = "0000"
+vertical_alignment = 1
+
+[node name="SaveLoadPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 352.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SaveLoadPanel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 36.0
+offset_right = 527.0
+offset_bottom = 229.0
+follow_focus = true
+
+[node name="SaveList" type="VBoxContainer" parent="SaveLoadPanel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="save_slot_1" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_2" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_3" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_4" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_5" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_6" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_7" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_8" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_9" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_10" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_11" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_12" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_13" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_14" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_15" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_16" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_17" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_18" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_19" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_20" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_21" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_22" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_23" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_24" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_25" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_26" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_27" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_28" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_29" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2
+
+[node name="save_slot_30" parent="SaveLoadPanel/ScrollContainer/SaveList" instance=ExtResource("2_v8m4p")]
+layout_mode = 2

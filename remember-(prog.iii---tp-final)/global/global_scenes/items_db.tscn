@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://1cc0jicrs85g"]
+
+[ext_resource type="Script" uid="uid://cv0truseya5fu" path="res://global/item_db.gd" id="1_hhknu"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_qcoyx"]
+
+[node name="ItemsDb" type="Node"]
+script = ExtResource("1_hhknu")
+
+[node name="Serializable" type="Node" parent="."]
+script = ExtResource("2_qcoyx")
+transform = false
+children = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

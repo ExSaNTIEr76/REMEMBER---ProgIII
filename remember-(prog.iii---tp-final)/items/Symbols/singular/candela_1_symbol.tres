@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=6 format=3 uid="uid://cyuogbryr5w57"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_co46r"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_6pyxw"]
+
+[sub_resource type="Resource" id="Resource_jl8aa"]
+script = ExtResource("1_co46r")
+type = 3
+value = 8
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c7it6"]
+load_path = "res://.godot/imported/itemsIcons.png-4b876634127af6fbfaabb9b7f4249248.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co46r"]
+atlas = SubResource("CompressedTexture2D_c7it6")
+region = Rect2(400, 288, 16, 16)
+
+[resource]
+script = ExtResource("2_6pyxw")
+modifiers = Array[ExtResource("1_co46r")]([SubResource("Resource_jl8aa")])
+symbol_icon_name = "S_candela_1"
+name = "Candela"
+type = 7
+ID = 268
+description = "Luminous symbol that allows to illuminate to see in dark areas."
+texture = SubResource("AtlasTexture_co46r")
+cost = 0
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

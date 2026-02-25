@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c76weug2y4b5s"]
+
+[ext_resource type="AnimationNodeStateMachine" uid="uid://thyvepi0kphy" path="res://scenes/CHARACTERS/Puppet/animationTrees/Puppet.tres" id="1_k80df"]
+
+[node name="PuppetAnimationTree" type="AnimationTree"]
+tree_root = ExtResource("1_k80df")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/is_running = false
+parameters/conditions/is_walking = false
+parameters/Idle/blend_position = Vector2(0.00508475, 1.0885)
+parameters/Run/blend_position = Vector2(0.366102, -0.99115)
+parameters/Walk/blend_position = Vector2(-0.00508475, 0)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjt1ekyvgs36s"
+path="res://.godot/imported/Wake Up.ogg-21afa889f5b003ca4884fa5333b372ad.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Wake Up.ogg"
+dest_files=["res://.godot/imported/Wake Up.ogg-21afa889f5b003ca4884fa5333b372ad.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://brlfluhva4fxa"]
+
+[ext_resource type="Texture2D" uid="uid://bhpe7d4w61iwa" path="res://dialogues/TALKSPRITES/sprites/Ciro_Talksprites.png" id="1_jwnss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilro0"]
+atlas = ExtResource("1_jwnss")
+region = Rect2(1472, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj32j"]
+atlas = ExtResource("1_jwnss")
+region = Rect2(1536, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilro0")
+}],
+"loop": false,
+"name": &"stalker_1",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj32j")
+}],
+"loop": false,
+"name": &"stalker_2",
+"speed": 0.0
+}]

@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://c3kvacqgvayyd"]
+
+[ext_resource type="Script" uid="uid://b23j7ifdt65uw" path="res://UI/Menu/EquipMenu/equip_slot.gd" id="1_ppjho"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="2_72xwe"]
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="3_j6fio"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="4_uf60f"]
+[ext_resource type="Script" uid="uid://cfylos866td70" path="res://UI/Menu/MainMenu/menu_button.gd" id="5_g3wcc"]
+[ext_resource type="AudioStream" uid="uid://78a5tcw0n2eu" path="res://audio/SFX/GUI SFX/menu/Sfx_Cursor.ogg" id="6_yvei8"]
+[ext_resource type="AudioStream" uid="uid://eugb20fy3pmr" path="res://audio/SFX/GUI SFX/menu/Sfx_Accept.ogg" id="7_wv8oc"]
+[ext_resource type="AudioStream" uid="uid://bglgatckwenmv" path="res://audio/SFX/GUI SFX/menu/Sfx_Blocked.ogg" id="8_m1emd"]
+[ext_resource type="AudioStream" uid="uid://it0ij0b2qiy2" path="res://audio/SFX/GUI SFX/menu/Sfx_Equip.ogg" id="9_2im35"]
+[ext_resource type="AudioStream" uid="uid://cqhl1fvyvtp1d" path="res://audio/SFX/GUI SFX/menu/Sfx_Cancel.ogg" id="10_i5am5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppjho"]
+atlas = ExtResource("2_72xwe")
+region = Rect2(304, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8op6d"]
+atlas = ExtResource("3_j6fio")
+region = Rect2(72, 40, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ec3qr"]
+texture = SubResource("AtlasTexture_8op6d")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj6q6"]
+atlas = ExtResource("3_j6fio")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3i80l"]
+texture = SubResource("AtlasTexture_qj6q6")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="Animation" id="Animation_h7a5g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/ItemButton:theme_override_styles/focus:modulate_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u0nqj"]
+resource_name = "slot_selector"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/ItemButton:theme_override_styles/focus:modulate_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_efhpl"]
+_data = {
+&"RESET": SubResource("Animation_h7a5g"),
+&"slot_selector": SubResource("Animation_u0nqj")
+}
+
+[node name="EquipSlot" type="Control" unique_id=1718152635]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 194.0
+offset_bottom = 24.0
+script = ExtResource("1_ppjho")
+
+[node name="ItemTexture" type="TextureRect" parent="." unique_id=966899589]
+z_index = 2
+layout_mode = 0
+offset_left = 1.91823
+offset_top = 1.95
+offset_right = 27.9182
+offset_bottom = 25.95
+texture = SubResource("AtlasTexture_ppjho")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=1356012581]
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 28.0
+theme_override_constants/separation = 5
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1184428539]
+custom_minimum_size = Vector2(30, 22)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ec3qr")
+
+[node name="ItemButton" type="Button" parent="VBoxContainer" unique_id=1821768301]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(140, 16)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("4_uf60f")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxTexture_3i80l")
+text = "EquipSlot"
+flat = true
+alignment = 0
+script = ExtResource("5_g3wcc")
+hover_sfx = ExtResource("6_yvei8")
+press_sfx = ExtResource("7_wv8oc")
+blocked_sfx = ExtResource("8_m1emd")
+blocked_volume_db = -5.0
+blocked_pitch = 1.0
+equiped_sfx = ExtResource("9_2im35")
+unequiped_sfx = ExtResource("10_i5am5")
+
+[node name="ItemName" type="Label" parent="." unique_id=1492366063]
+y_sort_enabled = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_left = 38.9178
+offset_top = 7.00236
+offset_right = 178.918
+offset_bottom = 20.4904
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_uf60f")
+theme_override_font_sizes/font_size = 12
+text = "EquipSlot"
+vertical_alignment = 2
+
+[node name="ButtonAnimations" type="AnimationPlayer" parent="." unique_id=2026157905]
+libraries/ = SubResource("AnimationLibrary_efhpl")
+autoplay = &"slot_selector"

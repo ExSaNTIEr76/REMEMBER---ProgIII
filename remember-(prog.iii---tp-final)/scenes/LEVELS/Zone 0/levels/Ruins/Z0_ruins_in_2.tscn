@@ -1,0 +1,273 @@
+[gd_scene format=4 uid="uid://bn3cmcjn6rlsi"]
+
+[ext_resource type="Script" uid="uid://da33mdxfo35ay" path="res://scenes/LEVELS/levelScripts/level.gd" id="1_lf0v1"]
+[ext_resource type="AudioStream" uid="uid://djiyhqs2skfn5" path="res://audio/music/Synapse.ogg" id="2_yl6li"]
+[ext_resource type="TileSet" uid="uid://bbxgpr6k085rt" path="res://scenes/LEVELS/Zone 0/sprites/Zone 0 TileMap.tres" id="3_qg044"]
+[ext_resource type="Script" uid="uid://bcweryyykqkml" path="res://scenes/LEVELS/levelScripts/level_tile_map_layer.gd" id="4_jt0qm"]
+[ext_resource type="Script" uid="uid://dlae4fxyvspys" path="res://scenes/LEVELS/levelScripts/footstep_tilemap.gd" id="5_fp1y2"]
+[ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="5_u8rmw"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="6_qx5ti"]
+[ext_resource type="PackedScene" uid="uid://cbhl4re0el2sc" path="res://scenes/LEVELS/levelScripts/LevelTransition.tscn" id="6_yl6li"]
+[ext_resource type="Shader" uid="uid://3np6bvvo3dn0" path="res://effects/Light/light_aura.gdshader" id="7_qg044"]
+[ext_resource type="Texture2D" uid="uid://b74k65q57n664" path="res://effects/Gradients/Light_Gradient.tres" id="8_jt0qm"]
+[ext_resource type="Script" uid="uid://b50ovxqctvmi" path="res://scenes/ENVIOREMENT/Puzzles/simple_blocks_puzzle.gd" id="9_yl6li"]
+[ext_resource type="PackedScene" uid="uid://bpc05xumcarhr" path="res://scenes/ENVIOREMENT/Barriers/TrapdoorBarrier/trapdoor_barrier.tscn" id="10_yl6li"]
+[ext_resource type="PackedScene" uid="uid://btwlfjeib6g0x" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_block.tscn" id="11_qx5ti"]
+[ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="13_fp1y2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jt0qm"]
+shader = ExtResource("7_qg044")
+shader_parameter/intensity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u8rmw"]
+shader = ExtResource("7_qg044")
+shader_parameter/intensity = 0.5
+
+[node name="Z0RuinsIn_2" type="Node2D" unique_id=1502144978 groups=["Persist"]]
+script = ExtResource("1_lf0v1")
+level_name = "Ruins F2"
+zone_name = "Zone 0"
+zone_tag = "Z0_int"
+transition_tag = "Z0_int"
+music = ExtResource("2_yl6li")
+music_volume = -15.0
+
+[node name="YSORT" type="Node2D" parent="." unique_id=871638354 groups=["Y-SORT"]]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Serializable" type="Node" parent="YSORT" unique_id=834669212]
+script = ExtResource("6_qx5ti")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="Layer 0 (Plastic)" type="TileMapLayer" parent="YSORT" unique_id=1076031395]
+z_index = -5
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAALAAIAAgAUAAEAAAAOAAIAAgAUAAEAAAAFAAIAAgAUAAEAAAAIAAIAAgAUAAEAAAA=")
+tile_set = ExtResource("3_qg044")
+
+[node name="Layer 1 (Building)" type="TileMapLayer" parent="YSORT" unique_id=1130337126]
+z_index = -4
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAPAAYAAQABAA8AAAAPAAUAAQABAA8AAAAOAAYAAQABAA8AAAAOAAUAAQABAA8AAAANAAYAAQABAA8AAAANAAUAAQABAA8AAAAMAAYAAQABAA8AAAAMAAUAAQABAA8AAAALAAYAAQABAA8AAAALAAUAAQABAA8AAAAKAAYAAQABAA8AAAAKAAUAAQABAA8AAAAJAAYAAQABAA8AAAAJAAUAAQABAA8AAAAIAAYAAQABAA8AAAAIAAUAAQABAA8AAAAHAAYAAQABAA8AAAAHAAUAAQABAA8AAAAGAAYAAQABAA8AAAAGAAUAAQABAA8AAAAFAAYAAQABAA8AAAAFAAUAAQABAA8AAAAEAAYAAQABAA8AAAAEAAUAAQABAA8AAAAEAAQAAQABAA4AAAAPAAQAAQABAA4AAAAOAAQAAQABAA4AAAANAAQAAQABAA4AAAAMAAQAAQABAA4AAAALAAQAAQABAA4AAAAKAAQAAQABAA4AAAAJAAQAAQABAA4AAAAIAAQAAQABAA4AAAAHAAQAAQABAA4AAAAGAAQAAQABAA4AAAAFAAQAAQABAA4AAAAQAAYAAQACAA8AAAAQAAUAAQACAA8AAAAQAAQAAQACAA4AAAADAAYAAQAAAA8AAAADAAUAAQAAAA8AAAADAAQAAQAAAA4AAAAQAAMAAQAPABAAAAAQAAIAAQAPAA8AAAAQAAEAAQAPAA4AAAAPAAMAAQAOABAAAAAPAAEAAQAOAA4AAAAOAAMAAQAOABAAAAAOAAEAAQAOAA4AAAANAAMAAQAOABAAAAANAAIAAQAOAA8AAAANAAEAAQAOAA4AAAAMAAMAAQAOABAAAAAMAAEAAQAOAA4AAAALAAMAAQAOABAAAAALAAEAAQAOAA4AAAAKAAMAAQAOABAAAAAKAAIAAQAOAA8AAAAKAAEAAQAOAA4AAAAJAAMAAQAOABAAAAAJAAIAAQAOAA8AAAAJAAEAAQAOAA4AAAAIAAMAAQAOABAAAAAIAAEAAQAOAA4AAAAHAAMAAQAOABAAAAAHAAEAAQAOAA4AAAAGAAMAAQAOABAAAAAGAAIAAQAOAA8AAAAGAAEAAQAOAA4AAAAFAAMAAQAOABAAAAAFAAEAAQAOAA4AAAAEAAMAAQAOABAAAAAEAAEAAQAOAA4AAAADAAIAAQANAA8AAAADAAEAAQANAA4AAAADAAMAAQANABAAAAADAAkAAQAAABAAAAAEAAkAAQABABAAAAAFAAkAAQABABAAAAAGAAkAAQABABAAAAAHAAkAAQABABAAAAAIAAkAAQABABAAAAAJAAkAAQABABAAAAAKAAkAAQABABAAAAALAAkAAQABABAAAAAMAAkAAQABABAAAAANAAkAAQABABAAAAAOAAkAAQABABAAAAAPAAkAAQABABAAAAAQAAkAAQACABAAAAADAAgAAQAAAA8AAAAEAAgAAQABAA8AAAAFAAgAAQABAA8AAAAGAAgAAQABAA8AAAAHAAgAAQABAA8AAAAIAAgAAQABAA8AAAAJAAgAAQABAA8AAAAKAAgAAQABAA8AAAALAAgAAQABAA8AAAAMAAgAAQABAA8AAAANAAgAAQABAA8AAAAOAAgAAQABAA8AAAAPAAgAAQABAA8AAAAQAAgAAQACAA8AAAALAAcAAQABAA8AAAAMAAcAAQABAA8AAAANAAcAAQABAA8AAAAOAAcAAQABAA8AAAAPAAcAAQABAA8AAAAQAAcAAQACAA8AAAADAAcAAQAAAA8AAAAEAAcAAQABAA8AAAAFAAcAAQABAA8AAAAGAAcAAQABAA8AAAAHAAcAAQABAA8AAAAIAAcAAQABAA8AAAAJAAcAAQABAA8AAAAKAAcAAQABAA8AAAAOAAIAAgAYAAAAAAALAAIAAgAYAAAAAAAIAAIAAgAYAAAAAAAFAAIAAgAYAAAAAAAPAAIAAQAOAA8AAAAMAAIAAQAOAA8AAAAHAAIAAQAOAA8AAAAEAAIAAQAOAA8AAAA=")
+tile_set = ExtResource("3_qg044")
+script = ExtResource("5_fp1y2")
+
+[node name="Layer 2 (Entrances)" type="TileMapLayer" parent="YSORT" unique_id=232925301]
+z_index = -3
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAEAAYAAgABAAsAAAAPAAYAAgADAAsAAAADAAMAAgAMABMAAAAQAAMAAgAPABMAAAA=")
+tile_set = ExtResource("3_qg044")
+
+[node name="Layer 3 (Cracks)" type="TileMapLayer" parent="YSORT" unique_id=2063462558]
+z_index = -2
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAADAAIAAQANABQAAAADAAQAAQAAABMAAAADAAkAAQAAABUAAAAFAAQAAQABABMAAAAFAAkAAQABABUAAAAIAAkAAQABABUAAAAJAAQAAQABABMAAAAKAAQAAQABABMAAAALAAkAAQABABUAAAAOAAQAAQABABMAAAAOAAkAAQABABUAAAAQAAIAAQAPABQAAAAQAAkAAQACABUAAAAHAAQAAQABABMAAAAMAAQAAQABABMAAAAQAAQAAQACABMAAAAPAAQAAQABABMAAAAEAAQAAQABABMAAAAGAAkAAQABABUAAAANAAkAAQABABUAAAAMAAIAAQAOABQAAAAKAAIAAQAOABQAAAAJAAIAAQAOABQAAAAHAAIAAQAOABQAAAA=")
+tile_set = ExtResource("3_qg044")
+
+[node name="Layer 4 (Path)" type="TileMapLayer" parent="YSORT" unique_id=1676787099]
+z_index = -1
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAGAAYAAQANAAMAAAANAAYAAQAPAAMAAAAMAAUAAQAUAAAAAAALAAUAAQAOAAMAAAAKAAUAAQAOAAMAAAAJAAUAAQAOAAMAAAAIAAUAAQAOAAMAAAAHAAUAAQARAAAAAAAMAAYAAQARAAQAAAAHAAYAAQAUAAQAAAAHAAgAAQARAAMAAAAHAAcAAQAQAAEAAAAMAAgAAQAUAAMAAAALAAgAAQAOAAMAAAAKAAgAAQAOAAMAAAAJAAgAAQAOAAMAAAAIAAgAAQAOAAMAAAAMAAcAAQAQAAEAAAAIAAYAAgAFAA0AAAAIAAcAAgAFAA0AAAAJAAcAAgAFAA0AAAAJAAYAAgAFAA0AAAAKAAYAAgAFAA0AAAAKAAcAAgAFAA0AAAALAAcAAgAFAA0AAAALAAYAAgAFAA0AAAA=")
+tile_set = ExtResource("3_qg044")
+
+[node name="Layer 5 (Background)" type="TileMapLayer" parent="YSORT" unique_id=752061756]
+z_index = 5
+y_sort_enabled = true
+texture_repeat = 3
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAAAAgAWAAcAAwABAAAAAgAWAAcAAwACAAAAAgAWAAcAAwADAAAAAgAWAAcAAwAEAAAAAgAWAAcAAwAFAAAAAgAWAAcAAwAGAAAAAgAWAAcAAwAHAAAAAgAWAAcAAwAIAAAAAgAWAAcAAwAJAAAAAgAWAAcAAwAKAAAAAgAWAAcAAwALAAAAAgAWAAcAAwAMAAAAAgAWAAcAAwANAAAAAgAWAAcAAwAOAAAAAgAWAAcAAwAPAAAAAgAWAAcAAwAQAAAAAgAWAAcAAwARAAAAAgAWAAcAAwASAAAAAgAWAAcAAwATAAAAAgAWAAcAAwATAAEAAgAWAAcAAwATAAIAAgAWAAcAAwATAAMAAgAWAAcAAwATAAQAAgAWAAcAAwATAAUAAgAWAAcAAwATAAYAAgAWAAcAAwATAAcAAgAWAAcAAwATAAgAAgAWAAcAAwATAAkAAgAWAAcAAwATAAoAAgAWAAcAAwAAAAoAAgAWAAcAAwABAAoAAgAWAAcAAwACAAoAAgAWAAcAAwADAAoAAgAWAAcAAwAEAAoAAgAWAAcAAwAFAAoAAgAWAAcAAwAGAAoAAgAWAAcAAwAHAAoAAgAWAAcAAwAIAAoAAgAWAAcAAwAJAAoAAgAWAAcAAwAKAAoAAgAWAAcAAwALAAoAAgAWAAcAAwAMAAoAAgAWAAcAAwANAAoAAgAWAAcAAwAOAAoAAgAWAAcAAwAPAAoAAgAWAAcAAwAQAAoAAgAWAAcAAwARAAoAAgAWAAcAAwASAAoAAgAWAAcAAwAAAAEAAgAWAAcAAwAAAAIAAgAWAAcAAwAAAAMAAgAWAAcAAwAAAAQAAgAWAAcAAwAAAAUAAgAWAAcAAwAAAAYAAgAWAAcAAwAAAAcAAgAWAAcAAwAAAAgAAgAWAAcAAwAAAAkAAgAWAAcAAwABAAEAAgAWAAcAAwABAAIAAgAWAAcAAwABAAMAAgAWAAcAAwABAAQAAgAWAAcAAwABAAUAAgAWAAcAAwABAAYAAgAWAAcAAwABAAcAAgAWAAcAAwABAAgAAgAWAAcAAwABAAkAAgAWAAcAAwACAAEAAgAWAAcAAwACAAIAAgAWAAcAAwACAAMAAgAWAAcAAwACAAQAAgAWAAcAAwACAAUAAgAWAAcAAwACAAYAAgAWAAcAAwACAAcAAgAWAAcAAwACAAgAAgAWAAcAAwACAAkAAgAWAAcAAwARAAkAAgAWAAcAAwASAAkAAgAWAAcAAwARAAEAAgAWAAcAAwARAAIAAgAWAAcAAwARAAMAAgAWAAcAAwARAAQAAgAWAAcAAwARAAUAAgAWAAcAAwARAAYAAgAWAAcAAwARAAcAAgAWAAcAAwARAAgAAgAWAAcAAwASAAEAAgAWAAcAAwASAAIAAgAWAAcAAwASAAMAAgAWAAcAAwASAAQAAgAWAAcAAwASAAUAAgAWAAcAAwASAAYAAgAWAAcAAwASAAcAAgAWAAcAAwASAAgAAgAWAAcAAwA=")
+tile_set = ExtResource("3_qg044")
+script = ExtResource("4_jt0qm")
+
+[node name="Layer 6 (Numbers)" type="TileMapLayer" parent="YSORT" unique_id=373258217]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAHAAEAAAABAAAAAAAIAAEAAAAAAAEAAAAGAAEAAAAAAAAAAAALAAEAAAADAAEAAAAMAAEAAAABAAAAAAANAAEAAAACAAEAAAA=")
+tile_set = ExtResource("3_qg044")
+
+[node name="Layer 7 (Decorations)" type="TileMapLayer" parent="YSORT" unique_id=886884147]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAEAAQAAgAAABIAAAAPAAQAAgAFABIAAAAFAAQAAgABABMAAAAKAAQAAgAKABAAAAALAAQAAgALABAAAAALAAIAAgAHAAIAAAAOAAIAAgAHAAIAAAAFAAIAAgAHAAIAAAAIAAIAAgAHAAIAAAAIAAQAAgAJABAAAAAJAAQAAgAKABAAAQAJAAMAAgAAABEAAAA=")
+tile_set = ExtResource("3_qg044")
+
+[node name="Layer 8 (Decorations 2)" type="TileMapLayer" parent="YSORT" unique_id=515569278]
+z_index = 1
+use_parent_material = true
+tile_map_data = PackedByteArray("AAADAAEAAgAMABEAAAAQAAEAAgAPABEAAAAEAAEAAgANABEAAAAFAAEAAgANABEAAAAGAAEAAgANABEAAAAHAAEAAgANABEAAAAIAAEAAgANABEAAAAJAAEAAgANABEAAAAKAAEAAgANABEAAAALAAEAAgANABEAAAAMAAEAAgANABEAAAANAAEAAgANABEAAAAOAAEAAgANABEAAAAPAAEAAgANABEAAAAQAAIAAgAPABIAAAADAAIAAgAMABIAAAA=")
+tile_set = ExtResource("3_qg044")
+
+[node name="Layer 9 (Limit)" type="TileMapLayer" parent="YSORT" unique_id=280462985]
+z_index = 5
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAQAAcAAQACABcAAAAQAAYAAQACABcAAAAQAAUAAQACABcAAAAQAAQAAQACABcAAAAQAAMAAQACABcAAAAQAAIAAQACABcAAAAQAAEAAQACABYAAAAPAAcAAQABABcAAAAPAAYAAQABABcAAAAPAAUAAQABABcAAAAPAAQAAQABABcAAAAPAAMAAQABABcAAAAPAAIAAQABABcAAAAPAAEAAQABABYAAAAOAAcAAQABABcAAAAOAAYAAQABABcAAAAOAAUAAQABABcAAAAOAAQAAQABABcAAAAOAAMAAQABABcAAAAOAAIAAQABABcAAAAOAAEAAQABABYAAAANAAcAAQABABcAAAANAAYAAQABABcAAAANAAUAAQABABcAAAANAAQAAQABABcAAAANAAMAAQABABcAAAANAAIAAQABABcAAAANAAEAAQABABYAAAAMAAcAAQABABcAAAAMAAYAAQABABcAAAAMAAUAAQABABcAAAAMAAQAAQABABcAAAAMAAMAAQABABcAAAAMAAIAAQABABcAAAAMAAEAAQABABYAAAALAAcAAQABABcAAAALAAYAAQABABcAAAALAAUAAQABABcAAAALAAQAAQABABcAAAALAAMAAQABABcAAAALAAIAAQABABcAAAALAAEAAQABABYAAAAKAAcAAQABABcAAAAKAAUAAQABABcAAAAKAAQAAQABABcAAAAKAAMAAQABABcAAAAKAAIAAQABABcAAAAKAAEAAQABABYAAAAJAAcAAQABABcAAAAJAAYAAQABABcAAAAJAAUAAQABABcAAAAJAAQAAQABABcAAAAJAAMAAQABABcAAAAJAAIAAQABABcAAAAJAAEAAQABABYAAAAIAAcAAQABABcAAAAIAAYAAQABABcAAAAIAAUAAQABABcAAAAIAAQAAQABABcAAAAIAAMAAQABABcAAAAIAAIAAQABABcAAAAIAAEAAQABABYAAAAHAAcAAQABABcAAAAHAAYAAQABABcAAAAHAAUAAQABABcAAAAHAAQAAQABABcAAAAHAAMAAQABABcAAAAHAAIAAQABABcAAAAHAAEAAQABABYAAAAGAAcAAQABABcAAAAGAAYAAQABABcAAAAGAAUAAQABABcAAAAGAAQAAQABABcAAAAGAAMAAQABABcAAAAGAAIAAQABABcAAAAGAAEAAQABABYAAAAFAAcAAQABABcAAAAFAAYAAQABABcAAAAFAAUAAQABABcAAAAFAAQAAQABABcAAAAFAAMAAQABABcAAAAFAAIAAQABABcAAAAFAAEAAQABABYAAAAEAAcAAQABABcAAAAEAAYAAQABABcAAAAEAAUAAQABABcAAAAEAAQAAQABABcAAAAEAAMAAQABABcAAAAEAAIAAQABABcAAAAEAAEAAQABABYAAAADAAcAAQAAABcAAAADAAYAAQAAABcAAAADAAUAAQAAABcAAAADAAQAAQAAABcAAAADAAMAAQAAABcAAAADAAIAAQAAABcAAAADAAEAAQAAABYAAAADAAkAAQAAABgAAAAEAAkAAQABABgAAAAFAAkAAQABABgAAAAGAAkAAQABABgAAAAHAAkAAQABABgAAAAIAAkAAQABABgAAAAJAAkAAQABABgAAAAKAAkAAQABABgAAAALAAkAAQABABgAAAAMAAkAAQABABgAAAANAAkAAQABABgAAAAOAAkAAQABABgAAAAPAAkAAQABABgAAAAQAAkAAQACABgAAAADAAgAAQAAABcAAAAEAAgAAQABABcAAAAFAAgAAQABABcAAAAGAAgAAQABABcAAAAHAAgAAQABABcAAAAIAAgAAQABABcAAAAJAAgAAQABABcAAAAKAAgAAQABABcAAAALAAgAAQABABcAAAAMAAgAAQABABcAAAANAAgAAQABABcAAAAOAAgAAQABABcAAAAPAAgAAQABABcAAAAQAAgAAQACABcAAAA=")
+tile_set = ExtResource("3_qg044")
+
+[node name="PlayerSpawn" parent="YSORT" unique_id=2050348564 instance=ExtResource("5_u8rmw")]
+position = Vector2(525, 209)
+
+[node name="SimpleBlocksPuzzle" type="Node2D" parent="." unique_id=1667728096]
+y_sort_enabled = true
+script = ExtResource("9_yl6li")
+puzzle_name = "Warehouse 2F"
+total_attempts = 6
+correct_algorithm = Array[int]([1, 2, 5, 8, 2, 7])
+
+[node name="Barrier_1" parent="SimpleBlocksPuzzle" unique_id=115844858 instance=ExtResource("10_yl6li")]
+position = Vector2(144, 221)
+
+[node name="Block_1" parent="SimpleBlocksPuzzle" unique_id=1515441365 instance=ExtResource("11_qx5ti")]
+position = Vector2(272, 208)
+block_number = 1
+
+[node name="Block_2" parent="SimpleBlocksPuzzle" unique_id=2133704857 instance=ExtResource("11_qx5ti")]
+position = Vector2(304, 208)
+block_number = 2
+
+[node name="Block_3" parent="SimpleBlocksPuzzle" unique_id=968542205 instance=ExtResource("11_qx5ti")]
+position = Vector2(336, 208)
+block_number = 3
+
+[node name="Block_4" parent="SimpleBlocksPuzzle" unique_id=1971880642 instance=ExtResource("11_qx5ti")]
+position = Vector2(368, 208)
+block_number = 4
+
+[node name="Block_5" parent="SimpleBlocksPuzzle" unique_id=341766124 instance=ExtResource("11_qx5ti")]
+position = Vector2(272, 240)
+block_number = 5
+
+[node name="Block_6" parent="SimpleBlocksPuzzle" unique_id=578413201 instance=ExtResource("11_qx5ti")]
+position = Vector2(304, 240)
+block_number = 6
+
+[node name="Block_7" parent="SimpleBlocksPuzzle" unique_id=1624515604 instance=ExtResource("11_qx5ti")]
+position = Vector2(336, 240)
+block_number = 7
+
+[node name="Block_8" parent="SimpleBlocksPuzzle" unique_id=1092932805 instance=ExtResource("11_qx5ti")]
+position = Vector2(368, 240)
+block_number = 8
+
+[node name="DOORS" type="Node2D" parent="." unique_id=802895620]
+
+[node name="RuinsIn2_a" parent="DOORS" unique_id=695738053 instance=ExtResource("6_yl6li")]
+position = Vector2(128, 208)
+level = "uid://q7qsgm6hg186"
+target_transition_area = "RuinsIn1_b"
+center_player = true
+size = 1
+side = 1
+
+[node name="RuinsIn2_b" parent="DOORS" unique_id=917029559 instance=ExtResource("6_yl6li")]
+position = Vector2(512, 208)
+level = "uid://xg63wslni2l0"
+target_transition_area = "RuinsIn3_b"
+center_player = true
+size = 1
+
+[node name="ILUMINATION" type="Node2D" parent="." unique_id=917073523]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ILUMINATION" unique_id=845275817]
+light_mask = 3
+visibility_layer = 3
+color = Color(0.776072, 0.776072, 0.776072, 1)
+
+[node name="Light 1" type="Sprite2D" parent="ILUMINATION" unique_id=1917687185]
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_jt0qm")
+position = Vector2(176, 98)
+scale = Vector2(0.555664, 0.564453)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Light 1" type="Sprite2D" parent="ILUMINATION/Light 1" unique_id=1455246127]
+modulate = Color(1, 1, 1, 0.368627)
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_jt0qm")
+position = Vector2(-1.18017e-05, -28.346)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Light 2" type="Sprite2D" parent="ILUMINATION" unique_id=1198178202]
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_jt0qm")
+position = Vector2(273, 98)
+scale = Vector2(0.555664, 0.564453)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Light 1" type="Sprite2D" parent="ILUMINATION/Light 2" unique_id=88172054]
+modulate = Color(1, 1, 1, 0.368627)
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_jt0qm")
+position = Vector2(-1.18017e-05, -28.346)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Light 3" type="Sprite2D" parent="ILUMINATION" unique_id=92157775]
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_jt0qm")
+position = Vector2(369, 98)
+scale = Vector2(0.555664, 0.564453)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Light 1" type="Sprite2D" parent="ILUMINATION/Light 3" unique_id=235776155]
+modulate = Color(1, 1, 1, 0.368627)
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_jt0qm")
+position = Vector2(-1.18017e-05, -28.346)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Light 4" type="Sprite2D" parent="ILUMINATION" unique_id=2101635282]
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_jt0qm")
+position = Vector2(465, 98)
+scale = Vector2(0.555664, 0.564453)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Light 1" type="Sprite2D" parent="ILUMINATION/Light 4" unique_id=333292292]
+modulate = Color(1, 1, 1, 0.368627)
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_jt0qm")
+position = Vector2(-1.18017e-05, -28.346)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Light 5" type="Sprite2D" parent="ILUMINATION" unique_id=1555891526]
+light_mask = 512
+z_index = 3
+material = SubResource("ShaderMaterial_u8rmw")
+position = Vector2(323, 387)
+scale = Vector2(3.30469, 0.925781)
+texture = ExtResource("8_jt0qm")
+metadata/_edit_group_ = true
+
+[node name="Serializable" type="Node" parent="." unique_id=1563436215]
+script = ExtResource("6_qx5ti")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="Savestate" type="Node" parent="." unique_id=2041947100]
+script = ExtResource("13_fp1y2")
+metadata/_custom_type_script = "uid://b146xa42md0k3"

@@ -1,0 +1,257 @@
+[gd_scene format=3 uid="uid://cjujff8xi8qru"]
+
+[ext_resource type="Script" uid="uid://dr0lc4fhge7mt" path="res://UI/HUD/scripts/player_hud.gd" id="1_53hql"]
+[ext_resource type="Texture2D" uid="uid://bt3s3im0fcbu" path="res://UI/HUD/sprites/healthBar.png" id="1_nmvne"]
+[ext_resource type="Texture2D" uid="uid://rqc7j8d2i2wo" path="res://UI/HUD/sprites/HUD.png" id="2_3vfqn"]
+[ext_resource type="Script" uid="uid://cdpsfkx4dajgk" path="res://UI/HUD/scripts/healthbar.gd" id="2_anc6v"]
+[ext_resource type="Script" uid="uid://cq6s1ma8kwt6" path="res://UI/HUD/sprites/healthbar_delay.gd" id="2_nqxmk"]
+[ext_resource type="Texture2D" uid="uid://cssubp2epuwls" path="res://UI/HUD/sprites/competenceBar.png" id="6_vg8is"]
+[ext_resource type="Script" uid="uid://mufqe24gv5kf" path="res://UI/HUD/scripts/competencebar_delay.gd" id="7_ifsm0"]
+[ext_resource type="Script" uid="uid://cn08jeuwabb1" path="res://UI/HUD/scripts/competencebar.gd" id="8_m7xqo"]
+[ext_resource type="Script" uid="uid://bkm8vlmk16emo" path="res://UI/HUD/scripts/espritbar_delay.gd" id="9_0y3aa"]
+[ext_resource type="Texture2D" uid="uid://stm50fldayay" path="res://UI/HUD/sprites/espritBart.png" id="9_m7xqo"]
+[ext_resource type="Script" uid="uid://bhm74r41xhatd" path="res://UI/HUD/scripts/espritbar.gd" id="10_4jdnl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg8is"]
+atlas = ExtResource("2_3vfqn")
+region = Rect2(0, 77, 101, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7cui"]
+atlas = ExtResource("1_nmvne")
+region = Rect2(0, 16, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anc6v"]
+atlas = ExtResource("1_nmvne")
+region = Rect2(0, 24, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ndh6"]
+atlas = ExtResource("1_nmvne")
+region = Rect2(0, 0, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_galay"]
+atlas = ExtResource("1_nmvne")
+region = Rect2(0, 8, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51gt2"]
+atlas = ExtResource("6_vg8is")
+region = Rect2(0, 12, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifsm0"]
+atlas = ExtResource("6_vg8is")
+region = Rect2(0, 18, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7xqo"]
+atlas = ExtResource("6_vg8is")
+region = Rect2(0, 0, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jdnl"]
+atlas = ExtResource("6_vg8is")
+region = Rect2(0, 6, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d0m1"]
+atlas = ExtResource("9_m7xqo")
+region = Rect2(0, 56, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdvgp"]
+atlas = ExtResource("9_m7xqo")
+region = Rect2(0, 84, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y3aa"]
+atlas = ExtResource("9_m7xqo")
+region = Rect2(0, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkvrm"]
+atlas = ExtResource("9_m7xqo")
+region = Rect2(0, 28, 28, 28)
+
+[sub_resource type="Animation" id="Animation_bkvrm"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_6d0m1"]
+resource_name = "hud_fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUDRoot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0y3aa"]
+resource_name = "hud_fade_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUDRoot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdvgp"]
+_data = {
+&"RESET": SubResource("Animation_bkvrm"),
+&"hud_fade_in": SubResource("Animation_6d0m1"),
+&"hud_fade_out": SubResource("Animation_0y3aa")
+}
+
+[node name="PlayerHUD" type="CanvasLayer" unique_id=1124971917 groups=["Persist"]]
+process_mode = 3
+layer = 0
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+script = ExtResource("1_53hql")
+
+[node name="HUDRoot" type="Control" parent="." unique_id=503827825]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.40213
+offset_top = 5.0
+offset_right = 4.40213
+offset_bottom = 5.0
+
+[node name="TextureRect" type="TextureRect" parent="HUDRoot" unique_id=1333526363]
+modulate = Color(1, 1, 1, 0.901961)
+z_index = -1
+layout_mode = 0
+offset_right = 101.0
+offset_bottom = 33.0
+texture = SubResource("AtlasTexture_vg8is")
+
+[node name="HealthbarDelay" type="TextureProgressBar" parent="HUDRoot" unique_id=1337505987 node_paths=PackedStringArray("delayHealthBar", "updateValueDelayTimer")]
+z_index = -1
+layout_mode = 0
+offset_left = 36.0
+offset_top = 2.0
+offset_right = 99.0
+offset_bottom = 10.0
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = SubResource("AtlasTexture_o7cui")
+texture_progress = SubResource("AtlasTexture_anc6v")
+script = ExtResource("2_nqxmk")
+delayHealthBar = NodePath("Healthbar")
+updateValueDelayTimer = NodePath("HealthbarDelayTimer")
+tweenTime = 0.8
+metadata/_edit_group_ = true
+
+[node name="Healthbar" type="TextureProgressBar" parent="HUDRoot/HealthbarDelay" unique_id=1942267762]
+layout_mode = 0
+offset_right = 63.0
+offset_bottom = 8.0
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_over = SubResource("AtlasTexture_5ndh6")
+texture_progress = SubResource("AtlasTexture_galay")
+script = ExtResource("2_anc6v")
+tweenTime = 0.5
+
+[node name="HealthbarDelayTimer" type="Timer" parent="HUDRoot/HealthbarDelay" unique_id=1966907060]
+
+[node name="CompetencebarDelay" type="TextureProgressBar" parent="HUDRoot" unique_id=1049082088 node_paths=PackedStringArray("delayCompetenceBar", "updateValueDelayTimer")]
+z_index = -1
+layout_mode = 0
+offset_left = 36.0
+offset_top = 13.0
+offset_right = 94.0
+offset_bottom = 19.0
+max_value = 50.0
+step = 0.1
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = SubResource("AtlasTexture_51gt2")
+texture_progress = SubResource("AtlasTexture_ifsm0")
+script = ExtResource("7_ifsm0")
+delayCompetenceBar = NodePath("Competencebar")
+updateValueDelayTimer = NodePath("CompetencebarDelayTimer")
+tweenTime = 0.3
+metadata/_edit_group_ = true
+
+[node name="Competencebar" type="TextureProgressBar" parent="HUDRoot/CompetencebarDelay" unique_id=202088534 node_paths=PackedStringArray("preview_bar")]
+layout_mode = 0
+offset_right = 58.0
+offset_bottom = 6.0
+max_value = 50.0
+step = 0.1
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_over = SubResource("AtlasTexture_m7xqo")
+texture_progress = SubResource("AtlasTexture_4jdnl")
+script = ExtResource("8_m7xqo")
+preview_bar = NodePath(".")
+
+[node name="CompetencebarDelayTimer" type="Timer" parent="HUDRoot/CompetencebarDelay" unique_id=951293675]
+
+[node name="EspritbarDelay" type="TextureProgressBar" parent="HUDRoot" unique_id=1678829018 node_paths=PackedStringArray("delayEspritBar", "updateValueDelayTimer")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 30.0
+offset_bottom = 33.0
+max_value = 10.0
+step = 0.1
+value = 10.0
+fill_mode = 4
+radial_initial_angle = 108.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_6d0m1")
+texture_progress = SubResource("AtlasTexture_kdvgp")
+script = ExtResource("9_0y3aa")
+delayEspritBar = NodePath("Espritbar")
+updateValueDelayTimer = NodePath("EspritbarDelayTimer")
+
+[node name="Espritbar" type="TextureProgressBar" parent="HUDRoot/EspritbarDelay" unique_id=1922176038]
+layout_mode = 0
+offset_left = 0.307692
+offset_top = 0.384615
+offset_right = 28.3077
+offset_bottom = 28.3846
+max_value = 10.0
+step = 0.1
+value = 10.0
+fill_mode = 4
+radial_initial_angle = 108.0
+nine_patch_stretch = true
+texture_over = SubResource("AtlasTexture_0y3aa")
+texture_progress = SubResource("AtlasTexture_bkvrm")
+script = ExtResource("10_4jdnl")
+
+[node name="EspritbarDelayTimer" type="Timer" parent="HUDRoot/EspritbarDelay" unique_id=215792962]
+
+[node name="HUDAnimations" type="AnimationPlayer" parent="HUDRoot" unique_id=486128010]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_kdvgp")
+speed_scale = 0.5
+
+[node name="HideTimer" type="Timer" parent="HUDRoot/HUDAnimations" unique_id=272939356]
+one_shot = true

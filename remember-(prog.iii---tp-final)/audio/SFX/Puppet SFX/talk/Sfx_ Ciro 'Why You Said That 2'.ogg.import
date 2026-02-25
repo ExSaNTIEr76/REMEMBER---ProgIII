@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7n8rrnhrff4q"
+path="res://.godot/imported/Sfx_ Ciro 'Why You Said That 2'.ogg-d9fe1950ceff5a5e7921197bc95e4231.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'Why You Said That 2'.ogg"
+dest_files=["res://.godot/imported/Sfx_ Ciro 'Why You Said That 2'.ogg-d9fe1950ceff5a5e7921197bc95e4231.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

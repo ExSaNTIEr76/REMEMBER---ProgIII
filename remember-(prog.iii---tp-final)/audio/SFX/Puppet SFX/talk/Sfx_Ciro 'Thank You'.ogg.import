@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://g57ia3a6diwj"
+path="res://.godot/imported/Sfx_Ciro 'Thank You'.ogg-9b35de97dbd9117b7a803d5aabd5d4d3.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Thank You'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'Thank You'.ogg-9b35de97dbd9117b7a803d5aabd5d4d3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

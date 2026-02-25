@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dq5lvk2g8p0ws"
+path="res://.godot/imported/Sfx_Spectre_Death_1.ogg-a6fa9d0b1ed2f7d8c408301b5f6f43ce.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Enemies SFX/spectres/Sfx_Spectre_Death_1.ogg"
+dest_files=["res://.godot/imported/Sfx_Spectre_Death_1.ogg-a6fa9d0b1ed2f7d8c408301b5f6f43ce.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

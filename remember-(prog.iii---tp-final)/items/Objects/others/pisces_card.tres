@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bvbrdhrvhxhpt"]
+
+[ext_resource type="Script" uid="uid://culxbd8ylmven" path="res://items/item_data.gd" id="1_uutxi"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="2_dxf78"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p022i"]
+atlas = ExtResource("2_dxf78")
+region = Rect2(32, 176, 16, 16)
+
+[resource]
+script = ExtResource("1_uutxi")
+name = "Pisces card"
+type = 4
+ID = 57
+description = "Zodiac card engraved with the figure of two twin fishes.
+Grants access to Zone 3."
+texture = SubResource("AtlasTexture_p022i")
+cost = 0
+metadata/_custom_type_script = "uid://culxbd8ylmven"

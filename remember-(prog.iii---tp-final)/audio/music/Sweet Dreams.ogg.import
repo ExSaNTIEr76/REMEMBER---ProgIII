@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cscktcn01egr5"
+path="res://.godot/imported/Sweet Dreams.ogg-0b2aad108a401f949ddd97fb60d13299.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Sweet Dreams.ogg"
+dest_files=["res://.godot/imported/Sweet Dreams.ogg-0b2aad108a401f949ddd97fb60d13299.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

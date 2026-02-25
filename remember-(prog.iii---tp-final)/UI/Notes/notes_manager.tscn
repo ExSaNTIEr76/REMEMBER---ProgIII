@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://ck3a7ga4y14ot"]
+
+[ext_resource type="Script" uid="uid://drsu76qrl334v" path="res://UI/Notes/notes_manager.gd" id="1_46gcy"]
+[ext_resource type="SpriteFrames" uid="uid://djlhb35tiys7i" path="res://UI/Notes/all_notes.tres" id="2_50cl7"]
+
+[sub_resource type="Animation" id="Animation_ke8lm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Notes:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NoteBackground:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gnds7"]
+resource_name = "note_fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Notes:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NoteBackground:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.588235)]
+}
+
+[sub_resource type="Animation" id="Animation_pjs62"]
+resource_name = "note_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Notes:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NoteBackground:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.588235), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dpgr6"]
+_data = {
+&"RESET": SubResource("Animation_ke8lm"),
+&"note_fade_in": SubResource("Animation_gnds7"),
+&"note_fade_out": SubResource("Animation_pjs62")
+}
+
+[node name="NotesManager" type="CanvasLayer" unique_id=1486058869]
+process_mode = 3
+script = ExtResource("1_46gcy")
+
+[node name="Control" type="Control" parent="." unique_id=954455596]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Notes" type="AnimatedSprite2D" parent="Control" unique_id=985478622]
+process_mode = 3
+z_index = 101
+sprite_frames = ExtResource("2_50cl7")
+animation = &"z0_block_instructions_eng"
+autoplay = "empty"
+
+[node name="NotesEffects" type="AnimationPlayer" parent="." unique_id=969877007]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_dpgr6")
+
+[node name="NoteBackground" type="ColorRect" parent="." unique_id=472981379]
+process_mode = 3
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

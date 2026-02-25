@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0xc1pn0qiiq1"
+path="res://.godot/imported/Sfx_ Ciro 'Don't Force Me'.ogg-d7e97c08ab7e2cdc39a56c9deab20e08.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'Don't Force Me'.ogg"
+dest_files=["res://.godot/imported/Sfx_ Ciro 'Don't Force Me'.ogg-d7e97c08ab7e2cdc39a56c9deab20e08.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

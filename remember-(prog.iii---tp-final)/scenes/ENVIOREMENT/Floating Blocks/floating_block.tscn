@@ -1,0 +1,149 @@
+[gd_scene load_steps=13 format=3 uid="uid://btwlfjeib6g0x"]
+
+[ext_resource type="Script" uid="uid://ck1b67ktk3y7k" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_block.gd" id="1_kicbg"]
+[ext_resource type="SpriteFrames" uid="uid://dyi1o0i0bupmv" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_blocks_hole.tres" id="2_21l02"]
+[ext_resource type="Material" uid="uid://dtqbcwjsm0d74" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_block_shader.tres" id="2_woxi5"]
+[ext_resource type="SpriteFrames" uid="uid://5aipi6hb0t8k" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_blocks.tres" id="4_0wubg"]
+[ext_resource type="SpriteFrames" uid="uid://bytsh08fs8rd" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_blocks_sparkles.tres" id="5_jv31m"]
+[ext_resource type="Script" uid="uid://blnrgny6nbusr" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_block_area.gd" id="6_21l02"]
+
+[sub_resource type="Animation" id="Animation_0yu3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlockAnimations:material:shader_parameter/flash_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlockAnimations:material:shader_parameter/flash_opacity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2cepu"]
+resource_name = "flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlockAnimations:material:shader_parameter/flash_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlockAnimations:material:shader_parameter/flash_opacity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d2ymd"]
+resource_name = "reset_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlockAnimations:material:shader_parameter/flash_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlockAnimations:material:shader_parameter/flash_opacity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0yu3m"]
+_data = {
+&"RESET": SubResource("Animation_0yu3m"),
+&"flash": SubResource("Animation_2cepu"),
+&"reset_flash": SubResource("Animation_d2ymd")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yu3m"]
+size = Vector2(16, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kicbg"]
+size = Vector2(12, 8)
+
+[node name="Block" type="CharacterBody2D" groups=["floating_block"]]
+collision_mask = 3
+script = ExtResource("1_kicbg")
+
+[node name="BlockAnimations" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_woxi5")
+sprite_frames = ExtResource("4_0wubg")
+animation = &"Yellow_descending"
+
+[node name="BlockHole" type="AnimatedSprite2D" parent="."]
+z_index = -1
+sprite_frames = ExtResource("2_21l02")
+animation = &"Yellow_blockHole"
+frame_progress = 1.0
+
+[node name="BlockSparkles" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_woxi5")
+position = Vector2(0, -19)
+sprite_frames = ExtResource("5_jv31m")
+animation = &"Sparkle"
+frame = 15
+frame_progress = 1.0
+
+[node name="BlockEffects" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0yu3m")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_0yu3m")
+debug_color = Color(1, 0, 0.0166664, 0)
+
+[node name="BlockArea" type="Area2D" parent="."]
+collision_layer = 2048
+collision_mask = 0
+monitoring = false
+script = ExtResource("6_21l02")
+one_time = false
+
+[node name="BlockAreaCollision" type="CollisionShape2D" parent="BlockArea"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_kicbg")
+debug_color = Color(0, 0.6, 0.7, 0)

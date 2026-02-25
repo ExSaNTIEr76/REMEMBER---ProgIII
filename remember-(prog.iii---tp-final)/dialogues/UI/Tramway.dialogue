@@ -1,0 +1,442 @@
+--------------------------  ELSEN -----------------------------------
+
+~ Z1ElsenTramway
+
+match GlobalConditions.tramPassport
+	when 0
+		=> END
+	when 1
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Damien
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/DamienTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/damien_tram.tscn", false)
+	when 2
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Damien
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/DamienTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/damien_tram.tscn", false)
+		- Pentel
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/PentelTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/pentel_tram.tscn", false)
+	when 3
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Damien
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/DamienTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/damien_tram.tscn", false)
+		- Pentel
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/PentelTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/pentel_tram.tscn", false)
+		- Shachihata => END
+	when 4
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Damien
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/DamienTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/damien_tram.tscn", false)
+		- Pentel
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/PentelTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/pentel_tram.tscn", false)
+		- Shachihata => END
+		- Alma => END
+	else
+		 => END
+
+do SceneTransition.fade_in_black()
+do CinematicManager.end_cinematic()
+
+=> END
+
+--------------------------  DAMIEN -----------------------------------
+
+~ Z1DamienTramway
+
+#Selecciona el distrito:
+
+match GlobalConditions.tramPassport
+	when 0
+		=> END
+	when 1
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Elsen
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/ElsenTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/elsen_tram.tscn", false)
+	when 2
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Elsen
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/ElsenTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/elsen_tram.tscn", false)
+		- Pentel
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/PentelTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/pentel_tram.tscn", false)
+	when 3
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Elsen
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/ElsenTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/elsen_tram.tscn", false)
+		- Pentel
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/PentelTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/pentel_tram.tscn", false)
+		- Shachihata => END
+	when 4
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Elsen
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/ElsenTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/elsen_tram.tscn", false)
+		- Pentel
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/PentelTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/pentel_tram.tscn", false)
+		- Shachihata => END
+		- Alma => END
+	else
+		 => END
+
+do SceneTransition.fade_in_black()
+do CinematicManager.end_cinematic()
+
+=> END
+
+
+--------------------------  PENTEL -----------------------------------
+
+
+~ Z1PentelTramway
+
+#Select the distrit
+match GlobalConditions.tramPassport
+	when 0
+		=> END
+	when 1
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Elsen
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/ElsenTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/elsen_tram.tscn", false)
+	when 2
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Elsen
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/ElsenTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/elsen_tram.tscn", false)
+		- Damien
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/DamienTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/damien_tram.tscn", false)
+	when 3
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Elsen
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/ElsenTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/elsen_tram.tscn", false)
+		- Damien
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/DamienTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/damien_tram.tscn", false)
+		- Shachihata => END
+	when 4
+		#[speed=80.0]Select the distrit:
+		[speed=80.0]Selecciona el distrito:
+		- CANCELAR => END
+		- Elsen
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/ElsenTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/elsen_tram.tscn", false)
+		- Damien
+			do CinematicManager.start_cinematic()
+			do wait(0.1)
+			do SceneTransition.fade_out_black()
+			do wait(0.1)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tramway_Ride.ogg", 0.8, -18.0)
+			do wait(1.4)
+			do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/tramway/Sfx_Tram_Ext_Door_Close.ogg", 1.0, -15.0)
+			do wait(0.1)
+			do TeleportManager.teleport_player("/root/DamienTram/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Tramway/damien_tram.tscn", false)
+		- Shachihata => END
+		- Alma => END
+	else
+		 => END
+
+do SceneTransition.fade_in_black()
+do CinematicManager.end_cinematic()
+
+=> END
+
+
+-----------------------  SHACHIHATA --------------------------------
+
+
+~ Z1ShachihataTramway
+
+#[speed=80.0]Select the distrit:
+#[speed=80.0]Selecciona el distrito:
+#do wait(1.0)
+#
+#- CANCELAR => END
+#- Elsen
+#	
+#- Damien
+#	
+#- Pentel
+#	
+#- Alma
+#	
+#=> END
+
+
+--------------------------  ALMA -----------------------------------
+
+
+~ Z1AlmaTramway
+
+#[speed=80.0]Select the distrit:
+#[speed=80.0]Selecciona el distrito:
+#do wait(1.0)
+#
+#- CANCELAR => END
+#- Elsen
+#	
+#- Damien
+#	
+#- Pentel
+#	
+#- Shachihata
+#	
+#=> END

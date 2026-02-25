@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ocehciv788u3"
+path="res://.godot/imported/OFF - Soft Breeze.ogg-dd8dba8a50ee20c85e74efae4061e1f6.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/OFF - Soft Breeze.ogg"
+dest_files=["res://.godot/imported/OFF - Soft Breeze.ogg-dd8dba8a50ee20c85e74efae4061e1f6.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

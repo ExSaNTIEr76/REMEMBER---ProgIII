@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dtqbcwjsm0d74"]
+
+[ext_resource type="Shader" uid="uid://cuns4ecqxp4to" path="res://effects/Shaders/FloatingBlocks.gdshader" id="1_64jr8"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_64jr8")
+shader_parameter/flash_opacity = 0.0
+shader_parameter/flash_color = Color(1, 1, 1, 1)

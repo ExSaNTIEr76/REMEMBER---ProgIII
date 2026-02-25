@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EquipableItemData" format=3 uid="uid://dgjuox6emol17"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_fk118"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_2j0g3"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="3_r1v7c"]
+
+[sub_resource type="Resource" id="Resource_fk118"]
+script = ExtResource("1_fk118")
+type = 3
+value = 15
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp2cc"]
+atlas = ExtResource("3_r1v7c")
+region = Rect2(384, 144, 16, 16)
+
+[resource]
+script = ExtResource("2_2j0g3")
+modifiers = Array[ExtResource("1_fk118")]([SubResource("Resource_fk118")])
+symbol_icon_name = "C_knife_2"
+cep_cost = 8
+name = "Knife Duo"
+type = 5
+ID = 183
+is_quantitative = true
+description = "Butcher symbol that throws ruthless cuts within an acceptable range."
+texture = SubResource("AtlasTexture_gp2cc")
+cost = 500
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

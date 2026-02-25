@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5x7pdyxkbrpb"
+path="res://.godot/imported/Sfx_Ciro Sighing.ogg-95cf246cef8f1465dc6235d622c50cee.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Sighing.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro Sighing.ogg-95cf246cef8f1465dc6235d622c50cee.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

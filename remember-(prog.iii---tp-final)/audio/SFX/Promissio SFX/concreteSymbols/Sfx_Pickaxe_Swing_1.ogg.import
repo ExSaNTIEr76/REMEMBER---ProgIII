@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://kexcya1ad7co"
+path="res://.godot/imported/Sfx_Pickaxe_Swing_1.ogg-9e1b0cdce64b1a10e878a9047d9bc1a2.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Promissio SFX/concreteSymbols/Sfx_Pickaxe_Swing_1.ogg"
+dest_files=["res://.godot/imported/Sfx_Pickaxe_Swing_1.ogg-9e1b0cdce64b1a10e878a9047d9bc1a2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

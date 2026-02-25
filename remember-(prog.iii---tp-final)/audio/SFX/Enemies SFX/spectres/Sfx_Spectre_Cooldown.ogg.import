@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://vo5iuaewe3cm"
+path="res://.godot/imported/Sfx_Spectre_Cooldown.ogg-05c66c207e1ddf6909bb487e25aaccae.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Enemies SFX/spectres/Sfx_Spectre_Cooldown.ogg"
+dest_files=["res://.godot/imported/Sfx_Spectre_Cooldown.ogg-05c66c207e1ddf6909bb487e25aaccae.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

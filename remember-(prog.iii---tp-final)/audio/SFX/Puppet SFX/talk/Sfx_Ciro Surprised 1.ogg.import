@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://nfkiby22ofxq"
+path="res://.godot/imported/Sfx_Ciro Surprised 1.ogg-602d8c8435c4c22b71179f48ea1f181f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Surprised 1.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro Surprised 1.ogg-602d8c8435c4c22b71179f48ea1f181f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

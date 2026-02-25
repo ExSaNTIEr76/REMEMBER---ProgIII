@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dqveflhrvcgjx"
+path="res://.godot/imported/Don't Give Up Yet (please).ogg-c8b18c026bcf2bef5d3b126a866707d3.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Don't Give Up Yet (please).ogg"
+dest_files=["res://.godot/imported/Don't Give Up Yet (please).ogg-c8b18c026bcf2bef5d3b126a866707d3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

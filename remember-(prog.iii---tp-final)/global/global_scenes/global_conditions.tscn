@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dulm5q53kngfd"]
+
+[ext_resource type="Script" uid="uid://c8gdlqrm08o3f" path="res://global/global_conditions.gd" id="1_jdxwv"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_l4fcp"]
+
+[node name="GlobalConditions" type="Node" unique_id=1840262022]
+script = ExtResource("1_jdxwv")
+
+[node name="Serializable" type="Node" parent="." unique_id=1740224173]
+script = ExtResource("2_l4fcp")
+transform = false
+children = false
+variables = Array[String](["player_name", "level_name", "zone_name", "yellow_boxes_open", "red_boxes_open", "c_symbols_obtained", "a_symbols_obtained", "s_symbols_obtained", "map_discovered", "game_act", "welcome_home", "zodiac_key_cards", "zone_flowers", "zone_illness", "floating_box_state", "puppet_name_revealed", "puppet_sucre", "first_symbol_count", "sleeve_count", "special_2_slot_obtained", "cts_beggining", "cts_chills", "cts_ladderLost", "has_read_bookshelf", "has_read_zone0_sign", "cats_picture_seen", "lookingForTheChild", "tramPassport", "has_talked_elsen", "pitfall_awake_cinematic"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

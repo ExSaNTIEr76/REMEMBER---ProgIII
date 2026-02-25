@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://ckdo1re1dhhxw"]
+
+[ext_resource type="Script" uid="uid://v18j4uxltnhu" path="res://UI/Menu/Panels/level_panel.gd" id="1_84iwm"]
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="1_w837w"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="2_84iwm"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="2_x0lkb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85leg"]
+atlas = ExtResource("1_w837w")
+region = Rect2(72, 40, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72d1b"]
+texture = SubResource("AtlasTexture_85leg")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="LEVEL" type="Control" unique_id=1997864106]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 255.0
+offset_bottom = 63.0
+script = ExtResource("1_84iwm")
+
+[node name="TimePanel" type="PanelContainer" parent="." unique_id=1380954209]
+layout_mode = 0
+offset_right = 255.0
+offset_bottom = 63.0
+theme_override_styles/panel = ExtResource("2_84iwm")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TimePanel" unique_id=1673873790]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TimePanel/MarginContainer" unique_id=986599499]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1985022162]
+layout_mode = 0
+offset_left = 7.75574
+offset_top = 6.1694
+offset_right = 51.7557
+offset_bottom = 58.1694
+theme_override_constants/separation = 0
+
+[node name="HBoxContainerEXP" type="HBoxContainer" parent="VBoxContainer" unique_id=905970945]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="EXP" type="Label" parent="VBoxContainer/HBoxContainerEXP" unique_id=713228838]
+z_index = 1
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_x0lkb")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "EXP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="expNumber" type="Label" parent="VBoxContainer/HBoxContainerEXP" unique_id=654556530]
+custom_minimum_size = Vector2(37, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x0lkb")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 2
+
+[node name="HBoxContainerNEXT" type="HBoxContainer" parent="VBoxContainer" unique_id=1357133028]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="NEXT" type="Label" parent="VBoxContainer/HBoxContainerNEXT" unique_id=2112649866]
+z_index = 1
+custom_minimum_size = Vector2(-20, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_x0lkb")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "SIGU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="nextNumber" type="Label" parent="VBoxContainer/HBoxContainerNEXT" unique_id=1652588254]
+custom_minimum_size = Vector2(37, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x0lkb")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 2
+
+[node name="currentLevel" type="Label" parent="." unique_id=1292354110]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 0
+offset_left = -45.2802
+offset_top = -109.225
+offset_right = -26.2802
+offset_bottom = -89.225
+theme_override_colors/font_color = Color(0.47451, 0.180392, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.47451, 0.180392, 0.180392, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_x0lkb")
+theme_override_font_sizes/font_size = 16
+text = "1"
+vertical_alignment = 1

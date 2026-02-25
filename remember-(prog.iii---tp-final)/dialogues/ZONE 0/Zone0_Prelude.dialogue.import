@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dg48fr6p71bs2"
+path="res://.godot/imported/Zone0_Prelude.dialogue-37ff81bd9f20b73feefea845aa2cde90.tres"
+
+[deps]
+
+source_file="res://dialogues/ZONE 0/Zone0_Prelude.dialogue"
+dest_files=["res://.godot/imported/Zone0_Prelude.dialogue-37ff81bd9f20b73feefea845aa2cde90.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://i8g6d8y3o1rm"
+path="res://.godot/imported/Zone1_SmokeMines.dialogue-a3556db9e12da54d7e8aabf44295fa3c.tres"
+
+[deps]
+
+source_file="res://dialogues/ZONE 1/Zone1_SmokeMines.dialogue"
+dest_files=["res://.godot/imported/Zone1_SmokeMines.dialogue-a3556db9e12da54d7e8aabf44295fa3c.tres"]
+
+[params]
+
+defaults=true

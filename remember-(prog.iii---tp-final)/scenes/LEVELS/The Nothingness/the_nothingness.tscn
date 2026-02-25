@@ -1,0 +1,534 @@
+[gd_scene format=4 uid="uid://dg6gtmwuap4ub"]
+
+[ext_resource type="TileSet" uid="uid://bbxgpr6k085rt" path="res://scenes/LEVELS/Zone 0/sprites/Zone 0 TileMap.tres" id="1_fuxy4"]
+[ext_resource type="Script" uid="uid://da33mdxfo35ay" path="res://scenes/LEVELS/levelScripts/level.gd" id="1_pc258"]
+[ext_resource type="Texture2D" uid="uid://cn4x2n02q383d" path="res://scenes/LEVELS/The Nothingness/nothingness_background.png" id="2_g6ppw"]
+[ext_resource type="Script" uid="uid://x13lxq5j2u8f" path="res://scenes/LEVELS/The Nothingness/the_nothingness.gd" id="2_wyb7a"]
+[ext_resource type="SpriteFrames" uid="uid://hxtcvlbrx33" path="res://scenes/LEVELS/The Nothingness/Zones_sprite_frames.tres" id="3_wyb7a"]
+[ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="4_x15rv"]
+[ext_resource type="Script" uid="uid://bas1vdqii0wep" path="res://UI/Camera/camera_manager.gd" id="5_yrmm5"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="6_x15rv"]
+[ext_resource type="Script" uid="uid://bl44l8aaismjy" path="res://dialogues/actionable.gd" id="7_3300h"]
+[ext_resource type="Resource" uid="uid://cuq1vads5p20j" path="res://dialogues/UI/TheNothingness.dialogue" id="9_08g6y"]
+[ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="12_u2v73"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="13_s7x7e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kv3et"]
+radius = 15.0333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wyb7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqt0s"]
+size = Vector2(641.12, 361.418)
+
+[sub_resource type="Animation" id="Animation_we4l1"]
+resource_name = "HOME"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZoneLabels/MapLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 8, 10, 10.5, 10.566667, 10.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 25), Vector2(0, 0), Vector2(0, 0), Vector2(0, -24), Vector2(-125, -24), Vector2(-125, 352), Vector2(0, 352)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZoneLabels/MapLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["world map   (HOME)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ZoneLabels/MapLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hblc7"]
+resource_name = "HOME_NEW"
+length = 26.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZoneLabels/MapLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15.400001, 17.400002, 23.400002, 25.400002, 25.900002, 25.966667, 26.033333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 352), Vector2(0, 25), Vector2(0, 0), Vector2(0, 0), Vector2(0, -24), Vector2(-125, -24), Vector2(-125, 352), Vector2(0, 352)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZoneLabels/MapLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ZoneLabels/MapLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_u2v73"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZoneLabels/MapLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZoneLabels/MapLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["world map   (HOME)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ZoneLabels/MapLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_s7x7e"]
+resource_name = "UNKNOWN"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZoneLabels/MapLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 8, 10, 10.5, 10.566667, 10.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 25), Vector2(0, 0), Vector2(0, 0), Vector2(0, -24), Vector2(-125, -24), Vector2(-125, 352), Vector2(0, 352)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZoneLabels/MapLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["world map   (?)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ZoneLabels/MapLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_08gxb"]
+resource_name = "UNKNOWN_NEW"
+length = 26.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZoneLabels/MapLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15.400001, 17.400002, 23.400002, 25.400002, 25.900002, 25.966667, 26.033333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 352), Vector2(0, 25), Vector2(0, 0), Vector2(0, 0), Vector2(0, -24), Vector2(-125, -24), Vector2(-125, 352), Vector2(0, 352)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZoneLabels/MapLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["world map   (?)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ZoneLabels/MapLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7e"]
+_data = {
+&"HOME": SubResource("Animation_we4l1"),
+&"HOME_NEW": SubResource("Animation_hblc7"),
+&"RESET": SubResource("Animation_u2v73"),
+&"UNKNOWN": SubResource("Animation_s7x7e"),
+&"UNKNOWN_NEW": SubResource("Animation_08gxb")
+}
+
+[node name="TheNothingness" type="Node2D" unique_id=1198788231 groups=["Persist"]]
+script = ExtResource("1_pc258")
+level_name = "The Nothingness"
+zone_name = "?"
+zone_tag = "TheNothingness"
+transition_tag = "black"
+
+[node name="YSORT" type="Node2D" parent="." unique_id=536998526 groups=["Y-SORT"]]
+unique_name_in_owner = true
+y_sort_enabled = true
+script = ExtResource("2_wyb7a")
+
+[node name="Serializable" type="Node" parent="YSORT" unique_id=60813794]
+script = ExtResource("13_s7x7e")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="YSORT" unique_id=906375789]
+tile_map_data = PackedByteArray("AAAAAAsAAgAYAAAAAAABAAsAAgAYAAAAAAACAAsAAgAYAAAAAAADAAsAAgAYAAAAAAAEAAsAAgAYAAAAAAAFAAsAAgAYAAAAAAAGAAsAAgAYAAAAAAAHAAsAAgAYAAAAAAAIAAsAAgAYAAAAAAAJAAsAAgAYAAAAAAAKAAsAAgAYAAAAAAALAAsAAgAYAAAAAAAMAAsAAgAYAAAAAAANAAsAAgAYAAAAAAAOAAsAAgAYAAAAAAAPAAsAAgAYAAAAAAAQAAsAAgAYAAAAAAARAAsAAgAYAAAAAAASAAsAAgAYAAAAAAATAAsAAgAYAAAAAAAUAAsAAgAYAAAAAAAUAAEAAgAYAAAAAAAUAAIAAgAYAAAAAAAUAAMAAgAYAAAAAAAUAAQAAgAYAAAAAAAUAAUAAgAYAAAAAAAUAAYAAgAYAAAAAAAUAAcAAgAYAAAAAAAUAAgAAgAYAAAAAAAUAAkAAgAYAAAAAAAUAAoAAgAYAAAAAAD//wEAAgAYAAAAAAD//wIAAgAYAAAAAAD//wMAAgAYAAAAAAD//wQAAgAYAAAAAAD//wUAAgAYAAAAAAD//wYAAgAYAAAAAAD//wcAAgAYAAAAAAD//wgAAgAYAAAAAAD//wkAAgAYAAAAAAD//woAAgAYAAAAAAD//wsAAgAYAAAAAAD//wAAAgAYAAAAAAAUAAAAAgAYAAAAAAAAAAAAAgAYAAAAAAABAAAAAgAYAAAAAAACAAAAAgAYAAAAAAADAAAAAgAYAAAAAAAEAAAAAgAYAAAAAAAFAAAAAgAYAAAAAAAGAAAAAgAYAAAAAAAHAAAAAgAYAAAAAAAIAAAAAgAYAAAAAAAJAAAAAgAYAAAAAAAKAAAAAgAYAAAAAAALAAAAAgAYAAAAAAAMAAAAAgAYAAAAAAANAAAAAgAYAAAAAAAOAAAAAgAYAAAAAAAPAAAAAgAYAAAAAAAQAAAAAgAYAAAAAAARAAAAAgAYAAAAAAASAAAAAgAYAAAAAAATAAAAAgAYAAAAAAA=")
+tile_set = ExtResource("1_fuxy4")
+
+[node name="Zone0" type="AnimatedSprite2D" parent="YSORT" unique_id=1915763647]
+z_index = -1
+position = Vector2(383, 285)
+sprite_frames = ExtResource("3_wyb7a")
+animation = &"Zone0_flower"
+autoplay = "Zone0_flower"
+
+[node name="Zone1" type="AnimatedSprite2D" parent="YSORT" unique_id=1089630614]
+z_index = -1
+position = Vector2(339, 247)
+sprite_frames = ExtResource("3_wyb7a")
+animation = &"Zone1_sapling"
+
+[node name="Zone2" type="AnimatedSprite2D" parent="YSORT" unique_id=2012398416]
+z_index = -1
+position = Vector2(415, 241)
+sprite_frames = ExtResource("3_wyb7a")
+animation = &"Zone2_sapling"
+
+[node name="Zone3" type="AnimatedSprite2D" parent="YSORT" unique_id=1579474315]
+z_index = -1
+position = Vector2(430, 317)
+sprite_frames = ExtResource("3_wyb7a")
+animation = &"Zone3_sapling"
+
+[node name="Zone4" type="AnimatedSprite2D" parent="YSORT" unique_id=1830304336]
+z_index = -1
+position = Vector2(339, 321)
+sprite_frames = ExtResource("3_wyb7a")
+animation = &"Zone4_sapling"
+
+[node name="Zone5" type="AnimatedSprite2D" parent="YSORT" unique_id=2035918480]
+z_index = -1
+position = Vector2(355, 105)
+sprite_frames = ExtResource("3_wyb7a")
+animation = &"Zone5_sapling"
+
+[node name="Void" type="Sprite2D" parent="YSORT" unique_id=1469671593]
+z_index = -2
+position = Vector2(320, 176)
+texture = ExtResource("2_g6ppw")
+
+[node name="PlayerSpawn" parent="YSORT" unique_id=965595485 instance=ExtResource("4_x15rv")]
+position = Vector2(374, 186)
+
+[node name="ZONES" type="Node2D" parent="." unique_id=73796057]
+
+[node name="Area0" type="Area2D" parent="ZONES" unique_id=1814392621]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("7_3300h")
+dialogue_resource = ExtResource("9_08g6y")
+dialogue_start = "zone0"
+one_time = false
+
+[node name="AreaCollision0" type="CollisionShape2D" parent="ZONES/Area0" unique_id=426510797]
+position = Vector2(383, 285)
+shape = SubResource("CircleShape2D_kv3et")
+
+[node name="Area1" type="Area2D" parent="ZONES" unique_id=460702318]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("7_3300h")
+dialogue_resource = ExtResource("9_08g6y")
+dialogue_start = "zone1"
+one_time = false
+
+[node name="AreaCollision1" type="CollisionShape2D" parent="ZONES/Area1" unique_id=1878947367]
+position = Vector2(339, 247)
+shape = SubResource("CircleShape2D_kv3et")
+
+[node name="Area2" type="Area2D" parent="ZONES" unique_id=2078187785]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("7_3300h")
+dialogue_resource = ExtResource("9_08g6y")
+dialogue_start = "zone2"
+one_time = false
+
+[node name="AreaCollision2" type="CollisionShape2D" parent="ZONES/Area2" unique_id=786685167]
+position = Vector2(415, 241)
+shape = SubResource("CircleShape2D_kv3et")
+
+[node name="Area3" type="Area2D" parent="ZONES" unique_id=1659214809]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("7_3300h")
+dialogue_resource = ExtResource("9_08g6y")
+dialogue_start = "zone3"
+one_time = false
+
+[node name="AreaCollision3" type="CollisionShape2D" parent="ZONES/Area3" unique_id=339135347]
+position = Vector2(430, 317)
+shape = SubResource("CircleShape2D_kv3et")
+
+[node name="Area4" type="Area2D" parent="ZONES" unique_id=1540640583]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("7_3300h")
+dialogue_resource = ExtResource("9_08g6y")
+dialogue_start = "zone4"
+one_time = false
+
+[node name="AreaCollision4" type="CollisionShape2D" parent="ZONES/Area4" unique_id=133098639]
+position = Vector2(339, 321)
+shape = SubResource("CircleShape2D_kv3et")
+
+[node name="Area5" type="Area2D" parent="ZONES" unique_id=446622274]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("7_3300h")
+dialogue_resource = ExtResource("9_08g6y")
+dialogue_start = "theRoom"
+one_time = false
+
+[node name="AreaCollision5" type="CollisionShape2D" parent="ZONES/Area5" unique_id=1833649268]
+position = Vector2(355, 105)
+shape = SubResource("CircleShape2D_wyb7a")
+
+[node name="SpawnMarker" type="Marker2D" parent="ZONES" unique_id=1526221822]
+position = Vector2(374, 186)
+
+[node name="ZoneLabels" type="Control" parent="." unique_id=1898947211]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapLabel" type="Label" parent="ZoneLabels" unique_id=1795238652]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_top = 25.0
+offset_right = 128.0
+offset_bottom = 49.999817
+theme_override_colors/font_color = Color(0.129412, 0.141176, 0.129412, 1)
+theme_override_colors/font_shadow_color = Color(0.046, 0.05, 0.046, 1)
+theme_override_fonts/font = ExtResource("6_x15rv")
+theme_override_font_sizes/font_size = 12
+text = "world map   (HOME)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone0" type="Label" parent="ZoneLabels" unique_id=2118492377]
+texture_filter = 1
+layout_mode = 0
+offset_left = 344.0
+offset_top = 176.0
+offset_right = 410.0
+offset_bottom = 201.0
+theme_override_colors/font_shadow_color = Color(0.36, 0.36, 0.36, 1)
+theme_override_fonts/font = ExtResource("6_x15rv")
+theme_override_font_sizes/font_size = 14
+text = "Zone  0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone1" type="Label" parent="ZoneLabels" unique_id=1664977414]
+texture_filter = 1
+layout_mode = 0
+offset_left = 343.0
+offset_top = 176.0
+offset_right = 409.0
+offset_bottom = 201.0
+theme_override_colors/font_shadow_color = Color(0.36, 0.36, 0.36, 1)
+theme_override_fonts/font = ExtResource("6_x15rv")
+theme_override_font_sizes/font_size = 14
+text = "Zone  1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone2" type="Label" parent="ZoneLabels" unique_id=1414726077]
+texture_filter = 1
+layout_mode = 0
+offset_left = 345.0
+offset_top = 176.0
+offset_right = 411.0
+offset_bottom = 201.0
+theme_override_colors/font_shadow_color = Color(0.36, 0.36, 0.36, 1)
+theme_override_fonts/font = ExtResource("6_x15rv")
+theme_override_font_sizes/font_size = 14
+text = "Zone  2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone3" type="Label" parent="ZoneLabels" unique_id=1319323382]
+texture_filter = 1
+layout_mode = 0
+offset_left = 344.0
+offset_top = 176.0
+offset_right = 410.0
+offset_bottom = 201.0
+theme_override_colors/font_shadow_color = Color(0.36, 0.36, 0.36, 1)
+theme_override_fonts/font = ExtResource("6_x15rv")
+theme_override_font_sizes/font_size = 14
+text = "Zone  3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone4" type="Label" parent="ZoneLabels" unique_id=311621726]
+texture_filter = 1
+layout_mode = 0
+offset_left = 345.0
+offset_top = 176.0
+offset_right = 411.0
+offset_bottom = 201.0
+theme_override_colors/font_shadow_color = Color(0.36, 0.36, 0.36, 1)
+theme_override_fonts/font = ExtResource("6_x15rv")
+theme_override_font_sizes/font_size = 14
+text = "Zone  4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zone5" type="Label" parent="ZoneLabels" unique_id=2053032992]
+texture_filter = 1
+layout_mode = 0
+offset_left = 317.0
+offset_top = 36.0
+offset_right = 400.0
+offset_bottom = 61.0
+theme_override_colors/font_shadow_color = Color(0.36, 0.36, 0.36, 1)
+theme_override_fonts/font = ExtResource("6_x15rv")
+theme_override_font_sizes/font_size = 14
+text = "DEAD ZONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CameraManager" type="Node2D" parent="." unique_id=1699936015 groups=["camera_managers"]]
+script = ExtResource("5_yrmm5")
+
+[node name="MainCamera" type="Camera2D" parent="CameraManager" unique_id=477406092]
+position = Vector2(317, 176)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+editor_draw_limits = true
+
+[node name="AreaZone0" type="Area2D" parent="CameraManager" unique_id=1248523053 groups=["camera_areas"]]
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CameraZone0" type="Marker2D" parent="CameraManager/AreaZone0" unique_id=587110128 groups=["camera_markers"]]
+position = Vector2(317, 176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/AreaZone0" unique_id=1147228907]
+position = Vector2(320.059, 176)
+scale = Vector2(0.998069, 0.973941)
+shape = SubResource("RectangleShape2D_lqt0s")
+debug_color = Color(0.95, 1, 0, 0)
+
+[node name="Savestate" type="Node" parent="." unique_id=2097454545]
+script = ExtResource("12_u2v73")
+metadata/_custom_type_script = "uid://b146xa42md0k3"
+
+[node name="Serializable" type="Node" parent="." unique_id=11661777]
+script = ExtResource("13_s7x7e")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="MapLevelAnimations" type="AnimationPlayer" parent="." unique_id=1495504427]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_s7x7e")
+autoplay = &"RESET"
+
+[connection signal="body_entered" from="ZONES/Area0" to="YSORT" method="_on_area_0_body_entered"]
+[connection signal="body_exited" from="ZONES/Area0" to="YSORT" method="_on_area_0_body_exited"]
+[connection signal="body_entered" from="ZONES/Area1" to="YSORT" method="_on_area_1_body_entered"]
+[connection signal="body_exited" from="ZONES/Area1" to="YSORT" method="_on_area_1_body_exited"]
+[connection signal="body_entered" from="ZONES/Area2" to="YSORT" method="_on_area_2_body_entered"]
+[connection signal="body_exited" from="ZONES/Area2" to="YSORT" method="_on_area_2_body_exited"]
+[connection signal="body_entered" from="ZONES/Area3" to="YSORT" method="_on_area_3_body_entered"]
+[connection signal="body_exited" from="ZONES/Area3" to="YSORT" method="_on_area_3_body_exited"]
+[connection signal="body_entered" from="ZONES/Area4" to="YSORT" method="_on_area_4_body_entered"]
+[connection signal="body_exited" from="ZONES/Area4" to="YSORT" method="_on_area_4_body_exited"]
+[connection signal="body_entered" from="ZONES/Area5" to="YSORT" method="_on_area_5_body_entered"]
+[connection signal="body_exited" from="ZONES/Area5" to="YSORT" method="_on_area_5_body_exited"]

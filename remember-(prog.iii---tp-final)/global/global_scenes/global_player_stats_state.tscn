@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvwtxl1lqjncr"]
+
+[ext_resource type="Script" uid="uid://1m5u0dslypn4" path="res://global/global_player_stats_state.gd" id="1_s2bdk"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_61d6x"]
+
+[node name="GlobalPlayerStatsState" type="Node"]
+script = ExtResource("1_s2bdk")
+
+[node name="Serializable" type="Node" parent="."]
+script = ExtResource("2_61d6x")
+transform = false
+children = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

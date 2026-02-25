@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwcspoiv8a8o5"]
+
+[ext_resource type="Script" uid="uid://b6t6mqq55ehba" path="res://global/global_chests_state.gd" id="1_5qsq5"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_rawj7"]
+
+[node name="GlobalChestsState" type="Node"]
+script = ExtResource("1_5qsq5")
+
+[node name="Serializable" type="Node" parent="."]
+script = ExtResource("2_rawj7")
+transform = false
+children = false
+variables = Array[String](["chests_triggered"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

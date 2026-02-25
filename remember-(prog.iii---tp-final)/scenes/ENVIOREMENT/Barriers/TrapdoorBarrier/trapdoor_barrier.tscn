@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpc05xumcarhr"]
+
+[ext_resource type="Script" uid="uid://beklqe1eb8bv2" path="res://scenes/ENVIOREMENT/Barriers/SimpleBarrier/barrier.gd" id="1_vj5rj"]
+[ext_resource type="SpriteFrames" uid="uid://cmo0n4stm2vaf" path="res://scenes/ENVIOREMENT/Barriers/TrapdoorBarrier/trapdoor_barrier.tres" id="2_aqpc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qel7r"]
+size = Vector2(32, 30)
+
+[node name="TrapdoorBarrier" type="StaticBody2D"]
+script = ExtResource("1_vj5rj")
+
+[node name="BarrierAnimatedSprite" type="AnimatedSprite2D" parent="."]
+z_index = -1
+sprite_frames = ExtResource("2_aqpc5")
+animation = &"blue_s_barrier_idle"
+offset = Vector2(0, -14)
+
+[node name="BarrierCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_qel7r")
+disabled = true
+debug_color = Color(0.675468, 0.7, 0, 0)

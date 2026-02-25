@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crxjkcaksmsdk"
+path="res://.godot/imported/Sfx_Dialogue_Cancel.ogg-8c47d7b598f009137513e694a5befb72.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/GUI SFX/menu/Sfx_Dialogue_Cancel.ogg"
+dest_files=["res://.godot/imported/Sfx_Dialogue_Cancel.ogg-8c47d7b598f009137513e694a5befb72.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

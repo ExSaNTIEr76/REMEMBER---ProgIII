@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bes6dwy4ye2kt"]
+
+[ext_resource type="Script" uid="uid://culxbd8ylmven" path="res://items/item_data.gd" id="1_dtqtq"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="2_5meox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xf1v"]
+atlas = ExtResource("2_5meox")
+region = Rect2(32, 192, 16, 16)
+
+[resource]
+script = ExtResource("1_dtqtq")
+name = "Aries card"
+type = 4
+ID = 60
+description = "Zodiac card engraved with the figure of a ram.
+Grants access to..."
+texture = SubResource("AtlasTexture_8xf1v")
+cost = 0
+metadata/_custom_type_script = "uid://culxbd8ylmven"

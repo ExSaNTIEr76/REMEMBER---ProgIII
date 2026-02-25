@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://cij3fhow5r65x"]
+
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="1_engy0"]
+[ext_resource type="Script" uid="uid://dfsisv8ckul6p" path="res://UI/Menu/Panels/gold_panel.gd" id="1_w5tor"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="2_ekwv7"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="2_w5tor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85leg"]
+atlas = ExtResource("1_engy0")
+region = Rect2(72, 40, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72d1b"]
+texture = SubResource("AtlasTexture_85leg")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="GOLD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 169.0
+offset_bottom = 33.0
+script = ExtResource("1_w5tor")
+
+[node name="GoldPanel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 169.0
+offset_bottom = 33.0
+theme_override_styles/panel = ExtResource("2_w5tor")
+
+[node name="MarginContainer" type="MarginContainer" parent="GoldPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GoldPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 171.0
+offset_bottom = 33.0
+theme_override_constants/separation = 10
+
+[node name="C" type="Label" parent="HBoxContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.717647, 1, 0.25098, 1)
+theme_override_fonts/font = ExtResource("2_ekwv7")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creditsNumber" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ekwv7")
+theme_override_font_sizes/font_size = 20
+text = "0"

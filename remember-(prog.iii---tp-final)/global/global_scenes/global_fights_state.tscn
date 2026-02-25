@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dunrl5xjw8h1n"]
+
+[ext_resource type="Script" uid="uid://l2cuysatfgkh" path="res://global/global_fights_state.gd" id="1_b5v4p"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_r2n3m"]
+
+[node name="GlobalFightsStates" type="Node"]
+script = ExtResource("1_b5v4p")
+
+[node name="Serializable" type="Node" parent="."]
+script = ExtResource("2_r2n3m")
+transform = false
+children = false
+variables = Array[String](["fights_completed"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

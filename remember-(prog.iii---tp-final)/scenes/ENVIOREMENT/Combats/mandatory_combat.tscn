@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cntdpr7c370o4"]
+
+[ext_resource type="Script" uid="uid://cnxl108rfidpc" path="res://scenes/ENVIOREMENT/Combats/mandatory_combat.gd" id="1_jpw7s"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="3_gn2qo"]
+[ext_resource type="Script" uid="uid://djwhiyjd0pldn" path="res://scenes/ENEMIES/UTILITIES/enemy_list.gd" id="4_jwiti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4dju"]
+
+[sub_resource type="Animation" id="Animation_loipl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/CombatTag:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/CombatTag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 45)]
+}
+
+[sub_resource type="Animation" id="Animation_gn2qo"]
+resource_name = "enemies_overcome"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/CombatTag:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/CombatTag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 62), Vector2(0, 45)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/CombatTag:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["ENEMIGOS VENCIDOS!"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hem1w"]
+_data = {
+&"RESET": SubResource("Animation_loipl"),
+&"enemies_overcome": SubResource("Animation_gn2qo")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gn2qo"]
+light_mode = 1
+
+[node name="MandatoryCombat" type="Area2D" unique_id=1724075391]
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_jpw7s")
+fight_name = "fight_name"
+enemy_list = ExtResource("4_jwiti")
+combat_music_volume = -28.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1277391462]
+shape = SubResource("RectangleShape2D_q4dju")
+debug_color = Color(1, 0, 0.307249, 0.556863)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=255110588]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1570133830]
+libraries/ = SubResource("AnimationLibrary_hem1w")
+
+[node name="Control" type="Control" parent="." unique_id=949251491]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 352.0
+
+[node name="CombatTag" type="RichTextLabel" parent="Control" unique_id=1043728894]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 99
+material = SubResource("CanvasItemMaterial_gn2qo")
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 0
+offset_top = 45.0
+offset_right = 640.0
+offset_bottom = 76.000046
+theme_override_colors/default_color = Color(0, 0.986424, 1, 1)
+theme_override_colors/font_outline_color = Color(0.156299, 0.225305, 0.260134, 1)
+theme_override_colors/font_shadow_color = Color(0.0525074, 0.107439, 0.151515, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("3_gn2qo")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "ENEMIGOS VENCIDOS!"
+horizontal_alignment = 1
+vertical_alignment = 1

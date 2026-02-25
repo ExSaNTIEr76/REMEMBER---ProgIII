@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=6 format=3 uid="uid://dj2fx01hqn1wk"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_eihw3"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_ylu0h"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="3_aafy2"]
+
+[sub_resource type="Resource" id="Resource_jl8aa"]
+script = ExtResource("1_eihw3")
+type = 3
+value = 24
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eihw3"]
+atlas = ExtResource("3_aafy2")
+region = Rect2(448, 160, 16, 16)
+
+[resource]
+script = ExtResource("2_ylu0h")
+modifiers = Array[ExtResource("1_eihw3")]([SubResource("Resource_jl8aa")])
+symbol_icon_name = "C_block_2"
+cep_cost = 18
+name = "Block Duo"
+type = 5
+ID = 197
+is_quantitative = true
+description = "Heavy symbol that generates heavier weight and obstructs the enemy's path."
+texture = SubResource("AtlasTexture_eihw3")
+cost = 700
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dske2jv72ts8c"
+path="res://.godot/imported/Sfx_Ciro 'Sorry 2'.ogg-391f33fa5d7ec15df2b276db507a7b0b.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Sorry 2'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'Sorry 2'.ogg-391f33fa5d7ec15df2b276db507a7b0b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

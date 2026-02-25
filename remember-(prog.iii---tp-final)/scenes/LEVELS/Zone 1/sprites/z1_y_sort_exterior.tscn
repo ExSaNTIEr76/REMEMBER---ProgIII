@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dyfcdv1vi3cmx"]
+
+[ext_resource type="TileSet" uid="uid://ch8qquwfuqasp" path="res://scenes/LEVELS/Zone 1/sprites/Zone 1 TileMap.tres" id="1_2mb6f"]
+[ext_resource type="Script" uid="uid://bcweryyykqkml" path="res://scenes/LEVELS/levelScripts/level_tile_map_layer.gd" id="2_gparr"]
+[ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="3_888iv"]
+[ext_resource type="Script" uid="uid://cwxmgl8me2t5o" path="res://global/footstep_sound_manager.gd" id="3_gparr"]
+
+[node name="YSORT" type="Node2D" unique_id=812197675 groups=["Y-SORT"]]
+y_sort_enabled = true
+
+[node name="Layer 0 (Plastic)" type="TileMapLayer" parent="." unique_id=37412776]
+z_index = -3
+use_parent_material = true
+tile_set = ExtResource("1_2mb6f")
+script = ExtResource("2_gparr")
+
+[node name="Layer 1 (Ground)" type="TileMapLayer" parent="." unique_id=685121719]
+z_index = -2
+use_parent_material = true
+tile_set = ExtResource("1_2mb6f")
+script = ExtResource("3_gparr")
+
+[node name="Layer 2 (Path)" type="TileMapLayer" parent="." unique_id=1915183874]
+z_index = -1
+use_parent_material = true
+tile_set = ExtResource("1_2mb6f")
+
+[node name="Layer 3 (Buildings)" type="TileMapLayer" parent="." unique_id=1355064368]
+tile_set = ExtResource("1_2mb6f")
+
+[node name="Layer 4 (Buildings 2)" type="TileMapLayer" parent="." unique_id=1738267001]
+tile_set = ExtResource("1_2mb6f")
+
+[node name="Layer 5 (Buildings 3)" type="TileMapLayer" parent="." unique_id=2048518645]
+tile_set = ExtResource("1_2mb6f")
+
+[node name="Layer 6 (Entrances)" type="TileMapLayer" parent="." unique_id=467768847]
+use_parent_material = true
+tile_set = ExtResource("1_2mb6f")
+
+[node name="Layer 7 (Puddles)" type="TileMapLayer" parent="." unique_id=1255217220]
+y_sort_enabled = true
+tile_set = ExtResource("1_2mb6f")
+
+[node name="Layer 8 (Decorations)" type="TileMapLayer" parent="." unique_id=1796821489]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_2mb6f")
+
+[node name="Layer 9 (Decorations 2)" type="TileMapLayer" parent="." unique_id=1925421062]
+y_sort_enabled = true
+tile_set = ExtResource("1_2mb6f")
+
+[node name="PlayerSpawn" parent="." unique_id=603881343 instance=ExtResource("3_888iv")]

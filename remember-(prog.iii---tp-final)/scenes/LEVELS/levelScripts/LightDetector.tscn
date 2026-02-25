@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://4bw6soamb2u7"]
+
+[ext_resource type="Script" uid="uid://bouay7e0xwvjh" path="res://scenes/LEVELS/levelScripts/light_detector.gd" id="1_edxic"]
+
+[node name="LightDetector" type="Area2D"]
+collision_layer = 512
+collision_mask = 2
+priority = 2
+script = ExtResource("1_edxic")

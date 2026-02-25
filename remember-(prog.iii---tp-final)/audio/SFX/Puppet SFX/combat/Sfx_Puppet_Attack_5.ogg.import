@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxjphjubeeht6"
+path="res://.godot/imported/Sfx_Puppet_Attack_5.ogg-798fba63c3ac1e6a7e3cc73ec06739ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/combat/Sfx_Puppet_Attack_5.ogg"
+dest_files=["res://.godot/imported/Sfx_Puppet_Attack_5.ogg-798fba63c3ac1e6a7e3cc73ec06739ff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

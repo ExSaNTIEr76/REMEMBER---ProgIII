@@ -1,0 +1,600 @@
+------------------------ SEPULCHER ---------------------------------
+
+~ intro
+
+do wait(6.0)
+[speed=0.4]Hello there.
+[speed=0.4]I wonder if you can hear me.
+do wait(3.0)
+[speed=0.4]I know that this should be a natural thing, but...
+[speed=0.4]It still feels like something new to me.
+do wait(5.0)
+[speed=0.4]Lately... I have a memory running through my mind.
+[speed=0.4]Do you know what it's about?
+[speed=0.4]It's a beautiful and happy one.
+[speed=0.4]It was that big party.
+[speed=0.4]Everybody was there.
+[speed=0.4]Laughing, playing and singing together.
+[speed=0.4]But you...
+do wait(2.0)
+[speed=0.4]Well... I can't judge, can I?
+[speed=0.4]Even how bad I wished you were there...
+[speed=0.4]It's not your fault after all.
+[speed=0.4]You couldn't be there.
+[speed=0.4]Not like this.
+do wait(2.0)
+[speed=0.2]Maybe just... it was better like that?
+[speed=0.2]Who knows...
+do wait(4.0)
+[speed=0.2]But hey...
+[speed=0.2]So what if maybe it wasn't?
+[speed=0.2]If life would give you a second chance...
+[speed=0.2]Would you try to change fate just to be there?
+[speed=0.2]To be with... me?
+do wait(8.0)
+[speed=0.2]Are you even still there?
+[speed=0.2]Hhh...
+do wait(4.0)
+[speed=0.2]Just... don't give up yet.
+[speed=0.2]This is only temporary, okay?
+[speed=0.2]Stay in your coma.
+[speed=0.2]And, please...
+[speed=0.2]REMEMBER
+do wait(3.0)
+do TeleportManager.teleport_player("/root/Sepulcher/Y-SORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 0/levels/Prelude/Z0_sepulcher.tscn")
+
+=> END
+
+------------------------ SEPULCHER ---------------------------------
+
+~ beginningAct1
+
+#do wait(0.2)
+#do CinematicManager.start_cinematic()
+#do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/HeadScratching_Down")
+#do wait(0.2)
+#do AudioManager.fade_out_current_music(0.1)
+#do wait(0.2)
+#do AudioManager.fade_out_current_ambient(0.1)
+#do wait(0.2)
+#do AudioManager.play_ambient_path("res://audio/ambient/ambSfx_Plastic Flowing_1.ogg", 0.76, -12.0)
+#do SceneTransition.bars_fade_in()
+#do wait(2.0)
+#Ciro: [#confused_1] [#no_name]W-What...
+#do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Where am I'.ogg", 1.0, -3.0)
+#Ciro: [#confused_2] [#no_name] [speed=0.15]Where am I?
+#do wait(0.1)
+#do SceneTransition.cinematic_fade_out()
+#do wait(0.2)
+#do AudioManager.play_music_path("res://audio/music/Glimpse of Life.ogg", 1.0, -7.0)
+#do wait(0.2)
+#do AudioManager.play_ambient_path("res://audio/ambient/ambSfx_Plastic Flowing_1.ogg", 0.76, -25.0)
+#do wait(0.2)
+#do CinematicManager.end_cinematic(PlayerManager.player)
+#
+##set GlobalConditions.special_2_slot_obtained = true
+##set GlobalConditions.first_symbol_count += 2
+##do InventoryManager.give_all()
+##do InventoryManager.add_credits(9999)
+##do AudioManager.mute_hover_once()
+#
+#do TimeManager.resume_time()
+
+
+do wait(0.2)
+do CinematicManager.start_cinematic()
+do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/HeadScratching_Down")
+do wait(0.2)
+do AudioManager.fade_out_current_music(0.1)
+do wait(0.2)
+do AudioManager.fade_out_current_ambient(0.1)
+do wait(0.2)
+do AudioManager.play_ambient_path("res://audio/ambient/ambSfx_Plastic Flowing_1.ogg", 0.76, -12.0)
+do SceneTransition.bars_fade_in()
+do wait(2.0)
+Ciro: [#confused_1] [#no_name]Q-qué...
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Where am I'.ogg", 1.0, -3.0)
+Ciro: [#confused_2] [#no_name] [speed=0.5]¿En dónde estoy?
+do wait(0.1)
+Usa las FLECHAS del teclado para moverte.
+	Mantén CONTROL mientras te mueves para correr.
+Utiliza la BARRA ESPACIADORA para interactuar con el entorno.
+	Oprime SHIFT para adelantar un diálogo.
+do SceneTransition.cinematic_fade_out()
+do wait(0.2)
+do AudioManager.play_music_path("res://audio/music/Glimpse of Life.ogg", 1.0, -7.0)
+do wait(0.2)
+do AudioManager.play_ambient_path("res://audio/ambient/ambSfx_Plastic Flowing_1.ogg", 0.76, -25.0)
+do wait(0.2)
+do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/others/Sfx_Fabric_2.ogg", 1.0, -25.0)
+do CinematicManager.end_cinematic(PlayerManager.player)
+do TimeManager.resume_time()
+
+=> END
+
+-----------------------------------------------------
+
+~ caveEntrance
+
+#It's dark. I don't want to go back in there.
+
+Está oscuro. No quiero regresar ahí dentro.
+
+=> END
+
+-----------------------------------------------------
+
+~ rockSymbol
+
+#I have no idea what this is, but looking at it makes my head hurt.
+
+No tengo idea de qué es esto, pero mirarlo me hace doler la cabeza.
+
+=> END
+
+----------------------- LARES OF EXCILE --------------------------------
+
+~ boxes
+
+#Boxes with nothing special inside.
+
+Cajas sin nada especial dentro.
+
+=> END
+
+-----------------------------------------------------
+
+~ childEncounter
+
+do CinematicManager.start_cinematic()
+do CinematicManager.move_entity("Puppet", Vector2.UP, 28, 40.0)
+do CinematicManager.play_cinematic("Puppet", "_CinematicIdle/CinematicIdle_Up")
+do wait(3.0)
+Ciro: [#smiling_1] [#no_name]Disculpa pequeñín. ¿Eres de por aquí?
+do wait(0.1)
+do CinematicManager.play_cinematic("TheChild", "StopDrawing")
+do CinematicManager.play_cinematic("Puppet", "Walk/WalkUp")
+do CinematicManager.move_entity("Puppet", Vector2.UP, 28, 40.0)
+do CinematicManager.play_cinematic("Puppet", "_CinematicIdle/CinematicIdle_Up")
+do wait(1.0)
+Ciro: [#smiling_4] [#no_name]Sólo estoy algo perdido y no me vendrían mal algunas indicaciones.
+Ciro: [#smiling_4] [#no_name]¿Crees poder ayudarme?
+do wait(1.0)
+do CinematicManager.play_cinematic("Puppet", "Walk/WalkUp")
+do CinematicManager.move_entity("Puppet", Vector2.UP, 28, 40.0)
+do CinematicManager.play_cinematic("Puppet", "_CinematicIdle/CinematicIdle_Up")
+do wait(0.1)
+do CinematicManager.play_cinematic("TheChild", "RunOut")
+do wait(0.43)
+do CinematicManager.play_cinematic("TheChild", "WalkRight")
+do CinematicManager.move_entity("TheChild", Vector2.RIGHT, 60, 120.0)
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'Hey Don't Run'.ogg", 1.0, 0.0)
+do CinematicManager.play_cinematic("TheChild", "WalkUp")
+do CinematicManager.move_entity("TheChild", Vector2.UP, 28, 120.0)
+do CinematicManager.play_cinematic("TheChild", "OFF")
+Ciro: [#shocked_1] [#no_name]¡Hey, no corras! no voy a hacerte daño.
+do wait(1.0)
+do SceneTransition.cinematic_fade_out()
+do wait(0.1)
+do CinematicManager.end_cinematic(PlayerManager.player)
+
+=> END
+
+
+-----------------------------------------------------
+
+~ drawing
+
+#Boxes with nothing special inside.
+
+do wait(1.0)
+¿Ciro? hmm... Con que así me llamaba.
+set GlobalConditions.puppet_name_revealed = true
+¿Acaso este niño me conoce de algo?
+do wait(0.1)
+
+=> END
+
+
+-----------------------------------------------------
+
+
+~ childRunning1
+
+
+do CinematicManager.play_cinematic("TheChild", "WalkRight")
+do CinematicManager.move_entity("TheChild", Vector2.RIGHT, 60, 120.0)
+do CinematicManager.play_cinematic("TheChild", "OFF")
+
+=> END
+
+
+-----------------------------------------------------
+
+~ templeSymbol
+
+#do CinematicManager.start_cinematic()
+#do SceneTransition.white_flash()
+#do wait(0.1)
+#do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Dark_Flash.ogg", 1.8, -13.0)
+#do wait(0.1)
+#do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Complain 4.ogg", 1.0, 0.0)
+#do wait(1.0)
+#That symbol again... ugh.
+#I don't know what's wrong with me, but I can't get any closer.
+#It's weird. Like some kind of higher force is holding me back...
+#Anyway. Maybe I should go somewhere else.
+#do CinematicManager.move_entity("Puppet", Vector2.DOWN, 48, 40.0)
+#do CinematicManager.play_cinematic("Puppet", "Idle/IdleDown")
+#do wait(0.1)
+#do CinematicManager.end_cinematic(PlayerManager.player)
+
+
+
+do CinematicManager.start_cinematic()
+do SceneTransition.white_flash()
+do wait(0.1)
+do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Dark_Flash.ogg", 1.8, -13.0)
+do wait(0.1)
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Complain 4.ogg", 1.0, 0.0)
+do wait(1.0)
+Ese símbolo otra vez... agh.
+No sé qué es lo que me ocurre, pero no puedo acercarme más.
+Es raro. Como si algún tipo de fuerza superior me detuviese...
+Como sea. Tal vez deba continuar por otro sitio.
+do CinematicManager.move_entity("Puppet", Vector2.DOWN, 48, 40.0)
+do CinematicManager.play_cinematic("Puppet", "Idle/IdleDown")
+do wait(0.1)
+do CinematicManager.end_cinematic(PlayerManager.player)
+
+=> END
+
+------------------------- WAREHOUSE 1 ----------------------------------
+
+~ boxes2
+
+#More boxes with nothing important in them.
+
+Más cajas sin nada importante dentro.
+
+=> END
+
+-----------------------------------------------------
+
+~ emptyBoxes
+
+#They are just empty boxes.
+
+Son sólo cajas vacías.
+
+=> END
+
+-----------------------------------------------------
+
+~ window
+
+#I can hear the distant waves from here.
+
+Puedo escuchar las distantes olas desde aquí.
+
+=> END
+
+-----------------------------------------------------
+
+~ chairAndTable
+
+#A chair and an empty table. 
+#I wonder if there's anyone around here.
+
+Una silla y una mesa vacía.
+Me pregunto si habrá alguien por aquí.
+
+=> END
+
+
+-----------------------------------------------------
+
+~ lever
+
+#It's a mechanism with a groove in the center.
+#Hmm... Could it be for a lever, perhaps?
+
+Es un mecanismo con una hendidura en el centro.
+Hmm... ¿Podría ser para una palanca, tal vez?
+
+=> END
+
+
+----------------------- SECRET BASEMENT 1 --------------------------------
+
+~ bookshelf
+
+#if not GlobalConditions.has_read_bookshelf
+#	set GlobalConditions.has_read_bookshelf = true
+#	"The New World".
+#		"The Primordial Elements".
+#		"The Royal Guardians"...
+#	From the titles, they seem like fantasy books.
+#	Whatever. I don't think reading them is very relevant right now.
+#else
+#	I'm not interested in reading right now.
+
+
+if not GlobalConditions.has_read_bookshelf
+	set GlobalConditions.has_read_bookshelf = true
+	"El Nuevo Mundo".
+		"Los Elementos Primordiales".
+		"Los Guardianes Reales"...
+	Por los títulos, parecen ser libros interesantes.
+	Amo los libros, pero no creo que sean relevantes en este momento.
+else
+	No me interesa leer en este momento.
+
+=> END
+
+
+-----------------------------------------------------
+
+
+~ posters
+
+#They are posters of some kind of ancient sun religion.
+
+Son pósters de alguna especie de antigua religión al sol.
+
+=> END
+
+
+
+
+----------------------- SECRET BASEMENT 2 --------------------------------
+
+~ bookInTable
+
+#do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/notes/Sfx_Note_Grab1.ogg", 1.0, -5.0)
+#"That is why these entities are said to be the abstract manifestation of a strong purpose, feeling, desire, or memory."
+#"Their intentions are known to be in accord with the nature of this gestating energy, making them both bright and dark."
+#"Those individuals not bound by a physical order can resonate with its energy and allow it to forge an irrevocable bond."
+#do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'What is This'.ogg", 1.0, -15.0)
+#Ciro: [#upset_5] [#no_name]What the heck is this? Esotericism?
+#Ciro: [#confused_3] [#no_name]]God... I don't like this place at all.
+
+
+do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/notes/Sfx_Note_Grab1.ogg", 1.0, -5.0)
+[speed=80.0]"Es por eso que se dice que estos entes son la abstracta manifestación de un fuerte propósito, sentimiento, deseo o recuerdo."
+[speed=80.0]"Se sabe que sus intenciones son acorde a la naturaleza de esta energía gestante, habiéndolos brillantes y oscuros." 
+[speed=80.0]"Aquellos individuos no sujetos a un orden físico pueden resonar con su energía y permitirles forjar un vínculo irrebocable."
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'What is This'.ogg", 1.0, -15.0)
+Ciro: [#upset_5] [#no_name]¿Qué rayos es esto? ¿esoterismo?
+Ciro: [#confused_3] [#no_name]Dios... este sitio no me gusta en lo absoluto.
+
+=> END
+
+-----------------------------------------------------
+
+~ posters2
+
+#They are posters of curious places.
+
+Son pósters de sitios curiosos.
+
+=> END
+
+
+---------------------- FORGOTTEN GROTTOES -------------------------------
+
+~ chills
+
+#do CinematicManager.start_cinematic()
+#do wait(1.0)
+#do SceneTransition.cinematic_fade_in()
+#do wait(0.5)
+#Ciro: [#worried_1] [#no_name] [speed=0.2]This place gives me the creeps.
+#Ciro: [#worried_2] [#no_name] [speed=0.2]I feel like something is watching me.
+#Ciro: [#worried_3] [#no_name] [speed=0.5]I-I don't want to be here.
+#Ciro: [#worried_2] [#no_name] [speed=0.5]Maybe I should look somewhere else.
+#do wait(0.5)
+#do CinematicManager.play_cinematic(PlayerManager.player, "_CinematicIdle/CinematicIdle_Left")
+#do wait(0.5)
+#do CinematicManager.play_cinematic(PlayerManager.player, "Hurt/Hurt_Left")
+#do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Surprised 1.ogg", 1.0, -3.0)
+#Ciro: [#shocked_1] [#no_name] [speed=0.15]!!!
+#do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/HeadScratching_Left")
+#Ciro: [#shocked_2] [#no_name] [speed=0.2]The stairs... disappeared?
+#do PlayerManager.set_ill_state( true )
+#Ciro: [#shocked_3] [#no_name] [speed=0.5]N-No, it can't be, it must just be my imagination, yes, they're definitely still here and I just have to walk to-[next=auto]
+#do CinematicManager.move_entity("Puppet", Vector2.LEFT, 48, 75.0)
+#do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/others/Sfx_Fabric_1.ogg", 1.0, -25.0)
+#do CinematicManager.play_cinematic("Puppet", "_CinematicIdle/CinematicIdle_Left")
+#do wait(1.0)
+#Ciro: [#shocked_4] [#no_name] [speed=15.0]...
+#do wait(1.0)
+#do CinematicManager.play_cinematic("Puppet", "_CinematicIdle/CinematicIdle_Right")
+#do wait(1.0)
+#Ciro: [#scared_2] [#no_name] [speed=0.1]I-I...
+#do wait(1.0)
+#do SceneTransition.black_flash()
+#do wait(0.1)
+#do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Dark_Flash.ogg", 0.5, -10.0)
+#do CinematicManager.play_cinematic(PlayerManager.player, "Hurt/Hurt_Right")
+#do wait(0.1)
+#do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/hurt/Sfx_Puppet_Hurt_3.ogg", 1.0, -5.0)
+#do wait(0.5)
+#do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -10.0)
+#do wait(2.0)
+#do AudioManager.play_music_path("res://audio/music/Migraine.ogg", 1.0, -5.0)
+#Ciro: [#ill_2] [#no_name] [speed=0.2]M-My head hurts. It hurts a lot!
+#Ciro: [#ill_1] [#no_name] [speed=0.2]I feel weak.
+#do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/HeadScratchsing_Right")
+#Ciro: [#ill_2] [#no_name] [speed=0.2]G-God! What's happening to this site!?
+#Ciro: [#ill_2] [#no_name] [speed=0.4]I want to get out of here now!
+#do SceneTransition.cinematic_fade_out()
+#do CinematicManager.play_cinematic(PlayerManager.player, "_CinematicIdle/CinematicIdle_Right")
+#do wait(0.2)
+#do PlayerManager.set_ill_state(true)
+#do CinematicManager.end_cinematic(PlayerManager.player)
+
+
+do CinematicManager.start_cinematic()
+do wait(1.0)
+Ciro: [#worried_1] [#no_name]Pequeñín, ¿estás aquí?
+Ciro: [#worried_2] [#no_name]Hey, esto no es divertido.
+Ciro: [#worried_3] [#no_name]A penas se puede ver algo aquí.
+Ciro: [#worried_1] [#no_name]Yo... vi el dibujo que hiciste de mí.
+Ciro: [#worried_2] [#no_name]¿Acaso nos conocemos de algo?
+do wait(1.0)
+Ciro: [#worried_2] [#no_name]Mejor volvamos a la superficie, donde no esté todo tan oscuro, ¿sí?
+do wait(0.5)
+do CinematicManager.play_cinematic(PlayerManager.player, "_CinematicIdle/CinematicIdle_Left")
+do wait(0.5)
+do CinematicManager.play_cinematic(PlayerManager.player, "Hurt/Hurt_Left")
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Surprised 1.ogg", 1.0, -3.0)
+Ciro: [#shocked_1] [#no_name] [speed=15.0]!!!
+do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/HeadScratching_Left")
+Ciro: [#shocked_2] [#no_name] [speed=0.4]Las escaleras... ¿desaparecieron?
+do PlayerManager.set_ill_state( true )
+Ciro: [#shocked_3] [#no_name] [speed=1.0]N-No, no puede ser, debe de ser sólo mi imaginación, sí, de seguro siguen aquí y solo no estoy viendo bien.
+do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/others/Sfx_Fabric_1.ogg", 1.0, -25.0)
+do CinematicManager.play_cinematic(PlayerManager.player, "_CinematicIdle/CinematicIdle_Left")
+do wait(1.0)
+do CinematicManager.move_entity("Puppet", Vector2.LEFT, 24, 75.0)
+do CinematicManager.play_cinematic("Puppet", "_CinematicIdle/CinematicIdle_Left")
+do AudioManager.fade_out_current_ambient(1.5)
+do wait(1.0)
+do AudioManager.fade_out_current_ambient(1.5)
+do wait(0.1)
+Ciro: [#shocked_4] [#no_name] [speed=15.0]...
+do wait(1.0)
+do AudioManager.fade_out_current_ambient(1.5)
+do CinematicManager.play_cinematic("Puppet", "_CinematicIdle/CinematicIdle_Right")
+do wait(1.0)
+Ciro: [#scared_2] [#no_name] [speed=0.1]Y-yo...
+do wait(1.0)
+do SceneTransition.black_flash()
+do wait(0.1)
+do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Dark_Flash.ogg", 0.5, -10.0)
+do CinematicManager.play_cinematic(PlayerManager.player, "Hurt/Hurt_Right")
+do wait(0.1)
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/hurt/Sfx_Puppet_Hurt_3.ogg", 1.0, -5.0)
+do scene.start_migraine()
+do wait(0.5)
+do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -10.0)
+do wait(2.0)
+Ciro: [#ill_2] [#no_name] [speed=0.5]M-Mi cabeza duele. ¡Duele mucho!
+Ciro: [#ill_1] [#no_name] [speed=0.5]Me siento débil.
+do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/HeadScratching_Right")
+Ciro: [#ill_2] [#no_name] [speed=0.5]¡D-Dios! ¿¡qué está ocurriendo con este sitio!?
+Ciro: [#ill_2] [#no_name] [speed=0.6]¡Quiero largarme de aquí ahora!
+do SceneTransition.cinematic_fade_out()
+do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/others/Sfx_Fabric_2.ogg", 1.0, -25.0)
+do CinematicManager.play_cinematic(PlayerManager.player, "_CinematicIdle/CinematicIdle_Right")
+do wait(0.2)
+do scene.start_whispers()
+do PlayerManager.set_ill_state(true)
+do CinematicManager.end_cinematic(PlayerManager.player)
+
+=> END
+
+
+-----------------------------------------------------
+
+~ shadowStalkerAppears 
+
+do CinematicManager.start_cinematic()
+do CinematicManager.play_cinematic(PlayerManager.player, "Hurt/Hurt_Right")
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Surprised 1.ogg", 1.0, -3.0)
+do wait(1.5)
+do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -10.0)
+do wait(1.0)
+do SceneTransition.black_flash()
+do scene.start_otherworld()
+do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Dark_Flash.ogg", 0.5, -5.0)
+do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/Kneeling_Right")
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/hurt/Sfx_Puppet_Hurt_3.ogg", 1.0, -5.0)
+do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -10.0)
+do wait(2.0)
+Ciro: [#ill_1] [#no_name] [speed=0.5]¿Qué eres?
+Ciro: [#ill_2] [#no_name]¿¡Qué demonios quieres de mí, maldito!?
+Ciro: [#ill_2] [#no_name]¡Ahhh, sal de mi cabeza!
+do wait(1.0)
+Entities: [#stalker_1] [#no_name] [speed=0.1]...
+do wait(1.0)
+do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -10.0)
+do AudioManager.fade_out_current_ambient(1.5)
+do AudioManager.fade_out_music_path("res://audio/music/Migraine.ogg", 0.8)
+do wait(2.0)
+Ciro: [#ill_2] [#no_name][speed=0.4]S-Sal de mi ca-...
+do wait(0.5)
+do SceneTransition.black_flash()
+do scene.start_shadow_embrace()
+do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Dark_Flash.ogg", 0.5, -5.0)
+do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/Fainted_2_Right")
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/hurt/Sfx_Puppet_Death_3.ogg", 1.0, 5.0)
+do wait(5.0)
+do AudioManager.play_ambient_path("res://audio/ambient/ambSfx_White_Static.ogg", 1.0, 5.0)
+do scene.start_sentence()
+do wait(5.0)
+do SceneTransition.fade_out_black()
+do TeleportManager.teleport_player("/root/Z0_Ruins/YSORT/SpawnMarker", Vector2(0, 0), 1, "res://scenes/LEVELS/Zone 0/levels/Ruins/Z0_ruins.tscn", false)
+do AudioManager.fade_out_music_path("res://audio/music/Distant Waves.ogg", 0.0)
+do SceneTransition.black_screen_on()
+
+=> END
+
+
+-----------------------------------------------------
+
+~ ciroFainting
+
+	do CinematicManager.start_cinematic()
+	do wait(0.2)
+	do SceneTransition.fade_out_black()
+	do wait(0.2)
+	do TeleportManager.teleport_player("/root/Z0_Ruins/YSORT/SpawnMarker", Vector2(0, 0), 1, "res://scenes/LEVELS/Zone 0/levels/Ruins/Z0_ruins.tscn", false)
+	do SceneTransition.black_screen_on()
+
+=> END
+
+----------------------- SECRET BASEMENT 4 --------------------------------
+
+~ laddersLost
+
+#do wait(0.2)
+#do CinematicManager.start_cinematic()
+#do CinematicManager.play_player_cinematic("_CinematicIdle/CinematicIdle_Left")
+#do wait(0.2)
+#do SceneTransition.cinematic_fade_in()
+#do wait(0.5)
+#do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Surprised 1.ogg", 1.0, -3.0)
+#Ciro: [#shocked_2] [#no_name] [speed=0.15]!!!
+#Ciro: [#shocked_2] [#no_name] [speed=0.3]What was all that about?
+#Ciro: [#eyeclosed] [#no_name] [speed=0.5]Damn, and that voices...
+#Ciro: [#worried_1] [#no_name] [speed=0.5]I was just dreaming? or...
+#do wait(0.5)
+#do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'I Think I'm Going Crazy'.ogg", 1.0, -3.0)
+#Ciro: [#confused_4] [#no_name] [speed=0.55]God... I think I'm going crazy right now.
+#do SceneTransition.cinematic_fade_out()
+#do wait(0.2)
+#do CinematicManager.end_cinematic(PlayerManager.player)
+
+
+
+do wait(0.2)
+do CinematicManager.start_cinematic()
+do CinematicManager.play_cinematic(PlayerManager.player, "_CinematicIdle/CinematicIdle_Left")
+do wait(0.2)
+do SceneTransition.cinematic_fade_in()
+do wait(0.5)
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Surprised 1.ogg", 1.0, -3.0)
+Ciro: [#shocked_2] [#no_name] [speed=0.15]!!!
+Ciro: [#shocked_2] [#no_name] [speed=0.3]¿Qué fue todo eso?
+Ciro: [#eyeclosed] [#no_name] [speed=0.5]Rayos, esas voces...
+Ciro: [#worried_1] [#no_name] [speed=0.5]¿Tan sólo estaba soñando? ó...
+do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'I Think I'm Going Crazy'.ogg", 1.0, -3.0)
+Ciro: [#confused_4] [#no_name] [speed=0.5]Dios... Creo que estoy volviéndome loco.
+do SceneTransition.cinematic_fade_out()
+do SceneTransition.cinematic_fade_out()
+do wait(0.2)
+do CinematicManager.end_cinematic(PlayerManager.player)
+
+=> END

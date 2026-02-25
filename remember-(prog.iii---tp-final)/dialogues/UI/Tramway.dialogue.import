@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dl67gd4hvk4ca"
+path="res://.godot/imported/Tramway.dialogue-74e23370cf46cdcd63722e0e8380f388.tres"
+
+[deps]
+
+source_file="res://dialogues/UI/Tramway.dialogue"
+dest_files=["res://.godot/imported/Tramway.dialogue-74e23370cf46cdcd63722e0e8380f388.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2a6hp4y43pjx"
+path="res://.godot/imported/Sfx_Puppet_NoCp_2.ogg-1c82e338f2753cc63c0ed2a47954c63f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/combat/Sfx_Puppet_NoCp_2.ogg"
+dest_files=["res://.godot/imported/Sfx_Puppet_NoCp_2.ogg-1c82e338f2753cc63c0ed2a47954c63f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

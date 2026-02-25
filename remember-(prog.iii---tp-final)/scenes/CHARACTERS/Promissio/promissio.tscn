@@ -1,0 +1,414 @@
+[gd_scene format=3 uid="uid://cx165gn0ww1b0"]
+
+[ext_resource type="Script" uid="uid://dqffxrmmfe8pm" path="res://scenes/CHARACTERS/Promissio/promissio.gd" id="1_hphlv"]
+[ext_resource type="Texture2D" uid="uid://xmhq3mi8e08j" path="res://scenes/CHARACTERS/Promissio/Promissio_Idle.png" id="2_xmy8k"]
+[ext_resource type="Material" uid="uid://b8t3bswj5v8c5" path="res://effects/Shaders/SmoothPixel.tres" id="3_0js4l"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="3_7b4g7"]
+[ext_resource type="Texture2D" uid="uid://bpoa54yvv35fu" path="res://scenes/CHARACTERS/Promissio/Promissio_HighAttack.png" id="3_kxqju"]
+[ext_resource type="PackedScene" uid="uid://c4f21dlpn8d8i" path="res://scenes/CHARACTERS/state_machine.tscn" id="5_0js4l"]
+[ext_resource type="Script" uid="uid://8nisuxc363nh" path="res://scenes/CHARACTERS/Promissio/promissioStates/promissio_state_idle.gd" id="6_7b4g7"]
+[ext_resource type="Script" uid="uid://5tedwr7pb8uc" path="res://scenes/CHARACTERS/Promissio/promissioStates/promissio_state_anticipation.gd" id="7_ujt5u"]
+[ext_resource type="Script" uid="uid://b3qmq14pmkidr" path="res://scenes/CHARACTERS/Promissio/promissioStates/promissio_state_attacking.gd" id="8_2w1l6"]
+[ext_resource type="Animation" uid="uid://balydc18wuhbf" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/SmearAnticipationB_Down.res" id="9_5h1ff"]
+[ext_resource type="Script" uid="uid://ctnvggn1govp5" path="res://scenes/CHARACTERS/Promissio/promissioStates/promissio_state_sleeping.gd" id="9_7b4g7"]
+[ext_resource type="Animation" uid="uid://vdikq6dfsjft" path="res://scenes/CHARACTERS/Promissio/animations/Idle.res" id="9_n7qu3"]
+[ext_resource type="Script" uid="uid://sf3cvsc0nk3b" path="res://scenes/CHARACTERS/Promissio/promissioStates/promissio_state_recovery.gd" id="9_un8o0"]
+[ext_resource type="Script" uid="uid://d4hhh16kffxpd" path="res://scenes/CHARACTERS/Promissio/promissioStates/promissio_state_consec.gd" id="9_xmy8k"]
+[ext_resource type="Animation" uid="uid://bdqk8cs720ue0" path="res://scenes/CHARACTERS/Promissio/animations/Sleeping.res" id="10_ekskw"]
+[ext_resource type="Animation" uid="uid://v5ges27e5wim" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/SmearAnticipationB_UpRight.res" id="10_u7ew7"]
+[ext_resource type="Animation" uid="uid://bbgnfx3eouvjp" path="res://scenes/CHARACTERS/Promissio/animations/Vanish.res" id="11_baxaj"]
+[ext_resource type="Animation" uid="uid://cc3mulerpkluj" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/SmearAnticipationA_Down.res" id="11_wl27o"]
+[ext_resource type="Animation" uid="uid://ri3hnm8ej2i1" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_Shield/Shield_breaking.res" id="12_a5q1g"]
+[ext_resource type="Animation" uid="uid://bi4tg4qek16o7" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/SmearAnticipationA_DownLeft.res" id="12_jugjk"]
+[ext_resource type="Animation" uid="uid://7djfhm7w6y3" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/SmearAnticipationA_DownRight.res" id="13_2cli7"]
+[ext_resource type="Animation" uid="uid://cfgxuak64xjl8" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_Shield/Shield_summoning.res" id="13_lra2o"]
+[ext_resource type="Animation" uid="uid://41gtxttnsyef" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_Shield/Shield_vanishing.res" id="14_igbcc"]
+[ext_resource type="Animation" uid="uid://diktpstj8os4m" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/SmearAnticipationA_Left.res" id="14_n7ckc"]
+[ext_resource type="Animation" uid="uid://cm5fah70br1rx" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_Shield/Shield_idle.res" id="15_ekskw"]
+[ext_resource type="Animation" uid="uid://dmqilwuujvtoo" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/SmearAnticipationA_Right.res" id="15_jclee"]
+[ext_resource type="Script" uid="uid://csvhrob8a2qda" path="res://scenes/CHARACTERS/Promissio/promissioStates/promissio_state_blocking.gd" id="15_ujt5u"]
+[ext_resource type="Animation" uid="uid://c4jm0x0nfjrw1" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/SmearAnticipationA_Up.res" id="16_i4dbu"]
+[ext_resource type="Animation" uid="uid://dl48t7xr4lcds" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/SmearAnticipationA_UpLeft.res" id="17_cng1f"]
+[ext_resource type="Animation" uid="uid://c5q5yh6wek705" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationA/SmearAnticipationA_UpRight.res" id="18_cfipr"]
+[ext_resource type="Animation" uid="uid://dg8a67jxa5s3j" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/SmearAnticipationB_DownLeft.res" id="24_xcshq"]
+[ext_resource type="Animation" uid="uid://mgj2ujpvfmer" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/SmearAnticipationB_DownRight.res" id="25_0hdcf"]
+[ext_resource type="Animation" uid="uid://ckpuxdl20hs0k" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/SmearAnticipationB_Left.res" id="26_tork5"]
+[ext_resource type="Animation" uid="uid://b13xxi8v4aelq" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/SmearAnticipationB_Right.res" id="27_xmp64"]
+[ext_resource type="Animation" uid="uid://bbmrb8gv6xah7" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/SmearAnticipationB_Up.res" id="28_abtm0"]
+[ext_resource type="Animation" uid="uid://d2yt6ppb2i38y" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearAnticipationB/SmearAnticipationB_UpLeft.res" id="29_ng1eg"]
+[ext_resource type="Animation" uid="uid://c44gyixg3gtu6" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/SmearConsecA_Down.res" id="31_3ueml"]
+[ext_resource type="Animation" uid="uid://crq66bmxlq320" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/SmearConsecA_DownLeft.res" id="32_wyb06"]
+[ext_resource type="Animation" uid="uid://dxkf50shro4bd" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/SmearConsecA_DownRight.res" id="33_ogahk"]
+[ext_resource type="Animation" uid="uid://c8vt87dogdfdu" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/SmearConsecA_Left.res" id="34_6c31g"]
+[ext_resource type="Animation" uid="uid://eqch4v2m5ite" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/SmearConsecA_Right.res" id="35_a1k68"]
+[ext_resource type="Animation" uid="uid://dcb77v1ry266j" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/SmearConsecA_Up.res" id="36_bmkfs"]
+[ext_resource type="Animation" uid="uid://peikup7y143d" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/SmearConsecA_UpLeft.res" id="37_f4ob6"]
+[ext_resource type="Animation" uid="uid://b5jq412mvmedx" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecA/SmearConsecA_UpRight.res" id="38_r8ivy"]
+[ext_resource type="Animation" uid="uid://bw0qbrg1ef32t" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/SmearConsecB_Down.res" id="39_niv8h"]
+[ext_resource type="Animation" uid="uid://dvu5dpqvg6k17" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/SmearConsecB_DownLeft.res" id="40_o4qrj"]
+[ext_resource type="Animation" uid="uid://dxmk174df0eoy" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/SmearConsecB_DownRight.res" id="41_gbvjr"]
+[ext_resource type="Animation" uid="uid://vohgjxsd1mwf" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/SmearConsecB_Left.res" id="42_xe76l"]
+[ext_resource type="Animation" uid="uid://cjlnq47k21qkf" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/SmearConsecB_Right.res" id="43_psb2y"]
+[ext_resource type="Animation" uid="uid://dr06and3lyj3a" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/SmearConsecB_Up.res" id="44_fslok"]
+[ext_resource type="Animation" uid="uid://fd8k1k37pvov" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/SmearConsecB_UpLeft.res" id="45_nmu04"]
+[ext_resource type="Animation" uid="uid://f8nkh1hp6hel" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearConsecB/SmearConsecB_UpRight.res" id="46_r75ek"]
+[ext_resource type="Animation" uid="uid://dgxuov1b52bsx" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/SmearRecoveryA_Down.res" id="47_g3pm3"]
+[ext_resource type="Animation" uid="uid://h1wv4muegrlq" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/SmearRecoveryA_DownLeft.res" id="48_7ccxr"]
+[ext_resource type="Animation" uid="uid://cahbf4g3oyi2m" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/SmearRecoveryA_DownRight.res" id="49_v5fh6"]
+[ext_resource type="Animation" uid="uid://ry0ypjsthfpg" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/SmearRecoveryA_Left.res" id="50_6r6qr"]
+[ext_resource type="Animation" uid="uid://d2xq2w71j6n32" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/SmearRecoveryA_Right.res" id="51_bim26"]
+[ext_resource type="Animation" uid="uid://p70mg4uacxnx" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/SmearRecoveryA_Up.res" id="52_eweqc"]
+[ext_resource type="Animation" uid="uid://ds4ynrluvycmw" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/SmearRecoveryA_UpLeft.res" id="53_522nq"]
+[ext_resource type="Animation" uid="uid://cry2ne2gfvoyk" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryA/SmearRecoveryA_UpRight.res" id="54_ywtt6"]
+[ext_resource type="Animation" uid="uid://de7vr6ahf6foh" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/SmearRecoveryB_Down.res" id="55_grdit"]
+[ext_resource type="Animation" uid="uid://cj3atju116ukl" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/SmearRecoveryB_DownLeft.res" id="56_gu2mi"]
+[ext_resource type="Animation" uid="uid://cx6ba6x0k51hb" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/SmearRecoveryB_DownRight.res" id="57_y4isx"]
+[ext_resource type="Animation" uid="uid://cnvralrguoa5p" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/SmearRecoveryB_Left.res" id="58_fa7lq"]
+[ext_resource type="Animation" uid="uid://vybfbmw1ar13" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/SmearRecoveryB_Right.res" id="59_gf8no"]
+[ext_resource type="Animation" uid="uid://0y53yvmpwjng" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/SmearRecoveryB_Up.res" id="60_cs48c"]
+[ext_resource type="Animation" uid="uid://detfjo3nmr4s8" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/SmearRecoveryB_UpLeft.res" id="61_7kljh"]
+[ext_resource type="AudioStream" uid="uid://ckvfoodnht8ac" path="res://audio/SFX/Puppet SFX/combat/Sfx_Puppet_Attack_1.ogg" id="62_a5q1g"]
+[ext_resource type="Animation" uid="uid://pniroahha1n2" path="res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_SmearRecoveryB/SmearRecoveryB_UpRight.res" id="62_rjuin"]
+[ext_resource type="AudioStream" uid="uid://b3er0uf02gtxo" path="res://audio/SFX/Puppet SFX/combat/Sfx_Puppet_Attack_2.ogg" id="63_lra2o"]
+[ext_resource type="AudioStream" uid="uid://be1fgrv8pf2l3" path="res://audio/SFX/Puppet SFX/combat/Sfx_Puppet_Attack_3.ogg" id="64_igbcc"]
+[ext_resource type="Script" uid="uid://b8aaoj75bdflo" path="res://scenes/CHARACTERS/Promissio/promissio_state_shield_breaking.gd" id="73_a5q1g"]
+
+[sub_resource type="Animation" id="Animation_5iob2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AddOn:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transformations:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AddOn:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Transformations:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-28, -23)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Transformations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AddOn:material:shader_parameter/flash_opacity")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Transformations:flip_v")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AddOn:material:shader_parameter/flash_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh42b"]
+_data = {
+&"Idle": ExtResource("9_n7qu3"),
+&"RESET": SubResource("Animation_5iob2"),
+&"Sleeping": ExtResource("10_ekskw"),
+&"Vanish": ExtResource("11_baxaj")
+}
+
+[sub_resource type="Animation" id="Animation_a5q1g"]
+resource_name = "Shield_guard"
+length = 0.001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AddOn:material:shader_parameter/flash_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_baxaj"]
+resource_name = "Shield_perfect_guard"
+length = 0.001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AddOn:material:shader_parameter/flash_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nuf5a"]
+_data = {
+&"Shield_breaking": ExtResource("12_a5q1g"),
+&"Shield_guard": SubResource("Animation_a5q1g"),
+&"Shield_idle": ExtResource("15_ekskw"),
+&"Shield_perfect_guard": SubResource("Animation_baxaj"),
+&"Shield_summoning": ExtResource("13_lra2o"),
+&"Shield_vanishing": ExtResource("14_igbcc")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6ykg"]
+_data = {
+&"SmearAnticipationA_Down": ExtResource("11_wl27o"),
+&"SmearAnticipationA_DownLeft": ExtResource("12_jugjk"),
+&"SmearAnticipationA_DownRight": ExtResource("13_2cli7"),
+&"SmearAnticipationA_Left": ExtResource("14_n7ckc"),
+&"SmearAnticipationA_Right": ExtResource("15_jclee"),
+&"SmearAnticipationA_Up": ExtResource("16_i4dbu"),
+&"SmearAnticipationA_UpLeft": ExtResource("17_cng1f"),
+&"SmearAnticipationA_UpRight": ExtResource("18_cfipr")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ftjp"]
+_data = {
+&"SmearAnticipationB_Down": ExtResource("9_5h1ff"),
+&"SmearAnticipationB_DownLeft": ExtResource("24_xcshq"),
+&"SmearAnticipationB_DownRight": ExtResource("25_0hdcf"),
+&"SmearAnticipationB_Left": ExtResource("26_tork5"),
+&"SmearAnticipationB_Right": ExtResource("27_xmp64"),
+&"SmearAnticipationB_Up": ExtResource("28_abtm0"),
+&"SmearAnticipationB_UpLeft": ExtResource("29_ng1eg"),
+&"SmearAnticipationB_UpRight": ExtResource("10_u7ew7")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3yf3"]
+_data = {
+&"SmearConsecA_Down": ExtResource("31_3ueml"),
+&"SmearConsecA_DownLeft": ExtResource("32_wyb06"),
+&"SmearConsecA_DownRight": ExtResource("33_ogahk"),
+&"SmearConsecA_Left": ExtResource("34_6c31g"),
+&"SmearConsecA_Right": ExtResource("35_a1k68"),
+&"SmearConsecA_Up": ExtResource("36_bmkfs"),
+&"SmearConsecA_UpLeft": ExtResource("37_f4ob6"),
+&"SmearConsecA_UpRight": ExtResource("38_r8ivy")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2n6e8"]
+_data = {
+&"SmearConsecB_Down": ExtResource("39_niv8h"),
+&"SmearConsecB_DownLeft": ExtResource("40_o4qrj"),
+&"SmearConsecB_DownRight": ExtResource("41_gbvjr"),
+&"SmearConsecB_Left": ExtResource("42_xe76l"),
+&"SmearConsecB_Right": ExtResource("43_psb2y"),
+&"SmearConsecB_Up": ExtResource("44_fslok"),
+&"SmearConsecB_UpLeft": ExtResource("45_nmu04"),
+&"SmearConsecB_UpRight": ExtResource("46_r75ek")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mks3w"]
+_data = {
+&"SmearRecoveryA_Down": ExtResource("47_g3pm3"),
+&"SmearRecoveryA_DownLeft": ExtResource("48_7ccxr"),
+&"SmearRecoveryA_DownRight": ExtResource("49_v5fh6"),
+&"SmearRecoveryA_Left": ExtResource("50_6r6qr"),
+&"SmearRecoveryA_Right": ExtResource("51_bim26"),
+&"SmearRecoveryA_Up": ExtResource("52_eweqc"),
+&"SmearRecoveryA_UpLeft": ExtResource("53_522nq"),
+&"SmearRecoveryA_UpRight": ExtResource("54_ywtt6")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1d4pe"]
+_data = {
+&"SmearRecoveryB_Down": ExtResource("55_grdit"),
+&"SmearRecoveryB_DownLeft": ExtResource("56_gu2mi"),
+&"SmearRecoveryB_DownRight": ExtResource("57_y4isx"),
+&"SmearRecoveryB_Left": ExtResource("58_fa7lq"),
+&"SmearRecoveryB_Right": ExtResource("59_gf8no"),
+&"SmearRecoveryB_Up": ExtResource("60_cs48c"),
+&"SmearRecoveryB_UpLeft": ExtResource("61_7kljh"),
+&"SmearRecoveryB_UpRight": ExtResource("62_rjuin")
+}
+
+[node name="Promissio" type="CharacterBody2D" unique_id=1083516868 groups=["Persist"]]
+motion_mode = 1
+wall_min_slide_angle = 0.174533
+script = ExtResource("1_hphlv")
+
+[node name="Serializable" type="Node" parent="." unique_id=97063274]
+script = ExtResource("3_7b4g7")
+children = false
+variables = Array[String](["current_symbol", "concrete_symbol_a", "concrete_symbol_b", "abstract_symbol", "stats"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="AddOn" type="Sprite2D" parent="." unique_id=1994229676]
+y_sort_enabled = true
+material = ExtResource("3_0js4l")
+position = Vector2(0, -16)
+texture = ExtResource("2_xmy8k")
+hframes = 11
+vframes = 2
+
+[node name="Transformations" type="Sprite2D" parent="." unique_id=1097119645]
+visible = false
+show_behind_parent = true
+z_index = 1
+y_sort_enabled = true
+material = ExtResource("3_0js4l")
+position = Vector2(-28, -23)
+texture = ExtResource("3_kxqju")
+hframes = 9
+vframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=740484517]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_nh42b")
+libraries/Shield = SubResource("AnimationLibrary_nuf5a")
+libraries/SmearAnticipationA = SubResource("AnimationLibrary_s6ykg")
+libraries/SmearAnticipationB = SubResource("AnimationLibrary_3ftjp")
+libraries/SmearConsecA = SubResource("AnimationLibrary_h3yf3")
+libraries/SmearConsecB = SubResource("AnimationLibrary_2n6e8")
+libraries/SmearRecoveryA = SubResource("AnimationLibrary_mks3w")
+libraries/SmearRecoveryB = SubResource("AnimationLibrary_1d4pe")
+
+[node name="AnticiConsecTimer" type="Timer" parent="." unique_id=1936878063]
+unique_name_in_owner = true
+wait_time = 0.3
+one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=543422607]
+unique_name_in_owner = true
+wait_time = 0.4
+one_shot = true
+
+[node name="ComboTimer" type="Timer" parent="." unique_id=1619313472]
+unique_name_in_owner = true
+wait_time = 0.3
+one_shot = true
+
+[node name="RecoveryTimer" type="Timer" parent="." unique_id=530818031]
+unique_name_in_owner = true
+wait_time = 0.11
+one_shot = true
+
+[node name="VanishTimer" type="Timer" parent="." unique_id=984329398]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+
+[node name="AUDIO" type="Node2D" parent="." unique_id=291112527]
+metadata/_edit_group_ = true
+
+[node name="PuppetAttack_1" type="AudioStreamPlayer2D" parent="AUDIO" unique_id=1600454508]
+unique_name_in_owner = true
+stream = ExtResource("62_a5q1g")
+volume_db = -8.0
+max_polyphony = 2
+bus = &"Voices"
+
+[node name="PuppetAttack_2" type="AudioStreamPlayer2D" parent="AUDIO" unique_id=1023431307]
+unique_name_in_owner = true
+stream = ExtResource("63_lra2o")
+volume_db = -8.0
+max_polyphony = 2
+bus = &"Voices"
+
+[node name="PuppetAttack_3" type="AudioStreamPlayer2D" parent="AUDIO" unique_id=2045060098]
+unique_name_in_owner = true
+stream = ExtResource("64_igbcc")
+volume_db = -8.0
+max_polyphony = 2
+bus = &"Voices"
+
+[node name="STATE MACHINE" parent="." unique_id=358509846 node_paths=PackedStringArray("default_state") instance=ExtResource("5_0js4l")]
+default_state = NodePath("PromissioStateSleeping")
+
+[node name="PromissioStateSleeping" type="Node" parent="STATE MACHINE" unique_id=777303418]
+script = ExtResource("9_7b4g7")
+
+[node name="PromissioStateIdle" type="Node" parent="STATE MACHINE" unique_id=924535350]
+script = ExtResource("6_7b4g7")
+
+[node name="PromissioStateAnticipation" type="Node" parent="STATE MACHINE" unique_id=1365278074]
+script = ExtResource("7_ujt5u")
+
+[node name="PromissioStateAttacking" type="Node" parent="STATE MACHINE" unique_id=314763768]
+script = ExtResource("8_2w1l6")
+
+[node name="PromissioStateConsec" type="Node" parent="STATE MACHINE" unique_id=1865512248]
+script = ExtResource("9_xmy8k")
+
+[node name="PromissioStateRecovery" type="Node" parent="STATE MACHINE" unique_id=311046439]
+script = ExtResource("9_un8o0")
+
+[node name="PromissioStateBlocking" type="Node" parent="STATE MACHINE" unique_id=1543550428]
+script = ExtResource("15_ujt5u")
+
+[node name="PromissioStateShieldBreaking" type="Node" parent="STATE MACHINE" unique_id=870003860]
+script = ExtResource("73_a5q1g")

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bme0ggll1itw1"]
+
+[ext_resource type="Script" uid="uid://culxbd8ylmven" path="res://items/item_data.gd" id="1_difvp"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="2_qtslt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl41w"]
+atlas = ExtResource("2_qtslt")
+region = Rect2(96, 48, 16, 16)
+
+[resource]
+script = ExtResource("1_difvp")
+name = "Tram passport"
+type = 4
+ID = 50
+description = "Authorized stations passport. 
+Allows travel on the Zone 1 tram."
+texture = SubResource("AtlasTexture_xl41w")
+cost = 0
+metadata/_custom_type_script = "uid://culxbd8ylmven"

@@ -1,0 +1,707 @@
+[gd_scene format=3 uid="uid://c7vko88bdcviy"]
+
+[ext_resource type="Texture2D" uid="uid://d1c21v2e6rejx" path="res://UI/Menu/sprites/mainMenu_portraits.png" id="1_2wmrv"]
+[ext_resource type="Script" uid="uid://cq10l1mwjyghv" path="res://UI/Menu/SaveMenu/save_slot_data.gd" id="1_jn6li"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="2_jn6li"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="3_3alqk"]
+[ext_resource type="StyleBox" uid="uid://c1tsw80ncp7qa" path="res://UI/Menu/styleboxes/menuHp_stylebox.tres" id="4_m0i5o"]
+[ext_resource type="StyleBox" uid="uid://cvpviixmf0jhl" path="res://UI/Menu/styleboxes/menuContainer_stylebox.tres" id="5_nsca8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr2qx"]
+atlas = ExtResource("1_2wmrv")
+region = Rect2(0, 0, 68, 74)
+
+[sub_resource type="Animation" id="Animation_lvjlu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlotDataPanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("STATS/STATSContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("STATS/STATS2Container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("STATS/DATEBoxContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ZonePortrait:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("STATS/STATSContainer/LEVELContainer/levelNumber:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("STATS/STATS2Container/TIMEHBoxContainer/HOURS:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("STATS/STATS2Container/TIMEHBoxContainer/MINUTES:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("STATS/STATS2Container/TIMEHBoxContainer/SECONDS:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("STATS/STATS2Container/CREDITSContainer/creditsNumber:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("STATS/DATEBoxContainer/DAY2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("STATS/DATEBoxContainer/MONTH:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("STATS/DATEBoxContainer/YEAR:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ka0tw"]
+resource_name = "slot_data_navigate"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("STATS/STATSContainer/LEVELContainer/levelNumber:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("STATS/STATS2Container/TIMEHBoxContainer/HOURS:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("STATS/STATS2Container/TIMEHBoxContainer/MINUTES:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("STATS/STATS2Container/TIMEHBoxContainer/SECONDS:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("STATS/STATS2Container/CREDITSContainer/creditsNumber:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("STATS/DATEBoxContainer/DAY2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("STATS/DATEBoxContainer/MONTH:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("STATS/DATEBoxContainer/YEAR:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ZonePortrait:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_slv7k"]
+resource_name = "slot_data_updated"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.13333333),
+"transitions": PackedFloat32Array(1, 0.5, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.02, 1.02), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlotDataPanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.631, 1.562879, 0, 0.588), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("STATS/STATSContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("STATS/STATS2Container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("STATS/DATEBoxContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ZonePortrait:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ka0tw"]
+_data = {
+&"RESET": SubResource("Animation_lvjlu"),
+&"slot_data_navigate": SubResource("Animation_ka0tw"),
+&"slot_data_updated": SubResource("Animation_slv7k")
+}
+
+[node name="SAVE SLOT DATA" type="Control" unique_id=1749551508]
+process_mode = 3
+editor_description = "121.438
+312.514"
+layout_mode = 3
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 240.0
+offset_right = 168.0
+offset_bottom = 240.0
+script = ExtResource("1_jn6li")
+zone_portrait_atlas = ExtResource("1_2wmrv")
+
+[node name="EmptyDataLabel" type="Label" parent="." unique_id=907532266]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(290, 96)
+layout_mode = 0
+offset_left = -24.0
+offset_right = 328.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 15
+text = "-    SIN    DATOS    -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZonePortrait" type="TextureRect" parent="." unique_id=1489392395]
+z_index = 1
+layout_mode = 0
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 60.001
+offset_bottom = 82.0001
+texture = SubResource("AtlasTexture_pr2qx")
+
+[node name="SlotDataPanel" type="PanelContainer" parent="." unique_id=1031658194]
+layout_mode = 0
+offset_left = -24.0
+offset_right = 328.0
+offset_bottom = 96.0
+theme_override_styles/panel = ExtResource("2_jn6li")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="SlotDataPanel" unique_id=2071484716]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SlotDataPanel/MarginContainer" unique_id=1156482304]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="STATS" type="Control" parent="." unique_id=1735503628]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 8.0
+offset_right = 158.0
+offset_bottom = 79.0
+
+[node name="STATSContainer" type="VBoxContainer" parent="STATS" unique_id=662154522]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 100.0
+offset_bottom = 69.0
+theme_override_constants/separation = -3
+
+[node name="PLAYERContainer" type="HBoxContainer" parent="STATS/STATSContainer" unique_id=124458498]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="STATS/STATSContainer/PLAYERContainer" unique_id=1160454148]
+z_index = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("4_m0i5o")
+text = "PlayerName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="space" type="Label" parent="STATS/STATSContainer/PLAYERContainer" unique_id=1105381075]
+custom_minimum_size = Vector2(20, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LEVELContainer" type="HBoxContainer" parent="STATS/STATSContainer" unique_id=1945527787]
+layout_mode = 2
+
+[node name="LEVEL" type="Label" parent="STATS/STATSContainer/LEVELContainer" unique_id=1857227287]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("5_nsca8")
+text = "NIVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="levelNumber" type="Label" parent="STATS/STATSContainer/LEVELContainer" unique_id=771728600]
+custom_minimum_size = Vector2(20, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 12
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="STATS2Container" type="VBoxContainer" parent="STATS" unique_id=1560646230]
+layout_mode = 0
+offset_left = 111.0
+offset_right = 248.0
+offset_bottom = 74.0
+theme_override_constants/separation = -5
+
+[node name="TIMEHBoxContainer" type="HBoxContainer" parent="STATS/STATS2Container" unique_id=1685510027]
+layout_mode = 2
+
+[node name="TIME" type="Label" parent="STATS/STATS2Container/TIMEHBoxContainer" unique_id=1841871724]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("5_nsca8")
+text = "TIEMPO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HOURS" type="Label" parent="STATS/STATS2Container/TIMEHBoxContainer" unique_id=1476617956]
+custom_minimum_size = Vector2(20, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = "00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="points" type="Label" parent="STATS/STATS2Container/TIMEHBoxContainer" unique_id=509298350]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MINUTES" type="Label" parent="STATS/STATS2Container/TIMEHBoxContainer" unique_id=2070117249]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = "00"
+vertical_alignment = 1
+
+[node name="points2" type="Label" parent="STATS/STATS2Container/TIMEHBoxContainer" unique_id=2143888019]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SECONDS" type="Label" parent="STATS/STATS2Container/TIMEHBoxContainer" unique_id=69801554]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = "00"
+vertical_alignment = 1
+
+[node name="LIMIT" type="Label" parent="STATS/STATS2Container/TIMEHBoxContainer" unique_id=1028611194]
+visible = false
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = "+ 999"
+vertical_alignment = 1
+
+[node name="MAPContainer" type="HBoxContainer" parent="STATS/STATS2Container" unique_id=1441199307]
+visible = false
+layout_mode = 2
+
+[node name="MAP" type="Label" parent="STATS/STATS2Container/MAPContainer" unique_id=131789512]
+editor_description = "Fuerza espiritual innata de Ciro, y bonificación de Símbolos Abstractos.
+
+Aumenta al subir de nivel y con las Auras."
+z_index = 1
+custom_minimum_size = Vector2(-20, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("5_nsca8")
+text = "MAP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="separator" type="Label" parent="STATS/STATS2Container/MAPContainer" unique_id=1461906154]
+custom_minimum_size = Vector2(7, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="mapNumber" type="Label" parent="STATS/STATS2Container/MAPContainer" unique_id=355979966]
+custom_minimum_size = Vector2(-2, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = "0"
+vertical_alignment = 1
+
+[node name="percent" type="Label" parent="STATS/STATS2Container/MAPContainer" unique_id=1127662679]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = "%"
+vertical_alignment = 1
+
+[node name="CREDITSContainer" type="HBoxContainer" parent="STATS/STATS2Container" unique_id=804490279]
+layout_mode = 2
+theme_override_constants/separation = 29
+
+[node name="CREDITS" type="Label" parent="STATS/STATS2Container/CREDITSContainer" unique_id=1770706337]
+editor_description = "Fuerza espiritual innata de Ciro, y bonificación de Símbolos Abstractos.
+
+Aumenta al subir de nivel y con las Auras."
+z_index = 1
+custom_minimum_size = Vector2(-20, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.717647, 1, 0.25098, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("5_nsca8")
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creditsNumber" type="Label" parent="STATS/STATS2Container/CREDITSContainer" unique_id=1913524671]
+custom_minimum_size = Vector2(33, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 14
+text = "0"
+vertical_alignment = 1
+
+[node name="DATEBoxContainer" type="HBoxContainer" parent="STATS" unique_id=429735629]
+layout_mode = 0
+offset_left = -97.7837
+offset_top = 66.1487
+offset_right = -9.78372
+offset_bottom = 94.1487
+
+[node name="DAY2" type="Label" parent="STATS/DATEBoxContainer" unique_id=1227530782]
+custom_minimum_size = Vector2(20, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 9
+text = "00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="bar" type="Label" parent="STATS/DATEBoxContainer" unique_id=1013653123]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 9
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MONTH" type="Label" parent="STATS/DATEBoxContainer" unique_id=527476133]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 9
+text = "00"
+vertical_alignment = 1
+
+[node name="bar2" type="Label" parent="STATS/DATEBoxContainer" unique_id=946458255]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 9
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YEAR" type="Label" parent="STATS/DATEBoxContainer" unique_id=344769873]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3alqk")
+theme_override_font_sizes/font_size = 9
+text = "0000"
+vertical_alignment = 1
+
+[node name="SlotDataAnimations" type="AnimationPlayer" parent="." unique_id=660046681]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_ka0tw")

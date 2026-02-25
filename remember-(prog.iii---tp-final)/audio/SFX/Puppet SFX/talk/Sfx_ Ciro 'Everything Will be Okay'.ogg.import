@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cal5bu106a73i"
+path="res://.godot/imported/Sfx_ Ciro 'Everything Will be Okay'.ogg-5a45c16729901eac8f12407c19bc712e.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'Everything Will be Okay'.ogg"
+dest_files=["res://.godot/imported/Sfx_ Ciro 'Everything Will be Okay'.ogg-5a45c16729901eac8f12407c19bc712e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

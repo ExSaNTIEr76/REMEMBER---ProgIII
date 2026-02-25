@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dew7jeyhury0a"
+path="res://.godot/imported/Glimpse of Life.ogg-f144fae038fe5a19181a5aaf6930145e.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Glimpse of Life.ogg"
+dest_files=["res://.godot/imported/Glimpse of Life.ogg-f144fae038fe5a19181a5aaf6930145e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

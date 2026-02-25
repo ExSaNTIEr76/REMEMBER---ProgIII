@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PromissioGlobalStats" load_steps=2 format=3 uid="uid://of4jgm7oavyj"]
+
+[ext_resource type="Script" uid="uid://dyn76upsxwvae" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/scripts/symbols_global_stats.gd" id="1_eiqo8"]
+
+[resource]
+script = ExtResource("1_eiqo8")
+type = ""
+cp_consume = 0
+ep_consume = 0
+x = "-------------------------"
+damage = 0
+metadata/_custom_type_script = "uid://dyn76upsxwvae"

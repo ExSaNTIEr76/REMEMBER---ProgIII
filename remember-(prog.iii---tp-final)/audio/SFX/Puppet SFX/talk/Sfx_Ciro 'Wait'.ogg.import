@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxecgfaj4as1n"
+path="res://.godot/imported/Sfx_Ciro 'Wait'.ogg-42e5a1803fc983d500700fbc3afbdceb.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Wait'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'Wait'.ogg-42e5a1803fc983d500700fbc3afbdceb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

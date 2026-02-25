@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlv5lfofxxc7x"
+path="res://.godot/imported/The days that we left behind.ogg-bf351707c6a26e462f650098e3a53525.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/GUI SFX/menu/The days that we left behind.ogg"
+dest_files=["res://.godot/imported/The days that we left behind.ogg-bf351707c6a26e462f650098e3a53525.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

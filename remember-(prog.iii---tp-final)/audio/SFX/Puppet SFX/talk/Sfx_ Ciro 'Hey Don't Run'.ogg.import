@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cn7mlp6c08pyd"
+path="res://.godot/imported/Sfx_ Ciro 'Hey Don't Run'.ogg-3f19c37025f16756c702d35abcaedfeb.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'Hey Don't Run'.ogg"
+dest_files=["res://.godot/imported/Sfx_ Ciro 'Hey Don't Run'.ogg-3f19c37025f16756c702d35abcaedfeb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://ce02jmaa8ns4g"]
+
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="1_mw37d"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="1_pj3so"]
+[ext_resource type="Script" uid="uid://di4xye2mnumk7" path="res://UI/Menu/Panels/time_panel.gd" id="1_y643p"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="2_pj3so"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="5_7mq0e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85leg"]
+atlas = ExtResource("1_mw37d")
+region = Rect2(72, 40, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72d1b"]
+texture = SubResource("AtlasTexture_85leg")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="TIME" type="Control" unique_id=1858797442]
+editor_description = "121.438
+312.514"
+layout_mode = 3
+anchors_preset = 0
+offset_right = 216.0
+offset_bottom = 33.0
+script = ExtResource("1_y643p")
+
+[node name="TimePanel" type="PanelContainer" parent="." unique_id=1942488008]
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 33.0
+theme_override_styles/panel = ExtResource("1_pj3so")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TimePanel" unique_id=483292645]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TimePanel/MarginContainer" unique_id=679808930]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1414750101]
+layout_mode = 0
+offset_left = 7.83774
+offset_top = 2.1694
+offset_right = 200.838
+offset_bottom = 33.1694
+
+[node name="TIME" type="Label" parent="HBoxContainer" unique_id=1494127229]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_pj3so")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "TIEMPO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HOURS" type="Label" parent="HBoxContainer" unique_id=1327897314]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pj3so")
+theme_override_font_sizes/font_size = 22
+text = "00"
+horizontal_alignment = 2
+
+[node name="bar" type="Label" parent="HBoxContainer" unique_id=316304492]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_pj3so")
+theme_override_font_sizes/font_size = 22
+text = ":"
+horizontal_alignment = 1
+
+[node name="MINUTES" type="Label" parent="HBoxContainer" unique_id=281873351]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pj3so")
+theme_override_font_sizes/font_size = 22
+text = "00"
+
+[node name="bar2" type="Label" parent="HBoxContainer" unique_id=327253880]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_pj3so")
+theme_override_font_sizes/font_size = 22
+text = ":"
+horizontal_alignment = 1
+
+[node name="SECONDS" type="Label" parent="HBoxContainer" unique_id=266606093]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pj3so")
+theme_override_font_sizes/font_size = 22
+text = "00"
+
+[node name="LIMIT" type="Label" parent="HBoxContainer" unique_id=556124557]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_pj3so")
+theme_override_font_sizes/font_size = 22
+text = "+ 999"
+
+[node name="Serializable" type="Node" parent="." unique_id=531707638]
+script = ExtResource("5_7mq0e")
+variables = Array[String](["total_seconds", "t", "h", "m", "s"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

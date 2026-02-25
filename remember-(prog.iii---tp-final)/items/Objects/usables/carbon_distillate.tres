@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UsableItemData" load_steps=5 format=3 uid="uid://ctx6cy0bib250"]
+
+[ext_resource type="Script" uid="uid://bmaqc3o0ps2of" path="res://items/ItemsEffects/item_effect.gd" id="1_hl04g"]
+[ext_resource type="Script" uid="uid://2ifblpu6h0vf" path="res://items/usable_item_data.gd" id="2_o806v"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="3_o806v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mms8"]
+atlas = ExtResource("3_o806v")
+region = Rect2(176, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_o806v")
+effects = Array[ExtResource("1_hl04g")]([])
+name = "Carbon distillate"
+type = 1
+ID = 8
+is_quantitative = true
+description = "Drinkable concoction made from Moloch's meat minerals.
+Cures poison state from the system."
+texture = SubResource("AtlasTexture_2mms8")
+cost = 10
+metadata/_custom_type_script = "uid://2ifblpu6h0vf"

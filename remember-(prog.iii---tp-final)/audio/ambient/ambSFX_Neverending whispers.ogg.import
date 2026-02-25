@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmupvesxx4h4l"
+path="res://.godot/imported/ambSFX_Neverending whispers.ogg-510133aa6346ee77ca63657625a014c4.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/ambient/ambSFX_Neverending whispers.ogg"
+dest_files=["res://.godot/imported/ambSFX_Neverending whispers.ogg-510133aa6346ee77ca63657625a014c4.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=20.35
+bpm=0.0
+beat_count=0
+bar_beats=4

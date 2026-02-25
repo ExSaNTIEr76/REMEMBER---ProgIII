@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6ixyyw1hbdrm"
+path="res://.godot/imported/Sfx_Puppet_Hurt_2.ogg-a16189e16545e69a1c8f0444682dbcbe.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/hurt/Sfx_Puppet_Hurt_2.ogg"
+dest_files=["res://.godot/imported/Sfx_Puppet_Hurt_2.ogg-a16189e16545e69a1c8f0444682dbcbe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

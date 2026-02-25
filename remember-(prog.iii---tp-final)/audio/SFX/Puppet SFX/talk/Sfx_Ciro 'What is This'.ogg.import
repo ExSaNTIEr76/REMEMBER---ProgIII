@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://j2hs4302whko"
+path="res://.godot/imported/Sfx_Ciro 'What is This'.ogg-b4fa9519ee45cdff1b39ca72f1df7653.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'What is This'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'What is This'.ogg-b4fa9519ee45cdff1b39ca72f1df7653.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

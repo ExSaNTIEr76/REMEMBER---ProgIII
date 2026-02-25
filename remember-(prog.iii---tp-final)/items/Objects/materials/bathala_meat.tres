@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bvkijvi37fvtb"]
+
+[ext_resource type="Script" uid="uid://culxbd8ylmven" path="res://items/item_data.gd" id="1_8mgla"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8mgla"]
+load_path = "res://.godot/imported/itemsIcons.png-4b876634127af6fbfaabb9b7f4249248.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_277bn"]
+atlas = SubResource("CompressedTexture2D_8mgla")
+region = Rect2(576, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_8mgla")
+name = "Bathala's Meat"
+type = 3
+ID = 32
+is_quantitative = true
+description = "Demonic meat with migrainous properties."
+texture = SubResource("AtlasTexture_277bn")
+cost = 50
+metadata/_custom_type_script = "uid://culxbd8ylmven"

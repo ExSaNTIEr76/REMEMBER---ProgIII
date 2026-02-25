@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://clj7i6qv4kjqf"]
+
+[ext_resource type="Script" uid="uid://cmp6at330ua18" path="res://global/player_manager.gd" id="1_y7h4k"]
+[ext_resource type="Resource" uid="uid://csdg36egp4ny1" path="res://UI/Menu/EquipMenu/player_equipment.tres" id="2_2lupy"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_5snf0"]
+
+[node name="PlayerManager" type="Node" unique_id=416779863]
+script = ExtResource("1_y7h4k")
+EQUIPMENT_DATA = ExtResource("2_2lupy")
+
+[node name="Serializable" type="Node" parent="." unique_id=510344119]
+script = ExtResource("2_5snf0")
+transform = false
+children = false
+variables = Array[String](["saved_position", "desired_facing_direction", "current_level", "stats"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

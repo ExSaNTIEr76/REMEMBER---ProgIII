@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=6 format=3 uid="uid://bppnh53rdqxr8"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_jpun3"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_kqwow"]
+
+[sub_resource type="Resource" id="Resource_jl8aa"]
+script = ExtResource("1_jpun3")
+type = 3
+value = 8
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c7it6"]
+load_path = "res://.godot/imported/itemsIcons.png-4b876634127af6fbfaabb9b7f4249248.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m7sg"]
+atlas = SubResource("CompressedTexture2D_c7it6")
+region = Rect2(352, 288, 16, 16)
+
+[resource]
+script = ExtResource("2_kqwow")
+modifiers = Array[ExtResource("1_jpun3")]([SubResource("Resource_jl8aa")])
+symbol_icon_name = "S_dodge_1"
+name = "Dodge"
+type = 7
+ID = 263
+description = "Evasive symbol that allows you to quickly dodge while blocking."
+texture = SubResource("AtlasTexture_7m7sg")
+cost = 0
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EquipableItemData" format=3 uid="uid://rykq1j6n02qy"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_tlaaf"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_vg00n"]
+[ext_resource type="PackedScene" uid="uid://dhs7q10x2ewui" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/scenes/c_symbol_punch.tscn" id="3_b44sy"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="3_qtvsd"]
+
+[sub_resource type="Resource" id="Resource_b44sy"]
+script = ExtResource("1_tlaaf")
+type = 3
+value = 6
+metadata/_custom_type_script = "uid://cjr2x0w1bdc32"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg00n"]
+atlas = ExtResource("3_qtvsd")
+region = Rect2(336, 144, 16, 16)
+
+[resource]
+script = ExtResource("2_vg00n")
+modifiers = Array[ExtResource("1_tlaaf")]([SubResource("Resource_b44sy")])
+symbol_scene = ExtResource("3_b44sy")
+symbol_icon_name = "C_punch_1"
+cep_cost = 5
+name = "Puño"
+type = 5
+ID = 180
+is_quantitative = true
+description = "Símbolo colérico que lanza golpes fuertes."
+texture = SubResource("AtlasTexture_vg00n")
+cost = 50
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

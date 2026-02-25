@@ -1,0 +1,47 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dbiu2rqbyitx"]
+
+[ext_resource type="Texture2D" uid="uid://c3xwdmfiku8bs" path="res://scenes/CHARACTERS/Promissio/SymbolBackground.png" id="1_2adq2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2adq2"]
+atlas = ExtResource("1_2adq2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7y3x"]
+atlas = ExtResource("1_2adq2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an3ov"]
+atlas = ExtResource("1_2adq2")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2adq2")
+}],
+"loop": false,
+"name": &"A_background",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7y3x")
+}],
+"loop": false,
+"name": &"C_background",
+"speed": 0.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"MenuBackground",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an3ov")
+}],
+"loop": false,
+"name": &"S_background",
+"speed": 0.0
+}]

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bnayuaylgf7b0"]
+
+[ext_resource type="TileSet" uid="uid://ch8qquwfuqasp" path="res://scenes/LEVELS/Zone 1/sprites/Zone 1 TileMap.tres" id="1_734sr"]
+[ext_resource type="Script" uid="uid://cwxmgl8me2t5o" path="res://global/footstep_sound_manager.gd" id="2_0b1gy"]
+[ext_resource type="Script" uid="uid://bcweryyykqkml" path="res://scenes/LEVELS/levelScripts/level_tile_map_layer.gd" id="2_c3axs"]
+[ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="3_0b1gy"]
+
+[node name="YSORT" type="Node2D" unique_id=1862844124 groups=["Y-SORT"]]
+y_sort_enabled = true
+
+[node name="Layer 0 (Plastic)" type="TileMapLayer" parent="." unique_id=1222897688]
+z_index = -5
+y_sort_enabled = true
+tile_set = ExtResource("1_734sr")
+
+[node name="Layer 1 (Building)" type="TileMapLayer" parent="." unique_id=831948979]
+z_index = -4
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_734sr")
+script = ExtResource("2_0b1gy")
+
+[node name="Layer 2 (Entrances)" type="TileMapLayer" parent="." unique_id=2030142356]
+z_index = -3
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_734sr")
+
+[node name="Layer 3 (Cracks)" type="TileMapLayer" parent="." unique_id=1352767687]
+z_index = -2
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_734sr")
+
+[node name="Layer 4 (Path)" type="TileMapLayer" parent="." unique_id=364848256]
+z_index = -1
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_734sr")
+
+[node name="Layer 5 (Background)" type="TileMapLayer" parent="." unique_id=765250244]
+y_sort_enabled = true
+texture_repeat = 3
+use_parent_material = true
+tile_set = ExtResource("1_734sr")
+script = ExtResource("2_c3axs")
+
+[node name="Layer 6 (Lights)" type="TileMapLayer" parent="." unique_id=1948143453]
+y_sort_enabled = true
+tile_set = ExtResource("1_734sr")
+
+[node name="Layer 7 (Decorations)" type="TileMapLayer" parent="." unique_id=712135179]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_734sr")
+
+[node name="Layer 8 (Decorations 2)" type="TileMapLayer" parent="." unique_id=693075566]
+z_index = 1
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_734sr")
+
+[node name="Layer 9 (Decorations 3)" type="TileMapLayer" parent="." unique_id=826462473]
+z_index = 3
+y_sort_enabled = true
+tile_set = ExtResource("1_734sr")
+
+[node name="Layer 10 (Limit)" type="TileMapLayer" parent="." unique_id=1114719672]
+z_index = 2
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("1_734sr")
+
+[node name="PlayerSpawn" parent="." unique_id=635442286 instance=ExtResource("3_0b1gy")]

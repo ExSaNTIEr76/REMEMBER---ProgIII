@@ -1,0 +1,716 @@
+[gd_scene format=3 uid="uid://beqyq5m82jtwn"]
+
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="1_6yj3q"]
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="1_8q1th"]
+[ext_resource type="Texture2D" uid="uid://d1c21v2e6rejx" path="res://UI/Menu/sprites/mainMenu_portraits.png" id="1_35xwp"]
+[ext_resource type="Script" uid="uid://tc6cfdqg7fon" path="res://UI/Menu/MainMenu/main_menu.gd" id="1_arsbj"]
+[ext_resource type="AudioStream" uid="uid://eugb20fy3pmr" path="res://audio/SFX/GUI SFX/menu/Sfx_Accept.ogg" id="3_dqiuw"]
+[ext_resource type="AudioStream" uid="uid://cqhl1fvyvtp1d" path="res://audio/SFX/GUI SFX/menu/Sfx_Cancel.ogg" id="4_85leg"]
+[ext_resource type="Script" uid="uid://dh3q6jwdq204g" path="res://UI/Menu/MainMenu/stats_updater.gd" id="5_g3e6q"]
+[ext_resource type="Texture2D" uid="uid://bhpe7d4w61iwa" path="res://dialogues/TALKSPRITES/sprites/Ciro_Talksprites.png" id="5_jtn5l"]
+[ext_resource type="AudioStream" uid="uid://78a5tcw0n2eu" path="res://audio/SFX/GUI SFX/menu/Sfx_Cursor.ogg" id="6_74swf"]
+[ext_resource type="StyleBox" uid="uid://4c254i3ttu7w" path="res://UI/Menu/styleboxes/menuName_stylebox.tres" id="6_qc4vc"]
+[ext_resource type="Texture2D" uid="uid://cpdggqmrtpptd" path="res://UI/Menu/sprites/UI_Names.png" id="9_k71sq"]
+[ext_resource type="PackedScene" uid="uid://bkp3cjremw68y" path="res://UI/Menu/Panels/status_panel.tscn" id="10_72d1b"]
+[ext_resource type="AudioStream" uid="uid://bglgatckwenmv" path="res://audio/SFX/GUI SFX/menu/Sfx_Blocked.ogg" id="11_dhfhy"]
+[ext_resource type="Script" uid="uid://cfylos866td70" path="res://UI/Menu/MainMenu/menu_button.gd" id="12_ju1pn"]
+[ext_resource type="PackedScene" uid="uid://ckdo1re1dhhxw" path="res://UI/Menu/Panels/level_panel.tscn" id="12_q5cvm"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="13_ijgva"]
+[ext_resource type="PackedScene" uid="uid://ce02jmaa8ns4g" path="res://UI/Menu/Panels/time_panel.tscn" id="13_jtn5l"]
+[ext_resource type="PackedScene" uid="uid://cij3fhow5r65x" path="res://UI/Menu/Panels/gold_panel.tscn" id="14_g3e6q"]
+[ext_resource type="PackedScene" uid="uid://1otitmdbsg55" path="res://UI/Menu/Panels/stats_panel.tscn" id="16_dhfhy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arsbj"]
+atlas = ExtResource("1_35xwp")
+region = Rect2(0, 0, 68, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3e6q"]
+atlas = ExtResource("5_jtn5l")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qku47"]
+atlas = ExtResource("9_k71sq")
+region = Rect2(0, 8, 35, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijgva"]
+atlas = ExtResource("1_8q1th")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_arsbj"]
+texture = SubResource("AtlasTexture_ijgva")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2agm2"]
+atlas = ExtResource("1_8q1th")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qku47"]
+texture = SubResource("AtlasTexture_2agm2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql2f0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijgva"]
+texture = SubResource("AtlasTexture_ql2f0")
+modulate_color = Color(1, 1, 1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q1th"]
+atlas = ExtResource("1_8q1th")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mernp"]
+texture = SubResource("AtlasTexture_8q1th")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="Animation" id="Animation_74swf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/EQUIP:theme_override_styles/focus:modulate_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_arsbj"]
+resource_name = "selector"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/EQUIP:theme_override_styles/focus:modulate_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qku47"]
+_data = {
+&"RESET": SubResource("Animation_74swf"),
+&"selector": SubResource("Animation_arsbj")
+}
+
+[sub_resource type="Animation" id="Animation_2agm2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YESNO/YesNoPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("YESNO/YesNoLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("YESNO:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("YesNoBackground:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("YesNoBackground:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0313726, 0.0431373, 0.0588235, 0.921569)]
+}
+
+[sub_resource type="Animation" id="Animation_ijgva"]
+resource_name = "yesnoMenu_fade_in"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YESNO/YesNoPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("YESNO/YesNoLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("YESNO:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("YesNoBackground:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("YesNoBackground:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0313726, 0.0431373, 0.0588235, 0), Color(0.0313726, 0.0431373, 0.0588235, 0.921569)]
+}
+
+[sub_resource type="Animation" id="Animation_xxiw3"]
+resource_name = "yesnoMenu_fade_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YESNO/YesNoPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("YESNO/YesNoLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("YESNO:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("YesNoBackground:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("YesNoBackground:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0313726, 0.0431373, 0.0588235, 0.921569), Color(0.0313726, 0.0431373, 0.0588235, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c38ta"]
+_data = {
+&"RESET": SubResource("Animation_2agm2"),
+&"yesnoMenu_fade_in": SubResource("Animation_ijgva"),
+&"yesnoMenu_fade_out": SubResource("Animation_xxiw3")
+}
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1596524660 groups=["Persist"]]
+process_mode = 3
+script = ExtResource("1_arsbj")
+title_screen_scene = "uid://cuois8lq6u0de"
+zone_portrait_atlas = ExtResource("1_35xwp")
+face_portrait_atlas = ExtResource("5_jtn5l")
+nametag_atlas = ExtResource("9_k71sq")
+menu_opened = ExtResource("3_dqiuw")
+menu_opened_volume_db = -18.0
+menu_opened_pitch = 1.5
+menu_closed = ExtResource("4_85leg")
+menu_closed_volume_db = -18.0
+menu_closed_pitch = 1.5
+
+[node name="MAINMENU" type="Label" parent="." unique_id=965367691]
+z_index = 1
+offset_left = -5.78237
+offset_top = 6.56502
+offset_right = 76.0
+offset_bottom = 34.565
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.145098, 0.0431373, 0.180392, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = ExtResource("6_qc4vc")
+text = "PAUSADO"
+horizontal_alignment = 1
+
+[node name="StatsUpdater" type="Control" parent="." unique_id=1558489714 node_paths=PackedStringArray("status_panel", "stats_panel", "level_panel", "gold_panel", "time_panel")]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_g3e6q")
+status_panel = NodePath("../STATUS")
+stats_panel = NodePath("../STATS")
+level_panel = NodePath("../LEVEL")
+gold_panel = NodePath("../GOLD")
+time_panel = NodePath("../TIME")
+
+[node name="Background" type="ColorRect" parent="." unique_id=946282506]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0.0431373, 0.0588235, 1)
+
+[node name="YesNoBackground" type="ColorRect" parent="." unique_id=1320810609]
+visible = false
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0.0431373, 0.0588235, 0.921569)
+
+[node name="ZonePortrait" type="TextureRect" parent="." unique_id=1212678716]
+unique_name_in_owner = true
+offset_left = 116.812
+offset_top = 8.28614
+offset_right = 184.813
+offset_bottom = 82.2862
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_arsbj")
+
+[node name="FacePortrait" type="TextureRect" parent="ZonePortrait" unique_id=316103259]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 2.16239
+offset_top = 2.00668
+offset_right = 66.1624
+offset_bottom = 66.0067
+texture = SubResource("AtlasTexture_g3e6q")
+
+[node name="NameTag" type="TextureRect" parent="ZonePortrait" unique_id=739473930]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 67.0
+offset_right = 46.0
+offset_bottom = 72.0
+texture = SubResource("AtlasTexture_qku47")
+
+[node name="OPTIONS" type="Control" parent="." unique_id=2075146608]
+process_priority = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 121.0
+offset_top = 156.0
+offset_right = 246.0
+offset_bottom = 312.0
+mouse_filter = 2
+
+[node name="OptionsPanel" type="PanelContainer" parent="OPTIONS" unique_id=790476552]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 125.0
+offset_bottom = 47.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_arsbj")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="OPTIONS/OptionsPanel" unique_id=350632943]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OPTIONS/OptionsPanel/MarginContainer" unique_id=480305529]
+layout_mode = 2
+theme_override_constants/separation = -8
+
+[node name="EQUIP" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=896699680]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../QUIT")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_qku47")
+text = "EQUIPO"
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+hover_sfx = ExtResource("6_74swf")
+press_sfx = ExtResource("3_dqiuw")
+blocked_sfx = ExtResource("11_dhfhy")
+
+[node name="ITEMS" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=1826457580]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../OPTIONS")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_qku47")
+text = "ITEMS"
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+hover_sfx = ExtResource("6_74swf")
+press_sfx = ExtResource("3_dqiuw")
+blocked_sfx = ExtResource("11_dhfhy")
+
+[node name="ARCHIVES" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=274442255]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_qku47")
+disabled = true
+text = "???????"
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+hover_sfx = ExtResource("6_74swf")
+press_sfx = ExtResource("3_dqiuw")
+blocked_sfx = ExtResource("11_dhfhy")
+
+[node name="ENEMIES" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=2120744831]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_qku47")
+disabled = true
+text = "???????"
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+hover_sfx = ExtResource("6_74swf")
+press_sfx = ExtResource("3_dqiuw")
+blocked_sfx = ExtResource("11_dhfhy")
+
+[node name="OPTIONS" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=289717708]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../ITEMS")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_qku47")
+text = "OPCIONES"
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+hover_sfx = ExtResource("6_74swf")
+press_sfx = ExtResource("3_dqiuw")
+blocked_sfx = ExtResource("11_dhfhy")
+
+[node name="QUIT" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=1313075275]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../EQUIP")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_qku47")
+text = "SALIR"
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+hover_sfx = ExtResource("6_74swf")
+press_sfx = ExtResource("3_dqiuw")
+blocked_sfx = ExtResource("11_dhfhy")
+
+[node name="NONE" type="Button" parent="OPTIONS" unique_id=1096529835]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.438
+offset_top = -15.7005
+offset_right = 60.438
+offset_bottom = 13.2995
+theme_override_colors/font_color = Color(0.404959, 0.404959, 0.404959, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.404959, 0.404959, 0.404959, 1)
+theme_override_colors/font_outline_color = Color(0.142464, 0.142464, 0.142464, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_ijgva")
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+
+[node name="YESNO" type="Control" parent="." unique_id=1715995547]
+process_priority = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 132.812
+offset_top = 149.0
+offset_right = 257.812
+offset_bottom = 305.0
+mouse_filter = 2
+
+[node name="YesNoPanel" type="PanelContainer" parent="YESNO" unique_id=32518716]
+z_index = 5
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 130.243
+offset_top = 41.0
+offset_right = 225.243
+offset_bottom = 82.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_arsbj")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="YESNO/YesNoPanel" unique_id=1768512756]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="YESNO/YesNoPanel/MarginContainer" unique_id=1254803035]
+z_index = 5
+y_sort_enabled = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NO" type="Button" parent="YESNO/YesNoPanel/MarginContainer/VBoxContainer" unique_id=2036751389]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../YES")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_qku47")
+text = "NO"
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+hover_sfx = ExtResource("6_74swf")
+press_sfx = ExtResource("3_dqiuw")
+blocked_sfx = ExtResource("11_dhfhy")
+
+[node name="YES" type="Button" parent="YESNO/YesNoPanel/MarginContainer/VBoxContainer" unique_id=1940717440]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_right = NodePath("../NO")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_qku47")
+text = "SÍ"
+flat = true
+alignment = 0
+script = ExtResource("12_ju1pn")
+hover_sfx = ExtResource("6_74swf")
+press_sfx = ExtResource("3_dqiuw")
+blocked_sfx = ExtResource("11_dhfhy")
+
+[node name="YesNoLabel" type="Label" parent="YESNO" unique_id=477265890]
+z_index = 5
+y_sort_enabled = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_left = 44.4637
+offset_top = -23.1157
+offset_right = 326.464
+offset_bottom = 34.3483
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6yj3q")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("13_ijgva")
+text = "¿Volver a la pantalla de título?
+El progreso no guardado se perderá."
+vertical_alignment = 2
+
+[node name="STATUS" parent="." unique_id=790470196 instance=ExtResource("10_72d1b")]
+offset_left = 259.0
+offset_top = 12.2995
+offset_right = 514.0
+offset_bottom = 140.299
+
+[node name="STATS" parent="." unique_id=1789488754 instance=ExtResource("16_dhfhy")]
+offset_left = 259.0
+offset_top = 149.0
+offset_right = 514.0
+offset_bottom = 238.0
+
+[node name="LEVEL" parent="." unique_id=538831038 instance=ExtResource("12_q5cvm")]
+offset_left = 259.0
+offset_top = 244.0
+offset_right = 514.0
+offset_bottom = 307.0
+
+[node name="TIME" parent="." unique_id=260773064 instance=ExtResource("13_jtn5l")]
+editor_description = ""
+offset_left = 121.438
+offset_top = 312.514
+offset_right = 323.438
+offset_bottom = 345.514
+
+[node name="GOLD" parent="." unique_id=1566691411 instance=ExtResource("14_g3e6q")]
+offset_left = 344.539
+offset_top = 313.0
+offset_right = 526.539
+offset_bottom = 346.0
+
+[node name="EQUIPED" type="Control" parent="." unique_id=1823902885]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 234.0
+offset_top = 139.786
+offset_right = 530.0
+offset_bottom = 204.786
+metadata/_edit_group_ = true
+
+[node name="EquipedPanel" type="PanelContainer" parent="EQUIPED" unique_id=1383036645]
+layout_mode = 0
+offset_left = -0.0820007
+offset_top = -0.169403
+offset_right = 296.917
+offset_bottom = 64.831
+theme_override_styles/panel = SubResource("StyleBoxTexture_mernp")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="EQUIPED/EquipedPanel" unique_id=1054517954]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EQUIPED/EquipedPanel/MarginContainer" unique_id=227686428]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="CursorAnimations" type="AnimationPlayer" parent="." unique_id=1066313802]
+libraries/ = SubResource("AnimationLibrary_qku47")
+autoplay = &"selector"
+
+[node name="MenuAnimations" type="AnimationPlayer" parent="." unique_id=1811501998]
+libraries/ = SubResource("AnimationLibrary_c38ta")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=864949431]
+stream = ExtResource("6_74swf")
+max_polyphony = 5
+bus = &"SFX"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="OPTIONS/NONE" to="." method="_on_none_pressed"]

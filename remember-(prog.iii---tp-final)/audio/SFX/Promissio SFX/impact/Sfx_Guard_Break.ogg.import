@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bs0kg5hdlx35w"
+path="res://.godot/imported/Sfx_Guard_Break.ogg-631ddd90a86e7efefc7d7d0de50c2d14.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Promissio SFX/impact/Sfx_Guard_Break.ogg"
+dest_files=["res://.godot/imported/Sfx_Guard_Break.ogg-631ddd90a86e7efefc7d7d0de50c2d14.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

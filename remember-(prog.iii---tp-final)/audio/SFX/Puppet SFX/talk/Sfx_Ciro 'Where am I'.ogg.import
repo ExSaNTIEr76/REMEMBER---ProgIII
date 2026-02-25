@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bnayji1rjjv3p"
+path="res://.godot/imported/Sfx_Ciro 'Where am I'.ogg-ba2e1d72555d8b0b7b2ebf6c0ea0ea3e.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Where am I'.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro 'Where am I'.ogg-ba2e1d72555d8b0b7b2ebf6c0ea0ea3e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

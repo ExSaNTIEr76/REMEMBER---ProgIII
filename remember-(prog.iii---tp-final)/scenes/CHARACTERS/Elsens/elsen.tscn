@@ -1,0 +1,266 @@
+[gd_scene load_steps=21 format=3 uid="uid://crnjm3jp2fsy3"]
+
+[ext_resource type="Script" uid="uid://dvfi36r315q7a" path="res://scenes/CHARACTERS/Elsens/elsen.gd" id="1_6vsg6"]
+[ext_resource type="Texture2D" uid="uid://qxu4g61gn4bs" path="res://scenes/CHARACTERS/Puppet/shadows/BLACK_sh.png" id="2_fai5a"]
+[ext_resource type="Texture2D" uid="uid://cnfo0bew3q0rl" path="res://scenes/CHARACTERS/Elsens/sprites/Elsen_normal_spritesheet.png" id="2_migga"]
+[ext_resource type="PackedScene" uid="uid://c4f21dlpn8d8i" path="res://scenes/CHARACTERS/state_machine.tscn" id="4_mt07u"]
+[ext_resource type="Script" uid="uid://cr3so3oha3kq4" path="res://scenes/CHARACTERS/Elsens/elsenStates/elsen_state_idle.gd" id="5_fai5a"]
+[ext_resource type="Script" uid="uid://03ap2hjwfjti" path="res://scenes/CHARACTERS/Elsens/elsenStates/elsen_state_walking.gd" id="6_migga"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="7_ek5am"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_migga"]
+size = Vector2(21, 22)
+
+[sub_resource type="Animation" id="Animation_knlfd"]
+resource_name = "IdleDown"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElsenSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9, 6.1, 11.7333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 0), Vector2i(5, 0), Vector2i(2, 0), Vector2i(5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_migga"]
+resource_name = "IdleLeft"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElsenSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9, 6.1, 11.7333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 2), Vector2i(5, 2), Vector2i(2, 2), Vector2i(5, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_fai5a"]
+resource_name = "IdleRight"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElsenSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.9, 6.1, 11.7333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 1), Vector2i(5, 1), Vector2i(2, 1), Vector2i(5, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ek5am"]
+resource_name = "IdleUp"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElsenSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.73333, 7.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 3), Vector2i(5, 3), Vector2i(2, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_2lvn6"]
+resource_name = "OFF"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hvmko"]
+resource_name = "ON"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fh00h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_x7rpk"]
+resource_name = "WalkDown"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElsenSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jef3i"]
+resource_name = "WalkLeft"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElsenSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_0vrqh"]
+resource_name = "WalkRight"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElsenSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_658qx"]
+resource_name = "WalkUp"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElsenSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vsg6"]
+_data = {
+&"IdleDown": SubResource("Animation_knlfd"),
+&"IdleLeft": SubResource("Animation_migga"),
+&"IdleRight": SubResource("Animation_fai5a"),
+&"IdleUp": SubResource("Animation_ek5am"),
+&"OFF": SubResource("Animation_2lvn6"),
+&"ON": SubResource("Animation_hvmko"),
+&"RESET": SubResource("Animation_fh00h"),
+&"WalkDown": SubResource("Animation_x7rpk"),
+&"WalkLeft": SubResource("Animation_jef3i"),
+&"WalkRight": SubResource("Animation_0vrqh"),
+&"WalkUp": SubResource("Animation_658qx")
+}
+
+[node name="Elsen" type="CharacterBody2D" groups=["Persist"]]
+y_sort_enabled = true
+collision_layer = 128
+collision_mask = 6339
+motion_mode = 1
+script = ExtResource("1_6vsg6")
+
+[node name="Serializable" type="Node" parent="."]
+script = ExtResource("7_ek5am")
+children = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="ElsenSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_migga")
+offset = Vector2(0, -23)
+hframes = 6
+vframes = 4
+frame = 2
+
+[node name="Shadow" type="Sprite2D" parent="ElsenSprite"]
+modulate = Color(1, 1, 1, 0.235294)
+show_behind_parent = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fai5a")
+offset = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.19209e-07, -1.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_migga")
+
+[node name="AreaDetector" type="RayCast2D" parent="."]
+modulate = Color(1, 0.880395, 0, 1)
+target_position = Vector2(0, 21)
+collision_mask = 7375
+hit_from_inside = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6vsg6")
+}
+autoplay = "IdleDown"
+
+[node name="IdleDesyncTimer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+
+[node name="STATE MACHINE" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("4_mt07u")]
+default_state = NodePath("ElsenStateIdle")
+
+[node name="ElsenStateIdle" type="Node" parent="STATE MACHINE"]
+script = ExtResource("5_fai5a")
+
+[node name="ElsenStateWalking" type="Node" parent="STATE MACHINE"]
+script = ExtResource("6_migga")

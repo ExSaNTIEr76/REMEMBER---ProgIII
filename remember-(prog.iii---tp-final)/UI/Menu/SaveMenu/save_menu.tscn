@@ -1,0 +1,684 @@
+[gd_scene format=3 uid="uid://qd6h21t2v0jd"]
+
+[ext_resource type="Script" uid="uid://bf1k5wfdwt3" path="res://UI/Menu/SaveMenu/save_menu.gd" id="1_8op6d"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="2_74b1y"]
+[ext_resource type="AudioStream" uid="uid://bwpnpamowbrrf" path="res://audio/SFX/GUI SFX/menu/Sfx_Box_Close.ogg" id="3_450ty"]
+[ext_resource type="PackedScene" uid="uid://c7vko88bdcviy" path="res://UI/Menu/SaveMenu/save_slot_data.tscn" id="6_4srhu"]
+[ext_resource type="Script" uid="uid://dj471swdxpb0m" path="res://UI/Menu/SaveMenu/save_slot.gd" id="6_8ojnq"]
+[ext_resource type="StyleBox" uid="uid://4c254i3ttu7w" path="res://UI/Menu/styleboxes/menuName_stylebox.tres" id="6_espim"]
+[ext_resource type="AudioStream" uid="uid://78a5tcw0n2eu" path="res://audio/SFX/GUI SFX/menu/Sfx_Cursor.ogg" id="7_jhov3"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="7_ytusu"]
+[ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="8_8op6d"]
+[ext_resource type="StyleBox" uid="uid://c1tsw80ncp7qa" path="res://UI/Menu/styleboxes/menuHp_stylebox.tres" id="8_dy14m"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="8_ec3qr"]
+[ext_resource type="AudioStream" uid="uid://eugb20fy3pmr" path="res://audio/SFX/GUI SFX/menu/Sfx_Accept.ogg" id="8_hlg34"]
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="9_jhov3"]
+[ext_resource type="AudioStream" uid="uid://bglgatckwenmv" path="res://audio/SFX/GUI SFX/menu/Sfx_Blocked.ogg" id="9_kdxcx"]
+[ext_resource type="Script" uid="uid://cfylos866td70" path="res://UI/Menu/MainMenu/menu_button.gd" id="10_hlg34"]
+[ext_resource type="PackedScene" uid="uid://blpi5vtkl7np2" path="res://UI/Menu/SaveMenu/save_slot.tscn" id="11_450ty"]
+[ext_resource type="AudioStream" uid="uid://baqva677n6av0" path="res://audio/SFX/GUI SFX/menu/Sfx_Save_Data.ogg" id="11_kdxcx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtn5l"]
+atlas = ExtResource("9_jhov3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjhl5"]
+texture = SubResource("AtlasTexture_jtn5l")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhfhy"]
+atlas = ExtResource("9_jhov3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3274q"]
+texture = SubResource("AtlasTexture_dhfhy")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pr2qx"]
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1idwy"]
+atlas = ExtResource("9_jhov3")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oeha3"]
+texture = SubResource("AtlasTexture_1idwy")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="Animation" id="Animation_qoitv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aantw"]
+resource_name = "slot_blocked"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.631, 0, 0.0058480976, 0.588), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qa01l"]
+resource_name = "slot_pressed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.13333333),
+"transitions": PackedFloat32Array(1, 0.5, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.02, 1.02), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.631, 1.562879, 0, 0.588), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aantw"]
+_data = {
+&"RESET": SubResource("Animation_qoitv"),
+&"slot_blocked": SubResource("Animation_aantw"),
+&"slot_pressed": SubResource("Animation_qa01l")
+}
+
+[sub_resource type="Animation" id="Animation_jhov3"]
+resource_name = "RESET"
+
+[sub_resource type="Animation" id="Animation_ijgva"]
+resource_name = "yesnoMenu_fade_in"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YESNO/YesNoPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("YESNO/YesNoLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("YESNO:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("YesNoBackground:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("YesNoBackground:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0313726, 0.0431373, 0.0588235, 0), Color(0.0313726, 0.0431373, 0.0588235, 0.921569)]
+}
+
+[sub_resource type="Animation" id="Animation_xxiw3"]
+resource_name = "yesnoMenu_fade_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YESNO/YesNoPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("YESNO/YesNoLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("YESNO:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("YesNoBackground:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("YesNoBackground:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0313726, 0.0431373, 0.0588235, 0.921569), Color(0.0313726, 0.0431373, 0.0588235, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1qxyb"]
+_data = {
+&"RESET": SubResource("Animation_jhov3"),
+&"yesnoMenu_fade_in": SubResource("Animation_ijgva"),
+&"yesnoMenu_fade_out": SubResource("Animation_xxiw3")
+}
+
+[node name="SaveMenu" type="CanvasLayer" unique_id=1559630659]
+process_mode = 3
+layer = 100
+script = ExtResource("1_8op6d")
+override_cancel_behaviour = true
+menu_closed = ExtResource("3_450ty")
+menu_closed_volume_db = -7.0
+menu_closed_pitch = 0.5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1712947121]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0.0431373, 0.0588235, 1)
+
+[node name="YesNoBackground" type="ColorRect" parent="." unique_id=1419335398]
+visible = false
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0.0431373, 0.0588235, 0)
+
+[node name="MENUTITLE" type="Label" parent="." unique_id=1662893736]
+z_index = 1
+offset_left = 283.0
+offset_top = 4.0
+offset_right = 343.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.325, 0.1, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = ExtResource("6_espim")
+text = "SAVE"
+horizontal_alignment = 1
+
+[node name="YESNO" type="Control" parent="." unique_id=1099160571]
+process_priority = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 132.812
+offset_top = 149.0
+offset_right = 257.812
+offset_bottom = 305.0
+mouse_filter = 2
+
+[node name="YesNoPanel" type="PanelContainer" parent="YESNO" unique_id=800150529]
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 130.243
+offset_top = 41.0
+offset_right = 225.243
+offset_bottom = 82.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vjhl5")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="YESNO/YesNoPanel" unique_id=1522515177]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="YESNO/YesNoPanel/MarginContainer" unique_id=2933505]
+z_index = 5
+y_sort_enabled = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NO" type="Button" parent="YESNO/YesNoPanel/MarginContainer/VBoxContainer" unique_id=720697209]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../YES")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_3274q")
+text = "NO"
+flat = true
+alignment = 0
+script = ExtResource("10_hlg34")
+hover_sfx = ExtResource("7_jhov3")
+press_sfx = ExtResource("8_hlg34")
+blocked_sfx = ExtResource("9_kdxcx")
+
+[node name="YES" type="Button" parent="YESNO/YesNoPanel/MarginContainer/VBoxContainer" unique_id=1089799080]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_right = NodePath("../NO")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_3274q")
+text = "YES"
+flat = true
+alignment = 0
+script = ExtResource("10_hlg34")
+hover_sfx = ExtResource("7_jhov3")
+press_sfx = ExtResource("8_hlg34")
+blocked_sfx = ExtResource("9_kdxcx")
+
+[node name="YesNoLabel" type="Label" parent="YESNO" unique_id=1114249003]
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+y_sort_enabled = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_left = 44.0
+offset_right = 326.0
+offset_bottom = 34.232
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("7_ytusu")
+text = "Overwrite progress in Slot 1?"
+vertical_alignment = 2
+
+[node name="SLOTDATA" parent="." unique_id=416993387 instance=ExtResource("6_4srhu")]
+
+[node name="SaveLoadPanel" type="Control" parent="." unique_id=1218632479]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 352.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SaveLoadPanel" unique_id=754297911]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 36.0
+offset_right = 527.0
+offset_bottom = 229.0
+follow_focus = true
+
+[node name="SaveList" type="VBoxContainer" parent="SaveLoadPanel/ScrollContainer" unique_id=315690868]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="save_slot_1" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1785754646 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+
+[node name="save_slot_2" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=505081181 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+
+[node name="save_slot_3" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=2095678972 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+
+[node name="save_slot_4" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1240643265 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_5" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1028257803 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_6" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1312634894 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_7" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1288687140 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_8" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1169513040 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_9" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=2082721887 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_10" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=390314444 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_11" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=709464907 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_12" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1306128746 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_13" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=2071772029 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_14" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=382540871 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_15" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=2011934624 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_16" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=105845799 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_17" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1641963026 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_18" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1478114460 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_19" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1524918843 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_20" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=861290172 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_21" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1721800285 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_22" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=797126478 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_23" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=799281083 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_24" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1843300872 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_25" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1659475844 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_26" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=49501120 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_27" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=277022967 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_28" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1149069809 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_29" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=325686733 instance=ExtResource("11_450ty")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="save_slot_30" type="Panel" parent="SaveLoadPanel/ScrollContainer/SaveList" unique_id=1726745654 groups=["Persist"]]
+unique_name_in_owner = true
+process_mode = 3
+editor_description = "121.438
+312.514"
+layout_mode = 2
+script = ExtResource("6_8ojnq")
+press_sfx = ExtResource("11_kdxcx")
+blocked_sfx = ExtResource("9_kdxcx")
+
+[node name="Panel" type="PanelContainer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30" unique_id=418679770]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 33.0
+theme_override_styles/panel = ExtResource("7_ytusu")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/Panel" unique_id=1513065558]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/Panel/MarginContainer" unique_id=412006225]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30" unique_id=768346484]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 352.0
+offset_bottom = 27.0
+theme_override_constants/separation = 10
+
+[node name="SlotNumber" type="Label" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer" unique_id=1638318305]
+custom_minimum_size = Vector2(22, 15)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 15
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNamePanel" type="PanelContainer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer" unique_id=1974370511]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("8_dy14m")
+metadata/_edit_group_ = true
+
+[node name="PlayerNameHBoxContainer" type="HBoxContainer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer/PlayerNamePanel" unique_id=680550323]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerName" type="Label" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer/PlayerNamePanel/PlayerNameHBoxContainer" unique_id=1333994496]
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 11
+text = "PlayerName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZonePanel" type="PanelContainer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer" unique_id=626779148]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pr2qx")
+
+[node name="ZoneHBoxContainer" type="HBoxContainer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer/ZonePanel" unique_id=1366349348]
+layout_mode = 2
+
+[node name="LevelName" type="Label" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer/ZonePanel/ZoneHBoxContainer" unique_id=338624581]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 11
+text = "LevelName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZoneName" type="Label" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer/ZonePanel" unique_id=1555811672]
+custom_minimum_size = Vector2(189, 10)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 11
+text = "ZoneName"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CreateSave" type="Label" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30/HBoxContainer" unique_id=296778602]
+visible = false
+custom_minimum_size = Vector2(290, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_74b1y")
+theme_override_font_sizes/font_size = 11
+text = "-  CREATE  SAVE  -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlotButton" type="Button" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30" unique_id=1672673697]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 33.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_oeha3")
+flat = true
+script = ExtResource("10_hlg34")
+hover_sfx = ExtResource("7_jhov3")
+blocked_volume_db = -5.0
+blocked_pitch = 1.0
+
+[node name="SaveSlotAnimations" type="AnimationPlayer" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30" unique_id=601406666]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_aantw")
+
+[node name="Serializable" type="Node" parent="SaveLoadPanel/ScrollContainer/SaveList/save_slot_30" unique_id=529097699]
+script = ExtResource("8_ec3qr")
+transform = false
+variables = Array[String](["global_puzzles_state", "player_name_panel", "zone_panel", "createsave", "slot_number", "player_name", "level_name", "zone_name"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="MenuAnimations" type="AnimationPlayer" parent="." unique_id=1313073272]
+libraries/ = SubResource("AnimationLibrary_1qxyb")
+
+[node name="Serializable" type="Node" parent="." unique_id=899666967]
+script = ExtResource("8_ec3qr")
+transform = false
+metadata/_custom_type_script = "uid://nmgti4nnwjet"
+
+[node name="Savestate" type="Node" parent="." unique_id=1308483713]
+script = ExtResource("8_8op6d")
+metadata/_custom_type_script = "uid://b146xa42md0k3"

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://duuf6osgxj4db"
+path="res://.godot/imported/Zone0_Ruins.dialogue-861658813883bf0828d28348aadd3151.tres"
+
+[deps]
+
+source_file="res://dialogues/ZONE 0/Zone0_Ruins.dialogue"
+dest_files=["res://.godot/imported/Zone0_Ruins.dialogue-861658813883bf0828d28348aadd3151.tres"]
+
+[params]
+
+defaults=true

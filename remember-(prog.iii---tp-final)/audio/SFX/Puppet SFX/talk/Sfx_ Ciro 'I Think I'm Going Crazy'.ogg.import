@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://clrgx7y0ecf3d"
+path="res://.godot/imported/Sfx_ Ciro 'I Think I'm Going Crazy'.ogg-67459e33991dd2d417c2a8762a634fb0.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'I Think I'm Going Crazy'.ogg"
+dest_files=["res://.godot/imported/Sfx_ Ciro 'I Think I'm Going Crazy'.ogg-67459e33991dd2d417c2a8762a634fb0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

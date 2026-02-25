@@ -1,0 +1,229 @@
+---------------------- YELLOW BOX -------------------------------
+# Permite guardar la partida y reponer todo el HP y CP.
+
+
+~ yellowBox
+
+do AudioPlayer.box_open()
+do PlayerManager.restore_health_and_cp()
+do GlobalConditions.floating_box_state = 1
+do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+
+
+
+#[speed=80.0]Do you want to save your memories?
+
+#- Cancel
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do AudioPlayer.box_close()
+#	=> END
+#- Save
+#	do GlobalMenuHub.open_save_menu()
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do wait(0.4)
+#	do GlobalConditions.floating_box_state = 0
+
+
+
+
+[speed=80.0]¿Deseas guardar tus memorias?
+
+- Cancelar
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do AudioPlayer.box_close()
+	do wait(0.4)
+	do GlobalConditions.floating_box_state = 0
+	do CinematicManager.end_cinematic(PlayerManager.player)
+	=> END
+- Guardar
+	do GlobalMenuHub.open_save_menu()
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do wait(0.4)
+	do GlobalConditions.floating_box_state = 0
+
+do PlayerManager.player.restore_movement()
+do CinematicManager.end_cinematic(PlayerManager.player)
+
+=> END
+
+
+
+
+---------------------- RED BOX -------------------------------
+# Permite guardar la partida, reponer todo el HP y CP, y también
+# elegir si moverse a La Nada, el nexo para viajar entre las Zonas. 
+
+
+~ redBox
+
+do AudioPlayer.box_open()
+do GlobalConditions.floating_box_state = 1
+do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+do PlayerManager.restore_health_and_cp()
+
+
+
+
+#[speed=80.0]Do you want to save your memories or go to The Nothingness?
+
+#- Cancel
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do AudioPlayer.box_close()
+#	do wait(0.4)
+#	do GlobalConditions.floating_box_state = 0
+#	=> END
+#- Save
+#	do GlobalMenuHub.open_save_menu()
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do wait(0.4)
+#	do GlobalConditions.floating_box_state = 0
+#- Go to The Nothingness
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do wait(0.1)
+#	do TeleportManager.teleport_player("/root/TheNothingness/ZONES/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/The Nothingness/the_nothingness.tscn")
+#	do AudioPlayer.go_to_nothingness()
+#	do GlobalConditions.floating_box_state = 0
+#	=> END
+
+
+
+
+[speed=80.0]¿Deseas guardar tus memorias o ir a La Nada?
+
+- Cancelar
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do AudioPlayer.box_close()
+	do wait(0.4)
+	do GlobalConditions.floating_box_state = 0
+	do CinematicManager.end_cinematic(PlayerManager.player)
+	=> END
+- Guardar
+	do GlobalMenuHub.open_save_menu()
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do wait(0.4)
+	do GlobalConditions.floating_box_state = 0
+- Ir a La Nada
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do wait(0.1)
+	do TeleportManager.teleport_player("/root/TheNothingness/ZONES/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/The Nothingness/the_nothingness.tscn")
+	do AudioPlayer.go_to_nothingness()
+	do GlobalConditions.floating_box_state = 0
+	do PlayerManager.player.restore_movement()
+	=> END
+
+do PlayerManager.player.restore_movement()
+do CinematicManager.end_cinematic(PlayerManager.player)
+
+=> END
+
+
+---------------------- GREEN BOX -------------------------------
+# Abre el menu para cargar partida. Sólo disponible en futuros 
+# modos EXTRA y para debug/testing.
+
+
+~ greenBox
+
+do AudioPlayer.box_open()
+do GlobalConditions.floating_box_state = 1
+do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+
+
+
+#[speed=80.0]Do you want to load your memories?
+
+#- Cancel
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do AudioPlayer.box_close()
+#	do wait(0.4)
+#	do GlobalConditions.floating_box_state = 0
+#	=> END
+#- Load
+#	do GlobalMenuHub.open_load_menu()
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do wait(0.4)
+#	do GlobalConditions.floating_box_state = 0
+
+
+
+[speed=80.0]¿Deseas cargar tus memorias?
+
+- Cancelar
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do AudioPlayer.box_close()
+	do wait(0.4)
+	do GlobalConditions.floating_box_state = 0
+	do CinematicManager.end_cinematic(PlayerManager.player)
+	=> END
+- Cargar
+	do GlobalMenuHub.open_load_menu()
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do wait(0.4)
+	do GlobalConditions.floating_box_state = 0
+
+do CinematicManager.end_cinematic(PlayerManager.player)
+
+=> END
+
+
+---------------------- BLUE BOX -------------------------------
+# Permite guardar la partida, pero NO repone todo el HP y CP.
+# Serán el remplazo de las Yellow Boxes en el MODO DIFÍCL.
+
+
+~ blueBox
+
+do AudioPlayer.box_open()
+do GlobalConditions.floating_box_state = 1
+do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+
+
+
+#[speed=80.0]Do you want to save your memories?
+
+#- Cancel
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do AudioPlayer.box_close()
+#	=> END
+#- Save
+#	do GlobalMenuHub.open_save_menu()
+#	do GlobalConditions.floating_box_state = 2
+#	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+#	do wait(0.4)
+#	do GlobalConditions.floating_box_state = 0
+
+
+
+[speed=80.0]¿Deseas guardar tus memorias?
+
+- Cancelar
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do AudioPlayer.box_close()
+	do CinematicManager.end_cinematic(PlayerManager.player)
+	=> END
+- Guardar
+	do GlobalMenuHub.open_save_menu()
+	do GlobalConditions.floating_box_state = 2
+	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	do wait(0.4)
+	do GlobalConditions.floating_box_state = 0
+
+do CinematicManager.end_cinematic(PlayerManager.player)
+
+=> END

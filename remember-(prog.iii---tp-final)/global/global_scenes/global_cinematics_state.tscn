@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckt2msvjxu4ks"]
+
+[ext_resource type="Script" uid="uid://dxoh7x5ojrlmj" path="res://global/global_cinematics_state.gd" id="1_ech0h"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_j3kf4"]
+
+[node name="GlobalCinematicStates" type="Node"]
+script = ExtResource("1_ech0h")
+
+[node name="Serializable" type="Node" parent="."]
+script = ExtResource("2_j3kf4")
+transform = false
+children = false
+variables = Array[String](["cinematics_triggered"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

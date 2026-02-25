@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dw05y1ne1tvlu"
+path="res://.godot/imported/Sfx_Symbol_Materialized.ogg-169c6f56ce471b6fdb607af38c464cd5.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Ambient SFX/Sfx_Symbol_Materialized.ogg"
+dest_files=["res://.godot/imported/Sfx_Symbol_Materialized.ogg-169c6f56ce471b6fdb607af38c464cd5.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

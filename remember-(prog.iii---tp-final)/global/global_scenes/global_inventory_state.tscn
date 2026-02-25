@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b01my3kbkru6m"]
+
+[ext_resource type="Script" uid="uid://c8j3unyop00gm" path="res://global/global_inventory_state.gd" id="1_q1atl"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_g6ab2"]
+
+[node name="GlobalInventoryState" type="Node"]
+script = ExtResource("1_q1atl")
+
+[node name="Serializable" type="Node" parent="."]
+script = ExtResource("2_g6ab2")
+transform = false
+children = false
+variables = Array[String](["all_inventory_state"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

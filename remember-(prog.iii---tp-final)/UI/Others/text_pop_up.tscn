@@ -1,0 +1,719 @@
+[gd_scene format=3 uid="uid://wx70xiyrd2on"]
+
+[ext_resource type="Script" uid="uid://c4o76d4oaqdku" path="res://UI/Others/text_popup.gd" id="1_je7fr"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="2_5qp3g"]
+[ext_resource type="StyleBox" uid="uid://cmlql6rb17ix5" path="res://UI/Menu/styleboxes/popup_credits.tres" id="2_je7fr"]
+[ext_resource type="StyleBox" uid="uid://bahxwyiey5b7u" path="res://UI/Menu/styleboxes/popup_enemies.tres" id="3_c1iob"]
+[ext_resource type="StyleBox" uid="uid://ctrdwpebplnlx" path="res://UI/Menu/styleboxes/popup_symbol_concrete.tres" id="4_je7fr"]
+[ext_resource type="StyleBox" uid="uid://dsf684y38fae1" path="res://UI/Menu/styleboxes/popup_item_equipable.tres" id="4_nnqxx"]
+[ext_resource type="Texture2D" uid="uid://dxyi5n1ief678" path="res://items/itemsIcons.png" id="5_r4e6i"]
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="7_3fd12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fd12"]
+atlas = ExtResource("5_r4e6i")
+region = Rect2(16, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4e6i"]
+atlas = ExtResource("5_r4e6i")
+region = Rect2(336, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qwk0"]
+atlas = ExtResource("7_3fd12")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5asr"]
+texture = SubResource("AtlasTexture_3qwk0")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="Animation" id="Animation_c1iob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/ItemPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/ItemPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5qp3g"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/ItemPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/ItemPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_je7fr"]
+resource_name = "fade_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/ItemPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/ItemPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnqxx"]
+_data = {
+&"RESET": SubResource("Animation_c1iob"),
+&"fade_in": SubResource("Animation_5qp3g"),
+&"fade_out": SubResource("Animation_je7fr")
+}
+
+[sub_resource type="Animation" id="Animation_353sq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/CreditsPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/CreditsPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_r535h"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/CreditsPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/CreditsPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gq6jk"]
+resource_name = "fade_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/CreditsPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/CreditsPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_353sq"]
+_data = {
+&"RESET": SubResource("Animation_353sq"),
+&"fade_in": SubResource("Animation_r535h"),
+&"fade_out": SubResource("Animation_gq6jk")
+}
+
+[sub_resource type="Animation" id="Animation_o5asr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/SymbolPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/SymbolPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nnqxx"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/SymbolPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/SymbolPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kv3sp"]
+resource_name = "fade_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/Object&CreditsContainer/SymbolPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/Object&CreditsContainer/SymbolPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r535h"]
+_data = {
+&"RESET": SubResource("Animation_o5asr"),
+&"fade_in": SubResource("Animation_nnqxx"),
+&"fade_out": SubResource("Animation_kv3sp")
+}
+
+[sub_resource type="Animation" id="Animation_3fd12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/EnemyPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/EnemyPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_r4e6i"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/EnemyPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/EnemyPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3qwk0"]
+resource_name = "fade_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/EnemyPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/EnemyPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5asr"]
+_data = {
+&"RESET": SubResource("Animation_3fd12"),
+&"fade_in": SubResource("Animation_r4e6i"),
+&"fade_out": SubResource("Animation_3qwk0")
+}
+
+[sub_resource type="Animation" id="Animation_dxbxo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/NewSymbolPopup:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/NewSymbolPopup:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y0ak2"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("POPUPS/NewSymbolPopup:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("POPUPS/NewSymbolPopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x42kk"]
+_data = {
+&"RESET": SubResource("Animation_dxbxo"),
+&"fade_in": SubResource("Animation_y0ak2")
+}
+
+[node name="TextPopup" type="CanvasLayer" unique_id=926116343]
+layer = 0
+script = ExtResource("1_je7fr")
+
+[node name="POPUPS" type="Control" parent="." unique_id=1904556150]
+process_priority = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Object&CreditsContainer" type="VBoxContainer" parent="POPUPS" unique_id=761413484]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -106.0
+offset_right = 165.0
+offset_bottom = -3.0
+grow_vertical = 0
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="CreditsPopup" type="PanelContainer" parent="POPUPS/Object&CreditsContainer" unique_id=857306758]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("2_je7fr")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="POPUPS/Object&CreditsContainer/CreditsPopup" unique_id=1329134393]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="POPUPS/Object&CreditsContainer/CreditsPopup/MarginContainer" unique_id=903707410]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CreditsLabel" type="Label" parent="POPUPS/Object&CreditsContainer/CreditsPopup/MarginContainer/VBoxContainer" unique_id=1829028085]
+unique_name_in_owner = true
+y_sort_enabled = true
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9822266, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.084228925, 0.08627452, 0.015686272, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "C"
+vertical_alignment = 2
+
+[node name="CreditsQuantity" type="Label" parent="POPUPS/Object&CreditsContainer/CreditsPopup/MarginContainer/VBoxContainer" unique_id=379848240]
+unique_name_in_owner = true
+y_sort_enabled = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ItemPopup" type="PanelContainer" parent="POPUPS/Object&CreditsContainer" unique_id=552061807]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("4_nnqxx")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="POPUPS/Object&CreditsContainer/ItemPopup" unique_id=486077921]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="POPUPS/Object&CreditsContainer/ItemPopup/MarginContainer" unique_id=206040279]
+layout_mode = 2
+
+[node name="ItemTexture" type="TextureRect" parent="POPUPS/Object&CreditsContainer/ItemPopup/MarginContainer/VBoxContainer" unique_id=1077408173]
+unique_name_in_owner = true
+z_index = 2
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3fd12")
+
+[node name="ItemName" type="Label" parent="POPUPS/Object&CreditsContainer/ItemPopup/MarginContainer/VBoxContainer" unique_id=1526442362]
+unique_name_in_owner = true
+y_sort_enabled = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "Item Name"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ItemXlabel" type="Label" parent="POPUPS/Object&CreditsContainer/ItemPopup/MarginContainer/VBoxContainer" unique_id=1926506285]
+unique_name_in_owner = true
+y_sort_enabled = true
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "x"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ItemQuantity" type="Label" parent="POPUPS/Object&CreditsContainer/ItemPopup/MarginContainer/VBoxContainer" unique_id=889605728]
+unique_name_in_owner = true
+y_sort_enabled = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SymbolPopup" type="PanelContainer" parent="POPUPS/Object&CreditsContainer" unique_id=1570173166]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("4_je7fr")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="POPUPS/Object&CreditsContainer/SymbolPopup" unique_id=1636058101]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="POPUPS/Object&CreditsContainer/SymbolPopup/MarginContainer" unique_id=599791041]
+layout_mode = 2
+
+[node name="SymbolTexture" type="TextureRect" parent="POPUPS/Object&CreditsContainer/SymbolPopup/MarginContainer/VBoxContainer" unique_id=773216343]
+unique_name_in_owner = true
+z_index = 2
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_r4e6i")
+
+[node name="SymbolName" type="Label" parent="POPUPS/Object&CreditsContainer/SymbolPopup/MarginContainer/VBoxContainer" unique_id=698293197]
+unique_name_in_owner = true
+y_sort_enabled = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "Symbol Name"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SymbolXlabel" type="Label" parent="POPUPS/Object&CreditsContainer/SymbolPopup/MarginContainer/VBoxContainer" unique_id=955238703]
+unique_name_in_owner = true
+y_sort_enabled = true
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "x"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SymbolQuantity" type="Label" parent="POPUPS/Object&CreditsContainer/SymbolPopup/MarginContainer/VBoxContainer" unique_id=520555376]
+unique_name_in_owner = true
+y_sort_enabled = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="NewSymbolPopup" type="PanelContainer" parent="POPUPS" unique_id=1716118057]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = 11.0
+offset_right = 228.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_o5asr")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="POPUPS/NewSymbolPopup" unique_id=641217260]
+layout_mode = 2
+
+[node name="SymbolInfo" type="Label" parent="POPUPS/NewSymbolPopup/MarginContainer" unique_id=856569637]
+y_sort_enabled = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 14
+text = "Defensive symbol that allows blocking attacks and  projectiles."
+autowrap_mode = 2
+
+[node name="EnemyPopup" type="PanelContainer" parent="POPUPS" unique_id=1460122774]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -38.0
+offset_right = -6.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("3_c1iob")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="POPUPS/EnemyPopup" unique_id=1427711525]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="POPUPS/EnemyPopup/MarginContainer" unique_id=320173556]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="EnemyName" type="Label" parent="POPUPS/EnemyPopup/MarginContainer/VBoxContainer" unique_id=84793901]
+unique_name_in_owner = true
+y_sort_enabled = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5qp3g")
+theme_override_font_sizes/font_size = 15
+text = "Enemy Name"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ItemPopupAnimations" type="AnimationPlayer" parent="." unique_id=627066222]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_nnqxx")
+
+[node name="CreditsPopupAnimations" type="AnimationPlayer" parent="." unique_id=1123622144]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_353sq")
+
+[node name="SymbolPopupAnimations" type="AnimationPlayer" parent="." unique_id=1683535778]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_r535h")
+
+[node name="EnemyPopupAnimations" type="AnimationPlayer" parent="." unique_id=2139055101]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_o5asr")
+
+[node name="NewSymbolAnimations" type="AnimationPlayer" parent="." unique_id=629467210]
+libraries/ = SubResource("AnimationLibrary_x42kk")

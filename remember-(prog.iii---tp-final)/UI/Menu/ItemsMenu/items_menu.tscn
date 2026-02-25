@@ -1,0 +1,806 @@
+[gd_scene format=3 uid="uid://begoblitd07wj"]
+
+[ext_resource type="Script" uid="uid://bn2woni8wdqp1" path="res://UI/Menu/ItemsMenu/items_menu.gd" id="1_msq7w"]
+[ext_resource type="AudioStream" uid="uid://cqhl1fvyvtp1d" path="res://audio/SFX/GUI SFX/menu/Sfx_Cancel.ogg" id="2_w3q8x"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="3_3lu4p"]
+[ext_resource type="StyleBox" uid="uid://4c254i3ttu7w" path="res://UI/Menu/styleboxes/menuName_stylebox.tres" id="4_ia4c0"]
+[ext_resource type="Script" uid="uid://dh3q6jwdq204g" path="res://UI/Menu/MainMenu/stats_updater.gd" id="5_36nfe"]
+[ext_resource type="Script" uid="uid://bm2kb4ondn74m" path="res://UI/Menu/Panels/status_panel.gd" id="6_abb6e"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="7_jcj4d"]
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="8_3x0r4"]
+[ext_resource type="Texture2D" uid="uid://bt3s3im0fcbu" path="res://UI/HUD/sprites/healthBar.png" id="9_10pmo"]
+[ext_resource type="Script" uid="uid://cdpsfkx4dajgk" path="res://UI/HUD/scripts/healthbar.gd" id="10_be10v"]
+[ext_resource type="Texture2D" uid="uid://cssubp2epuwls" path="res://UI/HUD/sprites/competenceBar.png" id="11_hldrl"]
+[ext_resource type="Script" uid="uid://cn08jeuwabb1" path="res://UI/HUD/scripts/competencebar.gd" id="12_xkw8m"]
+[ext_resource type="Texture2D" uid="uid://stm50fldayay" path="res://UI/HUD/sprites/espritBart.png" id="13_ok8qf"]
+[ext_resource type="Script" uid="uid://bhm74r41xhatd" path="res://UI/HUD/scripts/espritbar.gd" id="14_5p5wx"]
+[ext_resource type="StyleBox" uid="uid://bw8tr7jgsa4jd" path="res://UI/Menu/styleboxes/menuInteractable_stylebox.tres" id="15_35i6h"]
+[ext_resource type="Script" uid="uid://cfylos866td70" path="res://UI/Menu/MainMenu/menu_button.gd" id="16_ekqou"]
+[ext_resource type="AudioStream" uid="uid://78a5tcw0n2eu" path="res://audio/SFX/GUI SFX/menu/Sfx_Cursor.ogg" id="17_lmd48"]
+[ext_resource type="AudioStream" uid="uid://eugb20fy3pmr" path="res://audio/SFX/GUI SFX/menu/Sfx_Accept.ogg" id="18_hgb3n"]
+[ext_resource type="AudioStream" uid="uid://bglgatckwenmv" path="res://audio/SFX/GUI SFX/menu/Sfx_Blocked.ogg" id="19_40txb"]
+[ext_resource type="Resource" uid="uid://d28crqpsjhhmi" path="res://UI/Menu/ItemsMenu/inventory/player_inventory.tres" id="20_4a1cr"]
+[ext_resource type="Script" uid="uid://dv8oifdw23rso" path="res://UI/Menu/ItemsMenu/inventory/inventory_ui.gd" id="20_ableb"]
+[ext_resource type="PackedScene" uid="uid://c0jxmn2v3jhx7" path="res://UI/Menu/ItemsMenu/inventory/inventory_slot.tscn" id="22_pwykk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fisbn"]
+atlas = ExtResource("8_3x0r4")
+region = Rect2(72, 40, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72d1b"]
+texture = SubResource("AtlasTexture_fisbn")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5cvm"]
+atlas = ExtResource("9_10pmo")
+region = Rect2(0, 56, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anc6v"]
+atlas = ExtResource("9_10pmo")
+region = Rect2(0, 24, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtn5l"]
+atlas = ExtResource("9_10pmo")
+region = Rect2(0, 40, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3e6q"]
+atlas = ExtResource("9_10pmo")
+region = Rect2(0, 48, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju1pn"]
+atlas = ExtResource("8_3x0r4")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5cvm"]
+texture = SubResource("AtlasTexture_ju1pn")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51gt2"]
+atlas = ExtResource("11_hldrl")
+region = Rect2(0, 12, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifsm0"]
+atlas = ExtResource("11_hldrl")
+region = Rect2(0, 18, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc4vc"]
+atlas = ExtResource("11_hldrl")
+region = Rect2(0, 30, 58, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijgva"]
+atlas = ExtResource("11_hldrl")
+region = Rect2(0, 38, 58, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3o3u"]
+atlas = ExtResource("8_3x0r4")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4qsf"]
+texture = SubResource("AtlasTexture_w3o3u")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2agm2"]
+atlas = ExtResource("13_ok8qf")
+region = Rect2(0, 136, 28, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a1cr"]
+atlas = ExtResource("13_ok8qf")
+region = Rect2(0, 144, 28, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxiw3"]
+atlas = ExtResource("13_ok8qf")
+region = Rect2(0, 120, 28, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40txb"]
+atlas = ExtResource("13_ok8qf")
+region = Rect2(0, 128, 28, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4qsf"]
+atlas = ExtResource("8_3x0r4")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whcjl"]
+texture = SubResource("AtlasTexture_b4qsf")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi5pv"]
+atlas = ExtResource("8_3x0r4")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3i80l"]
+texture = SubResource("AtlasTexture_vi5pv")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40txb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4eig"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6, 0.6, 0.6, 0.4392157)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.48235294)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="Animation" id="Animation_l5gwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/USABLES:theme_override_styles/focus:modulate_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mjh65"]
+resource_name = "selector"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/USABLES:theme_override_styles/focus:modulate_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wbwrj"]
+_data = {
+&"RESET": SubResource("Animation_l5gwo"),
+&"selector": SubResource("Animation_mjh65")
+}
+
+[node name="ItemsMenu" type="CanvasLayer" unique_id=670223271 groups=["Persist"]]
+process_mode = 3
+script = ExtResource("1_msq7w")
+menu_opened_volume_db = -18.0
+menu_opened_pitch = 1.5
+menu_closed = ExtResource("2_w3q8x")
+menu_closed_volume_db = -18.0
+menu_closed_pitch = 1.5
+
+[node name="ITEMSMENU" type="Label" parent="." unique_id=2049014850]
+z_index = 1
+offset_left = -5.78237
+offset_top = 6.56502
+offset_right = 71.2176
+offset_bottom = 34.565
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.145098, 0.0431373, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = ExtResource("4_ia4c0")
+text = "ITEMS"
+horizontal_alignment = 1
+
+[node name="StatsUpdater" type="Control" parent="." unique_id=294674787 node_paths=PackedStringArray("status_panel")]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_36nfe")
+status_panel = NodePath("../STATUS")
+
+[node name="Background" type="ColorRect" parent="." unique_id=724953171]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0.0431373, 0.0588235, 1)
+
+[node name="STATUS" type="Control" parent="." unique_id=217063433]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 285.918
+offset_top = 6.56502
+offset_right = 540.918
+offset_bottom = 138.565
+script = ExtResource("6_abb6e")
+
+[node name="StatusPanel" type="PanelContainer" parent="STATUS" unique_id=1358277595]
+layout_mode = 0
+offset_right = 247.0
+offset_bottom = 130.0
+theme_override_styles/panel = ExtResource("7_jcj4d")
+
+[node name="MarginContainer" type="MarginContainer" parent="STATUS/StatusPanel" unique_id=1256833244]
+layout_mode = 2
+theme_override_constants/margin_top = -4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="STATUS/StatusPanel/MarginContainer" unique_id=1622443514]
+layout_mode = 2
+tooltip_text = "
+"
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="HBoxContainerHP" type="HBoxContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer" unique_id=1633845709]
+z_index = 1
+layout_mode = 2
+
+[node name="HP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP" unique_id=2136124941]
+z_index = 1
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.25098, 0.25098, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentHP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP" unique_id=1032672085]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 2
+
+[node name="bar" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP" unique_id=111003037]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "/"
+horizontal_alignment = 1
+
+[node name="maxHP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP" unique_id=1901784976]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "100"
+
+[node name="HPUnderBar" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP/maxHP" unique_id=1635136494]
+process_mode = 3
+layout_mode = 0
+offset_left = -81.0
+offset_top = 25.736
+offset_right = 44.0
+offset_bottom = 30.736
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = SubResource("AtlasTexture_q5cvm")
+script = ExtResource("10_be10v")
+
+[node name="HPBarPreview" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP/maxHP" unique_id=655188485]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = -81.0
+offset_top = 25.736
+offset_right = 44.0
+offset_bottom = 30.736
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_progress = SubResource("AtlasTexture_anc6v")
+script = ExtResource("10_be10v")
+
+[node name="Healthbar" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP/maxHP" unique_id=237990747 node_paths=PackedStringArray("preview_bar")]
+process_mode = 3
+layout_mode = 0
+offset_left = -81.0
+offset_top = 25.736
+offset_right = 44.0
+offset_bottom = 30.736
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_over = SubResource("AtlasTexture_jtn5l")
+texture_progress = SubResource("AtlasTexture_g3e6q")
+script = ExtResource("10_be10v")
+preview_bar = NodePath("../HPBarPreview")
+
+[node name="HpPanel" type="PanelContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP/maxHP" unique_id=916517040]
+z_index = -1
+layout_mode = 0
+offset_left = -81.0
+offset_top = 3.39085
+offset_right = 44.0
+offset_bottom = 25.3908
+theme_override_styles/panel = SubResource("StyleBoxTexture_q5cvm")
+
+[node name="MarginContainer" type="MarginContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP/maxHP/HpPanel" unique_id=1551908827]
+layout_mode = 2
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerHP/maxHP/HpPanel/MarginContainer" unique_id=1613524102]
+layout_mode = 2
+tooltip_text = "
+"
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="HBoxContainerCP" type="HBoxContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer" unique_id=2129721403]
+z_index = 1
+layout_mode = 2
+
+[node name="CP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP" unique_id=1265198742]
+z_index = 1
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.917647, 0.25098, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "CP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentCP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP" unique_id=1436618572]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 2
+
+[node name="bar" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP" unique_id=846191298]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "/"
+horizontal_alignment = 1
+
+[node name="maxCP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP" unique_id=1846746794]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "100"
+
+[node name="CPUnderBar" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP/maxCP" unique_id=1695311301 node_paths=PackedStringArray("preview_bar")]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 0
+offset_left = -81.43802
+offset_top = 25.736
+offset_right = 43.56198
+offset_bottom = 30.736
+max_value = 50.0
+step = 0.1
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = SubResource("AtlasTexture_51gt2")
+script = ExtResource("12_xkw8m")
+preview_bar = NodePath("../CPBarPreview")
+
+[node name="CPBarPreview" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP/maxCP" unique_id=626534862]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = -81.43802
+offset_top = 25.736
+offset_right = 43.56198
+offset_bottom = 30.736
+max_value = 50.0
+step = 0.1
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_progress = SubResource("AtlasTexture_ifsm0")
+script = ExtResource("12_xkw8m")
+
+[node name="Competencebar" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP/maxCP" unique_id=1868573976 node_paths=PackedStringArray("preview_bar")]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 0
+offset_left = -81.438
+offset_top = 25.736
+offset_right = 43.562
+offset_bottom = 30.736
+max_value = 50.0
+step = 0.1
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_over = SubResource("AtlasTexture_qc4vc")
+texture_progress = SubResource("AtlasTexture_ijgva")
+script = ExtResource("12_xkw8m")
+preview_bar = NodePath("../CPBarPreview")
+
+[node name="CpPanel" type="PanelContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerCP/maxCP" unique_id=2010010355]
+z_index = -1
+layout_mode = 0
+offset_left = -81.0
+offset_top = 3.43059
+offset_right = 44.0
+offset_bottom = 25.4306
+theme_override_styles/panel = SubResource("StyleBoxTexture_b4qsf")
+
+[node name="HBoxContainerEP" type="HBoxContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer" unique_id=2119196796]
+z_index = 1
+layout_mode = 2
+
+[node name="EP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP" unique_id=1229151218]
+z_index = 1
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.756863, 1, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "EP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="currentEP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP" unique_id=853306879]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 2
+
+[node name="bar" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP" unique_id=432432545]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.25098, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.14625, 0.045, 0.18, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "/"
+horizontal_alignment = 1
+
+[node name="maxEP" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP" unique_id=647077430]
+custom_minimum_size = Vector2(50, 28)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 22
+text = "100"
+
+[node name="EPUnderBar" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP/maxEP" unique_id=167280701]
+process_mode = 3
+layout_mode = 0
+offset_left = -80.917984
+offset_top = 26.434982
+offset_right = 43.082016
+offset_bottom = 31.434982
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = SubResource("AtlasTexture_2agm2")
+script = ExtResource("14_5p5wx")
+
+[node name="EPBarPreview" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP/maxEP" unique_id=948994154]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = -80.917984
+offset_top = 26.434982
+offset_right = 43.082016
+offset_bottom = 31.434982
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_progress = SubResource("AtlasTexture_4a1cr")
+script = ExtResource("14_5p5wx")
+
+[node name="Espritbar" type="TextureProgressBar" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP/maxEP" unique_id=2006002370 node_paths=PackedStringArray("preview_bar")]
+process_mode = 3
+layout_mode = 0
+offset_left = -80.918
+offset_top = 26.434982
+offset_right = 43.082
+offset_bottom = 31.434982
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_over = SubResource("AtlasTexture_xxiw3")
+texture_progress = SubResource("AtlasTexture_40txb")
+script = ExtResource("14_5p5wx")
+preview_bar = NodePath("../EPBarPreview")
+
+[node name="EpPanel" type="PanelContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerEP/maxEP" unique_id=42213322]
+z_index = -1
+layout_mode = 0
+offset_left = -81.0
+offset_top = 3.44297
+offset_right = 44.0
+offset_bottom = 25.443
+theme_override_styles/panel = SubResource("StyleBoxTexture_whcjl")
+
+[node name="HBoxContainerSTATUS" type="HBoxContainer" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer" unique_id=389928365]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="STATUS" type="Label" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerSTATUS" unique_id=165942796]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_72d1b")
+text = "ESTADO"
+
+[node name="actualStatus" type="RichTextLabel" parent="STATUS/StatusPanel/MarginContainer/VBoxContainer/HBoxContainerSTATUS" unique_id=660225450]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3lu4p")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "PURO"
+vertical_alignment = 1
+
+[node name="OPTIONS" type="Control" parent="." unique_id=1678404402]
+process_priority = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 113.458
+offset_top = 6.56502
+offset_right = 239.458
+offset_bottom = 134.565
+mouse_filter = 2
+
+[node name="OptionsPanel" type="PanelContainer" parent="OPTIONS" unique_id=266060390]
+layout_mode = 0
+offset_left = -13.0
+offset_right = 115.0
+offset_bottom = 12.0
+theme_override_styles/panel = ExtResource("15_35i6h")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="OPTIONS/OptionsPanel" unique_id=1229541233]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OPTIONS/OptionsPanel/MarginContainer" unique_id=619134264]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="USABLES" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=321509295]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../MISCELLANEOUS")
+focus_neighbor_bottom = NodePath("../KEYS")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_3i80l")
+text = "USABLES"
+flat = true
+alignment = 0
+script = ExtResource("16_ekqou")
+hover_sfx = ExtResource("17_lmd48")
+press_sfx = ExtResource("18_hgb3n")
+blocked_sfx = ExtResource("19_40txb")
+
+[node name="KEYS" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=271563482]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../USABLES")
+focus_neighbor_bottom = NodePath("../MATERIALS")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_3i80l")
+text = "CLAVE"
+flat = true
+alignment = 0
+script = ExtResource("16_ekqou")
+hover_sfx = ExtResource("17_lmd48")
+press_sfx = ExtResource("18_hgb3n")
+blocked_sfx = ExtResource("19_40txb")
+
+[node name="MATERIALS" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=245988407]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../KEYS")
+focus_neighbor_bottom = NodePath("../MISCELLANEOUS")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_3i80l")
+text = "MATERIALES"
+flat = true
+alignment = 0
+script = ExtResource("16_ekqou")
+hover_sfx = ExtResource("17_lmd48")
+press_sfx = ExtResource("18_hgb3n")
+blocked_sfx = ExtResource("19_40txb")
+
+[node name="MISCELLANEOUS" type="Button" parent="OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=1647850416]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../MATERIALS")
+focus_neighbor_bottom = NodePath("../USABLES")
+theme_override_colors/font_color = Color(0.607843, 0.607843, 0.607843, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxTexture_3i80l")
+text = "MISCELÁNEOS"
+flat = true
+alignment = 0
+script = ExtResource("16_ekqou")
+hover_sfx = ExtResource("17_lmd48")
+press_sfx = ExtResource("18_hgb3n")
+blocked_sfx = ExtResource("19_40txb")
+
+[node name="ITEMSLIST" type="Control" parent="." unique_id=1273233300]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 352.0
+mouse_filter = 2
+
+[node name="ItemListPanel" type="PanelContainer" parent="ITEMSLIST" unique_id=191045828]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 144.385
+offset_right = 533.0
+offset_bottom = 288.0
+theme_override_styles/panel = ExtResource("15_35i6h")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ITEMSLIST" unique_id=1821115529]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 151.0
+offset_right = 546.0
+offset_bottom = 281.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_40txb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g4eig")
+follow_focus = true
+
+[node name="InventoryContainer" type="GridContainer" parent="ITEMSLIST/ScrollContainer" unique_id=840207181]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 215
+columns = 2
+script = ExtResource("20_ableb")
+data = ExtResource("20_4a1cr")
+
+[node name="InventorySlot" parent="ITEMSLIST/ScrollContainer/InventoryContainer" unique_id=550378285 instance=ExtResource("22_pwykk")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="ITEMSLIST/ScrollContainer/InventoryContainer" unique_id=479018116 instance=ExtResource("22_pwykk")]
+layout_mode = 2
+
+[node name="DESCRIPTION" type="Control" parent="." unique_id=1767206011]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StatusPanel" type="PanelContainer" parent="DESCRIPTION" unique_id=835237530]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 293.0
+offset_right = 533.0
+offset_bottom = 348.0
+theme_override_styles/panel = ExtResource("7_jcj4d")
+
+[node name="MarginContainer" type="MarginContainer" parent="DESCRIPTION/StatusPanel" unique_id=594982602]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 5
+
+[node name="ItemDescription" type="Label" parent="DESCRIPTION/StatusPanel/MarginContainer" unique_id=2137438629]
+unique_name_in_owner = true
+z_index = 3
+y_sort_enabled = true
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3lu4p")
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 3
+
+[node name="MenuAnimations" type="AnimationPlayer" parent="." unique_id=400788979]
+libraries/ = SubResource("AnimationLibrary_wbwrj")
+autoplay = &"selector"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1644160102]
+stream = ExtResource("17_lmd48")
+max_polyphony = 5
+bus = &"SFX"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

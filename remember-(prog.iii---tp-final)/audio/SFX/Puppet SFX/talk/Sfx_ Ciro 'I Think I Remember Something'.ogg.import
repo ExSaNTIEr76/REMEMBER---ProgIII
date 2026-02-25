@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bho523yp6crtm"
+path="res://.godot/imported/Sfx_ Ciro 'I Think I Remember Something'.ogg-0654f26e1673c5ece45603eaff8e04eb.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'I Think I Remember Something'.ogg"
+dest_files=["res://.godot/imported/Sfx_ Ciro 'I Think I Remember Something'.ogg-0654f26e1673c5ece45603eaff8e04eb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://1otitmdbsg55"]
+
+[ext_resource type="Texture2D" uid="uid://cgjo8b1eohulj" path="res://UI/Menu/sprites/UI Tilesets.png" id="1_33exr"]
+[ext_resource type="Script" uid="uid://d2ec33lltskdl" path="res://UI/Menu/Panels/stats_panel.gd" id="1_236hx"]
+[ext_resource type="FontFile" uid="uid://c75b0davad3b1" path="res://UI/Fonts/Remember.ttf" id="2_g4r6v"]
+[ext_resource type="StyleBox" uid="uid://cbusv48rao4ey" path="res://UI/Menu/styleboxes/menuPanel_stylebox.tres" id="2_v23ps"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8op6d"]
+atlas = ExtResource("1_33exr")
+region = Rect2(72, 40, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ec3qr"]
+texture = SubResource("AtlasTexture_8op6d")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[node name="STATS" type="Control" unique_id=41279753]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 255.0
+offset_bottom = 89.0
+script = ExtResource("1_236hx")
+
+[node name="StatsPanel" type="PanelContainer" parent="." unique_id=25334738]
+layout_mode = 0
+offset_right = 255.0
+offset_bottom = 89.0
+theme_override_styles/panel = ExtResource("2_v23ps")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="StatsPanel" unique_id=1947535558]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsPanel/MarginContainer" unique_id=1505897934]
+layout_mode = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=834317481]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.82371
+offset_right = 93.0
+offset_bottom = 84.8237
+theme_override_constants/separation = 0
+
+[node name="HBoxContainerATK" type="HBoxContainer" parent="VBoxContainer" unique_id=26953964]
+layout_mode = 2
+
+[node name="ATK" type="Label" parent="VBoxContainer/HBoxContainerATK" unique_id=1077345865]
+editor_description = "Daño causado por símbolos concretos físicos."
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.25098, 0.25098, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
+text = "ATQ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="atkNumber" type="Label" parent="VBoxContainer/HBoxContainerATK" unique_id=1456945568]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 2
+
+[node name="HBoxContainerSTR" type="HBoxContainer" parent="VBoxContainer" unique_id=625264965]
+layout_mode = 2
+
+[node name="STR" type="Label" parent="VBoxContainer/HBoxContainerSTR" unique_id=1396037417]
+editor_description = "Bonificación de daño físico total frente a la debilidad de atributo del enemigo.
+
+Aumenta al subir de nivel y con las Auras."
+z_index = 1
+custom_minimum_size = Vector2(-20, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
+text = "FUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="strNumber" type="Label" parent="VBoxContainer/HBoxContainerSTR" unique_id=1244756639]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(47, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 2
+
+[node name="HBoxContainerESP" type="HBoxContainer" parent="VBoxContainer" unique_id=548709546]
+layout_mode = 2
+
+[node name="ESP" type="Label" parent="VBoxContainer/HBoxContainerESP" unique_id=1160780243]
+editor_description = "Daño causado por Símbolos Abstractos de invocación."
+z_index = 1
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
+text = "ESP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="espNumber" type="Label" parent="VBoxContainer/HBoxContainerESP" unique_id=1613057635]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=252460379]
+layout_mode = 0
+offset_left = 132.144
+offset_top = 3.82371
+offset_right = 215.144
+offset_bottom = 84.8237
+theme_override_constants/separation = 0
+
+[node name="HBoxContainerDEF" type="HBoxContainer" parent="VBoxContainer2" unique_id=540847380]
+layout_mode = 2
+
+[node name="DEF" type="Label" parent="VBoxContainer2/HBoxContainerDEF" unique_id=77672519]
+editor_description = "Resistencia frente a fuentes de daño.
+
+Aumentado por equipables.
+"
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.756863, 1, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
+text = "DEF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="defNumber" type="Label" parent="VBoxContainer2/HBoxContainerDEF" unique_id=699483558]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 2
+
+[node name="HBoxContainerCON" type="HBoxContainer" parent="VBoxContainer2" unique_id=1280531779]
+layout_mode = 2
+
+[node name="CON" type="Label" parent="VBoxContainer2/HBoxContainerCON" unique_id=640820705]
+editor_description = "Resistencia frente a ataques elementales.
+
+Aumentado por Símbolos Abstractos y los Espíritus."
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
+text = "CON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="conNumber" type="Label" parent="VBoxContainer2/HBoxContainerCON" unique_id=1365900233]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 2
+
+[node name="HBoxContainerLCK" type="HBoxContainer" parent="VBoxContainer2" unique_id=1715314549]
+layout_mode = 2
+
+[node name="LCK" type="Label" parent="VBoxContainer2/HBoxContainerLCK" unique_id=430561047]
+editor_description = "Mayor probabilidad de item drops.
+
+Aumentado por accesorios."
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
+text = "SUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lckNumber" type="Label" parent="VBoxContainer2/HBoxContainerLCK" unique_id=1836565904]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g4r6v")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 2

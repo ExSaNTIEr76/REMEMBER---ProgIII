@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dyi1o0i0bupmv"]
+
+[ext_resource type="Texture2D" uid="uid://hcewtk83ueg1" path="res://scenes/ENVIOREMENT/Floating Blocks/Floating_Blocks.png" id="1_own30"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pptrr"]
+atlas = ExtResource("1_own30")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xbfi"]
+atlas = ExtResource("1_own30")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq2do"]
+atlas = ExtResource("1_own30")
+region = Rect2(128, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pptrr")
+}],
+"loop": false,
+"name": &"Lime_blockHole_ext",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xbfi")
+}],
+"loop": false,
+"name": &"Purple_blockHole_int",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq2do")
+}],
+"loop": false,
+"name": &"Yellow_blockHole",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"no_hole",
+"speed": 5.0
+}]

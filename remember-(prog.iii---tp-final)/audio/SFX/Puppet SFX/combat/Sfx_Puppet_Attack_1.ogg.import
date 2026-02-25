@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ckvfoodnht8ac"
+path="res://.godot/imported/Sfx_Puppet_Attack_1.ogg-89a65391d717780fc9987d9b090f1499.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/combat/Sfx_Puppet_Attack_1.ogg"
+dest_files=["res://.godot/imported/Sfx_Puppet_Attack_1.ogg-89a65391d717780fc9987d9b090f1499.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

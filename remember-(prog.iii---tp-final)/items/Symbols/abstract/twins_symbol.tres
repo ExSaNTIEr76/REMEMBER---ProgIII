@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EquipableItemData" format=3 uid="uid://da8m2l1kj77hf"]
+
+[ext_resource type="Script" uid="uid://cjr2x0w1bdc32" path="res://items/equipable_item_modifiers.gd" id="1_ikmmy"]
+[ext_resource type="Script" uid="uid://c4xepl2ndct37" path="res://items/equipable_item_data.gd" id="2_ecwa8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4it1o"]
+load_path = "res://.godot/imported/itemsIcons.png-4b876634127af6fbfaabb9b7f4249248.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikmmy"]
+atlas = SubResource("CompressedTexture2D_4it1o")
+region = Rect2(352, 224, 16, 16)
+
+[resource]
+script = ExtResource("2_ecwa8")
+symbol_icon_name = "A_twins"
+cep_cost = 5
+name = "Twins"
+type = 6
+ID = 221
+is_quantitative = true
+description = "Loyal symbol that invokes two spiritual orbitals that protects and harm enemies."
+texture = SubResource("AtlasTexture_ikmmy")
+cost = 250
+metadata/_custom_type_script = "uid://c4xepl2ndct37"

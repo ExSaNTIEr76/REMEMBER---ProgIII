@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cs4w0bvgl2q20"]
+
+[ext_resource type="Script" uid="uid://6v666n7y1urf" path="res://UI/Notes/actionable_note.gd" id="1_t26bq"]
+
+[node name="ActionableNote" type="Area2D" unique_id=1304794152]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_t26bq")
+note_names = Array[String]([""])
+one_time = false

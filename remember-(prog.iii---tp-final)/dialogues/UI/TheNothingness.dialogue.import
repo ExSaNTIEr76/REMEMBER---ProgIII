@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cuq1vads5p20j"
+path="res://.godot/imported/TheNothingness.dialogue-203b0aef5c49497b8dffa20feb3b8b7f.tres"
+
+[deps]
+
+source_file="res://dialogues/UI/TheNothingness.dialogue"
+dest_files=["res://.godot/imported/TheNothingness.dialogue-203b0aef5c49497b8dffa20feb3b8b7f.tres"]
+
+[params]
+
+defaults=true

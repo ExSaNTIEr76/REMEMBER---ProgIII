@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmtlwi4vx8ckg"
+path="res://.godot/imported/Sfx_Spectre_Laugh_1.ogg-186f14f9753b99cef272b835663356f4.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Enemies SFX/spectres/Sfx_Spectre_Laugh_1.ogg"
+dest_files=["res://.godot/imported/Sfx_Spectre_Laugh_1.ogg-186f14f9753b99cef272b835663356f4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://djroupcm0fr0r"
+path="res://.godot/imported/Sfx_Ciro Coughing 1.ogg-7cecf31951c36a4e421b70fc6a7b3cfb.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Coughing 1.ogg"
+dest_files=["res://.godot/imported/Sfx_Ciro Coughing 1.ogg-7cecf31951c36a4e421b70fc6a7b3cfb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://diqu4liiqujuy"
+
+[deps]
+
+files=["res://dialogues/ZONE 0/Z0_Actionables_ENG.en.translation"]
+
+source_file="res://dialogues/ZONE 0/Z0_Actionables_ENG.csv"
+dest_files=["res://dialogues/ZONE 0/Z0_Actionables_ENG.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

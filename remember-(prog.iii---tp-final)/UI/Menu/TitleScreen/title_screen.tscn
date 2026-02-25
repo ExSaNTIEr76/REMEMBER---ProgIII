@@ -576,7 +576,8 @@ tracks/4/keys = {
 "times": PackedFloat32Array(1.5, 7.7, 11),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["Es posible que ciertas escenas de este juego resulten impactantes para un público incauto", "ó...", "tal vez no..."]
+"values": ["Es posible que ciertas escenas de este juego
+resulten impactantes para un público incauto", "ó...", "tal vez no..."]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1305,7 +1306,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(2.1, 9.5, 17.8, 24.8, 31.9, 39.7, 47.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["No te rindas todavía", "Tu hora aún no ha llegado", "Esto es sólo temporal", "Tus sueños aún no han terminado", "Quédate en tu coma", "Y por favor no te rindas tofavía", "por favor..."]
+"values": ["No te rindas todavía", "Tu hora aún no ha llegado", "Esto es sólo temporal", "Tus sueños aún no han terminado", "Quédate en tu coma", "Y por favor no te rindas todavía", "por favor..."]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -1707,7 +1708,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_0kpm6")
 theme_override_font_sizes/font_size = 8
-text = "ExSaNTIEr    2026     v.0.0.1"
+text = "ExSaNTIEr    2026     ver. slice"
 horizontal_alignment = 2
 vertical_alignment = 2
 

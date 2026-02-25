@@ -130,9 +130,9 @@ var nav_mode := NavMode.CATEGORIES
 
 func preview_slot_items(equip_type: String) -> void:
 	inventory_preview_mode = InventoryPreviewMode.EQUIPABLE
-	last_slot_type = equip_type   # ← IMPORTANTE: guardamos qué slot pidió la lista
+	last_slot_type = equip_type
 	var item_type := ItemData.ItemType.NONE
-	# evita ternarios raros: usa if/else
+
 	if equip_type == "DEFENSIVE 1":
 		item_type = ItemData.ItemType.DEF1
 	elif equip_type == "DEFENSIVE 2":
@@ -200,7 +200,7 @@ func _show_group(group: String, pressed_button: Button, auto_focus_slot: bool = 
 func preview_equip_item(item: ItemData, equip_type: String) -> void:
 	if not item:
 		_show_body_ui()
-		update_item_description("Empty slot for " + equip_type)
+		update_item_description("Slot vacío para " + equip_type)
 		return
 
 	if item and item.type == ItemData.ItemType.SINGULAR:
@@ -208,7 +208,7 @@ func preview_equip_item(item: ItemData, equip_type: String) -> void:
 		update_item_description(item.description + "\n\n[ Read-only Symbol ]")
 		return
 
-# BODY (solo si NO estamos en símbolos)
+	# BODY (solo si NO estamos en símbolos)
 	if not equip_type.begins_with("CONCRETE") and equip_type != "ABSTRACT":
 		_show_body_ui()
 		update_item_description(item.description)
@@ -282,7 +282,6 @@ func _show_singular_symbol_ui(item: EquipableItemData) -> void:
 	symbol_description.show()
 	symbol_description.text = item.description
 
-	# 🚫 Sin coste
 	cost_label.hide()
 
 
@@ -354,8 +353,8 @@ func on_cancel() -> bool:
 			if inventory_preview_mode == InventoryPreviewMode.SINGULAR:
 				inventory_preview_mode = InventoryPreviewMode.NONE
 				nav_mode = NavMode.EQUIP_SLOTS
-				last_slot_type = ""          # 🔴 CLAVE
-				_clear_inventory_preview()   # 🔴 CLAVE
+				last_slot_type = ""
+				_clear_inventory_preview()
 
 				# Limpiar UI simbólica
 				symbol_icon.hide()

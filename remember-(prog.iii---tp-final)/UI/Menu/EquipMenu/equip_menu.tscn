@@ -534,13 +534,13 @@ equip_type = "SPECIAL 2"
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-equip_type = "CONCRETE A"
+equip_type = "CONCRET A"
 
 [node name="CONCRETE B" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=1688951901 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-equip_type = "CONCRETE B"
+equip_type = "CONCRET B"
 
 [node name="ABSTRACT" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=591767934 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true

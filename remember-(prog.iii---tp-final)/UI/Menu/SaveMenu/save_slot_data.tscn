@@ -148,7 +148,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("STATS/DATEBoxContainer/DAY2:modulate")
+tracks/11/path = NodePath("STATS/DATEBoxContainer/DAY:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -248,7 +248,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("STATS/DATEBoxContainer/DAY2:modulate")
+tracks/5/path = NodePath("STATS/DATEBoxContainer/DAY:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -654,7 +654,7 @@ offset_top = 66.1487
 offset_right = -9.78372
 offset_bottom = 94.1487
 
-[node name="DAY2" type="Label" parent="STATS/DATEBoxContainer" unique_id=1227530782]
+[node name="DAY" type="Label" parent="STATS/DATEBoxContainer" unique_id=1227530782]
 custom_minimum_size = Vector2(20, 28)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

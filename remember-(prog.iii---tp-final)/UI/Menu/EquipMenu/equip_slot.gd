@@ -44,8 +44,8 @@ func _ready() -> void:
 func clear() -> void:
 	current_item = null
 	item_texture.texture = null
-	item_button.text = equip_type  # 👈 visible y navegable
-	item_name.text = equip_type   # 👈 muestra tipo de slot aunque esté vacío
+	item_button.text = equip_type
+	item_name.text = equip_type
 
 
 
@@ -134,22 +134,22 @@ func _unhandled_input(event: InputEvent) -> void:
 		# 🔊 feedback
 		item_button.play_unequip_sfx()
 
-		# 1️⃣ Lógica real
+		# 1️. Lógica real
 		PlayerManager.EQUIPMENT_DATA.unequip(equip_type)
 
-		# 2️⃣ UI local
+		# 2️. UI local
 		clear()
 
 		# 3️⃣ Reset UI descriptiva
 		equip_menu.update_item_description("")
 		equip_menu.clear_stats_preview()
 
-		 #4️⃣ 🔄 FIX VISUAL
+		 # 4️. FIX VISUAL
 		_on_focus_exited()
 		equip_menu.preview_slot_items(equip_type)
 		_on_focus_entered()
 
-		# 4️⃣ Promissio sync
+		# 5. Promissio sync
 		var promissio := get_tree().get_first_node_in_group("promissio")
 		if promissio:
 			promissio.clear_concrete_symbol(equip_type)

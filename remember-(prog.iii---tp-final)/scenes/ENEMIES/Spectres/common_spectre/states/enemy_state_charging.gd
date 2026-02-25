@@ -4,11 +4,10 @@ extends EnemyStateBase
 
 @onready var competence_sound: AudioStreamPlayer2D = %CompetenceSound
 
-@export var attack_chance := 1.0  # 70% de las veces embiste
+@export var attack_chance := 1.0
 
 
 func start():
-	# 🔒 Una vez que empieza a cargar, no hay vuelta atrás
 	controlled_node.velocity = Vector2.ZERO
 	controlled_node.is_committed_to_charge = true
 	controlled_node.attack_area.set_deferred("monitoring", false)
@@ -16,7 +15,6 @@ func start():
 	competence_sound.play()
 	controlled_node.enemy_effects.play(animations.cp_flash)
 
-	#controlled_node.begin_flash_charge()
 	controlled_node.charging_timer.start(1.0)
 
 	await get_tree().create_timer(0.6).timeout
@@ -26,7 +24,7 @@ func start():
 
 	if enemy.stats.CURRENT_HP <= 0:
 		state_machine.change_to(states.Dead)
-		return  # 👻 Ya está muerto, no ataca más
+		return
 
 	if randf() <= attack_chance:
 		# Guardar dirección calculada UNA vez

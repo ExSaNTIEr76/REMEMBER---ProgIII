@@ -131,7 +131,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if current_item == null:
 			return  # nada que remover
 
-		# 🔊 feedback
+		# Feedback sonoro
 		item_button.play_unequip_sfx()
 
 		# 1️. Lógica real

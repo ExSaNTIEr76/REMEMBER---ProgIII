@@ -3,9 +3,9 @@
 class_name PromissioStateAnticipation     extends PromissioStateBase
 
 func start():
-		# 💥 Reposicionar antes de lanzar el ataque
+		# Reposicionar antes de lanzar el ataque
 	promissio.snap_to_attack_position(promissio.previous_direction)
-	# Elegimos la animación en base al último input (definilo desde el player o pásalo por variable)
+	# Elege la animación en base al último input
 	if promissio.attack_type == "A":
 		promissio.animation_player.play( animations.Smear_Anticipation_A + promissio.previous_direction )
 	else:

@@ -60,21 +60,21 @@ func set_concrete_symbol(slot: String, symbol_scene: PackedScene) -> void:
 	print("🧪 set_concrete_symbol:", slot, symbol_scene)
 
 	match slot:
-		"CONCRETE A":
+		"CONCRETO A":
 			concrete_symbol_a = symbol_scene
-		"CONCRETE B":
+		"CONCRETO B":
 			concrete_symbol_b = symbol_scene
-		"ABSTRACT":
+		"ABSTRACTO":
 			abstract_symbol = symbol_scene
 
-	print("➡ A:", concrete_symbol_a, " B:", concrete_symbol_b, " ABSTRACT:", abstract_symbol)
+	print("➡ A:", concrete_symbol_a, " B:", concrete_symbol_b, " ABSTRACTO:", abstract_symbol)
 
 
 func clear_concrete_symbol(slot: String) -> void:
 	match slot:
-		"CONCRETE A":
+		"CONCRETO A":
 			concrete_symbol_a = null
-		"CONCRETE B":
+		"CONCRETO B":
 			concrete_symbol_b = null
 
 
@@ -82,11 +82,11 @@ func perform_attack( attack: String ):
 	var symbol_scene = concrete_symbol_a if attack == "A" else concrete_symbol_b
 	if symbol_scene:
 		if current_symbol:
-			current_symbol.queue_free()  # Por si queda uno anterior colgado
+			current_symbol.queue_free()
 
 		current_symbol = symbol_scene.instantiate()
 		
-		# 🆕 Seteamos el tipo de ataque que se usará para determinar animación
+		# Setea el tipo de ataque que se usará para determinar animación
 		current_symbol.attack_type = attack
 		current_symbol.execute_attack( global_position, previous_direction, get_parent() )
 	else:
@@ -94,7 +94,7 @@ func perform_attack( attack: String ):
 
 
 func _on_AttackTimer_timeout():
-	last_attack_type = attack_type  # Guardamos el tipo de ataque actual
+	last_attack_type = attack_type
 
 
 func snap_to_attack_position(direction: String):
@@ -108,7 +108,7 @@ func snap_to_attack_position(direction: String):
 		"Up":
 			offset = Vector2( 0, -25 )
 		"Down":
-			offset = Vector2( 0, 0 )  # O algo más abajo si querés
+			offset = Vector2( 0, 0 )
 
 		"UpRight":
 			offset = Vector2( 0, -25 )
@@ -139,7 +139,7 @@ func apply_equipment_from_data(equipment_data: EquipmentData) -> void:
 	if not equipment_data:
 		return
 
-	for slot in ["CONCRETE A", "CONCRETE B"]:
+	for slot in ["CONCRETO A", "CONCRETO B"]:
 		var item := equipment_data.get_equipped(slot)
 
 		if item is EquipableItemData and item.symbol_scene:

@@ -132,6 +132,7 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 
 ## Apply any changes to the balloon given a new [DialogueLine].
 func apply_dialogue_line() -> void:
+	
 	# --- BLOQUE DE PERSONALIZACIÓN DE NOMBRE ---
 	var show_name := true
 	var display_name := dialogue_line.character
@@ -143,14 +144,13 @@ func apply_dialogue_line() -> void:
 		elif tag == "no_name":
 			show_name = false
 
-	# Aplicamos el nombre o lo ocultamos
+	# Aplica el nombre o lo oculta
 	character_label.visible = show_name and not display_name.is_empty()
 	name_tab.visible = show_name and not display_name.is_empty()
 	character_label.text = tr(display_name, "dialogue")
 
 	_load_talkface_for(dialogue_line)
 
-	# Ruta al sprite de animaciones
 	var frames_path := "res://dialogues/TALKSPRITES/spriteframes/%s_talksprites.tres" % dialogue_line.character
 
 	if ResourceLoader.exists(frames_path):
@@ -159,7 +159,7 @@ func apply_dialogue_line() -> void:
 			talkface.visible = true
 			talkface.sprite_frames = frames
 
-			# 🧠 Obtener el mood desde los tags
+			# Obtener el mood desde los tags
 			var mood := "neutral"
 			for tag in dialogue_line.tags:
 				if not tag.to_lower() in ["left", "right", "center"]:
@@ -194,14 +194,13 @@ func apply_dialogue_line() -> void:
 		dialogue_label.connect("finished_typing", Callable(self, "_on_typing_finished"))
 
 
-	# 🔁 Conectamos una sola vez para evitar error
 	if not dialogue_label.finished_typing.is_connected(_on_typing_finished):
 		dialogue_label.finished_typing.connect(_on_typing_finished)
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
 
-	# 🔹 Limpieza del texto visible: eliminamos tags personalizados [alias=...] y [no_name]
+	# Limpieza del texto visible: eliminam tags personalizados [alias=...] y [no_name]
 	var clean_text := dialogue_label.text
 	clean_text = clean_text.replace("[no_name]", "")
 	var alias_regex := RegEx.new()
@@ -279,7 +278,7 @@ func _on_spoke(letter: String, _index: int, _speed: float) -> void:
 	if not talkface.visible or talkface.sprite_frames == null:
 		return
 	var ignore := "-_()[]{}:;/#"
-	#var ignore := ",.¿?¡!()-_[]{}:;\"…\n\t "  # incluye tab y enter por si acaso
+	#var ignore := ",.¿?¡!()-_[]{}:;\"…\n\t "
 	if letter in ignore:
 		talkface.pause()
 	else:
@@ -288,8 +287,8 @@ func _on_spoke(letter: String, _index: int, _speed: float) -> void:
 
 
 func _on_typing_finished():
-	indicator.show()  # solo mostrar al terminar
-	talkface.stop()  # Detiene el sprite animado al terminar de hablar
+	indicator.show()
+	talkface.stop()
 #endregion
 
 
@@ -321,7 +320,7 @@ func _on_mutated(_mutation: Dictionary) -> void:
 
 
 func _on_balloon_gui_input(event: InputEvent) -> void:
-	# Si el texto aún se está tipeando → sólo permitir saltar el tipeo
+	# Si el texto aún se está tipeando → sólo permite saltar el tipeo
 	if dialogue_label.is_typing and dialogue_label.visible_ratio < 1.0:
 		var mouse_was_clicked = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()
 		var skip_button_was_pressed := event.is_action_pressed(skip_action)
@@ -330,7 +329,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 			dialogue_label.skip_typing()
 			return
 		else:
-			# ⚠️ No permitir avanzar si el texto aún se está tipeando
+			# No permitir avanzar si el texto aún se está tipeando
 			get_viewport().set_input_as_handled()
 			return
 
@@ -350,7 +349,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
-	responses_menu.input_locked = true  # 🔒 Extra seguro, por si se vuelve a conectar
+	responses_menu.input_locked = true
 	responses_animations.play("responses_fade_out")
 	await get_tree().create_timer(0.2).timeout
 	next(response.next_id)

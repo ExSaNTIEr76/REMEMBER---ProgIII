@@ -67,11 +67,11 @@ func _on_press():
 			AudioManager.play_sfx(blocked_sfx, blocked_pitch, blocked_volume_db)
 		return
 
-	# 🔕 Silenciar press_sfx si fue mutado explícitamente
+	# Silenciar press_sfx si fue mutado explícitamente
 	if AudioManager._consume_press_mute():
 		return
 
-	# 🟩 EQUIP (mismo nivel que BLOCKED)
+	# EQUIP (mismo nivel que BLOCKED)
 	if equip_requested:
 		equip_requested = false
 		#AudioManager.mute_press_once()
@@ -80,11 +80,11 @@ func _on_press():
 			AudioManager.play_sfx(equiped_sfx, equiped_pitch, equiped_volume_db)
 		return
 
-	# 🚫 Decidir si este botón debe sonar o no
+	# Decidir si este botón debe sonar o no
 	if press_sfx_validator.is_valid() and not press_sfx_validator.call():
 		return
 
-	# ⏱️ Cooldown normal
+	# Cooldown normal
 	if now - _last_press_time < press_cooldown:
 		return
 

@@ -7,11 +7,12 @@ var player: Node = null
 var camera_markers := {}
 var current_zone := -1
 
+
 func _ready():
 	print("🎬 CameraManager inicializado.")
 	await get_tree().process_frame
 
-	# ⏳ Esperamos hasta 2 segundos para que PlayerManager instancie al jugador
+	# Espera hasta 2 segundos para que PlayerManager instancie al jugador
 	var max_wait_frames := 120
 	while (PlayerManager.player == null or not PlayerManager.player.is_inside_tree()) and max_wait_frames > 0:
 		await get_tree().process_frame

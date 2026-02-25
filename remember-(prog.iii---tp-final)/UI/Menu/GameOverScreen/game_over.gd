@@ -74,7 +74,6 @@ func _play_game_over_sequence() -> void:
 	skip_requested = false
 
 
-
 func _reset_and_return_to_title():
 	get_tree().paused = false
 	active = false

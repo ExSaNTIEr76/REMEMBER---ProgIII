@@ -60,7 +60,7 @@ func _ready() -> void:
 	get_tree().paused = false
 	LevelManager.level_loaded.emit()
 
-	# 🔸 Fade opcional según el nivel
+	# Fade opcional según el nivel
 	if use_fade:
 		await SceneTransition.fade_in( transition_tag )
 
@@ -70,7 +70,7 @@ func _process( _delta: float ) -> void:
 		return
 	init_load = true
 
-	# 🧍 Si al terminar de cargar el nivel no existe player, respawnearlo
+	# Si al terminar de cargar el nivel no existe player, respawnearlo
 	if not PlayerManager.player or not is_instance_valid( PlayerManager.player ):
 		print( "🧩 Player no encontrado tras carga, forzando respawn manual." )
 		PlayerManager.respawn_player_after_load()
@@ -79,13 +79,13 @@ func _process( _delta: float ) -> void:
 
 func _on_level_loaded():
 	if music:
-		# Guardamos la música del nivel como "default"
+		# Guarda la música del nivel como "default"
 		AudioManager.default_music_stream = music
 		AudioManager.default_music_volume = music_volume
 		AudioManager.default_music_pitch = music_pitch
 		AudioManager.default_music_position = 0.0
 
-		# 🎶 Solo reproducimos si no estamos en combate
+		# Solo se reproduce si no se está en combate
 		if not AudioManager.is_in_combat:
 			AudioManager.play_music( music, music_pitch, music_volume, false )
 	else:
@@ -102,7 +102,7 @@ func _free_level() -> void:
 	queue_free()
 
 
-# 🧱 Maneja el caso de carga desde un save
+# Maneja el caso de carga desde un save
 func _handle_load_from_save() -> void:
 	print( "[LOAD] Restaurando estado desde save..." )
 
@@ -115,7 +115,7 @@ func _handle_load_from_save() -> void:
 		else:
 			print( "⚠️ No se encontró posición en el save, se usará spawn por defecto." )
 
-		# 🔄 Restaurar globales
+		# Restaura globales
 		savestate.get_game_variables( PlayerManager )
 		savestate.get_game_variables( GlobalConditions)
 		savestate.get_game_variables( GlobalInventoryState )
@@ -125,7 +125,7 @@ func _handle_load_from_save() -> void:
 		savestate.get_game_variables( GlobalPuzzlesState )
 		savestate.get_game_variables( GlobalFightsState )
 
-		# Sincronizar grupos
+		# Sincroniza grupos
 		for chest in get_tree().get_nodes_in_group( "chests" ):
 			if chest.has_method( "sync_with_global" ):
 				chest.sync_with_global()

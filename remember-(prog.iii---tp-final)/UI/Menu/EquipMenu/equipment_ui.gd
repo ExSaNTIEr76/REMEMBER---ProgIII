@@ -22,17 +22,17 @@ var slots: Dictionary = {}
 
 func _ready() -> void:
 	slots = {
-		"DEFENSIVE 1": defensive_1,
-		"DEFENSIVE 2": defensive_2,
-		"SPECIAL 1": special_1,
-		"SPECIAL 2": special_2,
-		"CONCRETE A": concrete_a,
-		"CONCRETE B": concrete_b,
-		"ABSTRACT": abstract,
+		"DEFENSIVO 1": defensive_1,
+		"DEFENSIVO 2": defensive_2,
+		"ESPECIAL 1": special_1,
+		"ESPECIAL 2": special_2,
+		"CONCRETO A": concrete_a,
+		"CONCRETO B": concrete_b,
+		"ABSTRACTO": abstract,
 	}
 
 	for slot in slots.values():
-		slot.equip_menu = equip_menu   # 🔴 ESTA ES LA CLAVE
+		slot.equip_menu = equip_menu
 
 	for t in slots.keys():
 		slots[t].slot_hovered.connect(_on_slot_hovered)

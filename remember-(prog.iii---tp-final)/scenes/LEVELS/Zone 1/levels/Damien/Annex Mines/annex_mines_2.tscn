@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://clnal8oh1xwhr" path="res://scenes/CHARACTERS/Promissio/Promissio_awakening.png" id="15_yis88"]
 
 [sub_resource type="GDScript" id="GDScript_y50xr"]
-script/source = "class_name AnnexMines2    extends Node2D
+script/source = "class_name Z1AnnexMines2    extends Node2D
 
 @onready var addon: AnimatedSprite2D = %Addon
 

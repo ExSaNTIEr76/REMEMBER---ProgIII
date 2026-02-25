@@ -7,7 +7,7 @@ extends EnemyStateBase
 @export var cooldown_duration := 2.0
 
 func start():
-	controlled_node.speed = 50.0  # 🌙 En enfriamiento o recuperación
+	controlled_node.speed = 50.0
 	controlled_node.attack_area.monitoring = false
 	controlled_node.velocity = Vector2.ZERO
 	controlled_node.cooldown_timer.start(cooldown_duration)

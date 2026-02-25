@@ -45,7 +45,7 @@ Mi cabeza está mejor, pero esas voces, esas sombras...
 do wait(1.0)
 [speed=0.4]Mi propósito...
 do wait(1.0)
-[speed=0.4]¿Cuál es mi propósito?
+[speed=0.4]¿Cuál era mi propósito?
 
 
 do wait(1.0)
@@ -55,26 +55,20 @@ do AudioManager.play_music_path("res://audio/music/Distant Waves.ogg", 1.0, -20.
 do SceneTransition.cinematic_fade_out()
 do CinematicManager.end_cinematic(PlayerManager.player)
 
-
 => END
 
 -----------------------------------------------------
 
 ~ sign
 
-#Welcome to Zone 0!
-
 if not GlobalConditions.has_read_zone0_sign
 	set GlobalConditions.has_read_zone0_sign = true
 	[center][speed=80.0]¡Bienvenido a la Zona 0!
 	do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Hah' 1.ogg", 1.0, 0.0)
 	Ciro: [#confused_3] [#no_name]Con que Zona 0, ¿Eh?
-#	Ciro: [#upset_3] [#no_name]Es verdad. Aún sigo en esta tonta isla.
-#	Ciro: [#confused_3] [#no_name]Aunque no precisamente en el mismo sitio que antes.
-#	Ciro: [#confused_2] [#no_name]Mmm, me pregunto si habrá alguien por aquí.
+	Ciro: [#confused_2] [#no_name]Pues con la desolación que hay aquí, le queda bien ese nombre.
 else
 	[center][speed=80.0]¡Bienvenido a la Zona 0!
-
 
 => END
 
@@ -83,49 +77,13 @@ else
 
 ~ catScratcher
 
-#I think it's a cat scratcher.
-
 Creo que es un rascador para gatos.
 
 => END
 
 ------------------------ JUDGE'S BASEMENT ----------------------------------
 
-~ meetingSucre
-
-do wait(0.1)
-do CinematicManager.play_cinematic("Sucre", "_Motions/Hiding")
-do wait(0.1)
-do CinematicManager.play_cinematic("Sucre", "ON")
-do wait(0.1)
-Ciro: [#shocked_1] [speed=0.6]H-Hey, ¿Quién anda ahí?
-Sucre: [#worried_2] [#no_name] [speed=0.4]!
-#do CinematicManager.move_entity("Sucre", Vector2.DOWN, 48, 40.0)
-do wait(0.1)
-do CinematicManager.play_cinematic("Sucre", "Idle/IdleDown")
-do wait(0.1)
-do CinematicManager.play_cinematic("Sucre", "_Crestfallen/IdleDown")
-do wait(0.1)
-Sucre: [#worried_1] [#no_name] [speed=0.4]A-Aléjate de mí, por favor.
-do wait(0.1)
-do CinematicManager.play_cinematic("Sucre", "OFF")
-do wait(0.1)
-
-
-=> END
-
------------------------------------------------------
-
 ~ catsPortrait
-
-#if not GlobalConditions.cats_picture_seen
-#	set GlobalConditions.cats_picture_seen = true
-#	Are they cats on a... roller coaster?
-#	Wow. And just when I thought I'd seen it all.
-#	Or so I thought...
-#else
-#	=> END
-
 
 if not GlobalConditions.cats_picture_seen
 	set GlobalConditions.cats_picture_seen = true
@@ -135,15 +93,11 @@ if not GlobalConditions.cats_picture_seen
 else
 	=> END
 
-
 => END
 
 -----------------------------------------------------
 
 ~ bookshelf
-
-#It's just a few books on philosophy, physics, and... feline health?
-#Such similar tastes.
 
 Son sólo algunos libros sobre filosofía, física y... ¿salud felina?
 Vaya gustos iguales.
@@ -152,11 +106,7 @@ Vaya gustos iguales.
 
 -----------------------------------------------------
 
-
 ~ catHouses
-
-#They're cat houses.
-#God. I can't imagine two kittens living in this place.
 
 Son cuchas para gatos.
 Dios. No me imagino a dos gatitos viviendo en este sitio.
@@ -167,9 +117,6 @@ Dios. No me imagino a dos gatitos viviendo en este sitio.
 
 ~ catFeeders
 
-#One of the feeders is emptier than the other.
-#Looks like we have a little glutton.
-
 Uno de los comederos está más vacío que el otro.
 Parece que tenemos a un pequeño glotón.
 
@@ -179,8 +126,6 @@ Parece que tenemos a un pequeño glotón.
 
 ~ emptyBoxes
 
-#There are scratch marks inside the open boxes.
-
 Dentro de las cajas abiertas hay marcas de arañazos.
 
 => END
@@ -188,9 +133,6 @@ Dentro de las cajas abiertas hay marcas de arañazos.
 -----------------------------------------------------
 
 ~ chairTable
-
-#There's an unfinished card game on the table.
-#It seems no one had a good hand.
 
 En la mesa hay una partida de cartas sin terminar.
 Parece que nadie tenía una buena mano.
@@ -201,28 +143,8 @@ Parece que nadie tenía una buena mano.
 
 ~ catPicture
 
-#Apparently it's a painting from a cat food ad.
-#The owner of this bunker really loves cats.
-#And I'm not judging. They're adorable.
-
 Al parecer es una pintura de un anuncio de comida para gatos.
 El dueño de este bunker realmente ama a los gatos.
 Y no juzgo. Son adorables.
 
-
 => END
-
------------------------------------------------------
-
-~ secretCode
-
-#There's an unfinished card game on the table.
-#It seems no one had a good hand.
-
-Espera... puedo ver algo escrito detrás de la biblioteca.
-Dice "2+3, 7-5, 6+2, 12-4, "
-
-
-=> END
-
------------------------------------------------------

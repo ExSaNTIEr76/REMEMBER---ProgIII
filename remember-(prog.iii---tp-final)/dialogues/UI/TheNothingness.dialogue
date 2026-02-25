@@ -3,17 +3,6 @@
 
 ~ zone0
 
-
-#[speed=80.0]Go to Zone 0?
-#
-#- NO
-#	=> END
-#- YES
-#	do wait(0.2)
-#	do TeleportManager.teleport_player("/root/RuinsExit/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 0/levels/Ruins/Z0_ruins_exit.tscn")
-#	do AudioPlayer.go_to_nothingness()
-
-
 [speed=80.0]¿Viajar hacia la Zona 0?
 
 - NO
@@ -33,17 +22,6 @@
 
 ~ zone1
 
-
-#[speed=80.0]Go to Zone 1?
-#
-#- NO
-#	=> END
-#- YES
-#	do wait(0.2)
-#	do TeleportManager.teleport_player("/root/ElsenStation_ext_1/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Elsen/elsen_station_ext_1.tscn")
-#	do AudioPlayer.go_to_nothingness()
-
-
 [speed=80.0]¿Viajar hacia la Zona 1?
 
 - NO
@@ -54,75 +32,5 @@
 #	do TeleportManager.teleport_player("/root/ElsenStation_ext_1/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Elsen/elsen_station_ext_1.tscn")
 	do AudioPlayer.go_to_nothingness()
 	do PlayerManager.player.restore_movement()
-
-=> END
-
-
-
------------------------- ZONE 2 ---------------------------------
-
-
-~ zone2
-
-[speed=80.0]¿Viajar hacia la Zona 2?
-
-- NO
-	=> END
-- SÍ
-	do wait(0.2)
-	do TeleportManager.teleport_player("/root/ElsenStation_ext_1/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Elsen/elsen_station_ext_1.tscn")
-	do AudioPlayer.go_to_nothingness()
-
-=> END
-
------------------------- ZONE 3 ---------------------------------
-
-
-~ zone3
-
-[speed=80.0]¿Viajar hacia la Zona 3?
-
-- NO
-	=> END
-- SÍ
-	do wait(0.2)
-	do TeleportManager.teleport_player("/root/ElsenStation_ext_1/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Elsen/elsen_station_ext_1.tscn")
-	do AudioPlayer.go_to_nothingness()
-
-
-=> END
-
-
------------------------- ZONE 4 ---------------------------------
-
-
-~ zone4
-
-[speed=80.0]¿Viajar hacia la Zona 4?
-
-- NO
-	=> END
-- SÍ
-	do wait(0.2)
-	do TeleportManager.teleport_player("/root/ElsenStation_ext_1/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Elsen/elsen_station_ext_1.tscn")
-	do AudioPlayer.go_to_nothingness()
-
-
-=> END
-
------------------------- THE ROOM ---------------------------------
-
-
-~ theRoom
-
-[speed=80.0]¿Viajar hacia La Habitación?
-
-- NO
-	=> END
-- SÍ
-	do wait(0.2)
-	do TeleportManager.teleport_player("/root/ElsenStation_ext_1/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 1/levels/Elsen/elsen_station_ext_1.tscn")
-	do AudioPlayer.go_to_nothingness()
-
 
 => END

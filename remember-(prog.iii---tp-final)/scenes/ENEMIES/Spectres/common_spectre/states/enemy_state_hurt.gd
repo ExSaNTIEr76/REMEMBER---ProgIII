@@ -10,10 +10,8 @@ func start():
 	controlled_node.enemy_animations.play(animations.hurt)
 	play_random_2d(hurt_sounds, 0.15)
 
-	# Esperamos que termine la animación
 	await controlled_node.enemy_animations.animation_finished
 
-	# Volvemos a Idle
 	state_machine.change_to(states.Idle)
 
 
@@ -29,4 +27,3 @@ func play_random_2d(players: Array[AudioStreamPlayer2D], chance := 1.0):
 
 	p.pitch_scale = randf_range(0.95, 1.05)
 	p.play()
-	#USO: play_random_2d(hurt_sounds, 0.15)

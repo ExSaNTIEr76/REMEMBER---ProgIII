@@ -29,13 +29,13 @@ func update_inventory(item_list: Array[ItemData], preferred_idx: int = -1) -> vo
 		slots.append(slot)
 		#print("InventoryUI.update_inventory: count=", item_list.size())
 
-	# 🚑 Restaurar focus al siguiente frame
+	# Restaurar focus al siguiente frame
 	if preferred_idx >= 0:
 		await get_tree().process_frame
 		if preferred_idx < slots.size():
 			slots[preferred_idx]._grab_focus()
 		else:
-			# fallback: volver al botón de categoría
+			# Fallback: volver al botón de categoría
 			if items_menu and items_menu.last_button:
 				items_menu.last_button.grab_focus()
 
@@ -43,7 +43,6 @@ func update_inventory(item_list: Array[ItemData], preferred_idx: int = -1) -> vo
 func on_inventory_changed() -> void:
 	if not visible: return
 
-	# respetar categoría activa
 	var menu := items_menu
 	if not menu or not is_instance_valid(menu.last_button):
 		return

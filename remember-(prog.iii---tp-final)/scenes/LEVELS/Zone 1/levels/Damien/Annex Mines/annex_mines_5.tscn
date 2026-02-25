@@ -743,9 +743,8 @@ libraries/ = SubResource("AnimationLibrary_mk27o")
 [node name="Control" type="Control" parent="MandatoryCombat" unique_id=1438456093]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 33.0
 offset_top = -1.0
-offset_right = 673.0
+offset_right = 640.0
 offset_bottom = 351.0
 
 [node name="CombatTag" type="RichTextLabel" parent="MandatoryCombat/Control" unique_id=34638030]

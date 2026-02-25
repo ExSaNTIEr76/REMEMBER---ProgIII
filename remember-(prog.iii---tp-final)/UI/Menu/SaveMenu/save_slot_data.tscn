@@ -392,6 +392,7 @@ zone_portrait_atlas = ExtResource("1_2wmrv")
 
 [node name="EmptyDataLabel" type="Label" parent="." unique_id=907532266]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(290, 96)
 layout_mode = 0

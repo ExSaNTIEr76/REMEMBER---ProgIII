@@ -12,13 +12,12 @@ func _ready():
 	set_process(true)
 	Engine.max_fps = 60
 
-	await get_tree().process_frame  # 🕐 Espera un frame
+	await get_tree().process_frame
 	if is_instance_valid(TimeManager):
 		total_seconds = TimeManager.total_seconds
 		update_time_display()
 		print("🕓 TimePanel inicializado con tiempo:", TimeManager.get_time_string())
 
-	# conectar la señal (opcional si ya lo tenías)
 	if TimeManager.has_signal("time_loaded"):
 		TimeManager.connect("time_loaded", Callable(self, "_on_time_loaded"))
 

@@ -8,7 +8,6 @@ signal preview_stats_changed(item: ItemData)
 @onready var button_materials: Button = %MATERIALS
 @onready var button_miscellaneous: Button = %MISCELLANEOUS
 
-# 🚀 Un solo contenedor
 @onready var inventory_container: InventoryUI = %InventoryContainer
 @onready var item_description: Label = %ItemDescription
 
@@ -27,13 +26,13 @@ func _ready() -> void:
 	button_materials.pressed.connect(func(): AudioManager.mute_hover_once(); _show_type(ItemData.ItemType.MATERIAL, button_materials))
 	button_miscellaneous.pressed.connect(func(): AudioManager.mute_hover_once(); _show_type(ItemData.ItemType.MISCELLANEOUS, button_miscellaneous))
 
-	# hover con mouse
+	# Hover con mouse
 	button_usables.mouse_entered.connect(func(): _preview_type(ItemData.ItemType.CONSUMABLE, button_usables))
 	button_keys.mouse_entered.connect(func(): _preview_type(ItemData.ItemType.KEY, button_keys))
 	button_materials.mouse_entered.connect(func(): _preview_type(ItemData.ItemType.MATERIAL, button_materials))
 	button_miscellaneous.mouse_entered.connect(func(): _preview_type(ItemData.ItemType.MISCELLANEOUS, button_miscellaneous))
 
-	# hover con teclado (cuando el player navega con flechas/tab)
+	# Hover con teclado
 	button_usables.focus_entered.connect(func(): _preview_type(ItemData.ItemType.CONSUMABLE, button_usables))
 	button_keys.focus_entered.connect(func(): _preview_type(ItemData.ItemType.KEY, button_keys))
 	button_materials.focus_entered.connect(func(): _preview_type(ItemData.ItemType.MATERIAL, button_materials))
@@ -63,12 +62,12 @@ func preview_item_effect(effect: ItemEffectHeal) -> void:
 			effect.heal_amount
 		)
 
+
 func clear_item_preview() -> void:
 	last_preview_effect = null
 
 	if has_node("StatsUpdater"):
 		$StatsUpdater.status_panel.clear_preview()
-
 
 
 func _preview_type(item_type: ItemData.ItemType, _hovered_button: Button) -> void:
@@ -88,13 +87,12 @@ func _show_type(item_type: ItemData.ItemType, pressed_button: Button) -> void:
 	)
 	last_button = pressed_button
 
-	# 👇 recién acá el foco va al primer slot
 	if inventory_container.slots.size() > 0:
 		await get_tree().process_frame
 		inventory_container.slots[0]._grab_focus()
 
 
-# Helper local: revisa si 'node' está dentro del árbol (descendiente) de 'ancestor'
+# Revisa si 'node' está dentro del árbol (descendiente) de 'ancestor'
 func _is_descendant_of(node: Node, ancestor: Node) -> bool:
 	var cur := node
 	while cur:
@@ -104,19 +102,19 @@ func _is_descendant_of(node: Node, ancestor: Node) -> bool:
 	return false
 
 
-# Retornar true si consumimos el cancel (no queremos que GlobalMenuHub lo procese)
+# Retornar true si consumimos el cancel
 func on_cancel() -> bool:
 	var focus_owner: Node = get_viewport().gui_get_focus_owner()
 
 	if focus_owner and (focus_owner.is_in_group("inventory_slot") or _is_descendant_of(focus_owner, inventory_container)):
-		await get_tree().process_frame  # 🔹 Espera un frame para evitar rebotes
+		await get_tree().process_frame
 
 		if last_button and is_instance_valid(last_button):
 			last_button.grab_focus()
 		else:
 			button_usables.grab_focus()
 
-		# 🔹 Refrescar el inventario según el último botón real
+		# Refrescar el inventario según el último botón real
 		if is_instance_valid(last_button):
 			var item_type := ItemData.ItemType.CONSUMABLE
 			match last_button:
@@ -134,7 +132,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		var focus_owner : Node = get_viewport().gui_get_focus_owner()
 		if focus_owner:
-			# Si el foco está dentro del contenedor de inventario, devolvemos el foco a la barra
+			# Si el foco está dentro del contenedor de inventario, devuelve el foco a la barra
 			if _is_descendant_of(focus_owner, inventory_container):
 				if last_button and is_instance_valid(last_button):
 					last_button.grab_focus()
@@ -143,5 +141,5 @@ func _unhandled_input(event: InputEvent) -> void:
 				get_viewport().set_input_as_handled()
 				return
 
-	# si no lo manejamos, delegamos a MenuBase
+	# Si no lo manejamos, delegamos a MenuBase
 	super._unhandled_input(event)

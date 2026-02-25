@@ -17,7 +17,6 @@ func start():
 	enemy.enemy_effects.play(animations.stunned_flash)
 	play_random_2d(stun_sounds, 0.50)
 
-	# 👻 Reculada suave al ser parreado
 	if controlled_node.player:
 		var recoil_dir = (controlled_node.global_position - controlled_node.player.global_position).normalized()
 		var target_pos = controlled_node.global_position + recoil_dir * recoil_distance
@@ -32,7 +31,6 @@ func start():
 			recoil_time
 		)
 
-	# ⏳ Duración real del stun
 	await get_tree().create_timer(stun_time).timeout
 	state_machine.change_to(states.Cooldown)
 

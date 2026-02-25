@@ -2,9 +2,6 @@
 
 ~ simpleLock
 
-
-#It's closed with a padlock.
-
 [speed=80.0] [center]Está cerrado con un candado simple.
 
 => END
@@ -13,13 +10,9 @@
 
 ~ complexLock
 
-
-#It's closed with a padlock.
-
 [speed=80.0] [center]Está cerrado con un candado complejo.
 
 => END
-
 
 
 ------------------------ UNLOCKS ----------------------------------

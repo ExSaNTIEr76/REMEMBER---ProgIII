@@ -9,7 +9,6 @@ var is_open := false
 
 @onready var menu_animations: AnimationPlayer = $MenuAnimations
 
-
 @onready var save_list = %SaveList
 @onready var save_and_load = %SaveLoadPanel
 
@@ -17,22 +16,6 @@ var is_open := false
 @onready var savestate: ThothGameState = $Savestate
 
 var _current_hovered_slot: SaveSlot = null
-
-
-#func _on_no_pressed() -> void:
-	#AudioManager.mute_hover_once()
-	#menu_animations.play("yesnoMenu_fade_out")
-	#await menu_animations.animation_finished
-	#quit_button.grab_focus()
-#
-#
-#func _on_yes_pressed() -> void:
-	#AudioManager.mute_hover_once()
-	#await SceneTransition.fade_out_black()
-	#menu_animations.play("yesnoMenu_fade_out")
-	#items_button.grab_focus()
-	#GlobalMenuHub.hide_pause_menu()
-
 
 const MAX_SAVE_SLOTS := 30
 @onready var save_slots: Array = [
@@ -76,7 +59,7 @@ func _ready():
 		var info = savestate.get_save_info(i)
 		if not info.is_empty():
 			slot_node.save_data = info.duplicate(true)
-			print("📂 SLOT ", i, " cargado con TAGS: ", info)
+			#print("📂 SLOT ", i, " cargado con TAGS: ", info)
 			if slot_node.has_method("update_from_save_data"):
 				slot_node.update_from_save_data(info)
 		else:
@@ -104,7 +87,6 @@ func _ready():
 	save_list.add_child(spacer)
 
 
-# ---- helper para update en hover/focus ----
 func _on_slot_hovered(slot_node) -> void:
 	if not slot_node:
 		return
@@ -112,7 +94,7 @@ func _on_slot_hovered(slot_node) -> void:
 	_current_hovered_slot = slot_node
 	slot_details_panel.update_from_save_data(slot_node.save_data)
 
-	# En modo SAVE, no queremos previsualización en vivo aquí
+	# En modo SAVE, no se busca previsualización en vivo aquí
 	if mode == MODE.SAVE:
 		if slot_node.save_data:
 			if slot_node.has_method("update_from_save_data"):
@@ -126,7 +108,7 @@ func _on_slot_hovered(slot_node) -> void:
 			if slot_details_panel:
 				slot_details_panel.clear_display()
 
-	# En modo LOAD, mostramos únicamente datos guardados si existen
+	# En modo LOAD, muestra únicamente datos guardados si existen
 	if mode == MODE.LOAD:
 		if slot_node.save_data:
 			if slot_node.has_method("update_from_save_data"):
@@ -146,9 +128,9 @@ func _menu_opened():
 		return
 	
 	if mode == MODE.SAVE:
-		menu_title.text = "SAVE"
+		menu_title.text = "GUARDAR"
 	else:
-		menu_title.text = "LOAD"
+		menu_title.text = "CARGAR"
 	
 	await SceneTransition.fade_out("menu")
 	visible = true
@@ -193,7 +175,6 @@ func on_cancel() -> bool:
 	return true
 
 
-
 func _grab_first_slot():
 	if save_slots.size() == 0:
 		return
@@ -204,12 +185,6 @@ func _grab_first_slot():
 		await get_tree().process_frame
 		first.get_node("SlotButton").grab_focus()
 
-
-
-
-
-
-# ---------- HELPERS (pegar cerca del top del archivo) ----------
 
 func _on_slot_activated(slot):
 
@@ -234,7 +209,7 @@ func _on_slot_activated(slot):
 			var level = get_tree().current_scene
 			PlayerManager.current_level = level.scene_file_path
 
-			# ✅ Asegurar sincronización antes de guardar
+			# Asegurar sincronización antes de guardar
 			PlayerManager.current_level = level.scene_file_path
 
 			var current_scene = get_tree().current_scene
@@ -244,19 +219,19 @@ func _on_slot_activated(slot):
 				GlobalConditions.zone_name = current_scene.zone_name
 				GlobalConditions.zone_tag  = current_scene.zone_tag
 
-			# 👤 Nombre del jugador
+			# Nombre del jugador
 			if PlayerManager.player and PlayerManager.player.has_method("get_player_name"):
 				GlobalConditions.player_name = PlayerManager.player.get_player_name()
 			elif GlobalConditions.player_name == "":
 				GlobalConditions.player_name = "Player"
 
-			# 🕒 Guardar tiempo jugado global (desde TimeManager)
+			# Guardar tiempo jugado global (desde TimeManager)
 			if is_instance_valid(TimeManager):
 				savestate.save_data["play_time"] = TimeManager.get_time_string()
 			else:
 				savestate.save_data["play_time"] = "00:00:00"
 
-			# Zone tag / player name / level name (desde GlobalConditions o Level)
+			# Zone tag / player name / level name (desde GlobalConditions / Level)
 			if current_scene and current_scene is Level:
 				savestate.save_data["zone_tag"] = str(current_scene.zone_tag)
 				savestate.save_data["level_name"] = str(current_scene.level_name)
@@ -268,7 +243,7 @@ func _on_slot_activated(slot):
 
 			savestate.save_data["player_name"] = str(GlobalConditions.player_name)
 
-			# Nivel y créditos del player: sacalos directamente del resource stats (si está)
+			# Nivel y créditos del player
 			if PlayerManager.stats:
 				var sts := PlayerManager.stats
 
@@ -282,7 +257,7 @@ func _on_slot_activated(slot):
 				savestate.save_data["player_level"] = int(PlayerManager.CURRENT_LEVEL)
 				savestate.save_data["credits"]      = int(PlayerManager.CREDITS)
 
-			# 🔒 Congelar posición REAL para el save
+			# Congelar posición real para el save
 			if PlayerManager.player:
 				PlayerManager.saved_position = PlayerManager.player.global_position
 				PlayerManager.saved_direction = PlayerManager.player.move_direction
@@ -290,11 +265,11 @@ func _on_slot_activated(slot):
 
 
 
-			# 🔐 Guardamos en el slot con Thoth (primero PlayerManager, luego GlobalConditions)
+			# Guardam en el slot con Thoth (primero PlayerManager, luego GlobalConditions)
 			savestate.set_game_variables(PlayerManager)
 			savestate.set_game_variables(GlobalConditions)
 
-			# 🧠 Forzar actualización del diccionario de globals antes de guardarlo
+			# Forzar actualización del diccionario de globals antes de guardarlo
 			print("🌍 Guardando: ", GlobalConditions.player_name, GlobalConditions.level_name, GlobalConditions.zone_name)
 			print("🧾 Thoth guardando globals: ", savestate.game_state.globals.keys())
 
@@ -310,7 +285,7 @@ func _on_slot_activated(slot):
 
 			savestate.save_game_state(slot_index)
 
-			# 🔄 Refrescar UI después de guardar
+			# Refrescar UI después de guardar
 			var info = savestate.get_save_info(slot_index)
 			if not info.is_empty():
 				slot.save_data = info.duplicate(true)
@@ -401,12 +376,12 @@ func _on_slot_activated(slot):
 
 			await SceneTransition.fade_out_black()
 			print("🚪 Cambiando a escena guardada:", saved_path)
-			get_tree().paused = false  # ✅ aseguramos que el árbol se reactive antes del cambio
+			get_tree().paused = false
 			get_tree().change_scene_to_file(saved_path)
 
-			await get_tree().process_frame  # 🕐 Esperar a que la nueva escena esté en árbol
+			await get_tree().process_frame
 
-			# 🕒 Reaplicar el tiempo del save después del cambio de escena
+			# 6. Reaplicar el tiempo del save después del cambio de escena
 			if is_instance_valid(TimeManager) and slot.save_data.has("play_time"):
 				TimeManager.pause_time()
 				TimeManager.set_time_from_string(slot.save_data["play_time"])

@@ -16,9 +16,9 @@ func _on_area_entered(area: Area2D) -> void:
 	if not target:
 		return
 
-	# -------------------------------
-	# 1️⃣ CREAR attack_data SIEMPRE
-	# -------------------------------
+
+	# 1. CREAR attack_data SIEMPRE
+
 	var source_damage := 0
 
 	if owner and owner.has_method("get_damage_amount"):
@@ -36,25 +36,24 @@ func _on_area_entered(area: Area2D) -> void:
 		attack_data.base_damage = source_damage
 		attack_data.attribute = DamageData.AttributeType.STRIKE
 
-	# 🔥 AHORA sí existe
 	attack_data.source = owner
 
-	# -------------------------------
-	# 2️⃣ INVULNERABILIDAD
-	# -------------------------------
+
+	# 2️. INVULNERABILIDAD
+
 	if target.invulnerable:
 		return
 
-	# -------------------------------
-	# 3️⃣ BLOQUEO
-	# -------------------------------
+
+	# 3️. BLOQUEO
+
 	if target.has_method("is_guarding") and target.is_guarding():
 		if target.shield_area.try_block(attack_data):
 			return # 🛡️ bloqueado
 
-	# -------------------------------
-	# 4️⃣ DAÑO REAL
-	# -------------------------------
+
+	# 4️. DAÑO REAL
+
 	if target.has_method("take_damage"):
 		target.take_damage(source_damage, attack_data)
 

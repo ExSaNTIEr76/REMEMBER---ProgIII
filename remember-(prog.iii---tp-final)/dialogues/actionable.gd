@@ -10,29 +10,27 @@ class_name Actionable    extends Area2D
 @export var auto_trigger: bool = false
 @export var one_time: bool = true
 
-# 🎭 Nombre único de la cinemática
-@export var cinematic_name: String = ""   # Ej: "intro_room_1"
+@export var cinematic_name: String = ""
 
-# 🎭 Animación cinemática opcional
-@export var cinematic_animation: String = ""   # Ej: PlayerAnimations.head_scratching
+@export var cinematic_animation: String = ""
 
 var triggered: bool = false
 
 
 func _ready() -> void:
-	# ✅ Si ya se registró la cinemática, desactivar permanentemente colisiones
+	# Si ya se registró la cinemática, desactivar permanentemente colisiones
 	if cinematic_name != "" and GlobalCinematicsState.cinematics_triggered.has(cinematic_name):
 		triggered = true
 		_disable_collisions()
 		set_deferred("monitoring", false) # no volver a detectar
 	else:
-		# 🚫 Si está en one_time, lo dejamos listo para desactivar tras reproducirse
+		# Si se está en one_time, lo dejam listo para desactivar tras reproducirse
 		_enable_collisions()
 
 	if auto_trigger:
 		connect("body_entered", Callable(self, "_on_body_entered"))
 
-	# 🔗 Enganche con el diálogo global
+	# Enganche con el diálogo global
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
@@ -52,25 +50,25 @@ func action() -> void:
 	if not player:
 		return
 
-	# 🚫 Iniciamos cinemática (bloquea movimiento + estados)
+	# Inicia cinemática (bloquea movimiento + estados)
 	CinematicManager.start_cinematic(player)
 
-	# 🎬 Activamos animación cinemática
+	# Activam animación cinemática
 	if cinematic_animation != "":
 		CinematicManager.play_cinematic(player, cinematic_animation)
 	else:
 		CinematicManager.cinematic_idle()
 
-	# 💬 Disparamos el diálogo
+	# Dispara el diálogo
 	if dialogue_resource:
 		DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
 		triggered = true
 
-		# 📝 Registrar estado global
+		# Registra estado global
 		if cinematic_name != "":
 			GlobalCinematicsState.cinematics_triggered[cinematic_name] = true
 
-		# 🔒 Si es one-time → desactivar colisiones
+		# Si es one-time → desactivar colisiones
 		if one_time:
 			call_deferred("_disable_collisions")
 
@@ -81,18 +79,20 @@ func action() -> void:
 func _on_dialogue_started(_res: DialogueResource) -> void:
 	var player = PlayerManager.get_player()
 	if player:
-		CinematicManager.start_cinematic(player)  # Bloquea todo durante el diálogo
+		CinematicManager.start_cinematic(player)
+
 
 func _on_dialogue_ended(_res: DialogueResource) -> void:
 	var player = PlayerManager.get_player()
 	if player:
-		CinematicManager.end_cinematic(player)  # Restaura movimiento y estado
+		CinematicManager.end_cinematic(player)
 
 
 
 # ==============================
 # 🔧 Helpers para colisiones
 # ==============================
+
 
 func _disable_collisions() -> void:
 	for col in collisions:

@@ -138,14 +138,14 @@ func _ready():
 	if not puppet_animations.is_connected( "animation_finished", Callable( self, "_on_animation_finished" )):
 		puppet_animations.connect( "animation_finished", Callable (self, "_on_animation_finished" ))
 
-	# encontrar promissio en escena
+	# Encontrar Promissio en escena
 	await get_tree().process_frame
 	for node in get_tree().get_nodes_in_group( "promissio" ):
 		if node is Promissio:
 			promissio = node
 			break
 
-	# ✅ Registro de regeneración de CP — usar getters de PlayerManager
+	# Registro de regeneración de CP — usar getters de PlayerManager
 	if CPRegenerator.is_registered( self ):
 		CPRegenerator.unregister( self )
 	CPRegenerator.register( self,
@@ -156,21 +156,19 @@ func _ready():
 		func( cp ): _on_cp_updated( cp )
 	)
 
-	# HUD: ahora autoload
 	var hud = get_hud()
 	if hud:
-		# PlayerHud.init_bars acepta dict o resource (lo adaptamos abajo)
 		hud.init_bars( PlayerManager.get_stats_snapshot() )
 
 	hurt_recovery_timer.wait_time = 0.6
 	hurt_recovery_timer.one_shot = true
 
-	# emitir estado inicial para listeners
+	# Emitir estado inicial para listeners
 	emit_signal( "health_updated", PlayerManager.get_current_hp() )
 	emit_signal( "cp_updated", PlayerManager.get_current_cp() )
 	emit_signal( "ep_updated", PlayerManager.get_current_ep() )
 
-	# Si venimos de load, mostrar HUD etc
+	# Si se viene de un load, mostrar HUD y demás
 	if ThothGameState.loading_from_save and hud:
 		if hud.has_method( "show_temporarily" ):
 			hud.show_temporarily(3.0)
@@ -239,7 +237,6 @@ func restore_movement():
 		]:
 			StateUnlockManager.unlock_temporarily(character_id, state)
 
-	# 🔁 Restauramos Idle normal al salir
 	play_animation(animations.idle + previous_direction)
 
 
@@ -257,7 +254,7 @@ func get_filtered_move_input( deadzone := 0.3 ) -> Vector2:
 func set_facing_direction( _direction: Vector2 ) -> void:
 	move_direction = _direction.normalized()
 
-	# Aseguramos que si no hay dirección, se mantiene la anterior (no la sobrescribimos con "Idle")
+	# Asegura que si no hay dirección, se mantiene la anterior
 	if move_direction == Vector2.ZERO:
 		return
 
@@ -265,7 +262,6 @@ func set_facing_direction( _direction: Vector2 ) -> void:
 	previous_direction = dir_name
 	print( "🎯 Dirección establecida:", dir_name )
 
-	# 🔁 Reproducimos animación solo si estamos en Idle o Stop
 	if state_machine.current_state.name in [ states.Idle, states.Stop ]:
 		play_animation( animations.idle + previous_direction )
 
@@ -292,7 +288,6 @@ func show_light( force: bool = false ) -> void:
 	PlayerManager.light_persistent = true if force else PlayerManager.light_persistent
 
 func hide_light( force: bool = false ) -> void:
-	# ⚡ Ahora si es `force = true`, ignora la persistencia
 	if PlayerManager.light_persistent and not force:
 		print("⚡ Se intentó apagar la luz, pero está en modo persistente. Se mantiene encendida.")
 		return
@@ -341,7 +336,6 @@ func _on_ep_updated( ep: int ) -> void:
 
 
 func _on_cp_updated( cp: int ) -> void:
-	# centralizamos en PlayerManager
 	PlayerManager.set_current_cp( int( cp ))
 	emit_signal( "cp_updated", PlayerManager.get_current_cp() )
 	var hud = get_hud()

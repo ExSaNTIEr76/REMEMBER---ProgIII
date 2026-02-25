@@ -512,41 +512,41 @@ data = ExtResource("15_lam5g")
 [node name="DEFENSIVE 1" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=1754918019 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true
 layout_mode = 2
-equip_type = "DEFENSIVE 1"
+equip_type = "DEFENSIVO 1"
 
 [node name="DEFENSIVE 2" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=602885932 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true
 layout_mode = 2
-equip_type = "DEFENSIVE 2"
+equip_type = "DEFENSIVO 2"
 
 [node name="SPECIAL 1" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=991567652 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true
 layout_mode = 2
-equip_type = "SPECIAL 1"
+equip_type = "ESPECIAL 1"
 
 [node name="SPECIAL 2" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=1199990810 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-equip_type = "SPECIAL 2"
+equip_type = "ESPECIAL 2"
 
 [node name="CONCRETE A" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=1182540870 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-equip_type = "CONCRET A"
+equip_type = "CONCRETO A"
 
 [node name="CONCRETE B" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=1688951901 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-equip_type = "CONCRET B"
+equip_type = "CONCRETO B"
 
 [node name="ABSTRACT" parent="EQUIPMENT/EquipmentPanel/MarginContainer/EquipmentContainer" unique_id=591767934 instance=ExtResource("8_vcct0")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-equip_type = "ABSTRACT"
+equip_type = "ABSTRACTO"
 
 [node name="ITEMSLIST" type="Control" parent="." unique_id=2108029265]
 unique_name_in_owner = true

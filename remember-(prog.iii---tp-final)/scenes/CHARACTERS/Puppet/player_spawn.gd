@@ -13,21 +13,21 @@ func _ready() -> void:
 	add_to_group( "player_spawn" )
 	visible = false
 
-	#Si estamos cargando desde un save, ignorar el spawn
+	# Si se está cargando desde un save, ignorar el spawn
 	var saved_pos := ThothGameState.get_player_position()
 	if ThothGameState.loading_from_save and saved_pos != Vector2.ZERO:
 		print( "🌱 PlayerSpawn ignorado (se respawneará desde PlayerManager):", saved_pos )
 		return
 
-	#Esperar hasta que el Player esté instanciado y en el árbol
+	# Esperar hasta que el Player esté instanciado y en el árbol
 	await _wait_for_player_ready()
 
-	#Posicionar player si no hubo save previo
+	# Posicionar al player si no hubo save previo
 	if not PlayerManager.player_spawned:
 		PlayerManager.set_player_position( global_position )
 		PlayerManager.player_spawned = true
 
-	#Manejar Promissio
+	# Manejar Promissio
 	if spawn_promissio and promissio_instance:
 		PlayerManager.attach_promissio_from_spawn( promissio_instance )
 

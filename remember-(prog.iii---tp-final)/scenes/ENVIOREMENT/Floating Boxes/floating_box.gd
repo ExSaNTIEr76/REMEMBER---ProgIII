@@ -43,7 +43,7 @@ func _snap_to_grid() -> void:
 	position.y = round( position.y / 16 ) * 16
 
 
-# ✅ FUNCIONES DE ANIMACIÓN SEGÚN ESTADO GLOBAL
+# FUNCIONES DE ANIMACIÓN SEGÚN ESTADO GLOBAL
 func update_animation_from_state() -> void:
 	var current_state := GlobalConditions.floating_box_state
 

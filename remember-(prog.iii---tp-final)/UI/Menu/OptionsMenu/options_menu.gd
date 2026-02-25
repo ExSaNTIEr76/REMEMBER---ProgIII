@@ -59,13 +59,13 @@ func open_menu():
 
 
 func on_cancel() -> bool:
-	# Si estamos en TitleScreen
+	# Si se está en TitleScreen
 	if get_tree().get_first_node_in_group("title_screen") != null:
 		GlobalMenuHub.menu_stack.clear()
 		GlobalMenuHub.hide_pause_menu()
 		return true
 	
-	# Si estamos in-game
+	# Si se está in-game
 	return false 
 
 

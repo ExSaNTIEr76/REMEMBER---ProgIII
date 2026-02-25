@@ -11,7 +11,7 @@ var desired_position := Vector2.ZERO
 func start():
 	controlled_node.animation_player.play(animations.Idle)
 
-	# 🔄 Reiniciamos el temporizador de inactividad
+	# Reinicia el temporizador de inactividad
 	if controlled_node.has_node("VanishTimer"):
 		controlled_node.get_node("VanishTimer").call_deferred("start")
 
@@ -26,7 +26,7 @@ func on_physics_process(delta):
 			"Down": facing = Vector2.DOWN
 			"Left": facing = Vector2.LEFT
 			"Right": facing = Vector2.RIGHT
-			_: facing = Vector2.LEFT  # Fallback
+			_: facing = Vector2.LEFT
 
 	var offset: Vector2 = -facing.normalized() * 16
 	offset += Vector2(0, -12)

@@ -8,7 +8,6 @@ signal preview_stats_changed(item: ItemData)
 
 @onready var equipment_container: EquipmentUI = %EquipmentContainer
 
-# 🚀 Un solo contenedor
 @onready var inventory_container: EquipInventoryUI = %InventoryContainer
 @onready var inventory_slot: InventorySlotUI
 
@@ -32,7 +31,7 @@ signal preview_stats_changed(item: ItemData)
 var _ui_ready := false
 var inventory_mode := false
 
-var last_slot_type: String = "" # Ej: "DEFENSIVE_1"
+var last_slot_type: String = ""
 var last_button: Button = null
 
 enum InventoryPreviewMode {
@@ -52,9 +51,8 @@ func _ready() -> void:
 
 	inventory_container.equip_menu = self
 	equipment_container.set_equip_menu(self)
-	# --- PRESSED sigue existiendo por si querés usarlo con teclado ---
 
-	# PRESSED → mostramos grupo y mandamos foco al primer slot
+
 	body_button.pressed.connect(func():
 		AudioManager.mute_hover_once()
 		_show_group("BODY", body_button, true)
@@ -65,13 +63,14 @@ func _ready() -> void:
 		_show_group("SYMBOLS", symbols_button, true)
 		unequip_ui_label.show(); singulars_ui_label.show())
 
-	# HOVER (mouse o focus con teclado) → solo mostrar slots, sin mover foco
+
 	body_button.mouse_entered.connect(func():
 		_show_group("BODY", body_button, false)
 	)
 	symbols_button.mouse_entered.connect(func():
 		_show_group("SYMBOLS", symbols_button, false)
 	)
+
 
 	body_button.focus_entered.connect(func():
 		_show_group("BODY", body_button, false)
@@ -133,18 +132,17 @@ func preview_slot_items(equip_type: String) -> void:
 	last_slot_type = equip_type
 	var item_type := ItemData.ItemType.NONE
 
-	if equip_type == "DEFENSIVE 1":
+	if equip_type == "DEFENSIVO 1":
 		item_type = ItemData.ItemType.DEF1
-	elif equip_type == "DEFENSIVE 2":
+	elif equip_type == "DEFENSIVO 2":
 		item_type = ItemData.ItemType.DEF2
-	elif equip_type.begins_with("SPECIAL"):
+	elif equip_type.begins_with("ESPECIAL"):
 		item_type = ItemData.ItemType.SPECIAL
-	elif equip_type.begins_with("CONCRETE"):
+	elif equip_type.begins_with("CONCRETO"):
 		item_type = ItemData.ItemType.CONCRETE
-	elif equip_type == "ABSTRACT":
+	elif equip_type == "ABSTRACTO":
 		item_type = ItemData.ItemType.ABSTRACT
 
-	#print("Previewing items for slot:", equip_type, "-> item_type:", item_type)
 
 	inventory_container.update_inventory(
 		PlayerManager.INVENTORY_DATA.get_items_by_type(item_type)
@@ -162,7 +160,7 @@ func _show_group(group: String, pressed_button: Button, auto_focus_slot: bool = 
 
 	last_button = pressed_button
 
-	# 🧹 LIMPIAR INVENTARIO SI VOLVEMOS A CATEGORÍAS
+	# LIMPIAR INVENTARIO SI VOLVEMOS A CATEGORÍAS
 	_clear_inventory_preview()
 	last_slot_type = ""
 
@@ -200,7 +198,7 @@ func _show_group(group: String, pressed_button: Button, auto_focus_slot: bool = 
 func preview_equip_item(item: ItemData, equip_type: String) -> void:
 	if not item:
 		_show_body_ui()
-		update_item_description("Slot vacío para " + equip_type)
+		update_item_description("Espacio vacío para " + equip_type)
 		return
 
 	if item and item.type == ItemData.ItemType.SINGULAR:
@@ -209,7 +207,7 @@ func preview_equip_item(item: ItemData, equip_type: String) -> void:
 		return
 
 	# BODY (solo si NO estamos en símbolos)
-	if not equip_type.begins_with("CONCRETE") and equip_type != "ABSTRACT":
+	if not equip_type.begins_with("CONCRETO") and equip_type != "ABSTRACTO":
 		_show_body_ui()
 		update_item_description(item.description)
 		return
@@ -254,9 +252,9 @@ func _show_symbol_ui(item: EquipableItemData, equip_type: String) -> void:
 
 	# Coste
 	cost_label.show()
-	if equip_type.begins_with("CONCRETE"):
+	if equip_type.begins_with("CONCRETO"):
 		cost_label.text = "CP / %d" % item.cep_cost
-	elif equip_type == "ABSTRACT":
+	elif equip_type == "ABSTRACTO":
 		cost_label.text = "EP / %d" % item.cep_cost
 	else:
 		cost_label.hide()
@@ -267,7 +265,7 @@ func _show_singular_symbol_ui(item: EquipableItemData) -> void:
 	singulars_label.show()
 	singulars_ui_label.show()
 
-	# 🟣 Icono
+	# Icono
 	if item.symbol_icon_name != "":
 		symbol_icon.show()
 		if symbol_icon.sprite_frames.has_animation(item.symbol_icon_name):
@@ -277,7 +275,7 @@ func _show_singular_symbol_ui(item: EquipableItemData) -> void:
 	else:
 		symbol_icon.hide()
 
-	# 🟣 Descripción
+	# Descripción
 	symbol_space.show()
 	symbol_description.show()
 	symbol_description.text = item.description
@@ -329,15 +327,15 @@ func _is_descendant_of(node: Node, ancestor: Node) -> bool:
 func has_items_for_slot(equip_type: String) -> bool:
 	var item_type := ItemData.ItemType.NONE
 
-	if equip_type == "DEFENSIVE 1":
+	if equip_type == "DEFENSIVO 1":
 		item_type = ItemData.ItemType.DEF1
-	elif equip_type == "DEFENSIVE 2":
+	elif equip_type == "DEFENSIVO 2":
 		item_type = ItemData.ItemType.DEF2
-	elif equip_type.begins_with("SPECIAL"):
+	elif equip_type.begins_with("ESPECIAL"):
 		item_type = ItemData.ItemType.SPECIAL
-	elif equip_type.begins_with("CONCRETE"):
+	elif equip_type.begins_with("CONCRETO"):
 		item_type = ItemData.ItemType.CONCRETE
-	elif equip_type == "ABSTRACT":
+	elif equip_type == "ABSTRACTO":
 		item_type = ItemData.ItemType.ABSTRACT
 
 	if item_type == ItemData.ItemType.NONE:
@@ -349,7 +347,7 @@ func has_items_for_slot(equip_type: String) -> bool:
 func on_cancel() -> bool:
 	match nav_mode:
 		NavMode.INVENTORY:
-			# 🔙 Inventario → EquipSlot
+			# Inventario → EquipSlot
 			if inventory_preview_mode == InventoryPreviewMode.SINGULAR:
 				inventory_preview_mode = InventoryPreviewMode.NONE
 				nav_mode = NavMode.EQUIP_SLOTS
@@ -379,7 +377,7 @@ func on_cancel() -> bool:
 				return true
 
 		NavMode.EQUIP_SLOTS:
-			# 🔙 EquipSlot → Categorías
+			# EquipSlot → Categorías
 			if last_button and is_instance_valid(last_button):
 				last_button.grab_focus()
 				nav_mode = NavMode.CATEGORIES
@@ -391,17 +389,17 @@ func on_cancel() -> bool:
 
 
 func _reset_menu_state() -> void:
-	# 🔄 Estados lógicos
+	# Estados lógicos
 	nav_mode = NavMode.CATEGORIES
 	inventory_preview_mode = InventoryPreviewMode.NONE
 	last_slot_type = ""
 	last_button = null
 	inventory_mode = false
 
-	# 🧹 Inventario
+	# Inventario
 	_clear_inventory_preview()
 
-	# 🧹 UI simbólica
+	# UI simbólica
 	symbol_icon.hide()
 	symbol_space.hide()
 	symbol_description.hide()
@@ -410,7 +408,7 @@ func _reset_menu_state() -> void:
 	unequip_ui_label.hide()
 	singulars_label.hide()
 
-	# 🧹 UI body
+	# UI body
 	if visible:
 		_show_body_ui()
 

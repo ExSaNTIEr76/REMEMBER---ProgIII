@@ -50,11 +50,11 @@ func _hide_all_elements() -> void:
 		areas[i].hide()
 		area_collisions[i].hide()
 		labels[i].hide()
-		areas[i].collision_layer &= ~(1 << 2)  # Desactiva layer 3 (bit 2)
+		areas[i].collision_layer &= ~(1 << 2)
 
-	# Zona 0 (siempre visible e interactuable)
+	# Zona 0 (siempre visible e interactuable por ser el tutorial)
 	labels[0].hide()
-	areas[0].collision_layer |= (1 << 2)  # Activa layer 3 (bit 2)
+	areas[0].collision_layer |= (1 << 2)
 
 
 func _play_flower_growth_if_needed() -> void:
@@ -69,19 +69,19 @@ func _play_flower_growth_if_needed() -> void:
 		PlayerManager.player.freeze_movement()
 		AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -5.0)
 		SceneTransition.black_flash()
-		await CinematicManager._wait(2.0)  # Espera 3 segundos
+		await CinematicManager._wait(2.0)
 		AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -5.0)
 		SceneTransition.black_flash()
-		await CinematicManager._wait(2.0)  # Espera 3 segundos
+		await CinematicManager._wait(2.0)
 		AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -5.0)
 		SceneTransition.black_flash()
-		await CinematicManager._wait(1.0)  # Espera 3 segundos
+		await CinematicManager._wait(1.0)
 		AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Heartbeat.ogg", 1.0, -5.0)
 		SceneTransition.black_flash()
-		await CinematicManager._wait(1.0)  # Espera 3 segundos
+		await CinematicManager._wait(1.0)
 		AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Competence_Flash.ogg", 1.5, -15.0)
 		SceneTransition.white_flash()
-		await CinematicManager._wait(1.5)  # Espera 3 segundos
+		await CinematicManager._wait(1.5)
 		var zone_anim: AnimatedSprite2D = zones[flower_count + 1]
 		zone_anim.play("Zone%d_growing" % (flower_count + 1))
 		AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Flower_Zone_Growing.ogg", 0.9, -5.0)
@@ -148,4 +148,4 @@ func _toggle_zone_ui(index: int, _show: bool) -> void:
 		areas[index].visible = _show
 		labels[index].visible = _show
 		if _show:
-			areas[index].collision_layer |= (1 << 2)  # Habilita interacción
+			areas[index].collision_layer |= (1 << 2)

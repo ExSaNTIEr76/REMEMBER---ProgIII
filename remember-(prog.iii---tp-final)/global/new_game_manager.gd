@@ -5,7 +5,7 @@ extends Node
 func start_new_game() -> void:
 	print("🆕 Iniciando New Game...")
 
-	# 🔁 Resetear estados globales
+	# Resetear estados globales
 	GlobalCinematicsState.reset_state()
 	GlobalChestsState.reset_state()
 	GlobalPuzzlesState.reset_state()
@@ -15,11 +15,7 @@ func start_new_game() -> void:
 	InventoryManager.remove_credits(9999999)
 	InventoryManager.reset_all()
 
-	# 🔄 Resetear PlayerManager
+	# Resetear PlayerManager
 	PlayerManager.reset_stats()
-
-	## 🔄 Resetear Time / flags
-	#ThothGameState.loading_from_save = false
-	#ThothGameState.clear_runtime_state()
 
 	print("✅ New Game listo.")

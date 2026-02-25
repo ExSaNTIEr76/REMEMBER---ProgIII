@@ -30,7 +30,6 @@ func _play_random_sfx_detached() -> AudioStreamPlayer2D:
 	if not p:
 		return null
 
-	# ✂️ Lo sacamos del enemigo
 	p.get_parent().remove_child(p)
 	get_tree().current_scene.add_child(p)
 

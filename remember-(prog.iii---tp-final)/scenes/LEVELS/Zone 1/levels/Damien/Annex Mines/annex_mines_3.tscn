@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://b74k65q57n664" path="res://effects/Gradients/Light_Gradient.tres" id="11_5ohl6"]
 [ext_resource type="PackedScene" uid="uid://dljuv1v63dwsj" path="res://scenes/ENVIOREMENT/TreasureChests/treasure_chest.tscn" id="11_ny2ew"]
 [ext_resource type="Resource" uid="uid://d4fnbdv1u7wng" path="res://items/Objects/usables/luck_ticket.tres" id="12_lpmph"]
-[ext_resource type="Resource" uid="uid://qdt4v3r46d3h" path="res://items/Equipment/defensive2/colour_of_anger.tres" id="12_umku2"]
 [ext_resource type="Resource" uid="uid://078u7moxey38" path="res://items/Objects/usables/basic_supplements.tres" id="13_lpmph"]
 [ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="16_kb0y7"]
 [ext_resource type="AudioStream" uid="uid://bb31hgpb4452n" path="res://audio/ambient/ambSfx_Wet_Dripping.ogg" id="16_ne2ik"]
@@ -247,7 +246,9 @@ debug_color = Color(1, 0.728301, 0, 0.419608)
 [node name="Chest" parent="ACTIONABLES" unique_id=2043378532 instance=ExtResource("11_ny2ew")]
 position = Vector2(1075.7603, 136.1413)
 chest_color = "Mines"
-item_data = ExtResource("12_umku2")
+quantity = 0
+gives_credits = true
+credits_amount = 1000
 
 [node name="Chest2" parent="ACTIONABLES" unique_id=735243858 instance=ExtResource("11_ny2ew")]
 position = Vector2(321.3108, 232.86157)

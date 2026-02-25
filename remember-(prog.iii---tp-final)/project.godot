@@ -127,7 +127,6 @@ runtime/balloon_path="res://dialogues/balloon.tscn"
 
 window/size/viewport_width=640
 window/size/viewport_height=352
-window/size/mode=3
 window/size/borderless=true
 window/size/window_width_override=1280
 window/size/window_height_override=704
@@ -185,12 +184,9 @@ folder_colors={
 "res://audio/SFX/Characters/Zacharie/": "pink",
 "res://audio/SFX/Enemies SFX/spectres/": "pink",
 "res://audio/SFX/Enviorement/chests/": "pink",
-"res://audio/SFX/Enviorement/doors/": "pink",
 "res://audio/SFX/Enviorement/notes/": "pink",
 "res://audio/SFX/Enviorement/others/": "pink",
-"res://audio/SFX/Enviorement/tramway/": "pink",
 "res://audio/SFX/Enviorement/transitions/": "pink",
-"res://audio/SFX/GUI SFX/map/": "pink",
 "res://audio/SFX/GUI SFX/menu/": "pink",
 "res://audio/SFX/Items SFX/pickup/": "pink",
 "res://audio/SFX/Promissio SFX/abstractSymbols/": "pink",
@@ -243,14 +239,6 @@ folder_colors={
 "res://items/Symbols/singular/": "red",
 "res://scenes/": "blue",
 "res://scenes/CHARACTERS/": "green",
-"res://scenes/CHARACTERS/Animals/": "red",
-"res://scenes/CHARACTERS/Animals/sprites/": "pink",
-"res://scenes/CHARACTERS/Animals/states/": "pink",
-"res://scenes/CHARACTERS/Elsens/": "red",
-"res://scenes/CHARACTERS/Elsens/elsenStates/": "pink",
-"res://scenes/CHARACTERS/Elsens/sprites/": "pink",
-"res://scenes/CHARACTERS/Kletus/": "red",
-"res://scenes/CHARACTERS/Kletus/kletusStates/": "pink",
 "res://scenes/CHARACTERS/Promissio/": "red",
 "res://scenes/CHARACTERS/Promissio/animations/": "pink",
 "res://scenes/CHARACTERS/Promissio/animations/PromissioAnimations_Shield/": "yellow",
@@ -288,22 +276,9 @@ folder_colors={
 "res://scenes/CHARACTERS/Puppet/scripts/": "pink",
 "res://scenes/CHARACTERS/Puppet/shadows/": "pink",
 "res://scenes/CHARACTERS/Puppet/sprites/": "pink",
-"res://scenes/CHARACTERS/Sucre/": "red",
-"res://scenes/CHARACTERS/Sucre/sprites/": "pink",
-"res://scenes/CHARACTERS/Sucre/sucreStates/": "pink",
 "res://scenes/CHARACTERS/The Child/": "red",
 "res://scenes/CHARACTERS/The Child/TheChildStates/": "pink",
-"res://scenes/CHARACTERS/Zacharie/": "red",
-"res://scenes/CHARACTERS/Zoulven/": "red",
-"res://scenes/CHARACTERS/Zoulven/sprites/": "pink",
-"res://scenes/CHARACTERS/Zoulven/zoulvenAnimations/": "pink",
-"res://scenes/CHARACTERS/Zoulven/zoulvenAnimations/ZoulvenAnimtions_Idle/": "yellow",
-"res://scenes/CHARACTERS/Zoulven/zoulvenAnimations/ZoulvenAnimtions_Walk/": "yellow",
-"res://scenes/CHARACTERS/Zoulven/zoulvenStates/": "pink",
 "res://scenes/ENEMIES/": "green",
-"res://scenes/ENEMIES/Bosses/": "orange",
-"res://scenes/ENEMIES/Ghouls/": "orange",
-"res://scenes/ENEMIES/Snoopers/": "orange",
 "res://scenes/ENEMIES/Spectres/": "orange",
 "res://scenes/ENEMIES/Spectres/common_spectre/": "yellow",
 "res://scenes/ENEMIES/Spectres/common_spectre/ghostrail/": "pink",
@@ -321,15 +296,12 @@ folder_colors={
 "res://scenes/ENVIOREMENT/HitHurtBoxes/": "red",
 "res://scenes/ENVIOREMENT/Puzzles/": "red",
 "res://scenes/ENVIOREMENT/Shine/": "red",
-"res://scenes/ENVIOREMENT/Shops/": "red",
 "res://scenes/ENVIOREMENT/SmokeCurrents/": "red",
 "res://scenes/ENVIOREMENT/TreasureChests/": "red",
 "res://scenes/LEVELS/": "green",
-"res://scenes/LEVELS/TestScenes/": "gray",
 "res://scenes/LEVELS/The Nothingness/": "gray",
 "res://scenes/LEVELS/Zone 0/": "yellow",
 "res://scenes/LEVELS/Zone 1/levels/Damien/": "purple",
-"res://scenes/LEVELS/Zone 2/": "pink",
 "res://scenes/LEVELS/levelScripts/": "gray",
 "res://translations/": "blue"
 }
@@ -451,7 +423,7 @@ ui_assimilate={
 [internationalization]
 
 locale/translations=PackedStringArray("res://dialogues/ZONE 0/Z0_Actionables_ENG.en.translation")
-locale/translations_pot_files=PackedStringArray("res://dialogues/GameUI.dialogue", "res://dialogues/ZONE 1/Zone1_ElsenStation.dialogue", "res://dialogues/ZONE 1/Zone1_Damien.dialogue", "res://dialogues/UI/FloatingBoxes.dialogue", "res://dialogues/UI/Tramway.dialogue", "res://dialogues/UI/TheNothingness.dialogue", "res://dialogues/ZONE 0/Zone0_Ruins.dialogue", "res://dialogues/ZONE 0/Zone0_Prelude.dialogue", "res://dialogues/ZONE 1/Zone1_SmokeMines.dialogue", "res://dialogues/ZONE 1/Zone1_AnnexMines.dialogue", "res://dialogues/UI/Chests.dialogue", "res://dialogues/UI/Shops.dialogue", "res://dialogues/ZONE 1/Zone1_Pentel.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/GameUI.dialogue", "res://dialogues/UI/FloatingBoxes.dialogue", "res://dialogues/UI/TheNothingness.dialogue", "res://dialogues/ZONE 0/Zone0_Ruins.dialogue", "res://dialogues/ZONE 0/Zone0_Prelude.dialogue", "res://dialogues/ZONE 1/Zone1_AnnexMines.dialogue", "res://dialogues/UI/Chests.dialogue")
 locale/test="es"
 
 [layer_names]

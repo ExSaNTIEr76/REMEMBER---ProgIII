@@ -84,7 +84,7 @@ light_mode = 1
 
 [node name="AnnexMines_5" type="Node2D" unique_id=282237437 groups=["Persist"]]
 script = ExtResource("1_rfub0")
-level_name = "Profundidades  Oscuras"
+level_name = "Profundidades"
 zone_name = "Zona 1"
 zone_tag = "DeepMines"
 transition_tag = "black"

@@ -73,8 +73,8 @@ func _process(_delta: float) -> void:
 		AudioManager.mute_hover_once()
 
 
-func initialize_focus() -> void: #HACER ESTO FUNCIONAR
-	await get_tree().process_frame # 👈 seguridad adicional
+func initialize_focus() -> void:
+	await get_tree().process_frame
 	if last_button == "":
 		button_none.grab_focus()
 	if last_button == "button_new_game":
@@ -105,10 +105,10 @@ func start_new_game_flow() -> void:
 	await title_animations.animation_finished
 	AudioManager.fade_out_current_music(1.0)
 
-	# 🔹 UNA VEZ TENEMOS EL NOMBRE
+	# UNA VEZ SE TIENE EL NOMBRE
 	NewGameManager.start_new_game()
 
-	# 🔹 MOSTRAR INPUT DE NOMBRE
+	# MOSTRAR INPUT DE NOMBRE
 	await CinematicManager._wait(3.0)
 	player_name_animations.play("entry_fade_in")
 	await player_name_animations.animation_finished
@@ -177,7 +177,7 @@ func _check_save_files() -> void:
 	var dir := DirAccess.open(save_path)
 
 	if dir == null:
-		# 📁 Si la carpeta no existe, ocultamos el botón
+		# Si la carpeta no existe, se oculta el botón
 		button_continue.hide()
 		print("📁 No existe la carpeta de saves, ocultando CONTINUE.")
 		return
@@ -264,20 +264,18 @@ func warning_screen() -> void:
 	AudioManager.fade_out_current_ambient(1.0)
 	await get_tree().process_frame
 
-	# ⚠️ Activamos el flag
 	warning_active = true
 
 	await CinematicManager._wait(1.5)
 	title_animations.play("warning_screen")
 
-	# Esperamos mientras el warning esté activo (o se interrumpa)
 	await _wait_for_warning_end()
 
-	# Si el jugador no lo interrumpió, desactivamos manualmente el flag aquí
+	# Si el jugador no la pasó, desactiva manualmente el flag aquí
 	if warning_active:
 		warning_active = false
 
-	# 🔊 Transición al menú principal
+	# Transición sonora al menú principal
 	AudioManager.play_music(title_music, music_pitch, music_volume_db)
 	title_animations.play("title_fade_in")
 	await title_animations.animation_finished
@@ -285,7 +283,7 @@ func warning_screen() -> void:
 
 
 func _wait_for_warning_end() -> void:
-	# 🔹 Espera hasta que la animación termine o se interrumpa por input
+	# Espera hasta que la animación termine o se interrumpa por input
 	while warning_active and title_animations.is_playing():
 		await get_tree().process_frame
 
@@ -331,7 +329,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			await title_animations.animation_finished
 			button_new_game.grab_focus()
 
-			# Detenemos la animación actual inmediatamente
+			# Detiene la animación actual inmediatamente
 			if title_animations.is_playing():
 				title_animations.stop()
 

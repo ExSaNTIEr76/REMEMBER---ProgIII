@@ -38,8 +38,6 @@ func clear_inventory() -> void:
 	slots.clear()
 
 
-
-# NUEVO UPDATE INVENTORY
 func update_inventory(item_list: Array[ItemData], preferred_idx: int = -1) -> void:
 	clear_inventory()
 	for item in item_list:
@@ -50,8 +48,7 @@ func update_inventory(item_list: Array[ItemData], preferred_idx: int = -1) -> vo
 		slots.append(slot)
 
 
-
-	# 🚑 Restaurar focus al siguiente frame
+	# Restaurar focus al siguiente frame
 	if preferred_idx >= 0:
 		await get_tree().process_frame
 		if preferred_idx < slots.size():

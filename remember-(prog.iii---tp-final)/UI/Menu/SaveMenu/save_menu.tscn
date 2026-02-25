@@ -304,16 +304,16 @@ color = Color(0.0313726, 0.0431373, 0.0588235, 0)
 
 [node name="MENUTITLE" type="Label" parent="." unique_id=1662893736]
 z_index = 1
-offset_left = 283.0
+offset_left = 278.0
 offset_top = 4.0
-offset_right = 343.0
+offset_right = 352.0
 offset_bottom = 32.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.325, 0.1, 0.4, 1)
 theme_override_fonts/font = ExtResource("2_74b1y")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = ExtResource("6_espim")
-text = "SAVE"
+text = "GUARDAR"
 horizontal_alignment = 1
 
 [node name="YESNO" type="Control" parent="." unique_id=1099160571]
@@ -646,7 +646,7 @@ theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_74b1y")
 theme_override_font_sizes/font_size = 11
-text = "-  CREATE  SAVE  -"
+text = "-  CREAR  ARCHIVO  -"
 horizontal_alignment = 1
 vertical_alignment = 1
 

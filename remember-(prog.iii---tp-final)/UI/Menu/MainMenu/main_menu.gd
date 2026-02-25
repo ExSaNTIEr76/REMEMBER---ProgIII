@@ -4,7 +4,6 @@ class_name MainMenu    extends MenuBase
 
 @export_file("*.tscn") var title_screen_scene: String
 
-# Estado lógico del submenú YES/NO
 var is_confirm_open: bool = false
 
 @export var zone_portrait_atlas: Texture2D
@@ -95,7 +94,7 @@ func _on_quit_pressed() -> void:
 	GlobalMenuHub.last_main_button = quit_button
 	AudioManager.mute_hover_once()
 
-	# Abrimos el submenú y marcamos estado lógico
+	# Abre el submenú y marca estado lógico
 	is_confirm_open = true
 	none_button.grab_focus()
 	menu_animations.play("yesnoMenu_fade_in")
@@ -104,7 +103,7 @@ func _on_quit_pressed() -> void:
 
 
 func _on_no_pressed() -> void:
-	# Cerramos confirm y volvemos al estado base
+	# Cierra confirm y vuelve al estado base
 	is_confirm_open = false
 	no_button.grab_focus()
 	GlobalMenuHub.last_main_button = quit_button
@@ -112,7 +111,6 @@ func _on_no_pressed() -> void:
 	menu_animations.play("yesnoMenu_fade_out")
 	await menu_animations.animation_finished
 
-	# opcional: asegurar estado base (por si fade_out no restablece todo)
 	_reset_menu_visual_state()
 
 	await CinematicManager._wait(0.2)
@@ -127,12 +125,10 @@ func _on_yes_pressed() -> void:
 	menu_animations.play("yesnoMenu_fade_out")
 	GlobalMenuHub.hide_pause_menu()
 
-	# 🧹 Apagar absolutamente todo el audio con fade suave
 	@warning_ignore("redundant_await")
 	await AudioManager.fade_out_all(1.0)
 	await get_tree().process_frame
 
-	# 🚪 Esperamos un poquito más para asegurarnos de silencio completo
 	CinematicManager._wait(0.5)
 	
 	get_tree().change_scene_to_file(title_screen_scene)
@@ -141,8 +137,6 @@ func _on_yes_pressed() -> void:
 func _on_none_pressed():
 	pass
 
-#PARA HACER FOCUS EN OTROS MENÚES:
-#GlobalMenuHub.show_pause_menu(GlobalMenuHub.objects_menu)
 
 
 #region PORTRAITS
@@ -231,17 +225,14 @@ func _update_portrait_from_stats():
 
 	var hp_ratio := float(current_hp) / float(max_hp)
 
-	# 🔥 PRIORIDAD 1
 	if PlayerManager.is_ill:
 		set_portrait_ill()
 		return
 
-	# PRIORIDAD 2
 	if hp_ratio <= 0.2:
 		set_portrait_critical()
 		return
 
-	# PRIORIDAD 3
 	set_portrait_default()
 
 
@@ -266,9 +257,8 @@ func _on_stats_changed():
 
 
 func on_cancel() -> bool:
-	# Si el confirm está abierto, lo tratamos exactamente como NO
+	# Si el confirm está abierto, lo trata como NO
 	if is_confirm_open:
-		# Si hay una animación en curso, esperarla
 		if menu_animations.is_playing():
 			await menu_animations.animation_finished
 
@@ -277,8 +267,6 @@ func on_cancel() -> bool:
 		get_viewport().set_input_as_handled()
 		return true
 
-	# 🚫 Si no hay confirm abierto, NO manejamos nada aquí
-	# Devolvemos false para que MenuBase decida si volver atrás
 	return false
 
 
@@ -287,13 +275,9 @@ func _reset_menu_visual_state() -> void:
 	if menu_animations.is_playing():
 		menu_animations.stop()
 
-	# Play 'RESET' to force pose base (asegurate de tener esta animación)
 	if menu_animations.has_animation("RESET"):
 		menu_animations.play("RESET")
-		# opcional: si necesitás esperar a que termine:
-		# await menu_animations.animation_finished
 
-	# Asegurá foco en el botón principal correcto
 	if is_instance_valid(GlobalMenuHub.last_main_button):
 		GlobalMenuHub.last_main_button.grab_focus()
 	else:
@@ -306,7 +290,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event.is_action_pressed("ui_pause") and GlobalMenuHub._can_pause():
-		# Si hay confirm abierto, lo limpiamos y luego salimos
 		if is_confirm_open:
 			is_confirm_open = false
 			_reset_menu_visual_state()

@@ -6,8 +6,8 @@ const PLAYER_SCENE := preload("res://scenes/CHARACTERS/Puppet/Puppet.tscn")
 var INVENTORY_DATA := InventoryData.new()
 @export var EQUIPMENT_DATA: EquipmentData
 
-var skin: String = "default"  # Skin actual del jugador
-var is_ill: bool = false  # Estado especial que modifica spritesheet
+var skin: String = "default"
+var is_ill: bool = false
 
 signal camera_shook(trauma: float)
 signal interact_pressed
@@ -25,18 +25,17 @@ var saved_direction: Vector2 = Vector2.DOWN
 var _pending_position: Vector2 = Vector2.ZERO
 var pending_respawn := false
 
-# ⚡ Nueva propiedad para Thoth
-var current_level: String = ""   # acá guardamos el path de la escena actual
+var current_level: String = ""
 
-# --- campos serializables para saves / UI ---
-var CURRENT_LEVEL: int = 1
-var CREDITS: int = 0
-
-const PROMISSIO_SCENE := preload("res://scenes/CHARACTERS/Promissio/promissio.tscn")
 var locked_enemy: Enemy = null
 
-# 🌟 Estado global de la luz
 var light_persistent: bool = false
+
+const PROMISSIO_SCENE := preload("res://scenes/CHARACTERS/Promissio/promissio.tscn")
+
+# --- Campos serializables para saves / UI ---
+var CURRENT_LEVEL: int = 1
+var CREDITS: int = 0
 
 var stats: Dictionary =  {
 	"MAX_HP": 100,
@@ -81,15 +80,11 @@ var game_over := false
 
 
 func _ready() -> void:
-	# Nos aseguramos de poder reaccionar a cambios de nivel
 	if Engine.has_singleton("LevelManager"):
 		var LM = Engine.get_singleton("LevelManager")
-		# Conexión para cuando un nivel termine de cargarse
 		if not LM.level_loaded.is_connected(Callable(self, "_on_level_loaded")):
 			LM.level_loaded.connect(Callable(self, "_on_level_loaded"))
 
-	# Intentamos crear / asegurar player en cuanto el autoload arranca.
-	# Observá que no asumimos que haya una escena todavía.
 	ensure_player()
 	await get_tree().create_timer(0.2).timeout
 	player_spawned = true
@@ -110,26 +105,21 @@ func _ready() -> void:
 #  Creación / Asegurar player
 # -----------------------
 func ensure_player() -> void:
-	# Si ya hay un player válido, nada que hacer
 	if player and is_instance_valid(player):
 		#print("PlayerManager: player already exists.")
 		return
 
-	# Si no hay, creamos uno pero no lo posicionamos aún (level puede no estar listo)
 	create_player()
 	player_spawned = true
 	print("PlayerManager: player creado por ensure_player().")
 
 
 func create_player() -> void:
-	# Si hay una instancia inválida, limpiamos la referencia por seguridad
 	if player and not is_instance_valid(player):
 		player = null
 
-	# Instanciamos
 	player = PLAYER_SCENE.instantiate()
 	emit_signal("player_created", player)
-	# No hacemos add_child todavía; lo pondremos en el YSORT del level en _on_level_loaded
 	print("PlayerManager: player instanciado (sin parent).")
 
 
@@ -144,7 +134,7 @@ func _on_level_loaded() -> void:
 		push_error("❌ No hay nivel actual")
 		return
 
-	# 2️⃣ Parentar correctamente
+	# 1. Parentar correctamente
 	var ysort := level.get_node_or_null("YSORT")
 	if ysort:
 		if player.get_parent() != ysort:
@@ -157,12 +147,12 @@ func _on_level_loaded() -> void:
 				player.get_parent().remove_child(player)
 			level.add_child(player)
 
-	# 3️⃣ Determinar posición FINAL
+	# 3. Determinar posición FINAL
 	var final_position: Vector2
 	@warning_ignore("unused_variable")
 	var used_saved := false
 
-	# ❗ Validar saved_position
+	# Validar saved_position
 	if saved_position != Vector2.ZERO and saved_position.y >= 0:
 		final_position = saved_position
 		used_saved = true
@@ -178,13 +168,13 @@ func _on_level_loaded() -> void:
 
 	player.global_position = final_position
 
-	# 4️⃣ Limpiar estado
+	# 3. Limpiar estado
 	if not ThothGameState.loading_from_save:
 		saved_position = Vector2.ZERO
 	pending_respawn = false
 	player_spawned = true
 
-	# 5️⃣ Facing direction pendiente
+	# 4. Facing direction pendiente
 	if desired_facing_direction != Vector2.ZERO:
 		player.set_facing_direction(desired_facing_direction)
 		desired_facing_direction = Vector2.ZERO
@@ -199,18 +189,15 @@ func _on_level_loaded() -> void:
 #  API pública para respawn diferido (usada por Level)
 # -----------------------
 func queue_restore_position(pos: Vector2) -> void:
-	# Guardamos la posición y marcamos respawn pendiente.
 	saved_position = pos
 	pending_respawn = true
 	print("PlayerManager: queue_restore_position:", pos)
 
-	# Conectamos por si el Level aún no emitió level_loaded
 	if Engine.has_singleton("LevelManager"):
 		var LM = Engine.get_singleton("LevelManager")
 		if not LM.level_loaded.is_connected(Callable(self, "_on_level_loaded")):
 			LM.level_loaded.connect(Callable(self, "_on_level_loaded"), CONNECT_ONE_SHOT)
 	else:
-		# Si no existe LevelManager, intentamos aplicar inmediatamente
 		call_deferred("_on_level_loaded")
 
 
@@ -237,11 +224,6 @@ func add_player_instance() -> void:
 	emit_signal("player_created", player)
 	add_child(player)
 	await get_tree().process_frame
-#
-	## Restaurar posición si hay un save
-	#if saved_position != Vector2.ZERO:
-		#player.global_position = saved_position
-		#print("📦 PlayerManager restauró posición:", saved_position)
 
 
 func _on_level_loaded_for_respawn() -> void:
@@ -259,7 +241,6 @@ func _apply_pending_position() -> void:
 	if _pending_position == Vector2.ZERO:
 		return
 
-	# ✅ Ahora el player ya está en el YSORT correcto
 	player.global_position = _pending_position
 	print("📦 Posición restaurada tras LevelLoaded:", _pending_position)
 	_pending_position = Vector2.ZERO
@@ -267,23 +248,23 @@ func _apply_pending_position() -> void:
 
 func respawn_player_after_load():
 	if not ThothGameState.loading_from_save:
-		return  # Solo hacer esto durante cargas de partida
+		return
 
 	print("🌀 Respawn del player tras carga de partida...")
 
-	# 1️⃣ Limpiar player previo
+	# 1. Limpiar player previo
 	if player and is_instance_valid(player):
 		if CPRegenerator.is_registered(player):
 			CPRegenerator.unregister(player)
 		player.queue_free()
 		await get_tree().process_frame
 
-	# 2️⃣ Instanciar nuevo player
+	# 2. Instanciar nuevo player
 	player = PLAYER_SCENE.instantiate()
 	emit_signal("player_created", player)
 
 
-	# 3️⃣ Reasignar resource de stats si existe en globals
+	# 3. Reasignar resource de stats si existe en globals
 	# Intentar obtener PlayerGlobalStats top-level primero
 	var saved_stats: PlayerGlobalStats = null
 	if ThothGameState.game_state.globals.has("PlayerGlobalStats"):
@@ -292,14 +273,10 @@ func respawn_player_after_load():
 	# Fallback: si no está top-level, intentar extraerlo desde PlayerManager serializado
 	if not saved_stats and ThothGameState.game_state.globals.has("PlayerManager"):
 		var pm_entry = ThothGameState.game_state.globals["PlayerManager"]
-		# La estructura depende de tu serializer: intentamos el caso más común
 		if pm_entry.has("variables") and pm_entry["variables"].has("stats"):
 			var stats_entry = pm_entry["variables"]["stats"]
-			# Si el serializer dejó el resource como "data" (dictionary), podemos deserializarlo:
-			# *Preferible:* dejar que ThothDeserializer cree el Resource en memoria
-			# Para ello, podríamos crear un PlayerGlobalStats nuevo y pasarle los valores
 			var tmp_stats = PlayerGlobalStats.new()
-			ThothDeserializer._deserialize_object(stats_entry, tmp_stats) # si tu api lo permite
+			ThothDeserializer._deserialize_object(stats_entry, tmp_stats)
 			saved_stats = tmp_stats
 
 	if saved_stats:
@@ -309,7 +286,7 @@ func respawn_player_after_load():
 		print("⚠️ No se encontró PlayerGlobalStats en el save; usando resource local del player.")
 
 
-	# 4️⃣ Parentar en el nivel actual
+	# 4. Parentar en el nivel actual
 	var level := get_tree().current_scene
 	if not level:
 		push_error("❌ No hay nivel actual durante respawn.")
@@ -323,7 +300,7 @@ func respawn_player_after_load():
 
 	await get_tree().process_frame
 
-	# 5️⃣ Restaurar posición
+	# 5. Restaurar posición
 	if saved_position != Vector2.ZERO:
 		player.global_position = saved_position
 		#print("📦 Player restaurado en posición:", saved_position)
@@ -340,7 +317,7 @@ func respawn_player_after_load():
 
 	await get_tree().process_frame
 
-	# 6️⃣ Reactivar HUD y CP
+	# 6. Reactivar HUD y CP
 	if CPRegenerator.is_registered(player):
 		CPRegenerator.unregister(player)
 	CPRegenerator.register(player, player.stats.MAX_CP, player.stats.CURRENT_CP, player.stats.cp_regen_rate, 1.0, func(cp): player._on_cp_updated(cp))
@@ -352,8 +329,7 @@ func respawn_player_after_load():
 		if player.hud.has_method("wait_until_cp_full"):
 			player.hud.wait_until_cp_full()
 
-
-	# 7️⃣ Confirmación visual/log
+	# 7. Confirmación visual/log
 	print("✅ Player respawneado y stats restauradas ->", player.stats.CREDITS, "cr, Lv.", player.stats.CURRENT_LEVEL)
 
 
@@ -365,9 +341,8 @@ func set_as_parent(_p: Node2D) -> void:
 
 	var current_parent = player.get_parent()
 	if current_parent == _p:
-		return  # Ya está en el padre correcto
+		return
 
-	# ⚡ Solo lo removemos si efectivamente tiene padre
 	if current_parent:
 		current_parent.remove_child(player)
 
@@ -391,15 +366,10 @@ func shake_camera(trauma: float = 1.0) -> void:
 
 
 func set_facing_direction(direction: Vector2) -> void:
-	# Asumiendo que usás alguna variable como `facing` o algo similar
-	# o rotás un sprite, ajustás aquí la lógica visual
 	if direction == Vector2.LEFT:
 		$Ciro.flip_h = true
 	elif direction == Vector2.RIGHT:
 		$Ciro.flip_h = false
-
-	# También podés rotar un marcador de entrada, animación, etc.
-	# facing_direction = direction.normalized()
 
 
 func spawn_promissio_near_player():
@@ -409,7 +379,6 @@ func spawn_promissio_near_player():
 
 	var promissio := PROMISSIO_SCENE.instantiate()
 
-	# ✅ Buscamos el YSORT activo en la escena
 	var level := get_tree().current_scene
 	if not level:
 		push_error("❌ No hay escena actual.")
@@ -420,14 +389,14 @@ func spawn_promissio_near_player():
 		push_error("❌ No se encontró el nodo YSORT en la escena actual.")
 		return
 
-	# 🛠️ Deferred para evitar conflictos con el árbol de nodos
+	# Deferred para evitar conflictos con el árbol de nodos
 	ysort.call_deferred("add_child", promissio)
 
 	# Referencias cruzadas
 	player.promissio = promissio
 	promissio.player = player
 
-	# 🕓 Esperamos a que se agregue al árbol antes de moverlo
+	# Espera a que se agregue al árbol antes de moverlo
 	await get_tree().process_frame
 	promissio.snap_to_attack_position(player.previous_direction)
 
@@ -450,14 +419,11 @@ func attach_promissio_from_spawn(promissio: Promissio) -> void:
 		push_error("❌ No se encontró YSORT en la escena actual.")
 		return
 
-	# 🛠️ Usamos call_deferred para evitar el error
 	ysort.call_deferred("add_child", promissio)
 
-	# Referencias cruzadas
 	player.promissio = promissio
 	promissio.player = player
 
-	# 🕓 Esperamos un frame para asegurarnos de que esté en escena antes de posicionarlo
 	await get_tree().process_frame
 	_apply_equipment_to_promissio(promissio)
 	promissio.snap_to_attack_position(player.previous_direction)
@@ -467,7 +433,7 @@ func _apply_equipment_to_promissio(promissio: Promissio) -> void:
 	if not EQUIPMENT_DATA:
 		return
 
-	for slot in ["CONCRETE A", "CONCRETE B"]:
+	for slot in ["CONCRETO A", "CONCRETO B"]:
 		var item := EQUIPMENT_DATA.get_equipped(slot)
 
 		if item is EquipableItemData and item.symbol_scene:
@@ -479,7 +445,7 @@ func _apply_equipment_to_promissio(promissio: Promissio) -> void:
 	)
 
 
-# 👁️‍🗨️ [PlayerManager.gd] - Modo de enfoque (target lock) al enemigo más cercano
+# [PlayerManager.gd] - Modo de enfoque (target lock) al enemigo más cercano
 
 func toggle_target_lock():
 	if locked_enemy and is_instance_valid(locked_enemy):
@@ -522,9 +488,6 @@ func set_skin(new_skin: String):
 		player.skin = new_skin
 		player.apply_skin()
 
-#COMO USAR:
-#PlayerManager.player.set_skin("evil")
-#PlayerManager.player.set_skin(PlayerManager.skin)
 
 
 func set_ill_state(active: bool):
@@ -533,10 +496,6 @@ func set_ill_state(active: bool):
 
 	if player and is_instance_valid(player):
 		player.set_ill_state(active)
-
-#COMO USAR:
-#PlayerManager.player.set_ill_state(true)  # entra en Ill
-#PlayerManager.player.set_ill_state(false) # vuelve a normal
 
 
 func modify_stat(stat: String, amount: int) -> void:
@@ -567,7 +526,6 @@ func modify_stat(stat: String, amount: int) -> void:
 		_:
 			push_warning("⚠️ Stat desconocida: %s" % stat)
 
-	# ⭐⭐ LA LÍNEA QUE FALTABA ⭐⭐
 	emit_signal("stats_changed")
 
 
@@ -582,11 +540,11 @@ func restore_health_and_cp() -> void:
 		push_error("❌ No se encontró el recurso de stats del jugador.")
 		return
 
-	# ♻️ Restaurar HP y CP al máximo
+	# Restaurar HP y CP al máximo
 	stats.CURRENT_HP = stats.MAX_HP
 	stats.CURRENT_CP = stats.MAX_CP
 
-	# 🧼 Remover efectos de estado negativos
+	# Remover efectos de estado negativos
 	var status = stats.CURRENT_ALTERED_STATE
 	match status:
 		DamageData.StatusEffect.POISON:
@@ -602,17 +560,18 @@ func restore_health_and_cp() -> void:
 		_:
 			pass
 
-	# ✅ Refrescar regenerador de CP
+	# Refrescar regenerador de CP
 	if CPRegenerator.is_registered(player):
 		CPRegenerator.update_current_cp(player, stats.CURRENT_CP)
 
-	# 📢 Emitir señales para actualizar HUDs
-	pstats.set_current_hp(stats.MAX_HP)   # ✅
-	pstats.set_current_cp(stats.MAX_CP)   # ✅
+	# Emitir señales para actualizar HUDs
+	pstats.set_current_hp(stats.MAX_HP)
+	pstats.set_current_cp(stats.MAX_CP)
 	player.emit_signal("health_updated", stats.CURRENT_HP)
 	player.emit_signal("cp_updated", stats.CURRENT_CP)
 
 	#print("💖 Salud y CP restaurados. El jugador está en estado PURE.")
+
 
 func clear_status():
 	if not player or not is_instance_valid(player):
@@ -626,7 +585,7 @@ func clear_status():
 		return
 
 	#print("💬 Estado actual antes de limpiar:", stats.CURRENT_ALTERED_STATE)
-	pstats.set_status(DamageData.StatusEffect.PURE)   # ✅
+	pstats.set_status(DamageData.StatusEffect.PURE)
 	#print("✨ Estado alterado negativo eliminado.")
 
 
@@ -634,9 +593,11 @@ func set_hp(value: int):
 	stats.CURRENT_HP = clamp(value, 0, stats.MAX_HP)
 	emit_signal("stats_changed")
 
+
 func set_cp(value: int):
 	stats.CURRENT_CP = clamp(value, 0, stats.MAX_CP)
 	emit_signal("stats_changed")
+
 
 func set_ep(value: int):
 	stats.CURRENT_EP = clamp(value, 0, stats.MAX_EP)
@@ -648,14 +609,16 @@ func _ensure_key(key: String, default_value = null) -> void:
 	if not stats.has(key):
 		stats[key] = default_value
 
+
 func get_stat(key: String):
 	return stats.get(key, null)
+
 
 func set_stat(key: String, value) -> void:
 	stats[key] = value
 	emit_signal("stats_changed")
 
-# getters especializados (por claridad / compatibilidad)
+# Getters especializados (por claridad / compatibilidad)
 func get_max_hp() -> int: return int(get_stat("MAX_HP"))
 func get_current_hp() -> int: return int(get_stat("CURRENT_HP"))
 func get_max_cp() -> int: return int(get_stat("MAX_CP"))
@@ -665,16 +628,19 @@ func get_current_ep() -> int: return int(get_stat("CURRENT_EP"))
 func get_cp_regen_rate() -> float: return float(get_stat("cp_regen_rate"))
 func get_current_altered_state(): return get_stat("CURRENT_ALTERED_STATE")
 
-# setters especializados (usan set_stat para emitir)
+
+# Setters especializados (usan set_stat para emitir)
 func set_current_hp(value: int) -> void:
 	stats.CURRENT_HP = clamp(value, 0, stats.MAX_HP)
 	hp_changed.emit(stats.CURRENT_HP)
 	stats_changed.emit()
 
+
 func set_current_cp(value: int) -> void:
 	stats.CURRENT_CP = clamp(value, 0, stats.MAX_CP)
 	cp_changed.emit(stats.CURRENT_CP)
 	stats_changed.emit()
+
 
 func set_current_ep(value: int) -> void:
 	stats.CURRENT_EP = clamp(value, 0, stats.MAX_EP)
@@ -685,10 +651,11 @@ func set_current_ep(value: int) -> void:
 func set_status(value: DamageData.StatusEffect) -> void:
 	set_stat("CURRENT_ALTERED_STATE", value)
 
+
 func set_credits(value: int) -> void:
 	set_stat("CREDITS", max(0, int(value)))
 
-# si necesitas exponer todo como un snapshot (ej: saves) puedes devolver un duplicate()
+
 func get_stats_snapshot() -> Dictionary:
 	return stats.duplicate(true)
 
@@ -712,24 +679,25 @@ func get_preview_stats(item: EquipableItemData, slot_name: String) -> Dictionary
 	if base_stats_snapshot.is_empty():
 		cache_base_stats()
 
-	# 1️⃣ Partimos de stats base
+	# 1. Parte de stats base
 	var preview := base_stats_snapshot.duplicate(true)
 
-	# 2️⃣ Aplicamos equipment ACTUAL
+	# 2. Aplica equipment ACTUAL
 	for slot in EQUIPMENT_DATA.equipped.keys():
 		var equipped_item := EQUIPMENT_DATA.get_equipped(slot)
 		if equipped_item is EquipableItemData:
 			_apply_item_modifiers(preview, equipped_item)
 
-	# 3️⃣ Quitamos lo que esté equipado en ese slot (si hay)
+	# 3. Quita lo que esté equipado en ese slot (si hay)
 	var current := EQUIPMENT_DATA.get_equipped(slot_name)
 	if current is EquipableItemData:
 		_remove_item_modifiers(preview, current)
 
-	# 4️⃣ Aplicamos el item hover
+	# 4. Aplica el item hover
 	_apply_item_modifiers(preview, item)
 
 	return preview
+
 
 @warning_ignore("shadowed_variable")
 func _apply_item_modifiers(stats: Dictionary, item: EquipableItemData) -> void:
@@ -751,10 +719,10 @@ func recalculate_equipment_stats():
 	if base_stats_snapshot.is_empty():
 		cache_base_stats()
 
-	# 1️⃣ Restaurar stats base
+	# 1. Restaurar stats base
 	stats = base_stats_snapshot.duplicate(true)
 
-	# 2️⃣ Aplicar modifiers de todos los ítems equipados
+	# 2. Aplicar modifiers de todos los ítems equipados
 	for slot in EQUIPMENT_DATA.equipped.keys():
 		var item := EQUIPMENT_DATA.get_equipped(slot)
 		if item is EquipableItemData:
@@ -763,7 +731,7 @@ func recalculate_equipment_stats():
 				if key != "" and stats.has(key):
 					stats[key] += mod.value
 
-	# 3️⃣ Clamp de valores actuales
+	# 3. Clamp de valores actuales
 	stats.CURRENT_HP = clamp(stats.CURRENT_HP, 0, stats.MAX_HP)
 	stats.CURRENT_CP = clamp(stats.CURRENT_CP, 0, stats.MAX_CP)
 	stats.CURRENT_EP = clamp(stats.CURRENT_EP, 0, stats.MAX_EP)
@@ -771,7 +739,7 @@ func recalculate_equipment_stats():
 	stats_changed.emit()
 
 
-# función para copiar/parsear un dict (por load)
+# Copia/parsea un dict (por load)
 func apply_stats_from_dict(d: Dictionary) -> void:
 	if not d:
 		return
@@ -790,7 +758,7 @@ func apply_stats_from_dict(d: Dictionary) -> void:
 		if k in INT_KEYS:
 			stats[k] = int(v)
 		else:
-			stats[k] = v  # floats, enums, etc.
+			stats[k] = v
 
 	emit_signal("stats_changed")
 
@@ -846,7 +814,7 @@ func learn_combat() -> void:
 
 func on_player_died():
 	if game_over:
-		return  # ⛔ evita doble game over
+		return
 	if player and is_instance_valid(player):
 		player.disable()
 

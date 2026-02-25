@@ -16,12 +16,12 @@ var drag_threshold := 16.0
 var current_item: ItemData = null
 
 func _ready() -> void:
-	custom_minimum_size = Vector2(0, 30) # o lo que mida tu slot
+	custom_minimum_size = Vector2(0, 30)
 
 	add_to_group("inventory_slot")
 	clear()
 
-	# 🔗 Conectamos el validador del botón
+	# Conectamos el validador del botón
 	if equip_menu:
 		item_button.press_sfx_validator = Callable(self, "_should_play_press_sfx")
 
@@ -106,7 +106,7 @@ func item_pressed() -> void:
 		if equip_menu.equipment_container:
 			equip_menu.equipment_container.set_equipped(target_slot, current_item)
 
-		# 🧠 CONEXIÓN REAL CON PROMISSIO
+		# CONEXIÓN REAL CON PROMISSIO
 		if current_item is EquipableItemData:
 			if current_item.symbol_scene:
 				var promissio := get_tree().get_first_node_in_group("promissio")
@@ -117,26 +117,26 @@ func item_pressed() -> void:
 					)
 					print("🟢 Symbol equipado en", target_slot, "→", current_item.symbol_scene)
 
-		# 🔊 feedback
+		# Feedback sonoro
 		if item_button:
 			item_button.equip_requested = true
 
 
 
-		# 🔄 Volvemos a modo slots
+		# Volvemos a modo slots
 		equip_menu.nav_mode = EquipMenu.NavMode.EQUIP_SLOTS
 		equip_menu.inventory_mode = false
 
 		await get_tree().process_frame
 
-		# 🔁 Volver foco al EquipSlot correcto
+		# Volver foco al EquipSlot correcto
 		if equip_menu.equipment_container \
 		and equip_menu.equipment_container.slots.has(target_slot):
 
 			var slot_ui: EquipSlotUI = equip_menu.equipment_container.slots[target_slot]
 			slot_ui._grab_focus()
 
-			# 🧹 LIMPIAR NEIGHBORS (MUY IMPORTANTE)
+			# LIMPIAR NEIGHBORS (MUY IMPORTANTE)
 			var equip_button: Button = slot_ui.item_button
 			var inv_button: Button = item_button
 
@@ -153,15 +153,15 @@ func item_pressed() -> void:
 	if not current_item or not items_menu:
 		return
 
-	# 🛑 Seguridad extra (por si alguien llama esto directo)
+	# Seguridad extra (por si alguien llama esto directo)
 	if not can_use_current_item():
 		return
 
-	# ✅ Aplicar efectos
+	# Aplicar efectos
 	for e in current_item.effects:
 		e.use()
 
-	# 📦 Consumir si corresponde
+	# Consumir si corresponde
 	if current_item.is_quantitative:
 		PlayerManager.INVENTORY_DATA.remove_item(current_item, 1)
 		refresh_quantity()
@@ -186,7 +186,7 @@ func item_pressed() -> void:
 		else:
 			refresh_quantity()
 
-			# 🔁 Reaplicar preview si seguimos hovereando
+			# Reaplicar preview si seguimos hovereando
 			if current_item is UsableItemData:
 				await get_tree().process_frame
 				for e in current_item.effects:
@@ -199,7 +199,7 @@ func can_use_current_item() -> bool:
 	if not current_item:
 		return false
 
-	# 🚫 NO USABLES
+	# NO USABLES
 	if current_item.type in [
 		ItemData.ItemType.NONE,
 		ItemData.ItemType.KEY,
@@ -208,7 +208,7 @@ func can_use_current_item() -> bool:
 	]:
 		return false
 
-	# 🔍 Validar efectos
+	# Validar efectos
 	if current_item is UsableItemData:
 		for e in current_item.effects:
 			if e is ItemEffect and not e.can_use():

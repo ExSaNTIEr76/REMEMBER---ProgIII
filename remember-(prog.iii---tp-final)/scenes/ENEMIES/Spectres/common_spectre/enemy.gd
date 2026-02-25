@@ -48,7 +48,7 @@ func _ready():
 	if sprite.material and sprite.material is ShaderMaterial:
 		sprite.material = sprite.material.duplicate()
 
-	# ✅ Si no se asignó player desde afuera, lo buscamos en el grupo
+	# Si no se asignó player desde afuera, lo busca en el grupo
 	if not player:
 		for node in get_tree().get_nodes_in_group("players"):
 			if node is Player:
@@ -61,7 +61,7 @@ func _ready():
 	detection_area.body_exited.connect(_on_lost_player)
 	ghost_timer.timeout.connect(_on_trail_timer_timeout)
 
-	# 🆕 Override dinámico del estado inicial
+	# Override dinámico del estado inicial
 	if start_with_spawn:
 		state_machine.default_state = state_machine.get_node(states.Spawn)
 
@@ -73,7 +73,7 @@ func _on_detected_player(body):
 
 func _on_lost_player(body):
 	if body is Player and not is_committed_to_charge:
-		speed = 50.0  # 🐌 Velocidad acechante
+		speed = 50.0
 
 
 var has_seen_player_recently := false
@@ -92,7 +92,6 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body is Player and not is_committed_to_charge:
-		# Solo si NO estamos en modo de ataque
 		if not forget_timer:
 			forget_timer = Timer.new()
 			forget_timer.wait_time = 2.0
@@ -116,15 +115,13 @@ func on_hit() -> void:
 	if stats.CURRENT_HP <= 0 or state_machine.current_state.name == "EnemyStateDead":
 		return
 
-	# 👇 Si está en estados especiales, sólo mostrar daño visual
+	# Si está en estados especiales, sólo mostrar daño visual
 	var current = state_machine.current_state.name
 	if current == "EnemyStateCharging" or current == "EnemyStateOnrushing":
 		enemy_effects.play(animations.hit_flash)
 		return
 
-	# ✅ Si no, cambiar a estado hurt normalmente
 	enemy_effects.play(animations.hit_flash)
-	#state_machine.change_to(states.Hurt)
 
 
 func take_damage(amount: int, attack_data: DamageData = null) -> void:
@@ -135,7 +132,7 @@ func take_damage(amount: int, attack_data: DamageData = null) -> void:
 	show_hit_numbers(amount)
 	TextPopup.show_enemy_popup(stats.enemy_name)
 
-	# 🔊 Sonido de impacto automático
+	# Sonido de impacto automático
 	if attack_data:
 		ImpactSounds.play_from_attack(attack_data, stats)
 
@@ -161,7 +158,6 @@ func on_perfect_guarded() -> void:
 	state_machine.change_to(states.Stunned)
 
 
-
 func _disable_combat_colliders():
 	var hitbox = get_node_or_null("Hitbox")
 	if hitbox:
@@ -183,27 +179,25 @@ func get_damage_amount() -> int:
 	return stats.ATK
 
 
-# 💨 Cuando el Timer hace "tic"
 func _on_trail_timer_timeout():
 	_spawn_ghost_trail()
 
 
-# 👻 Instanciar la sombra fantasmal
+# Instanciar el ghostrail
 func _spawn_ghost_trail():
-	var ghost_scene = preload("res://scenes/ENEMIES/Spectres/common_spectre/ghostrail/ghostrail_common_spectre.tscn") # ¡ajustá esto con la ruta real!
+	var ghost_scene = preload("res://scenes/ENEMIES/Spectres/common_spectre/ghostrail/ghostrail_common_spectre.tscn")
 	var ghost = ghost_scene.instantiate()
 	get_parent().add_child(ghost)
 	ghost.global_position = global_position
-	ghost.z_index = z_index - 1  # Asegura que quede detrás
+	ghost.z_index = z_index - 1
 
-	# Copiar apariencia y color con alpha
 	var ghost_sprite = ghost.get_node("Sprite2D")
 	ghost_sprite.texture = sprite.texture
 	ghost_sprite.frame = sprite.frame
 	var original_color = sprite.modulate
 	ghost_sprite.modulate = Color(original_color.r, original_color.g, original_color.b, 0.3)
 
-	# 🌬 Tween para que se desvanezca como el viento
+	# Tween para que se desvanezca brevemente
 	var fade = ghost.create_tween()
 	fade.tween_property(ghost_sprite, "modulate:a", 0.0, 0.5)
 	fade.tween_callback(Callable(ghost, "queue_free"))

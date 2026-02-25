@@ -195,7 +195,6 @@ func open_options_menu():
 
 func go_back_in_menu() -> void:
 	if current_menu is MainMenu and current_menu.is_confirm_open:
-		# Si el MainMenu tiene el confirm abierto, no lo cerramos globalmente
 		return
 
 	if current_menu == main_menu:

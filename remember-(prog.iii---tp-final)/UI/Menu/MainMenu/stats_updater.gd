@@ -10,23 +10,23 @@ class_name StatsUpdater extends Node
 var stats = null
 
 func setup(_stats = null):
-	# 1️⃣ Obtener PlayerManager real
+	# 1️. Obtener PlayerManager real
 	var PM := get_node_or_null("/root/PlayerManager")
 	if not PM:
 		push_warning("StatsUpdater: PlayerManager no encontrado.")
 		return
 
-	# 2️⃣ Desconectar si ya estaba
+	# 2️. Desconectar si ya estaba
 	if PM.is_connected("stats_changed", Callable(self, "update_all")):
 		PM.disconnect("stats_changed", Callable(self, "update_all"))
 
-	# 3️⃣ Conectar
+	# 3️. Conectar
 	PM.connect("stats_changed", Callable(self, "update_all"))
 
-	# 4️⃣ Guardar stats si vienen
+	# 4️. Guardar stats si vienen
 	stats = _stats
 
-	# 5️⃣ Forzar primer update
+	# 5️. Forzar primer update
 	update_all()
 
 
@@ -38,7 +38,7 @@ func update_all():
 		var PM = Engine.get_singleton("PlayerManager")
 		s = PM.get_stats_snapshot()
 
-	# 2) Si no existe PlayerManager, usar lo que tengamos en stats
+	# 2) Si no existe PlayerManager, usar lo que se tenga en stats
 	elif typeof(stats) == TYPE_DICTIONARY:
 		s = stats
 
@@ -58,7 +58,7 @@ func update_all():
 			"CREDITS": stats.CREDITS
 		}
 	else:
-		# Sin PM ni stats → no podemos actualizar nada
+		# Sin PM ni stats → no se puede actualizar nada
 		return
 
 
@@ -66,11 +66,6 @@ func update_all():
 	for key in s.keys():
 		if typeof(s[key]) in [TYPE_INT, TYPE_FLOAT]:
 			s[key] = int(s[key])
-
-	# -------------------------------------
-	# A partir de aquí ya estás SEGURO
-	# que `s` es el diccionario correcto
-	# -------------------------------------
 
 	# 🟩 PANEL STATUS
 	if status_panel:

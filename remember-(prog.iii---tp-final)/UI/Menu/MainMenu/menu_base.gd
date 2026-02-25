@@ -29,7 +29,7 @@ func _menu_closed():
 func _unhandled_input(event: InputEvent) -> void:
 	if GlobalMenuHub.input_locked:
 		get_viewport().set_input_as_handled()
-		return  # 🚫 Ignora todo input durante fade/transición
+		return
 	if event.is_action_pressed("ui_pause") and GlobalMenuHub._can_pause():
 		if not GlobalMenuHub.is_paused:
 			GlobalMenuHub.show_pause_menu()
@@ -42,14 +42,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if GlobalMenuHub.is_paused and event.is_action_pressed("ui_cancel"):
 		
-		# 1) Primero damos chance al menú de manejar el cancel
+		# 1. Da chance al menú de manejar el cancel
 		if GlobalMenuHub.current_menu and GlobalMenuHub.current_menu.has_method("on_cancel"):
 			var handled = await GlobalMenuHub.current_menu.on_cancel()
 			if handled:
 				get_viewport().set_input_as_handled()
 				return
 
-		# 2) Si NO lo manejó → ahora sí reseteamos (porque se va a cerrar)
+		# 2. Si NO lo manejó → resetea
 		if GlobalMenuHub.current_menu and GlobalMenuHub.current_menu.has_method("_reset_menu_state"):
 			GlobalMenuHub.current_menu._reset_menu_state()
 

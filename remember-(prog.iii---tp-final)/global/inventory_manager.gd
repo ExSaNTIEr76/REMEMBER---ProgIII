@@ -171,7 +171,7 @@ func is_player_has_item(ids: Array, require_all: bool = false) -> bool:
 
 # InventoryManager.gd
 func show_item_popup_by_id(id: int, quantity := 1) -> void:
-	var item := ItemDB.get_item(id)
+	var item = ItemDB.get_item(id)
 	if not item:
 		return
 	TextPopup.show_item_popup(item.name, quantity, item.type, item.texture)

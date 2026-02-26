@@ -138,7 +138,7 @@ func action() -> void:
 		if player.state_machine.current_state.has_method( "using_block" ):
 			await player.state_machine.current_state.using_block()
 
-	# 📦 Dar ítems o créditos
+	# Dar ítems o créditos
 	if gives_credits and credits_amount > 0:
 		InventoryManager.add_credits( credits_amount )
 		await CinematicManager._wait( 0.2 )
@@ -153,10 +153,10 @@ func action() -> void:
 			ItemData.ItemType.ABSTRACT,
 			ItemData.ItemType.SINGULAR
 		]:
-			# 🔮 Es un símbolo
+			# Es un símbolo
 			TextPopup.show_symbol_popup( item_data.name, quantity, item_data.type, item_data.texture )
 		else:
-			# 📦 Es un item normal
+			# Es un item normal
 			TextPopup.show_item_popup( item_data.name, quantity, item_data.type, item_data.texture )
 
 
@@ -205,8 +205,7 @@ func _set_padlock_type(value: String) -> void:
 
 func _update_texture() -> void:
 	if gives_credits:
-		# 💰 mostrar ícono de créditos
-		#item_sprite.texture = preload("res://ui/icons/credits.png") # ⚠️ cambia la ruta
+		# mostrar ícono de créditos
 		return
 	elif item_data and item_sprite:
 		item_sprite.texture = item_data.texture

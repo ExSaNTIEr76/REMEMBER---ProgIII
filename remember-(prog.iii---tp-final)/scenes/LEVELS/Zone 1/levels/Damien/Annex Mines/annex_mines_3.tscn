@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b74k65q57n664" path="res://effects/Gradients/Light_Gradient.tres" id="11_5ohl6"]
 [ext_resource type="PackedScene" uid="uid://dljuv1v63dwsj" path="res://scenes/ENVIOREMENT/TreasureChests/treasure_chest.tscn" id="11_ny2ew"]
 [ext_resource type="Resource" uid="uid://d4fnbdv1u7wng" path="res://items/Objects/usables/luck_ticket.tres" id="12_lpmph"]
-[ext_resource type="Resource" uid="uid://078u7moxey38" path="res://items/Objects/usables/basic_supplements.tres" id="13_lpmph"]
+[ext_resource type="Resource" uid="uid://cab1uhrle0a1i" path="res://items/Symbols/concrete/pickaxe_1_symbol.tres" id="13_lpmph"]
 [ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="16_kb0y7"]
 [ext_resource type="AudioStream" uid="uid://bb31hgpb4452n" path="res://audio/ambient/ambSfx_Wet_Dripping.ogg" id="16_ne2ik"]
 [ext_resource type="PackedScene" uid="uid://4bw6soamb2u7" path="res://scenes/LEVELS/levelScripts/LightDetector.tscn" id="17_umku2"]
@@ -258,6 +258,8 @@ item_data = ExtResource("12_lpmph")
 [node name="Chest3" parent="ACTIONABLES" unique_id=462448873 instance=ExtResource("11_ny2ew")]
 position = Vector2(1588.9785, -119.14219)
 chest_color = "Mines"
+is_padlocked = true
+padlock_type = "Complex"
 item_data = ExtResource("13_lpmph")
 
 [node name="DOORS" type="Node2D" parent="." unique_id=1367268395]

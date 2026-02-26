@@ -2,6 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://bhpe7d4w61iwa" path="res://dialogues/TALKSPRITES/sprites/Ciro_Talksprites.png" id="1_jwnss"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc5xf"]
+atlas = ExtResource("1_jwnss")
+region = Rect2(1344, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwnss"]
+atlas = ExtResource("1_jwnss")
+region = Rect2(1344, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ilro0"]
 atlas = ExtResource("1_jwnss")
 region = Rect2(1472, 0, 64, 64)
@@ -12,6 +20,22 @@ region = Rect2(1536, 0, 64, 64)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc5xf")
+}],
+"loop": true,
+"name": &"controls",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwnss")
+}],
+"loop": false,
+"name": &"promissio",
+"speed": 0.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ilro0")

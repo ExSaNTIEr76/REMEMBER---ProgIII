@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemCatalog" format=3 uid="uid://cghgjk58xfmjt"]
+
+[ext_resource type="Script" uid="uid://culxbd8ylmven" path="res://items/item_data.gd" id="1_e5iul"]
+[ext_resource type="Script" uid="uid://cd4e75sxob5k7" path="res://items/item_catalog.gd" id="2_2f2ux"]
+[ext_resource type="Resource" uid="uid://d4fnbdv1u7wng" path="res://items/Objects/usables/luck_ticket.tres" id="2_i8q72"]
+[ext_resource type="Resource" uid="uid://078u7moxey38" path="res://items/Objects/usables/basic_supplements.tres" id="3_mpvfo"]
+[ext_resource type="Resource" uid="uid://bytlk64ofcdd8" path="res://items/Objects/keys/gilded_key.tres" id="3_u6g75"]
+[ext_resource type="Resource" uid="uid://1mt4rhshrai4" path="res://items/Objects/keys/small_key.tres" id="4_o75le"]
+[ext_resource type="Resource" uid="uid://rykq1j6n02qy" path="res://items/Symbols/concrete/punch_1_symbol.tres" id="6_cbodr"]
+[ext_resource type="Resource" uid="uid://d04ijgnab8ysx" path="res://items/Objects/keys/valve.tres" id="6_o75le"]
+[ext_resource type="Resource" uid="uid://c4qg56uw4p71i" path="res://items/Symbols/concrete/knife_1_symbol.tres" id="7_02whp"]
+[ext_resource type="Resource" uid="uid://cab1uhrle0a1i" path="res://items/Symbols/concrete/pickaxe_1_symbol.tres" id="8_ir42j"]
+
+[resource]
+script = ExtResource("2_2f2ux")
+items = Array[ExtResource("1_e5iul")]([ExtResource("2_i8q72"), ExtResource("3_mpvfo"), ExtResource("4_o75le"), ExtResource("3_u6g75"), ExtResource("6_o75le"), ExtResource("6_cbodr"), ExtResource("7_02whp"), ExtResource("8_ir42j")])
+metadata/_custom_type_script = "uid://cd4e75sxob5k7"

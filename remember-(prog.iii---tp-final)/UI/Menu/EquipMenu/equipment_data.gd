@@ -5,13 +5,13 @@ signal equipment_changed
 
 # Diccionario: { slot_name : item_id }
 var equipped: Dictionary = {
-	"DEFENSIVE 1": null,
-	"DEFENSIVE 2": null,
-	"SPECIAL 1": null,
-	"SPECIAL 2": null,
-	"CONCRETE A": null,
-	"CONCRETE B": null,
-	"ABSTRACT": null,
+	"DEFENSIVO 1": null,
+	"DEFENSIVO 2": null,
+	"ESPECIAL 1": null,
+	"ESPECIAL 2": null,
+	"CONCRETO A": null,
+	"CONCRETO B": null,
+	"ABSTRACTO": null,
 }
 
 
@@ -25,14 +25,14 @@ func equip(slot_name: String, item: ItemData) -> void:
 	# 🔁 Si había algo equipado antes, devolverlo
 	var previous_id = equipped[slot_name]
 	if previous_id != null:
-		var previous_item := ItemDB.get_item(previous_id)
+		var previous_item = ItemDB.get_item(previous_id)
 		if previous_item and _is_finite(previous_item):
 			PlayerManager.INVENTORY_DATA.add_item(previous_item, 1)
 
 	# 🧠 Equipar nuevo
 	equipped[slot_name] = item.ID
 
-	# 📉 Consumir si es finito
+	# Consumir si es finito
 	if _is_finite(item):
 		PlayerManager.INVENTORY_DATA.remove_item(item, 1)
 
@@ -50,9 +50,9 @@ func unequip(slot_name: String) -> void:
 	if id == null:
 		return
 
-	var item := ItemDB.get_item(id)
+	var item = ItemDB.get_item(id)
 
-	# ↩️ Devolver si corresponde
+	# Devolver si corresponde
 	if item and _is_finite(item):
 		PlayerManager.INVENTORY_DATA.add_item(item, 1)
 

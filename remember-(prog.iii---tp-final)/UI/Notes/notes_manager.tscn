@@ -112,7 +112,7 @@ grow_vertical = 2
 process_mode = 3
 z_index = 101
 sprite_frames = ExtResource("2_50cl7")
-animation = &"z0_block_instructions_eng"
+animation = &"z0_block_instructions_esp"
 autoplay = "empty"
 
 [node name="NotesEffects" type="AnimationPlayer" parent="." unique_id=969877007]

@@ -30,7 +30,7 @@ zone_name = "Zone 0"
 zone_tag = "Z0_int"
 transition_tag = "Z0_int"
 music = ExtResource("2_yl6li")
-music_volume = -15.0
+music_volume = -18.0
 
 [node name="YSORT" type="Node2D" parent="." unique_id=871638354 groups=["Y-SORT"]]
 unique_name_in_owner = true

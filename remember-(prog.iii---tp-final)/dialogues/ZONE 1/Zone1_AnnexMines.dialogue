@@ -12,17 +12,7 @@ do wait(2.0)
 do SceneTransition.fade_in_black()
 do wait(1.0)
 do SceneTransition.cinematic_fade_in_simple()
-do wait(0.1)
-do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Complain 4.ogg", 1.0, 3.0)
-Ciro: [#shocked_1] [#no_name]D-Dios...
-Ciro: [#confused_2] [#no_name]¿En dónde estoy ahora?
-do wait(1.0)
-do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_ Ciro 'It's Chilling'.ogg", 1.0, 3.0)
-Ciro: [#worried_4] [#no_name]Hhh... que frío hace aquí.
-Ciro: [#worried_1] [#no_name]N-No me gusta este lugar.
-Ciro: [#worried_2] [#no_name]¿Y otra vez en la oscuridad?
-Ciro: [#upset_3] [#no_name]Esto ya parece personal.
-do wait(1.0)
+do wait(3.0)
 do AudioManager.play_music_path("res://audio/music/Crysalism Gloom.ogg", 0.2, 1.0)
 do wait(0.2)
 do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/others/Sfx_Fabric_2.ogg", 1.0, -25.0)
@@ -64,9 +54,9 @@ match GlobalConditions.tramPassport
 		do wait(1.0)
 
 		do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Puzzle_Completed.ogg", 1.0, -7.0)
-		¡Te vinculaste con un un Add-On, Promissio!
-		Él será tu guardián, ayudándote en combate mediante los SÍMBOLOS que le asignes en el menu EQUIPO.
-		Tras una habitación más, te espera una sala con símbolos, y otra con enemigos esperándote...
+		Entities: [#promissio] [#no_name]¡Te vinculaste con un un Add-On, Promissio!
+		Entities: [#promissio] [#no_name]Él será tu guardián, ayudándote en combate mediante los SÍMBOLOS que le asignes en el menu EQUIPO.
+		Entities: [#promissio] [#no_name]Tras una habitación más, te espera el tutorial de combate...
 			
 		do wait(1.0)
 		do SceneTransition.cinematic_fade_out()
@@ -93,9 +83,13 @@ No podré pasar por aquí a menos que encuentre la manera de desviar esta corrie
 
 if InventoryManager.is_player_has_item([ItemDB.IDs.VALVE]):
 
-	¡Fin del vertical slice de REMEMBER!
-	¡Espero que lo hayas disfrutado mucho!
-		Ahora espero con ansias tu feedback ;D
+	do SceneTransition.white_flash()
+	do AudioManager.play_sfx_path("res://audio/SFX/Ambient SFX/Sfx_Puzzle_Completed.ogg", 1.0, -7.0)
+	[center]¡Fin del vertical slice de REMEMBER!
+	[center]¡Espero que lo hayas disfrutado mucho!
+	[center]No sabés lo importante que es para mí si llegaste hasta acá :'3
+	[center]Ahora espero con ansias tu feedback ;D
+	[center]- Santiago Fernández, (aka ExSaNTIEr) <3
 	=> END
 else
 	Es una hendidura cuadrada de metal.

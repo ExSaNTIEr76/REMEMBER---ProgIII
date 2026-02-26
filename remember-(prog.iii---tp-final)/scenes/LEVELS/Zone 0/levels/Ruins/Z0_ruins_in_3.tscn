@@ -5,11 +5,11 @@
 [ext_resource type="TileSet" uid="uid://bbxgpr6k085rt" path="res://scenes/LEVELS/Zone 0/sprites/Zone 0 TileMap.tres" id="3_gptdh"]
 [ext_resource type="Script" uid="uid://bcweryyykqkml" path="res://scenes/LEVELS/levelScripts/level_tile_map_layer.gd" id="4_g00y6"]
 [ext_resource type="Script" uid="uid://dlae4fxyvspys" path="res://scenes/LEVELS/levelScripts/footstep_tilemap.gd" id="5_k7655"]
-[ext_resource type="Material" uid="uid://b8t3bswj5v8c5" path="res://effects/Shaders/SmoothPixel.tres" id="5_m1hlk"]
 [ext_resource type="PackedScene" uid="uid://bgtxqgjgfvwg5" path="res://scenes/CHARACTERS/Puppet/player_spawn.tscn" id="5_vi4vw"]
 [ext_resource type="PackedScene" uid="uid://cbhl4re0el2sc" path="res://scenes/LEVELS/levelScripts/LevelTransition.tscn" id="6_1pwl8"]
 [ext_resource type="Texture2D" uid="uid://bjvsv8oif5lp4" path="res://scenes/ENVIOREMENT/Shine/Interactuable_Shine.png" id="6_qu4bv"]
 [ext_resource type="Shader" uid="uid://3np6bvvo3dn0" path="res://effects/Light/light_aura.gdshader" id="7_gptdh"]
+[ext_resource type="Shader" uid="uid://dvraab7uk1wlr" path="res://effects/Shaders/SmoothPixel.gdshader" id="7_k7655"]
 [ext_resource type="Texture2D" uid="uid://b74k65q57n664" path="res://effects/Gradients/Light_Gradient.tres" id="8_g00y6"]
 [ext_resource type="Script" uid="uid://b50ovxqctvmi" path="res://scenes/ENVIOREMENT/Puzzles/simple_blocks_puzzle.gd" id="9_1pwl8"]
 [ext_resource type="PackedScene" uid="uid://cs4w0bvgl2q20" path="res://UI/Notes/actionable_note.tscn" id="9_qu4bv"]
@@ -17,6 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://btwlfjeib6g0x" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_block.tscn" id="11_m1hlk"]
 [ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="15_f4mqr"]
 [ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="17_k7655"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4gkyf"]
+resource_local_to_scene = true
+shader = ExtResource("7_k7655")
+shader_parameter/flash_opacity = 1.0
+shader_parameter/flash_color = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bd4ce"]
 atlas = ExtResource("6_qu4bv")
@@ -34,7 +40,7 @@ region = Rect2(48, 0, 24, 24)
 atlas = ExtResource("6_qu4bv")
 region = Rect2(24, 0, 24, 24)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f4mqr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsxu8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -76,7 +82,7 @@ zone_name = "Zone 0"
 zone_tag = "Z0_int"
 transition_tag = "Z0_int"
 music = ExtResource("2_733y4")
-music_volume = -15.0
+music_volume = -18.0
 
 [node name="YSORT" type="Node2D" parent="." unique_id=1790923976 groups=["Y-SORT"]]
 unique_name_in_owner = true
@@ -155,15 +161,14 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAQAAYAAQACABcAAAAQAAUAAQACABcAAAAQAAQAAQACABcAAAAQAAMAAQACABcAAAAQAAIAAQACABcAAAAQAAEAAQACABYAAAAPAAYAAQABABcAAAAPAAUAAQABABcAAAAPAAQAAQABABcAAAAPAAMAAQABABcAAAAPAAIAAQABABcAAAAPAAEAAQABABYAAAAOAAYAAQABABcAAAAOAAUAAQABABcAAAAOAAQAAQABABcAAAAOAAMAAQABABcAAAAOAAIAAQABABcAAAAOAAEAAQABABYAAAANAAYAAQABABcAAAANAAUAAQABABcAAAANAAQAAQABABcAAAANAAMAAQABABcAAAANAAIAAQABABcAAAANAAEAAQABABYAAAAMAAYAAQABABcAAAAMAAUAAQABABcAAAAMAAQAAQABABcAAAAMAAMAAQABABcAAAAMAAIAAQABABcAAAAMAAEAAQABABYAAAALAAYAAQABABcAAAALAAUAAQABABcAAAALAAQAAQABABcAAAALAAMAAQABABcAAAALAAIAAQABABcAAAALAAEAAQABABYAAAAKAAYAAQABABcAAAAKAAUAAQABABcAAAAKAAQAAQABABcAAAAKAAMAAQABABcAAAAKAAIAAQABABcAAAAKAAEAAQABABYAAAAJAAYAAQABABcAAAAJAAUAAQABABcAAAAJAAQAAQABABcAAAAJAAMAAQABABcAAAAJAAIAAQABABcAAAAJAAEAAQABABYAAAAIAAYAAQABABcAAAAIAAUAAQABABcAAAAIAAQAAQABABcAAAAIAAMAAQABABcAAAAIAAIAAQABABcAAAAIAAEAAQABABYAAAAHAAYAAQABABcAAAAHAAUAAQABABcAAAAHAAQAAQABABcAAAAHAAMAAQABABcAAAAHAAIAAQABABcAAAAHAAEAAQABABYAAAAGAAYAAQABABcAAAAGAAUAAQABABcAAAAGAAQAAQABABcAAAAGAAMAAQABABcAAAAGAAIAAQABABcAAAAGAAEAAQABABYAAAAFAAYAAQABABcAAAAFAAUAAQABABcAAAAFAAQAAQABABcAAAAFAAMAAQABABcAAAAFAAIAAQABABcAAAAFAAEAAQABABYAAAAEAAYAAQABABcAAAAEAAUAAQABABcAAAAEAAQAAQABABcAAAAEAAMAAQABABcAAAAEAAIAAQABABcAAAAEAAEAAQABABYAAAADAAYAAQAAABcAAAADAAUAAQAAABcAAAADAAQAAQAAABcAAAADAAMAAQAAABcAAAADAAIAAQAAABcAAAADAAEAAQAAABYAAAADAAgAAQAAABcAAAAEAAgAAQABABcAAAAFAAgAAQABABcAAAAGAAgAAQABABcAAAAHAAgAAQABABcAAAAIAAgAAQABABcAAAAJAAgAAQABABcAAAAKAAgAAQABABcAAAALAAgAAQABABcAAAAMAAgAAQABABcAAAANAAgAAQABABcAAAAOAAgAAQABABcAAAAPAAgAAQABABcAAAAQAAgAAQACABcAAAADAAkAAQAAABgAAAAEAAkAAQABABgAAAAFAAkAAQABABgAAAAGAAkAAQABABgAAAAHAAkAAQABABgAAAAIAAkAAQABABgAAAAJAAkAAQABABgAAAAKAAkAAQABABgAAAALAAkAAQABABgAAAAMAAkAAQABABgAAAANAAkAAQABABgAAAAOAAkAAQABABgAAAAPAAkAAQABABgAAAAQAAkAAQACABgAAAADAAcAAQAAABcAAAAEAAcAAQABABcAAAAFAAcAAQABABcAAAAGAAcAAQABABcAAAAHAAcAAQABABcAAAAIAAcAAQABABcAAAAJAAcAAQABABcAAAAKAAcAAQABABcAAAALAAcAAQABABcAAAAMAAcAAQABABcAAAANAAcAAQABABcAAAAOAAcAAQABABcAAAAPAAcAAQABABcAAAAQAAcAAQACABcAAAA=")
 tile_set = ExtResource("3_gptdh")
 
-[node name="Shine" type="AnimatedSprite2D" parent="YSORT" unique_id=206431627]
+[node name="Shine" type="AnimatedSprite2D" parent="YSORT" unique_id=53960408]
 z_index = 1
 y_sort_enabled = true
-material = ExtResource("5_m1hlk")
-position = Vector2(300, 85)
-sprite_frames = SubResource("SpriteFrames_f4mqr")
+material = SubResource("ShaderMaterial_4gkyf")
+position = Vector2(298, 85)
+sprite_frames = SubResource("SpriteFrames_jsxu8")
 animation = &"Interactuable Shine"
 autoplay = "Interactuable Shine"
-frame_progress = 0.933124
 
 [node name="PlayerSpawn" parent="YSORT" unique_id=127588382 instance=ExtResource("5_vi4vw")]
 position = Vector2(116, 210)

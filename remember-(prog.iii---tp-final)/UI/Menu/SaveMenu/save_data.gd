@@ -1,5 +1,4 @@
-extends Resource
-class_name SaveData
+class_name SaveData    extends Resource
 
 @export var uuid: String
 @export var title: String
@@ -18,17 +17,20 @@ class_name SaveData
 @export var world_state: Dictionary
 @export var autoloads: Dictionary
 
+
 func _init():
 	uuid = _generate_unique_id()
 	save_date = Time.get_datetime_string_from_system()
 
+
 func _generate_unique_id() -> String:
 	return str(Time.get_unix_time_from_system()) + "_" + str(randi() % 1000).pad_zeros(3)
+
 
 func clone() -> SaveData:
 	var new_save := SaveData.new()
 	
-	# Copiamos las propiedades exportadas
+	# Copia las propiedades exportadas
 	for property in get_property_list():
 		if property["usage"] & PROPERTY_USAGE_SCRIPT_VARIABLE:
 			var value = get(property.name)
@@ -39,7 +41,7 @@ func clone() -> SaveData:
 			else:
 				new_save.set(property.name, value)
 	
-	# Generamos nuevo ID único
+	# Genera nuevo ID único
 	new_save.uuid = new_save._generate_unique_id()
 	new_save.save_date = Time.get_datetime_string_from_system()
 	

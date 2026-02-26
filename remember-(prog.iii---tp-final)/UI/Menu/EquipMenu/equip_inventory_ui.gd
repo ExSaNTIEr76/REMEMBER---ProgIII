@@ -9,10 +9,10 @@ class_name EquipInventoryUI    extends Control
 var slots: Array[InventorySlotUI] = []
 
 const IGNORED_EQUIP_PREFIXES := [
-	"DEFENSIVE",
-	"SPECIAL",
-	"CONCRETE",
-	"ABSTRACT",
+	"DEFENSIVO",
+	"ESPECIAL",
+	"CONCRETO",
+	"ABSTRACTO",
 	"SINGULAR"
 ]
 

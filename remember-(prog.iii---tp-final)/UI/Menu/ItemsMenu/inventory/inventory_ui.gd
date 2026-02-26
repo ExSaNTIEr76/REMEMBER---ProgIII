@@ -3,13 +3,14 @@ class_name InventoryUI    extends Control
 const INVENTORY_SLOT = preload("res://UI/Menu/ItemsMenu/inventory/inventory_slot.tscn")
 @onready var items_menu: ItemsMenu
 
-@export var data: InventoryData
+var data: InventoryData
 var slots: Array[InventorySlotUI] = []
 
 
 func _ready() -> void:
 	GlobalMenuHub.hidden.connect(clear_inventory)
 	clear_inventory()
+	data = PlayerManager.INVENTORY_DATA
 	data.inventory_changed.connect(on_inventory_changed)
 
 

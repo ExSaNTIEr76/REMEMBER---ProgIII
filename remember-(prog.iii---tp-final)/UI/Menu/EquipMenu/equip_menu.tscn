@@ -809,7 +809,7 @@ theme_override_colors/font_color = Color(1, 0.25098, 0.25098, 1)
 theme_override_fonts/font = ExtResource("3_8hhmw")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
-text = "ATK"
+text = "ATQ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -910,7 +910,7 @@ theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
 theme_override_fonts/font = ExtResource("3_8hhmw")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
-text = "STR"
+text = "FUE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1057,7 +1057,7 @@ theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
 theme_override_fonts/font = ExtResource("3_8hhmw")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxTexture_ec3qr")
-text = "LCK"
+text = "SUE"
 horizontal_alignment = 1
 vertical_alignment = 1
 

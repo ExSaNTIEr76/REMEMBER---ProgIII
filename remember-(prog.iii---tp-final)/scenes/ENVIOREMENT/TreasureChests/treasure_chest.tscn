@@ -745,6 +745,7 @@ shape = SubResource("RectangleShape2D_lw67l")
 debug_color = Color(1, 0, 0.831373, 0)
 
 [node name="ChestSounds" type="AudioStreamPlayer2D" parent="." unique_id=1468728196]
+process_mode = 3
 volume_db = -2.0
 max_distance = 1000.0
 attenuation = 2.0

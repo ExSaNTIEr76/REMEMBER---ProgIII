@@ -16,7 +16,6 @@ do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Savi
 	do GlobalConditions.floating_box_state = 2
 	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
 	do AudioPlayer.box_close()
-	do PlayerManager.player.restore_movement()
 	do wait(0.4)
 	do GlobalConditions.floating_box_state = 0
 	do CinematicManager.end_cinematic(PlayerManager.player)
@@ -56,7 +55,6 @@ do PlayerManager.restore_health_and_cp()
 	do GlobalConditions.floating_box_state = 2
 	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
 	do AudioPlayer.box_close()
-	do PlayerManager.player.restore_movement()
 	do wait(0.4)
 	do GlobalConditions.floating_box_state = 0
 	do CinematicManager.end_cinematic(PlayerManager.player)
@@ -103,7 +101,6 @@ do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Savi
 	do GlobalConditions.floating_box_state = 2
 	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
 	do AudioPlayer.box_close()
-	do PlayerManager.player.restore_movement()
 	do wait(0.4)
 	do GlobalConditions.floating_box_state = 0
 	do CinematicManager.end_cinematic(PlayerManager.player)
@@ -141,7 +138,6 @@ do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Savi
 	do GlobalConditions.floating_box_state = 2
 	do PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
 	do AudioPlayer.box_close()
-	do PlayerManager.player.restore_movement()
 	do wait(0.4)
 	do GlobalConditions.floating_box_state = 0
 	do CinematicManager.end_cinematic(PlayerManager.player)

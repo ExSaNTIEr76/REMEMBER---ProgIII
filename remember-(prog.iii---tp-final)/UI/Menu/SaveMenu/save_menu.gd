@@ -274,6 +274,7 @@ func _on_slot_activated(slot):
 			print("🧾 Thoth guardando globals: ", savestate.game_state.globals.keys())
 
 			GlobalInventoryState.sync_from_player()
+			savestate.set_game_variables(StateUnlockManager)
 			savestate.set_game_variables(GlobalInventoryState)
 			savestate.set_game_variables(GlobalChestsState)
 			savestate.set_game_variables(GlobalCinematicsState)
@@ -352,6 +353,7 @@ func _on_slot_activated(slot):
 			savestate.get_game_variables(GlobalConditions)
 			savestate.get_game_variables(GlobalInventoryState)
 			GlobalInventoryState.apply_to_player()
+			savestate.get_game_variables(StateUnlockManager)
 			savestate.get_game_variables(GlobalChestsState)
 			savestate.get_game_variables(GlobalCinematicsState)
 			savestate.get_game_variables(GlobalPuzzlesState)

@@ -9,12 +9,12 @@ region = Rect2(0, 224, 16, 16)
 
 [resource]
 script = ExtResource("2_5kh1h")
-name = "Small key"
+name = "Llave Pequeña"
 type = 2
 ID = 25
 is_quantitative = true
-description = "Small and generic pocket key.
-Can be used to unlock simple padlocks."
+description = "Llave de bolsillo pequeña y genérica.
+Sirve para abrir candados sencillos."
 texture = SubResource("AtlasTexture_vojpp")
 cost = 400
 metadata/_custom_type_script = "uid://culxbd8ylmven"

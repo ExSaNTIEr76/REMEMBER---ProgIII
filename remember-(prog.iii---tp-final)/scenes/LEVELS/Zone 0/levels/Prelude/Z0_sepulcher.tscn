@@ -136,7 +136,7 @@ debug_color = Color(0.596078, 0.372549, 1, 0.419608)
 
 [node name="DOORS" type="Node2D" parent="." unique_id=287637582]
 
-[node name="Sepulcher2" parent="DOORS" unique_id=1464597784 instance=ExtResource("10_y1k6b")]
+[node name="Sepulcher" parent="DOORS" unique_id=1464597784 instance=ExtResource("10_y1k6b")]
 position = Vector2(304, 352)
 level = "uid://o0i5x8fbdexc"
 target_transition_area = "LaresOfExcile1_a"

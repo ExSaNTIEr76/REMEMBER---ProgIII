@@ -13,15 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://cbhl4re0el2sc" path="res://scenes/LEVELS/levelScripts/LevelTransition.tscn" id="10_735fx"]
 [ext_resource type="Texture2D" uid="uid://b51awou3uved0" path="res://scenes/LEVELS/Zone 0/sprites/Zone 0_2.png" id="11_36fts"]
 [ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="11_bb214"]
+[ext_resource type="PackedScene" uid="uid://dljuv1v63dwsj" path="res://scenes/ENVIOREMENT/TreasureChests/treasure_chest.tscn" id="11_vbtax"]
 [ext_resource type="Shader" uid="uid://dh1ohreqrmn3k" path="res://effects/Shaders/symbol_flicker.gdshader" id="12_36fts"]
 [ext_resource type="Shader" uid="uid://cajiaeq3stet6" path="res://scenes/ENEMIES/Spectres/common_spectre/ghostrail/blur_ghostrail.gdshader" id="12_efrt3"]
+[ext_resource type="Resource" uid="uid://bytlk64ofcdd8" path="res://items/Objects/keys/gilded_key.tres" id="12_waf6h"]
 [ext_resource type="AudioStream" uid="uid://dw05y1ne1tvlu" path="res://audio/SFX/Ambient SFX/Sfx_Symbol_Materialized.ogg" id="14_lnvaa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yipe"]
-size = Vector2(12, 9)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efrt3"]
-size = Vector2(260, 25)
+size = Vector2(66, 67)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_efrt3"]
 shader = ExtResource("12_36fts")
@@ -128,35 +127,29 @@ tile_set = ExtResource("5_efrt3")
 [node name="Layer 6 (Decorations 2)" type="TileMapLayer" parent="YSORT" unique_id=856704133]
 y_sort_enabled = true
 use_parent_material = true
-tile_map_data = PackedByteArray("AAARAAIAAQANAAwAAAARAAEAAQAAAAwAAAARAA4AAgAWABUAAAAFAAoAAQAAAAQAAAAIAA8AAQAAAAQAAAAGABIAAQAAAAQAAAAJABEAAQACAAQAAAABABIAAQABAAQAAAAEABEAAQAAAAQAAAARAAMAAQAQABUAACAQAAkAAgAYAAAAARATAAcAAQAQABUAAAATAAgAAQAQABUAABACAAIAAQARABUAAAAQAA4AAgAVABUAAAABAA0AAgAVABQAAAABAA4AAgAVABUAAAACAA4AAgAWABUAAAADAA0AAgAXABQAAAADAA4AAgAXABUAAAAQAA0AAgAVABQAAAARAA0AAgAWABQAAAASAA0AAgAXABQAAAASAA4AAgAXABUAAAAOAAQAAQABAAwAABAEAAcAAgAYABcAAAAEAAgAAgAYABgAAAAEAAkAAgAYABkAAAAHAAcAAgAYABoAAAAHAAgAAgAYABkAAAAMAAUAAgAYABYAAAAMAAYAAgAYABcAAAAMAAcAAgAYABgAAAAMAAgAAgAYABkAAAAPAAgAAgAYABUAAAAPAAkAAgAYABkAAAACAAYAAQABAAwAAAACAAcAAQAOAAwAAAAEAAYAAgAYABYAAAAFAAQAAQAAAAwAABAFAAUAAQANAAwAABAOAAUAAQAOAAwAABAGAAgAAgAYAAAAAQADAAkAAgAYAAAAAQANAAgAAgAYAAAAARASAAUAAgAYABMAAAASAAYAAgAYABQAAAASAAEAAgAYABkAAAASAAAAAgAYABUAAAABAAEAAgAYABkAAAABAAAAAgAYABgAAAABAP//AgAYABYAAAACAA0AAgAWABQAAAAIAAkAAgAYAAAAAiAJAAkAAgAYAAAAAiAKAAkAAgAYAAAAAiALAAkAAgAYAAAAAiA=")
+tile_map_data = PackedByteArray("AAARAAIAAQANAAwAAAARAAEAAQAAAAwAAAARAA4AAgAWABUAAAAFAAoAAQAAAAQAAAAIAA8AAQAAAAQAAAAGABIAAQAAAAQAAAAJABEAAQACAAQAAAABABIAAQABAAQAAAAEABEAAQAAAAQAAAARAAMAAQAQABUAACAQAAkAAgAYAAAAARATAAcAAQAQABUAAAATAAgAAQAQABUAABACAAIAAQARABUAAAAQAA4AAgAVABUAAAABAA0AAgAVABQAAAABAA4AAgAVABUAAAACAA4AAgAWABUAAAADAA0AAgAXABQAAAADAA4AAgAXABUAAAAQAA0AAgAVABQAAAARAA0AAgAWABQAAAASAA0AAgAXABQAAAASAA4AAgAXABUAAAAOAAQAAQABAAwAABAEAAcAAgAYABcAAAAEAAgAAgAYABgAAAAEAAkAAgAYABkAAAAHAAcAAgAYABoAAAAHAAgAAgAYABkAAAAMAAUAAgAYABYAAAAMAAYAAgAYABcAAAAMAAcAAgAYABgAAAAMAAgAAgAYABkAAAAPAAgAAgAYABUAAAAPAAkAAgAYABkAAAACAAYAAQABAAwAAAACAAcAAQAOAAwAAAAEAAYAAgAYABYAAAAFAAQAAQAAAAwAABAFAAUAAQANAAwAABAOAAUAAQAOAAwAABAGAAgAAgAYAAAAAQADAAkAAgAYAAAAAQANAAgAAgAYAAAAARASAAUAAgAYABMAAAASAAYAAgAYABQAAAASAAEAAgAYABkAAAASAAAAAgAYABUAAAABAAEAAgAYABkAAAABAAAAAgAYABgAAAABAP//AgAYABYAAAACAA0AAgAWABQAAAAJAAcAAgAYAAAAAAAKAAcAAgAYAAAAAAA=")
 tile_set = ExtResource("5_efrt3")
 
 [node name="PlayerSpawn" parent="YSORT" unique_id=131964078 instance=ExtResource("7_8syr0")]
-position = Vector2(321, 362)
+position = Vector2(18, 610)
 
 [node name="ACTIONABLES" type="Node2D" parent="." unique_id=1423754692]
-
-[node name="Lever" parent="ACTIONABLES" unique_id=1627084058 instance=ExtResource("8_vbtax")]
-dialogue_resource = ExtResource("9_waf6h")
-dialogue_start = "lever"
-one_time = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/Lever" unique_id=1319967610]
-position = Vector2(528, 178.5)
-shape = SubResource("RectangleShape2D_1yipe")
-debug_color = Color(0.596078, 0.372549, 1, 0.419608)
+y_sort_enabled = true
 
 [node name="TempleSymbol" parent="ACTIONABLES" unique_id=417166965 instance=ExtResource("8_vbtax")]
 collision_mask = 2
 dialogue_resource = ExtResource("9_waf6h")
 dialogue_start = "templeSymbol"
 auto_trigger = true
-one_time = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/TempleSymbol" unique_id=421293673]
-position = Vector2(321, 315.5)
+position = Vector2(321, 224)
 shape = SubResource("RectangleShape2D_efrt3")
 debug_color = Color(0.596078, 0.372549, 1, 0.419608)
+
+[node name="Chest1" parent="ACTIONABLES" unique_id=2043378532 instance=ExtResource("11_vbtax")]
+position = Vector2(430, 265)
+item_data = ExtResource("12_waf6h")
 
 [node name="DOORS" type="Node2D" parent="." unique_id=496340037]
 

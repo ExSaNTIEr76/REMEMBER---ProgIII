@@ -65,10 +65,42 @@ texture_margin_left = 3.0
 texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65c0x"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0)
+draw_center = false
+border_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilgro"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ilgro"]
 atlas = ExtResource("2_ij3oe")
@@ -2015,10 +2047,13 @@ size_flags_vertical = 4
 mouse_behavior_recursive = 2
 theme_override_colors/font_color = Color(1, 0.5770954, 0.23036289, 1)
 theme_override_colors/caret_color = Color(1, 0.5770954, 0.23036289, 1)
+theme_override_constants/outline_size = 0
 theme_override_constants/caret_width = 1
 theme_override_fonts/font = ExtResource("3_0kpm6")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_ilgro")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_65c0x")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ilgro")
 alignment = 1
 max_length = 12
 caret_blink = true

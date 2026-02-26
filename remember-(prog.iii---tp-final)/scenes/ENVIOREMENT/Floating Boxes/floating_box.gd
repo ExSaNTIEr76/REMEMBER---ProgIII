@@ -61,6 +61,7 @@ func update_animation_from_state() -> void:
 			_play_box_animation( "%s_box_close" % box_type )
 			await CinematicManager._wait( 0.4 )
 			GlobalConditions.floating_box_state = 0
+			PlayerManager.player.restore_movement()
 		_:
 			push_warning( "⚠️ Estado de caja desconocido: %s" % str( current_state ))
 

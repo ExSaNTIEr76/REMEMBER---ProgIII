@@ -1,6 +1,7 @@
-# ItemDB.gd (autoload):
+# ItemDB.gd (escena autoload):
 extends Node
 
+const CATALOG_RESOURCE: ItemCatalog = preload("res://items/item_catalog.tres")
 var catalog: Dictionary = {}
 
 enum IDs {
@@ -109,25 +110,15 @@ enum IDs {
 }
 
 func _ready() -> void:
-	load_items_from_folder("res://items/")
+	if not CATALOG_RESOURCE:
+		push_error("❌ ItemCatalog no encontrado.")
+		return
 
-func load_items_from_folder(path: String) -> void:
-	var dir = DirAccess.open(path)
-	if not dir: return
+	for item in CATALOG_RESOURCE.items:
+		catalog[item.ID] = item
 
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	while file_name != "":
-		if dir.current_is_dir() and not file_name.begins_with("."):
-			load_items_from_folder(path + "/" + file_name) # 👈 Recurse
-		elif file_name.ends_with(".tres"):
-			var data: ItemData = load(path + "/" + file_name)
-			if data:
-				catalog[data.ID] = data
-		file_name = dir.get_next()
-	dir.list_dir_end()
+	#print("📦 ItemDB cargado:", catalog.size(), "items")
 
 
-# 🚀 renombrada
 func get_item(id: int) -> ItemData:
 	return catalog.get(id, null)

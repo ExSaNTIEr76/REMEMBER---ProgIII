@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dljuv1v63dwsj" path="res://scenes/ENVIOREMENT/TreasureChests/treasure_chest.tscn" id="7_my0gj"]
 [ext_resource type="Texture2D" uid="uid://b74k65q57n664" path="res://effects/Gradients/Light_Gradient.tres" id="8_l2rml"]
 [ext_resource type="PackedScene" uid="uid://cs4w0bvgl2q20" path="res://UI/Notes/actionable_note.tscn" id="10_377xo"]
+[ext_resource type="Resource" uid="uid://c4qg56uw4p71i" path="res://items/Symbols/concrete/knife_1_symbol.tres" id="10_ngnyj"]
 [ext_resource type="PackedScene" uid="uid://bjo1vifofl7f2" path="res://dialogues/Actionable.tscn" id="10_ygqso"]
 [ext_resource type="Resource" uid="uid://duuf6osgxj4db" path="res://dialogues/ZONE 0/Zone0_Ruins.dialogue" id="11_ygqso"]
 [ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="15_my0gj"]
@@ -68,7 +69,7 @@ zone_name = "Zona 0"
 zone_tag = "Z0_basement"
 transition_tag = "Z0_int"
 music = ExtResource("2_my0gj")
-music_volume = -25.0
+music_volume = -28.0
 
 [node name="YSORT" type="Node2D" parent="." unique_id=512330197 groups=["Y-SORT"]]
 unique_name_in_owner = true
@@ -94,28 +95,21 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAJAAYAAgAVAA8AAAA=")
 tile_set = ExtResource("3_pn56c")
 
-[node name="Layer 3 (Entrances)" type="TileMapLayer" parent="YSORT" unique_id=1050482886]
-z_index = -3
-y_sort_enabled = true
-use_parent_material = true
-tile_map_data = PackedByteArray("AAAJAAMAAgAFAAkAAAA=")
-tile_set = ExtResource("3_pn56c")
-
-[node name="Layer 4 (Cracks)" type="TileMapLayer" parent="YSORT" unique_id=384895096]
+[node name="Layer 3 (Cracks)" type="TileMapLayer" parent="YSORT" unique_id=384895096]
 z_index = -2
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAGAAEAAQANABMAAAAHAAEAAQAOABMAAAAIAAEAAQAOABMAAAAJAAEAAQAOABMAAAAKAAEAAQAOABMAAAALAAEAAQAOABMAAAAMAAEAAQAPABMAAAAGAAQAAQAAABUAAAAHAAQAAQABABUAAAAIAAQAAQABABUAAAAJAAQAAQABABUAAAAKAAQAAQABABUAAAALAAQAAQABABUAAAAMAAQAAQACABUAAAAJAAkAAQABABUAAAAGAAgAAQAAABMAAAAMAAgAAQACABMAAAAHAAgAAQABABMAAAAIAAgAAQABABMAAAALAAgAAQABABMAAAAKAAgAAQABABMAAAAJAAgAAQABABMAAAA=")
 tile_set = ExtResource("3_pn56c")
 
-[node name="Layer 5 (Lights)" type="TileMapLayer" parent="YSORT" unique_id=973447184]
+[node name="Layer 4 (Lights)" type="TileMapLayer" parent="YSORT" unique_id=973447184]
 z_index = -1
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAHAAIAAgAIAAMAAAALAAIAAgAIAAMAAAA=")
 tile_set = ExtResource("3_pn56c")
 
-[node name="Layer 7 (Decorations)" type="TileMapLayer" parent="YSORT" unique_id=211773946]
+[node name="Layer 5 (Decorations)" type="TileMapLayer" parent="YSORT" unique_id=211773946]
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAGAAYAAgAEAAsAAAALAAYAAgADABAAAAALAAcAAgABAA0AAAAMAAYAAgABAA8AAAAJAAkAAQAAABsAAAAMAAIAAgACAA0AAAAGAAcAAgAKAAsAAAAHAAMAAgASABAAAAAJAAQAAgAGAA4AAAA=")
@@ -130,12 +124,12 @@ tile_map_data = PackedByteArray("AAAAAAAAAgAWAAcAAwABAAAAAgAWAAcAAwACAAAAAgAWAAc
 tile_set = ExtResource("3_pn56c")
 script = ExtResource("4_gst6d")
 
-[node name="Layer 8 (Decorations 2)" type="TileMapLayer" parent="YSORT" unique_id=1246587416]
+[node name="Layer 7 (Decorations 2)" type="TileMapLayer" parent="YSORT" unique_id=1246587416]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAHAAYAAgAJAAoAAAAGAAYAAgAIAAoAAAALAAQAAgAGABQAABALAAYAAgALAAsAAAA=")
 tile_set = ExtResource("3_pn56c")
 
-[node name="Layer 9 (Limit)" type="TileMapLayer" parent="YSORT" unique_id=502557339]
+[node name="Layer 8 (Limit)" type="TileMapLayer" parent="YSORT" unique_id=502557339]
 z_index = 5
 y_sort_enabled = true
 use_parent_material = true
@@ -151,7 +145,7 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_wv7cb")
 
 [node name="PlayerSpawn" parent="YSORT" unique_id=1129225147 instance=ExtResource("5_iwp7k")]
-position = Vector2(304, 250)
+position = Vector2(304, 286)
 
 [node name="ACTIONABLES" type="Node2D" parent="." unique_id=106081787]
 y_sort_enabled = true
@@ -159,7 +153,8 @@ y_sort_enabled = true
 [node name="Chest1" parent="ACTIONABLES" unique_id=226254656 instance=ExtResource("7_my0gj")]
 position = Vector2(210, 135)
 is_padlocked = true
-padlock_type = "Complex"
+padlock_type = "Simple"
+item_data = ExtResource("10_ngnyj")
 
 [node name="Bookshelf" parent="ACTIONABLES" unique_id=705988004 instance=ExtResource("10_ygqso")]
 dialogue_resource = ExtResource("11_ygqso")
@@ -223,7 +218,7 @@ shape = SubResource("RectangleShape2D_b8l3e")
 debug_color = Color(0.596078, 0.372549, 1, 0.419608)
 
 [node name="CatsPortrait" parent="ACTIONABLES" unique_id=494379605 instance=ExtResource("10_377xo")]
-note_names = Array[String](["z0_memories_of_the_park_eng"])
+note_names = Array[String](["z0_memories_of_the_park_esp"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/CatsPortrait" unique_id=1708605982]
 position = Vector2(400, 107)

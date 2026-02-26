@@ -93,7 +93,7 @@ box_type = "red"
 is_lost = true
 
 [node name="PlayerSpawn" parent="YSORT" unique_id=339657820 instance=ExtResource("7_pfjc3")]
-position = Vector2(304, 333)
+position = Vector2(304, 642)
 
 [node name="DOORS" type="Node2D" parent="." unique_id=1509466002]
 

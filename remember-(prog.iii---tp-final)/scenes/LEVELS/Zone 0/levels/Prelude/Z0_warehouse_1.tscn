@@ -15,9 +15,6 @@
 [ext_resource type="Shader" uid="uid://3np6bvvo3dn0" path="res://effects/Light/light_aura.gdshader" id="10_5082b"]
 [ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="13_io05e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_20e82"]
-size = Vector2(81.00008, 191)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljv4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p05ys"]
@@ -145,20 +142,6 @@ tile_set = ExtResource("4_hkg8w")
 position = Vector2(128, 293)
 
 [node name="ACTIONABLES" type="Node2D" parent="." unique_id=1085486042]
-
-[node name="ChildRunning" parent="ACTIONABLES" unique_id=1997084656 instance=ExtResource("7_h64cp")]
-collision_mask = 2
-dialogue_resource = ExtResource("8_srgqd")
-dialogue_start = "childRunning1"
-auto_trigger = true
-cinematic_name = "z0_child_running_1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/ChildRunning" unique_id=460280183]
-position = Vector2(-101, 262)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_20e82")
-disabled = true
-debug_color = Color(0, 0.866667, 1, 0.419608)
 
 [node name="Windows" parent="ACTIONABLES" unique_id=1901755452 instance=ExtResource("7_h64cp")]
 dialogue_resource = ExtResource("8_srgqd")

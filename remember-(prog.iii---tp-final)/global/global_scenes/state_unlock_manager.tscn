@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://hhdgttuglt76"]
+
+[ext_resource type="Script" uid="uid://c6cbgysh12urp" path="res://global/state_unlock_manager.gd" id="1_wia4n"]
+[ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="2_axb4s"]
+
+[node name="StateUnlockManager" type="Node" unique_id=2013599576]
+script = ExtResource("1_wia4n")
+
+[node name="Serializable" type="Node" parent="." unique_id=1899451354]
+script = ExtResource("2_axb4s")
+transform = false
+variables = Array[String](["learned_states"])
+metadata/_custom_type_script = "uid://nmgti4nnwjet"

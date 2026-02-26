@@ -26,11 +26,14 @@ func has_item(item: ItemData, count: int = 1) -> bool:
 	return get_quantity(item) >= count
 
 func get_items_by_type(item_type: ItemData.ItemType) -> Array[ItemData]:
+	print("IDs in inventory:", items)
+	print("Catalog size:", ItemDB.catalog.size())
 	var result: Array[ItemData] = []
 	for id in items.keys():
 		var data: ItemData = ItemDB.get_item(id)
 		if data and data.type == item_type:
 			result.append(data)
+			print("Item from DB:", ItemDB.get_item(id))
 	result.sort_custom(func(a, b): return a.ID < b.ID)
 	return result
 
@@ -41,6 +44,6 @@ func get_save_data() -> Dictionary:
 func parse_save_data(data: Dictionary) -> void:
 	items.clear()
 	for key in data.keys():
-		var int_id = int(key) # 👈 siempre casteamos
+		var int_id = int(key)
 		items[int_id] = data[key]
 	inventory_changed.emit()

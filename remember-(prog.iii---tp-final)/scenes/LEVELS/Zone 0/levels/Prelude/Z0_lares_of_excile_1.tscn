@@ -98,7 +98,7 @@ debug_color = Color(0.596078, 0.372549, 1, 0.419608)
 [node name="LaresOfExcile1_a" parent="DOORS" unique_id=1069167981 instance=ExtResource("10_boca7")]
 position = Vector2(112, 32)
 level = "uid://cqdpljd76nmjb"
-target_transition_area = "Sepulcher2"
+target_transition_area = "Sepulcher"
 size = 3
 side = 2
 initial_camera_zone = -1

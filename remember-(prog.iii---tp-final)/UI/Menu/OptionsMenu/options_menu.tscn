@@ -113,6 +113,10 @@ region = Rect2(512, 64, 64, 32)
 atlas = ExtResource("13_xjojd")
 region = Rect2(96, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjojd"]
+atlas = ExtResource("13_xjojd")
+region = Rect2(320, 128, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2agm2"]
 atlas = ExtResource("8_kqll5")
 region = Rect2(128, 0, 32, 32)
@@ -722,6 +726,30 @@ offset_right = 12.0
 offset_bottom = 30.0
 scale = Vector2(0.6, 0.6)
 texture = SubResource("AtlasTexture_vp08s")
+
+[node name="MuteUILabel2" type="Label" parent="AUDIO" unique_id=831740183]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 343.0
+offset_top = 179.7005
+offset_right = 399.0
+offset_bottom = 193.1885
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.1251387, 0.1251387, 0.1251387, 1)
+theme_override_fonts/font = ExtResource("5_o8juy")
+theme_override_font_sizes/font_size = 12
+text = "Fullscreen"
+metadata/_edit_group_ = true
+
+[node name="MuteUI" type="TextureRect" parent="AUDIO/MuteUILabel2" unique_id=1816454516]
+clip_contents = true
+layout_mode = 0
+offset_left = -20.0
+offset_top = -2.0
+offset_right = 12.0
+offset_bottom = 30.0
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_xjojd")
 
 [node name="RESOLUTION" type="Control" parent="." unique_id=1352603678]
 layout_mode = 3

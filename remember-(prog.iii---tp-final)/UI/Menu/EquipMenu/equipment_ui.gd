@@ -71,7 +71,6 @@ func set_equipped(equip_type: String, item: ItemData) -> void:
 
 
 func update_equipment(equipped_items: Dictionary) -> void:
-	# expected format: { "DEFENSIVE1": ItemData, "SPECIAL1": ItemData, ... }
 	for t in slots.keys():
 		if equipped_items.has(t) and equipped_items[t]:
 			slots[t].set_item(equipped_items[t])
@@ -82,7 +81,7 @@ func update_equipment(equipped_items: Dictionary) -> void:
 func on_inventory_changed() -> void:
 	if not visible: return
 
-	# respetar categoría activa
+	# Respetar categoría activa
 	var menu := equip_menu
 	if not menu or not is_instance_valid(menu.last_button):
 		return

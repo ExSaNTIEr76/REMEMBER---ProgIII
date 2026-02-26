@@ -8,14 +8,9 @@
 [ext_resource type="Script" uid="uid://dlae4fxyvspys" path="res://scenes/LEVELS/levelScripts/footstep_tilemap.gd" id="5_dwc8b"]
 [ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="6_7wfmx"]
 [ext_resource type="PackedScene" uid="uid://cbhl4re0el2sc" path="res://scenes/LEVELS/levelScripts/LevelTransition.tscn" id="6_83jrs"]
-[ext_resource type="PackedScene" uid="uid://bjo1vifofl7f2" path="res://dialogues/Actionable.tscn" id="7_5mjvp"]
 [ext_resource type="Shader" uid="uid://3np6bvvo3dn0" path="res://effects/Light/light_aura.gdshader" id="7_725rv"]
 [ext_resource type="Texture2D" uid="uid://b74k65q57n664" path="res://effects/Gradients/Light_Gradient.tres" id="8_7hb87"]
-[ext_resource type="Resource" uid="uid://duuf6osgxj4db" path="res://dialogues/ZONE 0/Zone0_Ruins.dialogue" id="8_83jrs"]
 [ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="12_dwc8b"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wfmx"]
-size = Vector2(18, 9.87575)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5mjvp"]
 shader = ExtResource("7_725rv")
@@ -122,16 +117,6 @@ tile_set = ExtResource("3_725rv")
 position = Vector2(173, 274)
 
 [node name="ACTIONABLES" type="Node2D" parent="." unique_id=1810174218]
-
-[node name="LockedDoor" parent="ACTIONABLES" unique_id=1252431097 instance=ExtResource("7_5mjvp")]
-dialogue_resource = ExtResource("8_83jrs")
-dialogue_start = "locked"
-one_time = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ACTIONABLES/LockedDoor" unique_id=1651323156]
-position = Vector2(464, 68)
-shape = SubResource("RectangleShape2D_7wfmx")
-debug_color = Color(0.596078, 0.372549, 1, 0.419608)
 
 [node name="DOORS" type="Node2D" parent="." unique_id=1875985878]
 

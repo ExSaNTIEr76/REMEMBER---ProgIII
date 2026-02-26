@@ -114,6 +114,12 @@ func _toggle_slider(node: Node) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	var focused := get_viewport().gui_get_focus_owner()
 
+	if Input.is_action_pressed("ui_pause"):
+		on_cancel()
+
+	if event.is_action_pressed("toggle_fullscreen"):
+		GlobalMenuHub._toggle_fullscreen()
+
 	if focused is HSlider:
 		var slider := focused as HSlider
 

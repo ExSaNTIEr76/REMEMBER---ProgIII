@@ -1,4 +1,8 @@
+#state_unlock_manager.gd (autoload):
+
 extends Node
+
+signal state_restored
 
 ## Mapeo por nombre de entidad (ej. "Player") a conjunto de estados desbloqueados
 var unlocked_states := {}
@@ -69,3 +73,24 @@ func reset_states(character_id: String) -> void:
 
 func get_unlocked_states(character_id: String) -> Array[String]:
 	return unlocked_states.get(character_id, [])
+
+
+func _get_serializable_state() -> Dictionary:
+	return {
+		"learned_states": learned_states
+	}
+
+
+func _set_serializable_state(state: Dictionary) -> void:
+	learned_states.clear()
+	
+	if state.has("learned_states"):
+		learned_states = state["learned_states"].duplicate(true)
+	
+	state_restored.emit()
+
+
+func reset_state() -> void:
+	learned_states.clear()
+	temporary_locked.clear()
+	state_restored.emit()

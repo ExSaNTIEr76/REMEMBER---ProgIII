@@ -12,8 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bjo1vifofl7f2" path="res://dialogues/Actionable.tscn" id="9_7d3r3"]
 [ext_resource type="Script" uid="uid://b50ovxqctvmi" path="res://scenes/ENVIOREMENT/Puzzles/simple_blocks_puzzle.gd" id="9_k54if"]
 [ext_resource type="PackedScene" uid="uid://dvump360fkk7a" path="res://scenes/ENVIOREMENT/Barriers/SimpleBarrier/simple_barrier.tscn" id="10_a701j"]
+[ext_resource type="PackedScene" uid="uid://dljuv1v63dwsj" path="res://scenes/ENVIOREMENT/TreasureChests/treasure_chest.tscn" id="10_i20sy"]
 [ext_resource type="Resource" uid="uid://duuf6osgxj4db" path="res://dialogues/ZONE 0/Zone0_Ruins.dialogue" id="10_y6jvf"]
 [ext_resource type="PackedScene" uid="uid://btwlfjeib6g0x" path="res://scenes/ENVIOREMENT/Floating Blocks/floating_block.tscn" id="11_7d3r3"]
+[ext_resource type="Resource" uid="uid://1mt4rhshrai4" path="res://items/Objects/keys/small_key.tres" id="11_i20sy"]
 [ext_resource type="Script" uid="uid://b146xa42md0k3" path="res://addons/thoth/thoth_gamestate.gd" id="14_6yo2h"]
 [ext_resource type="Script" uid="uid://nmgti4nnwjet" path="res://addons/thoth/thoth_serializable.gd" id="15_3w7w8"]
 
@@ -35,7 +37,7 @@ zone_name = "Zone 0"
 zone_tag = "Z0_int"
 transition_tag = "Z0_int"
 music = ExtResource("2_7d3r3")
-music_volume = -15.0
+music_volume = -18.0
 
 [node name="YSORT" type="Node2D" parent="." unique_id=1550201914 groups=["Y-SORT"]]
 unique_name_in_owner = true
@@ -95,7 +97,7 @@ tile_set = ExtResource("3_5j4mi")
 [node name="Layer 7 (Decorations)" type="TileMapLayer" parent="YSORT" unique_id=1562044612]
 y_sort_enabled = true
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAEAAIAAgAHAAIAAAAIAAIAAgAHAAIAAAAMAAIAAgAHAAIAAAAMAAQAAgAHAAsAAAAKAAIAAgADAA8AAAAEAAQAAgABABQAAAADAAQAAgADABQAAAALAAQAAgAAABIAAAANAAQAAgADABAAAAAEAAMAAgANAAsAAAAPAAoAAQAAABwAAAA=")
+tile_map_data = PackedByteArray("AAAEAAIAAgAHAAIAAAAIAAIAAgAHAAIAAAAMAAIAAgAHAAIAAAAMAAQAAgAHAAsAAAAKAAIAAgADAA8AAAADAAQAAgADABQAAAALAAQAAgAAABIAAAANAAQAAgADABAAAAAEAAMAAgANAAsAAAAPAAoAAQAAABwAAAA=")
 tile_set = ExtResource("3_5j4mi")
 
 [node name="Layer 8 (Decorations 2)" type="TileMapLayer" parent="YSORT" unique_id=1158964301]
@@ -121,6 +123,7 @@ script = ExtResource("15_3w7w8")
 metadata/_custom_type_script = "uid://nmgti4nnwjet"
 
 [node name="ACTIONABLES" type="Node2D" parent="." unique_id=239598476]
+y_sort_enabled = true
 
 [node name="CatScratcher" parent="ACTIONABLES" unique_id=1549774746 instance=ExtResource("9_7d3r3")]
 dialogue_resource = ExtResource("10_y6jvf")
@@ -131,6 +134,10 @@ one_time = false
 position = Vector2(400, 153.399)
 shape = SubResource("RectangleShape2D_6yo2h")
 debug_color = Color(0.596078, 0.372549, 1, 0.419608)
+
+[node name="Chest1" parent="ACTIONABLES" unique_id=2043378532 instance=ExtResource("10_i20sy")]
+position = Vector2(144, 149)
+item_data = ExtResource("11_i20sy")
 
 [node name="SimpleBlocksPuzzle" type="Node2D" parent="." unique_id=901664625]
 y_sort_enabled = true

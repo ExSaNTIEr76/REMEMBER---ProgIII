@@ -17,9 +17,9 @@ Ciro: [#confused_1] [#no_name]Q-qué...
 do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro 'Where am I'.ogg", 1.0, -3.0)
 Ciro: [#confused_2] [#no_name] [speed=0.5]¿En dónde estoy?
 do wait(0.1)
-Usa las FLECHAS del teclado para moverte.
+Entities: [#controls] [#no_name]Utiliza las FLECHAS del teclado para moverte.
 	Mantén CONTROL mientras te mueves para correr.
-Utiliza la BARRA ESPACIADORA para interactuar.
+Entities: [#controls] [#no_name]Usa la BARRA ESPACIADORA para interactuar.
 	Oprime SHIFT para acelerar una línea de diálogo.
 do SceneTransition.cinematic_fade_out()
 do wait(0.2)

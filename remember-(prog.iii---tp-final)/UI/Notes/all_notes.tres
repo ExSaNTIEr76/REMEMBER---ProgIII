@@ -1,15 +1,10 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://djlhb35tiys7i"]
 
 [ext_resource type="Texture2D" uid="uid://udjmivk0sq3d" path="res://UI/Notes/z0_notes/z0_block_instructions_esp.png" id="1_0o4fk"]
-[ext_resource type="Texture2D" uid="uid://cmvo2xbl2y3l2" path="res://UI/Notes/z0_notes/z0_block_instructions_eng.png" id="1_s34rt"]
 [ext_resource type="Texture2D" uid="uid://dj1evlgr2u6o7" path="res://UI/Notes/z0_notes/z0_ciro_drawing.png" id="3_5phh8"]
 [ext_resource type="Texture2D" uid="uid://dhus3eb0bev7d" path="res://UI/Notes/z0_notes/z0_illegible_sign.png" id="3_6h3y0"]
-[ext_resource type="Texture2D" uid="uid://be72r8ljkyx8p" path="res://UI/Notes/z0_notes/MemoriesOfThePark_cats_eng.png" id="3_na0e3"]
+[ext_resource type="Texture2D" uid="uid://be72r8ljkyx8p" path="res://UI/Notes/z0_notes/MemoriesOfThePark_cats_esp.png" id="4_6h3y0"]
 [ext_resource type="Texture2D" uid="uid://cor3ttabos7xq" path="res://UI/Notes/z1_notes/z1_combat_instructions_esp.png" id="4_t7au5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_na0e3"]
-atlas = ExtResource("1_s34rt")
-region = Rect2(0, 0, 176, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s34rt"]
 atlas = ExtResource("1_0o4fk")
@@ -21,22 +16,6 @@ region = Rect2(0, 0, 176, 256)
 
 [resource]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}],
-"loop": false,
-"name": &"empty",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_na0e3")
-}],
-"loop": false,
-"name": &"z0_block_instructions_eng",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s34rt")
@@ -63,10 +42,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_na0e3")
+"texture": ExtResource("4_6h3y0")
 }],
 "loop": false,
-"name": &"z0_memories_of_the_park_eng",
+"name": &"z0_memories_of_the_park_esp",
 "speed": 5.0
 }, {
 "frames": [{

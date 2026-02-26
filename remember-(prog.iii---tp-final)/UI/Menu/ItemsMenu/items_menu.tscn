@@ -19,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://78a5tcw0n2eu" path="res://audio/SFX/GUI SFX/menu/Sfx_Cursor.ogg" id="17_lmd48"]
 [ext_resource type="AudioStream" uid="uid://eugb20fy3pmr" path="res://audio/SFX/GUI SFX/menu/Sfx_Accept.ogg" id="18_hgb3n"]
 [ext_resource type="AudioStream" uid="uid://bglgatckwenmv" path="res://audio/SFX/GUI SFX/menu/Sfx_Blocked.ogg" id="19_40txb"]
-[ext_resource type="Resource" uid="uid://d28crqpsjhhmi" path="res://UI/Menu/ItemsMenu/inventory/player_inventory.tres" id="20_4a1cr"]
 [ext_resource type="Script" uid="uid://dv8oifdw23rso" path="res://UI/Menu/ItemsMenu/inventory/inventory_ui.gd" id="20_ableb"]
 [ext_resource type="PackedScene" uid="uid://c0jxmn2v3jhx7" path="res://UI/Menu/ItemsMenu/inventory/inventory_slot.tscn" id="22_pwykk"]
 
@@ -755,7 +754,6 @@ layout_mode = 2
 theme_override_constants/h_separation = 215
 columns = 2
 script = ExtResource("20_ableb")
-data = ExtResource("20_4a1cr")
 
 [node name="InventorySlot" parent="ITEMSLIST/ScrollContainer/InventoryContainer" unique_id=550378285 instance=ExtResource("22_pwykk")]
 layout_mode = 2

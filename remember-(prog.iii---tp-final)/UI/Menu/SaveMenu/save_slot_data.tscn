@@ -148,7 +148,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("STATS/DATEBoxContainer/DAY:modulate")
+tracks/11/path = NodePath("STATS/DATEBoxContainer/MONTH:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -160,7 +160,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("STATS/DATEBoxContainer/MONTH:modulate")
+tracks/12/path = NodePath("STATS/DATEBoxContainer/DAY:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -180,6 +180,82 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ept2g"]
+resource_name = "slot_data_close"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlotDataPanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("STATS/STATSContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("STATS/STATS2Container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("STATS/DATEBoxContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ZonePortrait:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ka0tw"]
@@ -248,7 +324,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("STATS/DATEBoxContainer/DAY:modulate")
+tracks/5/path = NodePath("STATS/DATEBoxContainer/MONTH:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -260,7 +336,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("STATS/DATEBoxContainer/MONTH:modulate")
+tracks/6/path = NodePath("STATS/DATEBoxContainer/DAY:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -288,6 +364,82 @@ tracks/8/path = NodePath("ZonePortrait:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_df0ti"]
+resource_name = "slot_data_open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlotDataPanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("STATS/STATSContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("STATS/STATS2Container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("STATS/DATEBoxContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ZonePortrait:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -373,7 +525,9 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ka0tw"]
 _data = {
 &"RESET": SubResource("Animation_lvjlu"),
+&"slot_data_close": SubResource("Animation_ept2g"),
 &"slot_data_navigate": SubResource("Animation_ka0tw"),
+&"slot_data_open": SubResource("Animation_df0ti"),
 &"slot_data_updated": SubResource("Animation_slv7k")
 }
 
@@ -403,7 +557,7 @@ theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_3alqk")
 theme_override_font_sizes/font_size = 15
-text = "-    SIN    DATOS    -"
+text = "-    EMPTY    DATA    -"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -479,7 +633,7 @@ theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
 theme_override_fonts/font = ExtResource("3_3alqk")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("5_nsca8")
-text = "NIVEL"
+text = "LEVEL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -511,7 +665,7 @@ theme_override_colors/font_color = Color(0.682353, 0.682353, 0.682353, 1)
 theme_override_fonts/font = ExtResource("3_3alqk")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = ExtResource("5_nsca8")
-text = "TIEMPO"
+text = "TIME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -655,7 +809,7 @@ offset_top = 66.1487
 offset_right = -9.78372
 offset_bottom = 94.1487
 
-[node name="DAY" type="Label" parent="STATS/DATEBoxContainer" unique_id=1227530782]
+[node name="MONTH" type="Label" parent="STATS/DATEBoxContainer" unique_id=1227530782]
 custom_minimum_size = Vector2(20, 28)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -675,7 +829,7 @@ text = "/"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MONTH" type="Label" parent="STATS/DATEBoxContainer" unique_id=527476133]
+[node name="DAY" type="Label" parent="STATS/DATEBoxContainer" unique_id=527476133]
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

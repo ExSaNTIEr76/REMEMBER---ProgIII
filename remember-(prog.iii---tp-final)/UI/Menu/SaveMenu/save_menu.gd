@@ -128,9 +128,9 @@ func _menu_opened():
 		return
 	
 	if mode == MODE.SAVE:
-		menu_title.text = "GUARDAR"
+		menu_title.text = "SAVE"
 	else:
-		menu_title.text = "CARGAR"
+		menu_title.text = "LOAD"
 	
 	await SceneTransition.fade_out("menu")
 	visible = true
@@ -149,7 +149,7 @@ func _menu_opened():
 		var first = save_slots[0]
 		if first.has_node("SlotButton"):
 			first.get_node("SlotButton").grab_focus()
-
+	slot_details_panel.slot_data_animations.play("slot_data_open")
 
 
 func _menu_closed():
@@ -159,6 +159,7 @@ func _menu_closed():
 	get_tree().paused = false
 	GlobalConditions.floating_box_state = 2
 	PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Saving)
+	slot_details_panel.slot_data_animations.play("slot_data_close")
 	await CinematicManager._wait(0.4)
 
 	visible = false
@@ -166,6 +167,7 @@ func _menu_closed():
 	hidden.emit()
 	AudioManager.play_sfx(menu_closed, menu_closed_pitch, menu_closed_volume_db)
 	await CinematicManager._wait(0.4)
+	slot_details_panel.slot_data_animations.play("slot_data_close")
 	PlayerManager.player.state_machine.change_to(PlayerManager.player.states.Idle)
 
 
@@ -341,7 +343,7 @@ func _on_slot_activated(slot):
 			# 1️. Restaurar tiempo jugado guardado
 			if Engine.has_singleton("TimeManager") and slot.save_data.has("play_time"):
 				TimeManager.set_time_from_string(slot.save_data["play_time"])
-				TimeManager.pause_time()  # 🔸lo pausamos para evitar correr mientras carga escena
+				TimeManager.pause_time()
 
 			print("DBG load - globals keys:", ThothGameState.game_state.globals.keys())
 

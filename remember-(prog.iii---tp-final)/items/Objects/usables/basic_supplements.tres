@@ -23,7 +23,7 @@ script = ExtResource("2_otlfv")
 effects = Array[ExtResource("1_8vu5v")]([SubResource("Resource_8vu5v")])
 name = "Suplementos básicos"
 type = 1
-ID = 3
+ID = 2
 is_quantitative = true
 description = "Cápsulas de calcio para revitalizar la energía del cuerpo.
 Restaura 25 CP."

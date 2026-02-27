@@ -9,11 +9,10 @@ region = Rect2(80, 48, 16, 16)
 
 [resource]
 script = ExtResource("2_s0a2f")
-name = "Valve"
+name = "Válvula"
 type = 2
-ID = 27
-description = "Lost  valve with a slit in its center.
-Can be used in a mechanism to drain smoke flows."
+ID = 5
+description = "Válvula perdida con una ranura en el centro. Se puede utilizar en un mecanismo para desviar corrientes de humo."
 texture = SubResource("AtlasTexture_bsy66")
 cost = 0
 metadata/_custom_type_script = "uid://culxbd8ylmven"

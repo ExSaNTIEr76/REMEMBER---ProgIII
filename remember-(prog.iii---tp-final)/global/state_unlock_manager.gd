@@ -4,10 +4,9 @@ extends Node
 
 signal state_restored
 
-## Mapeo por nombre de entidad (ej. "Player") a conjunto de estados desbloqueados
 var unlocked_states := {}
-var learned_states := {}        # Estados aprendidos permanentemente
-var temporary_locked := {}      # Bloqueos temporales (cinematic, illness, etc.)
+var learned_states := {}
+var temporary_locked := {}
 
 
 func _ready():

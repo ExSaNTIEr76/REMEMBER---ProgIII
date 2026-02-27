@@ -608,8 +608,8 @@ tracks/4/keys = {
 "times": PackedFloat32Array(1.5, 7.7, 11),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["Es posible que ciertas escenas de este juego
-resulten impactantes para un público incauto", "ó...", "tal vez no..."]
+"values": ["Es posible que ciertas escenas de este juego 
+puedan resultar impactantes para un público incauto", "ó...", "tal vez no..."]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1767,9 +1767,8 @@ z_index = 1
 y_sort_enabled = true
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
-offset_left = 129.742
 offset_top = 247.0
-offset_right = 489.742
+offset_right = 640.0
 offset_bottom = 313.696
 theme_override_colors/font_color = Color(1, 0.958976, 0.93405, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

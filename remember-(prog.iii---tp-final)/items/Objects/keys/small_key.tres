@@ -11,7 +11,7 @@ region = Rect2(0, 224, 16, 16)
 script = ExtResource("2_5kh1h")
 name = "Llave Pequeña"
 type = 2
-ID = 25
+ID = 3
 is_quantitative = true
 description = "Llave de bolsillo pequeña y genérica.
 Sirve para abrir candados sencillos."

@@ -7,14 +7,14 @@ signal state_restored
 var puzzles_completed: Dictionary = {}
 
 
-# 🔄 Serialización: convertir el diccionario en un array
+# Serialización: convertir el diccionario en un array
 func _get_serializable_state() -> Dictionary:
 	return {
 		"puzzles_completed": puzzles_completed.keys()
 	}
 
 
-# 🔄 Deserialización: reconstruir diccionario desde array
+# Deserialización: reconstruir diccionario desde array
 func _set_serializable_state(state: Dictionary) -> void:
 	puzzles_completed.clear()
 	if state.has("puzzles_completed"):

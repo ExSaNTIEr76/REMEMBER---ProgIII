@@ -110,7 +110,7 @@ tile_map_data = PackedByteArray("AAAQAAcAAQACABcAAAAQAAYAAQACABcAAAAQAAUAAQACABc
 tile_set = ExtResource("3_qg044")
 
 [node name="PlayerSpawn" parent="YSORT" unique_id=2050348564 instance=ExtResource("5_u8rmw")]
-position = Vector2(525, 209)
+position = Vector2(526, 210)
 
 [node name="SimpleBlocksPuzzle" type="Node2D" parent="." unique_id=1667728096]
 y_sort_enabled = true

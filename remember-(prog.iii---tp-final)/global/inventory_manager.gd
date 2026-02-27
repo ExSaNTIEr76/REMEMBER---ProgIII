@@ -2,7 +2,7 @@
 extends Node
 
 
-# 🚀 Dar ítems al jugador
+# Da ítems al jugador
 @warning_ignore("shadowed_variable")
 func give(id: int, count: int = 1) -> void:
 	var item: ItemData = ItemDB.get_item(id)
@@ -11,7 +11,7 @@ func give(id: int, count: int = 1) -> void:
 	_refresh_ui(item.type)
 
 
-# 🚀 Dar todos los ítems del catálogo para testeo
+# Da todos los ítems del catálogo para testeo
 @warning_ignore("shadowed_variable")
 func give_all(count: int = 1) -> void:
 	for id in ItemDB.catalog.keys():
@@ -21,14 +21,14 @@ func give_all(count: int = 1) -> void:
 	print("✅ Todos los ítems agregados x", count)
 
 	# Refrescar UI si hay algún menú abierto
-	var menu := get_tree().root.get_node_or_null("Root/ItemsMenu") # adaptá la ruta si es distinta
+	var menu := get_tree().root.get_node_or_null("Root/ItemsMenu")
 	if menu and menu.visible:
 		menu.inventory_container.update_inventory(
 			PlayerManager.INVENTORY_DATA.get_all_items()
 		)
 
 
-# 🚀 Quitar todos los ítems del catálogo para testeo
+# Quita todos los ítems del catálogo para testeo
 @warning_ignore("shadowed_variable")
 func reset_all(count: int = 1) -> void:
 	for id in ItemDB.catalog.keys():
@@ -38,14 +38,14 @@ func reset_all(count: int = 1) -> void:
 	print("✅ Todos los ítems agregados x", count)
 
 	# Refrescar UI si hay algún menú abierto
-	var menu := get_tree().root.get_node_or_null("Root/ItemsMenu") # adaptá la ruta si es distinta
+	var menu := get_tree().root.get_node_or_null("Root/ItemsMenu")
 	if menu and menu.visible:
 		menu.inventory_container.update_inventory(
 			PlayerManager.INVENTORY_DATA.get_all_items()
 		)
 
 
-# 🚀 Quitar ítems
+# Quitar ítems
 @warning_ignore("shadowed_variable")
 func take(id: int, count: int = 1) -> void:
 	var item: ItemData = ItemDB.get_item(id)
@@ -54,9 +54,6 @@ func take(id: int, count: int = 1) -> void:
 	_refresh_ui(item.type)
 
 
-
-
-#Ahora en cualquier lado hacés:
 
 #InventoryManager.give(ItemDB.IDs.LUCK_TICKET, 3)
 #InventoryManager.take(ItemDB.IDs.FORTUNE_TICKET, 1)
@@ -67,14 +64,14 @@ func take(id: int, count: int = 1) -> void:
 #-------------------------------------------------------------------------------
 
 
-# 🚀 Obtener cantidad
+# Obtener cantidad
 func count(id: int) -> int:
 	var item: ItemData = ItemDB.get_item(id)
 	if not item: return 0
 	return PlayerManager.INVENTORY_DATA.get_quantity(item)
 
 
-# 👀 Refrescar menú si está abierto
+# Refresca menú si está abierto
 func _refresh_ui(item_type: ItemData.ItemType) -> void:
 	var menu := get_tree().root.get_node_or_null("Root/ItemsMenu") # adaptá la ruta real
 	if menu and menu.visible:
@@ -86,7 +83,7 @@ func _refresh_ui(item_type: ItemData.ItemType) -> void:
 #-------------------------------------------------------------------------------
 
 
-# 💰 Manejo de créditos (currency del juego)
+# Manejo de créditos (currency del juego)
 
 func add_credits(amount: int) -> void:
 	var player := PlayerManager.player
@@ -117,7 +114,7 @@ func get_credits() -> int:
 #-------------------------------------------------------------------------------
 
 
-# 🔑 Detectar si hay llave para cierto tipo de candado
+# Detecta si hay llave para cierto tipo de candado
 func has_key_for(padlock_type: String) -> bool:
 	match padlock_type:
 		"Simple":
@@ -128,7 +125,7 @@ func has_key_for(padlock_type: String) -> bool:
 			return false
 
 
-# 🔑 Consumir la llave adecuada
+# Consume la llave adecuada
 func use_key_for(padlock_type: String) -> bool:
 	if has_key_for(padlock_type):
 		match padlock_type:
@@ -143,7 +140,7 @@ func use_key_for(padlock_type: String) -> bool:
 #-------------------------------------------------------------------------------
 
 
-# 🚀 Verificar si el jugador tiene uno o más ítems de una lista
+# Verifica si el jugador tiene uno o más ítems de una lista
 func has_any_item(ids: Array) -> bool:
 	for id in ids:
 		if count(id) > 0:
@@ -151,7 +148,7 @@ func has_any_item(ids: Array) -> bool:
 	return false
 
 
-# 🚀 Verificar si el jugador tiene *todos* los ítems de una lista
+# Verifica si el jugador tiene *todos* los ítems de una lista
 func has_all_items(ids: Array) -> bool:
 	for id in ids:
 		if count(id) <= 0:
@@ -159,7 +156,7 @@ func has_all_items(ids: Array) -> bool:
 	return true
 
 
-# 🚀 Versión flexible: admite lista de ítems
+# Versión flexible: admite lista de ítems
 func is_player_has_item(ids: Array, require_all: bool = false) -> bool:
 	if require_all:
 		return has_all_items(ids)

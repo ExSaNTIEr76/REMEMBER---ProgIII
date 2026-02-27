@@ -1703,6 +1703,7 @@ position = Vector2(16, 40)
 process_mode = 3
 script = ExtResource("1_cu4ju")
 title_music = ExtResource("2_cu4ju")
+music_volume_db = -10.0
 switch_sfx = ExtResource("6_ahc53")
 load_menu_scene = "uid://b1y6mjaucqr85"
 options_scene = "uid://c1old43pxh28m"

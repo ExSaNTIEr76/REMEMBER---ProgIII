@@ -14,7 +14,7 @@ class_name EnemyGlobalStats extends Resource
 @export var CURRENT_HP: int = 1
 @export var CURRENT_CP: int = 1
 
-@export var MAX_SHIELD: int = 999   #---> Vida max. del blindaje (si la tiene)
+@export var MAX_SHIELD: int = 999   #---> Vida max. del blindaje
 @export var CURRENT_SHIELD: int = 0
 
 @export var CURRENT_ALTERED_STATE: DamageData.StatusEffect = DamageData.StatusEffect.PURE

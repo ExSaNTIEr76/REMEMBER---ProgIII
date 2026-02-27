@@ -53,7 +53,7 @@ var is_in_combat: bool = false
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-	# 🎵 Music
+	# 🎵 MÚSICA
 	for i in music_audio_player_count:
 		var music_player = AudioStreamPlayer.new()
 		music_player.bus = music_bus
@@ -89,7 +89,7 @@ func _ready() -> void:
 #---------------------------------------------------------------------------------------------------------------------#
 
 
-# 🎵 Music
+# MÚSICA
 func play_music(audio: AudioStream, pitch: float = 1.0, volume_db: float = 0.0, allow_layer: bool = false) -> void:
 	if not allow_layer:
 		for music_player in music_players:
@@ -111,14 +111,14 @@ func play_music(audio: AudioStream, pitch: float = 1.0, volume_db: float = 0.0, 
 			return
 
 	if allow_layer:
-		# 🚀 modo layering
+		# Modo layering
 		var temp_player := AudioStreamPlayer.new()
 		temp_player.bus = music_bus
 		add_child(temp_player)
 		_configure_and_play(temp_player, audio, pitch, volume_db)
 		temp_player.finished.connect(func(): temp_player.queue_free())
 	else:
-		# 🎵 modo clásico crossfade
+		# Modo clásico crossfade
 		current_music_player = (current_music_player + 1) % music_audio_player_count
 		var new_player := music_players[current_music_player]
 		var old_player := music_players[(current_music_player + 1) % music_audio_player_count]
@@ -145,7 +145,7 @@ func resume_previous_music():
 		new_player.stream = _paused_music_stream
 		new_player.pitch_scale = _paused_music_pitch
 		new_player.play(_paused_music_position)
-		new_player.volume_db = -40  # arranca bajito
+		new_player.volume_db = -40
 
 		var tween := create_tween()
 		tween.tween_property(
@@ -155,7 +155,7 @@ func resume_previous_music():
 			music_fade_duration
 		)
 
-		# 🔎 Limpieza solo parcial: mantenemos el "default" del Level si corresponde
+		# Limpieza solo parcial: mantenemos el "default" del Level si corresponde
 		_paused_music_stream = null
 		_paused_music_position = 0.0
 		_paused_music_volume = 0.0
@@ -206,7 +206,7 @@ func fade_out_music_path(path: String, duration: float = 0.5) -> void:
 #---------------------------------------------------------------------------------------------------------------------#
 
 
-# 🎫 Ambient
+# 🎫 AMBIENTE
 func play_ambient(audio: AudioStream, pitch: float = 1.0, volume_db: float = 0.0, allow_layer: bool = false) -> void:
 	if not allow_layer:
 		for ambient_player in ambient_players:
@@ -228,14 +228,14 @@ func play_ambient(audio: AudioStream, pitch: float = 1.0, volume_db: float = 0.0
 			return
 
 	if allow_layer:
-		# 🚀 modo layering
+		# Modo layering
 		var temp_player := AudioStreamPlayer.new()
 		temp_player.bus = ambient_bus
 		add_child(temp_player)
 		_configure_and_play(temp_player, audio, pitch, volume_db)
 		temp_player.finished.connect(func(): temp_player.queue_free())
 	else:
-		# 🎵 modo clásico crossfade
+		# Modo clásico crossfade
 		current_ambient_player = (current_ambient_player + 1) % ambient_audio_player_count
 		var new_player := ambient_players[current_ambient_player]
 		var old_player := ambient_players[(current_ambient_player + 1) % ambient_audio_player_count]
@@ -267,13 +267,13 @@ func play_sfx(audio: AudioStream, pitch: float = 1.0, volume_db: float = 0.0) ->
 	if not audio:
 		return
 
-	# Buscar un player libre en el pool
+	# Busca un player libre en el pool
 	for sfx_player in sfx_players:
 		if not sfx_player.playing:
 			_configure_and_play(sfx_player, audio, pitch, volume_db)
 			return
 
-	# 🚀 Si no hay libres, creamos un player temporal "fire and forget"
+	# Si no hay libres, crea un player temporal "fire and forget"
 	var temp_player := AudioStreamPlayer.new()
 	temp_player.bus = sfx_bus
 	add_child(temp_player)
@@ -342,7 +342,7 @@ func _consume_press_mute() -> bool:
 #---------------------------------------------------------------------------------------------------------------------#
 
 
-# 🗣️ Voices
+# 🗣️ VOCES
 func play_voice(audio: AudioStream, pitch: float = 1.0, volume_db: float = 0.0) -> void:
 	if not audio:
 		return
@@ -352,7 +352,6 @@ func play_voice(audio: AudioStream, pitch: float = 1.0, volume_db: float = 0.0) 
 			_configure_and_play(voice_player, audio, pitch, volume_db)
 			return
 
-	# 🚀 Si no hay libres, creamos un player temporal
 	var temp_player := AudioStreamPlayer.new()
 	temp_player.bus = voice_bus
 	add_child(temp_player)
@@ -396,7 +395,7 @@ func fade_out_voice_path(path: String, duration: float = 0.5) -> void:
 #---------------------------------------------------------------------------------------------------------------------#
 
 
-# ⚙️ Utilities
+# ⚙️ UTILIDADES
 
 func mute_all_buses():
 	if _startup_muted:
@@ -446,7 +445,6 @@ func fade_out_and_stop(player: AudioStreamPlayer, duration: float) -> void:
 	var tween := create_tween()
 	tween.tween_property(player, "volume_db", -40, duration)
 	await tween.finished
-	# 👇 Solo lo paramos si sigue siendo el mismo stream
 	if player.stream == old_stream:
 		player.stop()
 

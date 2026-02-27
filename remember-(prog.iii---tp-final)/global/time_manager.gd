@@ -1,6 +1,6 @@
 extends Node
 
-signal time_loaded  # 🆕 Nuevo signal
+signal time_loaded
 
 var total_seconds: float = 0.0
 var is_running: bool = true
@@ -33,7 +33,7 @@ func set_time_from_string(time_str: String) -> void:
 		var s = int(parts[2])
 		total_seconds = (h * 3600) + (m * 60) + s
 		print("🕓 Tiempo restaurado desde save:", time_str)
-	emit_signal("time_loaded", total_seconds)  # 🧩 notifica a quien lo escuche
+	emit_signal("time_loaded", total_seconds)
 
 func pause_time() -> void:
 	is_running = false

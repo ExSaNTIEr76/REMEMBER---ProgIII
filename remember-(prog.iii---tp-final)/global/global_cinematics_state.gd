@@ -4,14 +4,14 @@ extends Node
 
 var cinematics_triggered: Dictionary = {}
 
-# 🔄 Serialización: convertir el diccionario en un array
+# Serialización: convertir el diccionario en un array
 func _get_serializable_state() -> Dictionary:
 	return {
 		"cinematics_triggered": cinematics_triggered.keys()
 	}
 
 
-# 🔄 Deserialización: reconstruir diccionario desde array
+# Deserialización: reconstruir diccionario desde array
 func _set_serializable_state(state: Dictionary) -> void:
 	cinematics_triggered.clear()
 	if state.has("cinematics_triggered"):

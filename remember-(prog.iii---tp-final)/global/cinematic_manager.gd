@@ -2,10 +2,10 @@
 
 extends Node
 
-# 🔹 Direcciones, por compatibilidad con el player
+# Direcciones, por compatibilidad con el player
 enum SIDE { LEFT, RIGHT, UP, DOWN }
 
-# 🔹 Diccionario para llevar control de entidades bloqueadas
+# Diccionario para llevar control de entidades bloqueadas
 var _cinematic_entities := {}
 
 
@@ -77,10 +77,9 @@ func play_cinematic(entity_ref, anim_name: String, wait: bool = false) -> void:
 	anim_player.play(anim_name)
 
 	if wait:
-		# esperar a que termine la animación
 		await anim_player.animation_finished
 
-	# No liberamos aquí automáticamente, para poder encadenar animaciones
+	# No se libra aquí automáticamente, para poder encadenar animaciones
 
 
 # ===================================
@@ -127,16 +126,16 @@ func end_cinematic(entity: Node = null):
 		if sm and sm.has_method("change_to") and sm.current_state and "states" in entity:
 			var states = entity.states
 			if sm.current_state.name == states.Cinematic:
-				# ✅ Si el estado actual tiene un método end(), lo ejecutamos manualmente
+				# Si el estado actual tiene un método end(), lo ejecuta manualmente
 				if sm.current_state.has_method("end"):
 					sm.current_state.end()
 
-				# ✅ Luego cambiamos a Idle de forma limpia
+				# Luego cambia a Idle de forma limpia
 				if "Idle" in states:
 					sm.change_to(states.Idle)
 					print("🔁 Restaurado estado Idle desde Cinematic para", entity.name)
 
-	# 🎨 Restaurar animación visual Idle
+	# Restaurar animación visual Idle
 	if entity.has_method("play_animation"):
 		if "animations" in entity and "previous_direction" in entity:
 			var anims = entity.animations
@@ -194,9 +193,6 @@ func move_entity(entity_ref, direction: Vector2, distance: int = 16, speed: floa
 func _wait(duration: float) -> void:
 	await get_tree().create_timer(duration).timeout
 
-
-# --- Añadir estas helpers en cinematic_manager.gd ---
-
 # Resuelve un "entity_ref" que puede ser: Node, NodePath, String (nombre o ruta) o null.
 func _resolve_entity_ref(entity_ref) -> Node:
 	if entity_ref == null:
@@ -215,24 +211,24 @@ func _resolve_entity_ref(entity_ref) -> Node:
 		var scene = get_tree().current_scene
 		var sref: String = str(entity_ref)
 		if scene:
-			# 1️⃣ Intentar como NodePath
+			# 1️. Intentar como NodePath
 			var node := scene.get_node_or_null(sref)
 			if node:
 				return node
 
-			# 2️⃣ Buscar por nombre (recursivamente) dentro de la escena
-			node = scene.find_child(sref, true, false) # ✅ Godot 4 usa find_child
+			# 2️. Buscar por nombre (recursivamente) dentro de la escena
+			node = scene.find_child(sref, true, false)
 			if node:
 				return node
 
-		# 3️⃣ Fallback: buscar en el root y autoloads
+		# 3️. Fallback: buscar en el root y autoloads
 		var root := get_tree().root
 		if root:
 			var n := root.get_node_or_null(sref)
 			if n:
 				return n
 
-			n = root.find_child(sref, true, false) # ✅ también acá
+			n = root.find_child(sref, true, false)
 			if n:
 				return n
 

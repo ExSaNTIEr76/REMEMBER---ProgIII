@@ -4,16 +4,16 @@ extends Node
 
 signal state_restored
 
-var chests_triggered: Dictionary = {}   # chest_name → true
+var chests_triggered: Dictionary = {}
 
-# 🔄 Serialización
+# Serialización
 func _get_serializable_state() -> Dictionary:
 	return {
 		"chests_triggered": chests_triggered.keys()
 	}
 
 
-# 🔄 Deserialización
+# Deserialización
 func _set_serializable_state(state: Dictionary) -> void:
 	chests_triggered.clear()
 	if state.has("chests_triggered"):

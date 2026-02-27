@@ -21,7 +21,7 @@ size = Vector2(632, 420)
 
 [node name="RuinsExit" type="Node2D" unique_id=218335952]
 script = ExtResource("1_ki6ka")
-level_name = "Ruinas"
+level_name = "Isla"
 zone_name = "Zona 0"
 zone_tag = "Z0_ext"
 transition_tag = "Z0_ext"

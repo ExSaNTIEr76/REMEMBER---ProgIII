@@ -10,7 +10,7 @@ enum StatusEffect { NONE, PURE, POISON, PARALYSIS, BLINDNESS, MIGRAINE, FRAILTY,
 
 var source: Node = null
 @export var base_damage: int = 0
-@export var status_strength: int = 0  # Ej. Nivel del veneno (I, II, etc.)
+@export var status_strength: int = 0
 
 static func get_colored_status_name(effect: StatusEffect) -> String:
 	match effect:

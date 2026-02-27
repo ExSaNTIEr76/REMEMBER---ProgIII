@@ -1,6 +1,6 @@
 extends Node
 
-# 🎵 Diccionario maestro de sonidos por tipo y reacción
+# Diccionario maestro de sonidos por tipo y reacción
 @export var impact_sounds := {
 	# === Atributos ===
 	"slash": {
@@ -78,7 +78,7 @@ extends Node
 # 🔊 Volumen y pitch base
 @export_range(-80, 0) var volume_db := -15.0
 @export_range(0.5, 2.0) var pitch := 1.0
-@export var pitch_variation := 0.05  # Pequeña variación aleatoria
+@export var pitch_variation := 0.05
 
 
 # === Funciones principales ===
@@ -145,7 +145,7 @@ func _map_attack_to_type(attack_data: DamageData) -> String:
 	elif attack_data.status_effect != DamageData.StatusEffect.NONE:
 		return _map_status_to_type(attack_data.status_effect)
 	else:
-		return "strike"  # default fallback
+		return "strike"
 
 
 func _map_attribute_to_type(attr: DamageData.AttributeType) -> String:
@@ -170,4 +170,4 @@ func _map_status_to_type(status: DamageData.StatusEffect) -> String:
 	match status:
 		DamageData.StatusEffect.POISON: return "poison"
 		DamageData.StatusEffect.PARALYSIS: return "paralysis"
-		_: return "sol"  # default: usa sonidos mágicos
+		_: return "sol"

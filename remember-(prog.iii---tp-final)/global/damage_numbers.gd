@@ -43,7 +43,6 @@ func display_number(value: int, position: Vector2, is_player: bool = false, is_c
 	number.pivot_offset = Vector2(number.size / 2)
 
 	# ANIMACIÓN:
-	# ⚡ Efecto de aparición con escala y rebote
 	number.scale = Vector2(0.7, 0.7)
 
 	var tween = get_tree().create_tween()

@@ -25,7 +25,7 @@ func teleport_player(
 
 	PlayerManager.player.set_facing_direction(PlayerManager.desired_facing_direction)
 
-	# 🔹 Si se teletransporta a otra escena
+	# Si se teletransporta a otra escena
 	if scene_path != "":
 		LevelManager.target_transition = "DialogueDecisionVirtual"
 		LevelManager.position_offset = offset
@@ -42,7 +42,7 @@ func teleport_player(
 		#else:
 		#	push_warning("⚠️ Nodo de transición no encontrado: %s" % target_node_path)
 
-	# 🔹 Si es en la misma escena
+	# Si es en la misma escena
 	var target := get_node_or_null(target_node_path)
 	if target == null:
 		push_warning("🔍 Nodo de destino no encontrado: %s" % target_node_path)

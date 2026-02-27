@@ -119,7 +119,7 @@ func start_new_game_flow() -> void:
 	await player_name_animations.animation_finished
 	await CinematicManager._wait(2.0)
 
-	AudioManager.play_music_path("res://audio/music/Don't Give Up Yet (please).ogg", 1.0, -9.0)
+	AudioManager.play_music_path("res://audio/music/Don't Give Up Yet (please).ogg", 1.0, -12.0)
 	puppet_animations.play("floating")
 	cinematic_animations.play("puppet_zoom_in")
 	await cinematic_animations.animation_finished

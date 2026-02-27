@@ -14,6 +14,7 @@ class CPEntry:
 
 var entries: Array[CPEntry] = []
 
+
 func _process(delta):
 	for entry in entries:
 		if entry.current_cp < entry.max_cp:
@@ -26,8 +27,8 @@ func _process(delta):
 				if entry.current_cp > entry.max_cp:
 					entry.current_cp = entry.max_cp
 
-				# Actualizamos el CP visualmente
 				entry.on_cp_changed.call_deferred(entry.current_cp)
+
 
 func register(target: Node, max_cp: float, current_cp: float, regen_rate: float, regen_delay: float, on_cp_changed: Callable):
 	var entry := CPEntry.new()
@@ -40,8 +41,10 @@ func register(target: Node, max_cp: float, current_cp: float, regen_rate: float,
 	entry.on_cp_changed = on_cp_changed
 	entries.append(entry)
 
+
 func unregister(target: Node):
 	entries = entries.filter(func(e): return e.target != target)
+
 
 func reset_regen_delay(target: Node, delay: float):
 	for entry in entries:
@@ -50,11 +53,13 @@ func reset_regen_delay(target: Node, delay: float):
 			entry.is_regenerating = false
 			break
 
+
 func update_current_cp(target: Node, value: float):
 	for entry in entries:
 		if entry.target == target:
 			entry.current_cp = value
 			break
+
 
 func is_registered(target: Node) -> bool:
 	for entry in entries:

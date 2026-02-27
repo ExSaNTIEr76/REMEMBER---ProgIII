@@ -128,9 +128,9 @@ func _menu_opened():
 		return
 	
 	if mode == MODE.SAVE:
-		menu_title.text = "SAVE"
+		menu_title.text = "GUARDAR"
 	else:
-		menu_title.text = "LOAD"
+		menu_title.text = "CARGAR"
 	
 	await SceneTransition.fade_out("menu")
 	visible = true

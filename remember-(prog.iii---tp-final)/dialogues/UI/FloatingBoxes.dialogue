@@ -153,3 +153,72 @@ do PlayerManager.player.restore_movement()
 do CinematicManager.end_cinematic(PlayerManager.player)
 
 => END
+
+
+------------------------ CHAPTER SELECT ---------------------------------
+
+~ chapters
+
+match GlobalConditions.chapters
+	when 0
+		=> END
+	when 1
+		[speed=80.0] [center] Selecciona el capítulo
+		- CANCELAR
+			=> END
+		- Preludio
+			do TimeManager.reset_time()
+			do NewGameManager.start_new_game()
+			do wait(0.2)
+			do TeleportManager.teleport_player("/root/Sepulcher/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 0/levels/Prelude/Z0_sepulcher.tscn")
+			do AudioPlayer.go_to_nothingness()
+	when 2
+		[speed=80.0] [center] Selecciona el capítulo
+		- CANCELAR
+			=> END
+		- Preludio
+			do TimeManager.reset_time()
+			do NewGameManager.start_new_game()
+			do wait(0.2)
+			do TeleportManager.teleport_player("/root/Sepulcher/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 0/levels/Prelude/Z0_sepulcher.tscn")
+			do AudioPlayer.go_to_nothingness()
+		- Puzzles
+			do SceneTransition.black_screen_on()
+			do TimeManager.reset_time()
+			do NewGameManager.start_new_game()
+			do wait(0.2)
+			do TeleportManager.teleport_player("/root/Z0_Ruins/YSORT/SpawnMarker", Vector2(0, 0), 1, "res://scenes/LEVELS/Zone 0/levels/Ruins/Z0_ruins.tscn", false)
+			do InventoryManager.give(4, 1)
+			do AudioPlayer.go_to_nothingness()
+			do SceneTransition.black_screen_on()
+	when 3
+		[speed=80.0] [center] Selecciona el capítulo
+		- CANCELAR
+			=> END
+		- Preludio
+			do TimeManager.reset_time()
+			do NewGameManager.start_new_game()
+			do wait(0.2)
+			do TeleportManager.teleport_player("/root/Sepulcher/YSORT/SpawnMarker", Vector2(0, 0), 0, "res://scenes/LEVELS/Zone 0/levels/Prelude/Z0_sepulcher.tscn")
+			do AudioPlayer.go_to_nothingness()
+		- Puzzles
+			do SceneTransition.black_screen_on()
+			do TimeManager.reset_time()
+			do NewGameManager.start_new_game()
+			do wait(0.2)
+			do TeleportManager.teleport_player("/root/Z0_Ruins/YSORT/SpawnMarker", Vector2(0, 0), 1, "res://scenes/LEVELS/Zone 0/levels/Ruins/Z0_ruins.tscn", false)
+			do InventoryManager.give(4, 1)
+			do AudioPlayer.go_to_nothingness()
+			do SceneTransition.black_screen_on()
+		- Combate
+			do TimeManager.reset_time()
+			do NewGameManager.start_new_game()
+			do wait(0.2)
+			do TeleportManager.teleport_player("/root/AnnexMines_1/YSORT/SpawnMarker", Vector2(0, 0), 1, "res://scenes/LEVELS/Zone 1/levels/Damien/Annex Mines/annex_mines_1.tscn")
+			do InventoryManager.give(4, 1)
+			do InventoryManager.give(1, 1)
+			do InventoryManager.give(2, 1)
+			do InventoryManager.give(7, 1)
+			do AudioPlayer.go_to_nothingness()
+
+=> END

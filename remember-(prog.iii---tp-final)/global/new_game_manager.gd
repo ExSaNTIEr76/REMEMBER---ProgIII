@@ -10,6 +10,7 @@ func start_new_game() -> void:
 	GlobalChestsState.reset_state()
 	GlobalPuzzlesState.reset_state()
 	GlobalFightsState.reset_state()
+	StateUnlockManager.reset_state()
 
 	GlobalConditions.reset_conditions()
 	InventoryManager.remove_credits(9999999)

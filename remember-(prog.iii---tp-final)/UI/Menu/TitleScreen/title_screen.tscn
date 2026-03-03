@@ -13,12 +13,11 @@
 [ext_resource type="AudioStream" uid="uid://78a5tcw0n2eu" path="res://audio/SFX/GUI SFX/menu/Sfx_Cursor.ogg" id="5_cu4ju"]
 [ext_resource type="AudioStream" uid="uid://dpry62ehwlygv" path="res://audio/SFX/Ambient SFX/Sfx_Switch.ogg" id="6_ahc53"]
 [ext_resource type="AudioStream" uid="uid://eugb20fy3pmr" path="res://audio/SFX/GUI SFX/menu/Sfx_Accept.ogg" id="6_as7yc"]
-[ext_resource type="Resource" uid="uid://dg48fr6p71bs2" path="res://dialogues/ZONE 0/Zone0_Prelude.dialogue" id="7_278g3"]
+[ext_resource type="Resource" uid="uid://cmi06migg3gm2" path="res://dialogues/UI/FloatingBoxes.dialogue" id="7_fquh0"]
 [ext_resource type="Texture2D" uid="uid://dn4a85b0iwp06" path="res://UI/Menu/TitleScreen/sprites/Puppet_floating_UI.png" id="10_lmpcs"]
 [ext_resource type="Shader" uid="uid://digjxaev4r8bp" path="res://scenes/CHARACTERS/Promissio/concreteSymbols/promissio_glowing.gdshader" id="10_tu2tl"]
 [ext_resource type="Texture2D" uid="uid://b74k65q57n664" path="res://effects/Gradients/Light_Gradient.tres" id="11_rhoif"]
 [ext_resource type="Shader" uid="uid://c1r7m0kk8m2wi" path="res://scenes/ENEMIES/Spectres/common_spectre/hurtFlashEnemy.gdshader" id="12_278g3"]
-[ext_resource type="AudioStream" uid="uid://nfkiby22ofxq" path="res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Surprised 1.ogg" id="15_pvi1t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pvi1t"]
 shader = ExtResource("10_tu2tl")
@@ -279,7 +278,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("%EXTRAS:disabled")
+tracks/14/path = NodePath("TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/CHAPTER:disabled")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -431,7 +430,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("%EXTRAS:disabled")
+tracks/8/path = NodePath("TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/CHAPTER:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1176,40 +1175,25 @@ tracks/13/keys = {
 "update": 0,
 "values": [Color(0.98, 0.968567, 0.8428, 0), Color(0.98, 0.968567, 0.8428, 0.541176), Color(0.98, 0.969, 0.843, 1)]
 }
-tracks/14/type = "audio"
+tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("AudioStreamPlayer")
+tracks/14/path = NodePath("FlashLapses:color")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("15_pvi1t")
-}],
-"times": PackedFloat32Array(5.5)
-}
-tracks/14/use_blend = true
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("FlashLapses:color")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Color(0, 0, 0, 0)]
 }
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("PuppetOutline:frame_coords")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("PuppetOutline:frame_coords")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0, 4.6, 5.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -1707,8 +1691,8 @@ music_volume_db = -10.0
 switch_sfx = ExtResource("6_ahc53")
 load_menu_scene = "uid://b1y6mjaucqr85"
 options_scene = "uid://c1old43pxh28m"
-dialogue_resource = ExtResource("7_278g3")
-dialogue_start = "intro"
+dialogue_resource = ExtResource("7_fquh0")
+dialogue_start = "chapters"
 
 [node name="Background" type="ColorRect" parent="TitleScreen" unique_id=1023673689]
 anchors_preset = 15
@@ -1830,10 +1814,6 @@ text = "Don't give up yet"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TitleScreen/NEWGAMESCREEN" unique_id=2122812253]
-volume_db = -9.6
-bus = &"Music"
-
 [node name="FlashLapses" type="ColorRect" parent="TitleScreen/NEWGAMESCREEN" unique_id=346399858]
 z_index = 1
 layout_mode = 1
@@ -1922,7 +1902,7 @@ script = ExtResource("4_ql2f0")
 hover_sfx = ExtResource("5_cu4ju")
 press_sfx = ExtResource("6_as7yc")
 
-[node name="EXTRAS" type="Button" parent="TitleScreen/TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=426928036]
+[node name="CHAPTER" type="Button" parent="TitleScreen/TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer" unique_id=426928036]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -1935,7 +1915,7 @@ theme_override_fonts/font = ExtResource("3_0kpm6")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/focus = SubResource("StyleBoxTexture_cu4ju")
 disabled = true
-text = "Extras"
+text = "Capítulo"
 flat = true
 alignment = 0
 script = ExtResource("4_ql2f0")
@@ -1998,6 +1978,31 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_cu4ju")
 flat = true
 alignment = 0
 script = ExtResource("4_ql2f0")
+
+[node name="CHAPTERS" type="Control" parent="TitleScreen" unique_id=1261727637]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleScreen/CHAPTERS" unique_id=483636545]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen/CHAPTERS/MarginContainer" unique_id=2067682170]
+layout_mode = 2
 
 [node name="PLAYERNAME" type="Control" parent="TitleScreen" unique_id=1353983643]
 visible = false
@@ -2151,7 +2156,7 @@ libraries/ = SubResource("AnimationLibrary_rck1w")
 
 [connection signal="pressed" from="TitleScreen/TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/NEW GAME" to="TitleScreen" method="_on_new_game_pressed"]
 [connection signal="pressed" from="TitleScreen/TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/CONTINUE" to="TitleScreen" method="_on_continue_pressed"]
-[connection signal="pressed" from="TitleScreen/TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/EXTRAS" to="TitleScreen" method="_on_extras_pressed"]
+[connection signal="pressed" from="TitleScreen/TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/CHAPTER" to="TitleScreen" method="_on_chapter_pressed"]
 [connection signal="pressed" from="TitleScreen/TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/OPTIONS" to="TitleScreen" method="_on_options_pressed"]
 [connection signal="pressed" from="TitleScreen/TITLE OPTIONS/OptionsPanel/MarginContainer/VBoxContainer/QUIT" to="TitleScreen" method="_on_quit_pressed"]
 [connection signal="pressed" from="TitleScreen/NONE" to="TitleScreen" method="_on_none_pressed"]

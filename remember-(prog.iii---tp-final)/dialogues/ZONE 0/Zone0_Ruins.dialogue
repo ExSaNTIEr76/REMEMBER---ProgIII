@@ -54,6 +54,7 @@ do wait(0.1)
 do AudioManager.play_music_path("res://audio/music/Distant Waves.ogg", 1.0, -20.0)
 do SceneTransition.cinematic_fade_out()
 do CinematicManager.end_cinematic(PlayerManager.player)
+do TimeManager.resume_time()
 
 => END
 

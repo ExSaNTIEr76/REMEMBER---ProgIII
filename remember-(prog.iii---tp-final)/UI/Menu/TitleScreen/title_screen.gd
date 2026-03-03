@@ -18,11 +18,8 @@ var prelude_active: bool = false
 
 @export_category( "Scenes" )
 
-@export_file("*.tscn") var intro_scene: String
 @export_file("*.tscn") var load_menu_scene: String
 @export_file("*.tscn") var options_scene: String
-@export_file("*.tscn") var extras_scene: String
-
 
 @export_category( "New Game Cinematic" )
 
@@ -31,7 +28,7 @@ var prelude_active: bool = false
 
 @onready var button_new_game: Button = %"NEW GAME"
 @onready var button_continue: Button = %CONTINUE
-@onready var button_extras: Button = %EXTRAS
+@onready var button_chapter: Button = %CHAPTER
 @onready var button_options: Button = %OPTIONS
 @onready var button_quit: Button = %QUIT
 
@@ -57,13 +54,20 @@ func _ready():
 	AudioManager.mute_hover_once()
 	AudioManager.is_in_combat = false
 	AudioManager.fade_out_all(0.5)
+
 	await _wait_for_player()
 	set_meta("allow_pause", false)
 	PlayerManager.player.freeze_movement()
+
 	visible = true
+
 	_check_save_files()
+	_check_chapter()
+	GlobalConditions.conditions_changed.connect(_check_chapter)
+
 	await warning_screen()
 	await CinematicManager._wait(1.0)
+
 	last_button = "button_new_game"
 
 
@@ -81,8 +85,8 @@ func initialize_focus() -> void:
 		button_new_game.grab_focus()
 	if last_button == "button_continue":
 		button_continue.grab_focus()
-	if last_button == "button_extras":
-		button_extras.grab_focus()
+	if last_button == "button_chapter":
+		button_chapter.grab_focus()
 	if last_button == "button_options":
 		button_options.grab_focus()
 	if last_button == "button_quit":
@@ -171,7 +175,6 @@ func _on_load_menu_hidden():
 	AudioManager.mute_hover_once()
 
 
-
 func _check_save_files() -> void:
 	var save_path := "user://Saves"
 	var dir := DirAccess.open(save_path)
@@ -204,14 +207,24 @@ func _check_save_files() -> void:
 
 # ---------------------------------------------------------------------------------------------------------------
 
+func _on_chapter_shown():
+	visible = true
+	_check_chapter()
 
-func _on_extras_pressed():
-	if extras_scene != "":
-		await SceneTransition.fade_out_black()
-		get_tree().change_scene_to_file(extras_scene)
-		SceneTransition.fade_in_black_noawait()
+	await get_tree().process_frame
+	await get_tree().process_frame
+
+
+func _on_chapter_pressed():
+	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
+	last_button = "button_chapter"
+
+
+func _check_chapter() -> void:
+	if GlobalConditions.chapters >= 1:
+		button_chapter.show()
 	else:
-		push_warning("⚠️ No se asignó una escena para los extras.")
+		button_chapter.hide()
 
 
 # ---------------------------------------------------------------------------------------------------------------

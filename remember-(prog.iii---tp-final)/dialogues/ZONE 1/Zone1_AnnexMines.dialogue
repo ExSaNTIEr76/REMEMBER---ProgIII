@@ -2,6 +2,11 @@
 
 ~ pitfallAwake
 
+match GlobalConditions.chapters
+	when 2
+		do GlobalConditions.add_chapter(1)
+		do GlobalConditions.conditions_changed.emit()
+
 do SceneTransition.black_screen_on()
 do CinematicManager.start_cinematic()
 do wait(0.1)
@@ -9,6 +14,7 @@ do AudioManager.fade_out_music_path("res://audio/music/Crysalism Gloom.ogg", 0.8
 do wait(0.8)
 do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/HeadScratching_Right")
 do wait(2.0)
+do wait(0.8)
 do SceneTransition.fade_in_black()
 do wait(1.0)
 do SceneTransition.cinematic_fade_in_simple()
@@ -19,6 +25,7 @@ do AudioManager.play_sfx_path("res://audio/SFX/Enviorement/others/Sfx_Fabric_2.o
 do CinematicManager.play_cinematic(PlayerManager.player, "_CinematicIdle/CinematicIdle_Right")
 do SceneTransition.cinematic_fade_out()
 do CinematicManager.end_cinematic(PlayerManager.player)
+do TimeManager.resume_time()
 
 => END
 
@@ -70,8 +77,6 @@ match GlobalConditions.tramPassport
 
 ~ smokeFlow
 
-#I won't be able to get through here unless I find a way to desviate this smoke current.
-
 No podré pasar por aquí a menos que encuentre la manera de desviar esta corriente de humo.
 
 => END
@@ -79,7 +84,6 @@ No podré pasar por aquí a menos que encuentre la manera de desviar esta corrie
 -----------------------------------------------------
 
 ~ smokeValve
-
 
 if InventoryManager.is_player_has_item([ItemDB.IDs.VALVE]):
 

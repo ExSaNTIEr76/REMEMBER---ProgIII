@@ -2,7 +2,7 @@
 
 extends Node
 
-const SAVE_PATH := "user://Saves/"
+const SAVE_PATH := "user://saves/"
 const SAVE_FILE_PATTERN := "save_%d.sav"
 const MAX_SLOTS := 30
 
@@ -14,6 +14,7 @@ var game_state := {
 	"maps": {}
 }
 var save_data := {}
+
 
 func _ready() -> void:
 	# Asegurar directorio de saves

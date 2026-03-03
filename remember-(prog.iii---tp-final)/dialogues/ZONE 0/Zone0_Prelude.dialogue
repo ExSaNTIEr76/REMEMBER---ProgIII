@@ -2,11 +2,17 @@
 
 ~ beginningAct1
 
+match GlobalConditions.chapters
+	when 0
+		do GlobalConditions.add_chapter(1)
+		do GlobalConditions.conditions_changed.emit()
+
 do wait(0.2)
 do CinematicManager.start_cinematic()
 do CinematicManager.play_cinematic(PlayerManager.player, "_Motions/HeadScratching_Down")
 do wait(0.2)
 do AudioManager.fade_out_current_music(0.1)
+do AudioManager.fade_out_music_path("res://audio/music/Glimpse of Life.ogg", 0.1)
 do wait(0.2)
 do AudioManager.fade_out_current_ambient(0.1)
 do wait(0.2)
@@ -296,6 +302,11 @@ do CinematicManager.end_cinematic(PlayerManager.player)
 
 ~ shadowStalkerAppears 
 
+match GlobalConditions.chapters
+	when 1
+		do GlobalConditions.add_chapter(1)
+		do GlobalConditions.conditions_changed.emit()
+
 do CinematicManager.start_cinematic()
 do CinematicManager.play_cinematic(PlayerManager.player, "Hurt/Hurt_Right")
 do AudioManager.play_voice_path("res://audio/SFX/Puppet SFX/talk/Sfx_Ciro Surprised 1.ogg", 1.0, -3.0)
@@ -334,19 +345,5 @@ do SceneTransition.fade_out_black()
 do TeleportManager.teleport_player("/root/Z0_Ruins/YSORT/SpawnMarker", Vector2(0, 0), 1, "res://scenes/LEVELS/Zone 0/levels/Ruins/Z0_ruins.tscn", false)
 do AudioManager.fade_out_music_path("res://audio/music/Distant Waves.ogg", 0.0)
 do SceneTransition.black_screen_on()
-
-=> END
-
-
------------------------------------------------------
-
-~ ciroFainting
-
-	do CinematicManager.start_cinematic()
-	do wait(0.2)
-	do SceneTransition.fade_out_black()
-	do wait(0.2)
-	do TeleportManager.teleport_player("/root/Z0_Ruins/YSORT/SpawnMarker", Vector2(0, 0), 1, "res://scenes/LEVELS/Zone 0/levels/Ruins/Z0_ruins.tscn", false)
-	do SceneTransition.black_screen_on()
 
 => END

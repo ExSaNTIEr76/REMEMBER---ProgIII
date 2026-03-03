@@ -2,6 +2,7 @@
 extends Node
 
 signal conditions_changed
+const META_SAVE_PATH := "user://meta_progress.save"
 
 #region PLAYER SAVE MARKS
 
@@ -26,6 +27,8 @@ var zodiac_key_cards: int = 1
 var zone_flowers: int = 0
 
 var zone_illness: int = 0
+
+var chapters: int = 0
 
 #endregion
 
@@ -85,6 +88,9 @@ var has_talked_elsen: bool = false
 
 #endregion
 
+func _ready():
+	load_meta_progress()
+
 func reveal_name():
 	puppet_name_revealed = true
 	conditions_changed.emit()
@@ -127,3 +133,40 @@ func reset_conditions() -> void:
 	lookingForTheChild = 0
 	tramPassport = 0
 	has_talked_elsen = false
+
+
+func save_meta_progress() -> void:
+	var data := {
+		"chapters": chapters
+	}
+	
+	var file = FileAccess.open(META_SAVE_PATH, FileAccess.WRITE)
+	if file:
+		file.store_var(data)
+		file.close()
+		print("💾 Meta progreso guardado.")
+	else:
+		push_error("❌ No se pudo guardar meta progreso.")
+
+
+func load_meta_progress() -> void:
+	if not FileAccess.file_exists(META_SAVE_PATH):
+		print("📁 No existe meta_progress.save, usando valores por defecto.")
+		return
+	
+	var file = FileAccess.open(META_SAVE_PATH, FileAccess.READ)
+	if file:
+		var data = file.get_var()
+		file.close()
+		
+		if typeof(data) == TYPE_DICTIONARY:
+			chapters = data.get("chapters", 0)
+			print("📖 Meta progreso cargado. Chapters:", chapters)
+	else:
+		push_error("❌ No se pudo cargar meta progreso.")
+
+
+func add_chapter(amount := 1) -> void:
+	chapters += amount
+	save_meta_progress()
+	conditions_changed.emit()
